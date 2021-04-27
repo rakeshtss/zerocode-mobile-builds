@@ -1,0 +1,176 @@
+<!-- <div class="blank-layout"><router-outlet></router-outlet></div> -->
+<header class="zc-header">
+    <div class="zc-header-left">
+      
+        <!-- <div class="col-1 sidebar-toggle">
+          <a  fxHide fxShow.lt-sm class="icon-bars " (click)="ly.toggleMenu();"></a>
+        </div> -->
+        <a href="javascript:;" class="sidebar-toggle" (click)="ly.toggleMenu()" matTooltip="Click to toggle Menu"
+      matTooltipPosition="right">
+      <img src="assets/themes/morefresh/images/menu_bars.png" alt="">
+        </a>
+      <a class="zc-logo" routerLink="/" *ngIf="ly.siteConfig.clientLogo">
+        <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+      </a>
+    </div>
+    <!--
+      <div class="col-4">
+          <zc-com-render type='app-selection' [options]="{type:'dropdown'}"></zc-com-render>
+      </div>
+    -->
+  
+    <div class="zc-header-right">
+      <ul class="zc-header-right-list">
+        <!-- <li class="zc-notifications">
+          <zc-com-render
+            type="notifications"
+            [options]="ly.siteConfig"
+          ></zc-com-render>
+        </li> -->
+        <!-- <li>
+            <zc-com-render  type="app-selection" [options]="{ type:'dropdown' }"></zc-com-render>
+        </li> -->
+        <!-- <li>
+          <a href="" class="zc-info-links">
+            <i class="icon icon-phone2"></i>
+            <p>1800-000-000</p>
+          </a>
+        </li>
+        <li>
+          <a href="" class="zc-info-links">
+            <i class="icon icon-gift"></i>
+            <p>Offers</p>
+          </a>
+        </li>
+        <li>
+          <a href="" class="zc-info-links">
+            <i class="icon icon-question-circle"></i>
+            <p>Help</p>
+          </a>
+        </li> -->
+        <li class="zc-notifications">
+          <zc-com-render type="notifications" [options]="ly.siteConfig"></zc-com-render>
+        </li>
+        <li>
+          <div ngbDropdown class="zc-profile-dp" placement="bottom-right" container="body">
+            <a class="zc-profile-dp-link" id="userdroupdown" ngbDropdownToggle>
+              <span class="welcome-user-pic"
+                *ngIf="!(ly.userDetails.addInfo && ly.userDetails.addInfo.pic && ly.userDetails.addInfo.pic.length > 0)">
+                <img src="assets/themes/morefresh/images/user.png" alt="logo" />
+              </span>
+              <span class="welcome-user-pic"
+                *ngIf="(ly.userDetails.addInfo && ly.userDetails.addInfo.pic && ly.userDetails.addInfo.pic.length > 0)">
+                <img [src]="ly.siteConfig.fileServer + 'get/' +ly.userDetails.addInfo.pic[0]['path']" alt="logo" />
+              </span>
+              <span class="welcome-widget">
+                <span class="welcome">Welcome </span>
+                <div class="welcome-user" title="{{ ly.userDetails.name }}"> {{ ly.userDetails.name }}</div>
+              </span>
+            </a>
+  
+            <div ngbDropdownMenu aria-labelledby="userdroupdown" class="zc-profile-dp-menu">
+              <ul class="zc-profile-dp-menu-list">
+                <li>
+                  <div class="zc-user-info">
+                    <label *ngIf="ly.userDetails.role?.label">{{
+                      ly.userDetails.role.label
+                    }}</label>
+                    <label *ngIf="ly.userDetails.addInfo?.branch">{{
+                      ly.userDetails.addInfo.branch?.label
+                    }}</label>
+                    <label *ngIf="ly.userDetails.phone?.isdCode">{{ ly.userDetails.phone?.isdCode }}-{{
+                        ly.userDetails.phone?.value
+                      }}
+                    </label>
+                  </div>
+                </li>
+                <ng-container *ngIf="ly.siteConfig && ly.siteConfig.profileLinks.length > 0">
+                  <li *ngFor="let link of ly.siteConfig.profileLinks">
+                    <ng-container [ngSwitch]="link.type">
+                      <!--
+                        <a *ngSwitchCase="external" [href]="link.url" class="dropdown-item" target="link.target">{{link.title}}</a>
+                      -->
+                      <a *ngSwitchDefault [routerLink]="['/' + link.url]" class="dropdown-item"
+                        [target]="link.target">{{ link.title }}</a>
+                    </ng-container>
+                  </li>
+                </ng-container>
+                <li>
+                  <button class="dropdown-item" routerLink="/zcbase/account/profile">Profile</button>
+                </li>            
+                <li>
+                  <button class="dropdown-item" routerLink="/zcbase/account/change-password">Change Password</button>
+                </li>
+                <li *ngIf="ly.userDetails && ly.userDetails.apps && ly.userDetails.apps.length > 0">
+                  <button class="dropdown-item" routerLink="/zcbase/account/app-selection">App Selection</button>
+                </li>
+                <li>
+                  <button id="logout" class="dropdown-item" (click)="ly.logout()">
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <!-- Application menu type(zc-horizontal-menu, zc-vertical-menu, zc-icon-menu)-->
+  <!-- classes for various menues types
+    1. zc-horizontal-menu
+    2. zc-vertical-menu
+    3. zc-icons-menu
+    4. zc-vertical-xlimenu  -->
+
+    
+    <!-- Menu end -->
+  
+    <!-- Main content layout-->
+    <div>
+      <div class="blank-layout" [ngClass]="ly.menuState">
+        
+  <div class="breadcrumb-widget">
+    <!-- <a href="javascript:;" class="icon-bars sidebar-toggle" (click)="ly.toggleMenu()" matTooltip="Click to toggle Menu"
+      matTooltipPosition="right"></a> -->
+    <div fxFlex class="zc-breadcrumb-left">
+  
+      <span>{{ ly.pageTitle }}</span>
+      <!-- Breadcrumb Start -->
+      <ul *ngIf="ly.breadcrumb && ly.breadcrumb.length > 0">
+        <li *ngFor="let item of ly.breadcrumb; let _inx = index">
+          <span class="arrow-divide" *ngIf="_inx">{{ ' > ' }}</span>
+          <span class="no-link" *ngIf="!item.url">
+            <span zcBreadcrumb [breadcrumb]="item"></span>
+          </span>
+          <a *ngIf="item.url" class="bredcrumb-item" [routerLink]="[item.url]" routerLinkActive="router-link-active">
+            <span zcBreadcrumb [breadcrumb]="item"></span>
+          </a>
+        </li>
+      </ul>
+      <!-- Breadcrumb Ends -->
+    </div>
+    <div fxFlex class="zc-breadcrumb-right">
+      <i *ngIf="ly.backBtn" class="icon-times-circle back-btn" (click)="ly.backClicked()" title="Back"></i>
+    </div>
+  </div>
+  
+          <router-outlet></router-outlet>
+      </div>
+      <footer>
+        <div class="right-footer">
+        </div>
+        <div class="leftnav-logo">
+          <a href="http://zeroco.de/" target="_blank">
+            <div class="d-flex align-items-center">
+              <span class="d-block pr-2">{{ly.siteConfig.powerByTitle}}</span>
+              <!-- <img *ngIf="ly.siteConfig.powerByLogo" [src]="ly.siteConfig.powerByLogo" alt="logo" /> -->
+              <img src="assets/themes/morefresh/images/logo-foot.png" alt="footer-logo"/>
+            </div>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+  
