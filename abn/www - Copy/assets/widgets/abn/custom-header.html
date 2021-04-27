@@ -1,0 +1,58 @@
+<div class="zc-edition-header zc-no-side-menu">
+    <a class="sidebar-toggle" href="javascript:;" id="nav-toggle" mattooltip="Click to toggle Menu"
+        mattooltipposition="right"><img alt="" src="assets/themes/abn/images/menu_bars.png"></a>
+    <div class="zc-edition-header-left">
+        <a [routerLink]="['/']" class="zc-logo">
+            <img src="assets/themes/abn/images/logo.png" alt="Logo" />
+            <p id="date" class="zc-date"></p>
+        </a>
+
+
+    </div>
+    <div class="zc-edition-header-right">
+        <a class="icon-close menu-close-btn" id="nav-close"></a>
+        <ul>
+            <!-- <li><a routerLink="/">HOME</a></li> -->
+            <li (click)="zc.zc_modal_2410.open()" class="edition-selector" id="divEditionSelector" style="display: none;"><span id="editionSelector"></span><span
+                    class="icon-angle-down"></span></li>
+            <li class="edition-date-selector">
+                <!-- <p class="zc-date" id="date"></p> -->
+                <div class="dropdown keep-inside-clicks-open" id="divDateSelector" >
+                    <a class="btn dropdown-toggle date-text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span id="formatedDate"></span>
+                      
+                      <!-- <span id="currentDate"></span>
+                      <span id="month"></span>
+                      <span id="year"></span> -->
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
+                        <li class="weeks-list" id="lastWeekDaysList">
+
+                        </li>
+                      <li>
+
+                        <div id="datepicker"></div>
+                      </li>
+                    </ul>
+                  </div>
+            </li>
+        </ul>
+        <!-- <div class="zc-search-setting">
+            <a href="javascript:;" class="icon-search"></a>
+            <a href="javascript:;" class="icon-settings"></a>
+
+        </div> -->
+        <div class="zc-social-media-block">
+            <a *ngIf="zc.user" class="editions-link" routerLink="/epa/editions/editions">Editions</a>
+            <div class="social-icons">
+                <!-- <a href="http://www.youtube.com/user/abntelugutv?sub_confirmation=1" target="_blank" class="icon-youtube"></a> -->
+                <a href="https://www.facebook.com/abntelugutv" target="_blank" class="icon-facebook"></a>
+                <a href="https://twitter.com/abntelugutv" target="_blank" class="icon-twitter"></a>
+            </div>
+            <a href="javascript:;" class="email-link">
+                <input type="mail" class="form-control" id="subscribeEmail" placeholder="Email">
+            </a>
+            <a href="javascript:;" class="subscribe-link" id="subscribe">Subscribe</a>
+        </div>
+    </div>
+</div>

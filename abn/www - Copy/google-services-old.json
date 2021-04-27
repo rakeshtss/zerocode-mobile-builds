@@ -1,0 +1,40 @@
+{
+    "project_info": {
+        "project_number": "125034094364",
+        "firebase_url": "https://zero-code-v3.firebaseio.com",
+        "project_id": "zero-code-v3",
+        "storage_bucket": "zero-code-v3.appspot.com"
+    },
+    "client": [{
+        "client_info": {
+            "mobilesdk_app_id": "1:125034094364:android:71a9c854a9a7c45a4a24d9",
+            "android_client_info": {
+                "package_name": "com.abn.zerocode"
+            }
+        },
+        "oauth_client": [{
+            "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
+            "client_type": 3
+        }],
+        "api_key": [{
+            "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
+        }],
+        "services": {
+            "appinvite_service": {
+                "other_platform_oauth_client": [{
+                        "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
+                        "client_type": 3
+                    },
+                    {
+                        "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
+                        "client_type": 2,
+                        "ios_info": {
+                            "bundle_id": "com.morefresh.zerocode"
+                        }
+                    }
+                ]
+            }
+        }
+    }],
+    "configuration_version": "1"
+}
