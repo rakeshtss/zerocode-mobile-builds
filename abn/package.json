@@ -13,6 +13,7 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "devDependencies": {
+        "cordova-admob-sdk-updated": "^0.24.2",
         "cordova-android": "^9.1.0",
         "cordova-plugin-androidx-adapter": "^1.1.1",
         "cordova-plugin-firebasex": "^11.0.0",
@@ -49,6 +50,7 @@
             "cordova-admob-sdk": {
                 "PLAY_SERVICES_VERSION": "17.0.0"
             },
+            "cordova-admob-sdk-updated": {},
             "cordova.plugins.diagnostic": {
                 "ANDROID_SUPPORT_VERSION": "28.+"
             },

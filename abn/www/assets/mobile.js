@@ -13,10 +13,21 @@ document.addEventListener("deviceready", function() {
         id: 'ca-app-pub-4071928387898761/4000779367',
         autoShow: true
     })
-    window['FirebasePlugin'].subscribe("/topics/all", function() {
-        console.warn("Subscribed to topic");
-    }, function(error) {
-        console.error("Error subscribing to topic: " + error);
+    // window['FirebasePlugin'].subscribe("/topics/all", function() {
+    //     console.warn("Subscribed to topic");
+    // }, function(error) {
+    //     console.error("Error subscribing to topic: " + error);
+    // }); 
+    window['FirebasePlugin'].grantPermission(function(hasPermission){ 
+        // alert('has permission;'+hasPermission);
+        if(hasPermission){
+            window['FirebasePlugin'].subscribe("/topics/all", function() {
+                console.warn("Subscribed to topic");
+            }, function(error) {
+                console.error("Error subscribing to topic: " + error);
+            });
+        }
+
     });
 
 }, false);
