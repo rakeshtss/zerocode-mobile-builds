@@ -1,0 +1,19 @@
+Android key store file details
+
+firsth name : More Fresh
+Password : morefresh
+alias: morefresh
+organzation : More Fresh
+city : HYD
+state :INDIA
+contry code : 91
+
+
+Firebase Account details:
+
+morefreshsm@gmail.com 
+project name : MoreFresh 29098
+
+
+
+
