@@ -393,7 +393,7 @@ $(document).on('click', '.ui-datepicker-prev', function (e) {
 //   console.log('lastWeekDisplay', lastWeekDisplay);
 //   console.log('lastWeekDisplayPadded', lastWeekDisplayPadded);
 $(window).scroll(function () {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 1024) {
         var scrollTop = window.scrollY;
         console.log('scrollTop', scrollTop);
         if (scrollTop > 50) {

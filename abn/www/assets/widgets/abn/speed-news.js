@@ -54,8 +54,7 @@ $(document).ready(function () {
     });
 
     $('.loader-wrap').fadeOut();
-
-
+    
 })
 
 function getSpeednewsListByCategory(defaultSelectedValue) {
@@ -92,6 +91,8 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                     // debugger;
                     slide_data = '';
                     slide_data += `<div class="swiper-slide" id='${o.uid}'>
+                    <div class="swiper-lazy-preloader"></div>
+                    <div class="swiper-lazy-loading"></div>
                     <h4>${o.title}</h4>`;
                     if(o.description) {
                         slide_data += `<p>${o.description}</p>`;
@@ -107,11 +108,39 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                         if (!videoUrl.includes('youtube') && videoUrl) {
                             videoUrl = 'https://www.youtube.com/embed/' + videoUrl;
                         }
-                        slide_data += `<div class="speed-video">
-                        <iframe id="iframeId${i}" width="100%" height="315" src="${videoUrl}" frameborder='0' allowtransparency="true" allowfullscreen></iframe>
-                        </div>`;
+                        // slide_data += `<div class="speed-video-widget"><div class="speed-video overlay-video" onclick="playVideo(event, ${i})">
+                        // <iframe class="iframeSwipe" id="iframeId${i}" width="100%" height="315" src="${videoUrl}?rel=0" frameborder='0' allowtransparency="true" allowfullscreen allow="autoplay"></iframe>
+                        // </div>
+                        // <div class="stopVideo" id="stop${i}" onclick='stopVideo(event, ${JSON.stringify(videoUrl)}, ${i})'></div>
+                        // </div>`;
+                        slide_data += `<div class="speed-video-widget"><div class="speed-video overlay-video">
+                        <iframe class="youTube youtube-video${i}" src="${videoUrl}?enablejsapi=1&version=3&playerapiid=ytplayer" width="100%" height="250" modestbranding="0" controls="0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                            <div  class="playVideo play-video${i}"></div>
+                            <div  class="pauseVideo pause-video${i}"></div>
+                            </div></div>`;
+                            // <button type="button" class="btn  btn-warning stop-video${i}"> stop</button>
+                    setTimeout(function(){
+                        $(`.stop-video${i}`).hide();
+                        $(`.play-video${i}`).click(function() {
+                            $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                            $(`.pause-video${i}`).show();
+                            $(`.play-video${i}`).hide();
+                        });
+                    
+                        $(`.stop-video${i}`).click(function() {
+                            $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                            $(`.stop-video${i}`).hide();
+                            $(`.play-video${i}`).show();
+                        });
+                    
+                        $(`.pause-video${i}`).click(function() {
+                            $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                            $(`.pause-video${i}`).hide();
+                            $(`.play-video${i}`).show();
+                        });
+                    }, 1000)
                         // <a href="#" id="play" onclick="playVideo(event, ${i})">Play button</a>
-                        // <a href="#" id="stop" onclick="stopVideo(event, ${i})">Stop button</a>
                     } else if (o.speednews_type.uid == 'audio') {
                         slide_data += `<div class="speed-audio">
                         <audio controls>
@@ -127,8 +156,9 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                         // Optional parameters
                         direction: 'vertical',
                         mousewheel: true,
-                        speed: 500,
+                        // speed: 700,
                         autoHeight: true,
+                        lazy:true,
                         // If we need pagination
                         // pagination: {
                         //     el: '.swiper-pagination',
@@ -147,162 +177,162 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                         // }
                         on: {
 
-                            init: function () {
-                                console.log('swiper init');
-                                // $('#iframeId').css({
-                                //     'pointer-events': 'none'
-                                // });
-                                // $('audio').css({
-                                //     'pointer-events': 'none'
-                                // });
-                            },
-                            activeIndexChange: function () {
-                                console.log('swiper activeIndexChange');
-                            },
-                            afterInit: function () {
-                                console.log('swiper afterInit');
-                            },
-                            beforeDestroy: function () {
-                                console.log('swiper beforeDestroy');
-                            },
-                            beforeInit: function () {
-                                console.log('swiper beforeInit');
-                            },
-                            beforeLoopFix: function () {
-                                console.log('swiper beforeLoopFix');
-                            },
-                            beforeResize: function () {
-                                console.log('swiper beforeResize');
-                            },
-                            beforeSlideChangeStart: function () {
-                                console.log('swiper beforeSlideChangeStart');
-                            },
-                            beforeTransitionStart: function () {
-                                console.log('swiper beforeTransitionStart');
-                            },
-                            breakpoint: function () {
-                                console.log('swiper breakpoint');
-                            },
-                            changeDirection: function () {
-                                console.log('swiper changeDirection');
-                            },
-                            click: function () {
-                                console.log('swiper click');
-                                $('#iframeId').css({
-                                    'pointer-events': 'all'
-                                });
-                                $('audio').css({
-                                    'pointer-events': 'all'
-                                });
-                            },
-                            destroy: function () {
-                                console.log('swiper destroy');
-                            },
-                            doubleClick: function () {
-                                console.log('swiper doubleClick');
-                            },
-                            doubleTap: function () {
-                                console.log('swiper doubleTap');
-                            },
-                            fromEdge: function () {
-                                console.log('swiper fromEdge');
-                            },
-                            imagesReady: function () {
-                                console.log('swiper imagesReady');
-                            },
-                            loopFix: function () {
-                                console.log('swiper loopFix');
-                            },
-                            momentumBounce: function () {
-                                console.log('swiper momentumBounce');
-                            },
-                            observerUpdate: function () {
-                                console.log('swiper observerUpdate');
-                            },
-                            orientationchange: function () {
-                                console.log('swiper orientationchange');
-                            },
-                            progress: function () {
-                                console.log('swiper progress');
-                            },
-                            reachBeginning: function () {
-                                console.log('swiper reachBeginning');
-                            },
-                            reachEnd: function () {
-                                console.log('swiper reachEnd');
-                            },
-                            realIndexChange: function () {
-                                console.log('swiper realIndexChange');
-                            },
-                            resize: function () {
-                                console.log('swiper resize');
-                            },
-                            setTransition: function () {
-                                console.log('swiper setTransition');
-                            },
-                            setTranslate: function () {
-                                console.log('swiper setTranslate');
-                            },
+                            // init: function () {
+                            //     console.log('swiper init');
+                            //     // $('#iframeId').css({
+                            //     //     'pointer-events': 'none'
+                            //     // });
+                            //     // $('audio').css({
+                            //     //     'pointer-events': 'none'
+                            //     // });
+                            // },
+                            // activeIndexChange: function () {
+                            //     console.log('swiper activeIndexChange');
+                            // },
+                            // afterInit: function () {
+                            //     console.log('swiper afterInit');
+                            // },
+                            // beforeDestroy: function () {
+                            //     console.log('swiper beforeDestroy');
+                            // },
+                            // beforeInit: function () {
+                            //     console.log('swiper beforeInit');
+                            // },
+                            // beforeLoopFix: function () {
+                            //     console.log('swiper beforeLoopFix');
+                            // },
+                            // beforeResize: function () {
+                            //     console.log('swiper beforeResize');
+                            // },
+                            // beforeSlideChangeStart: function () {
+                            //     console.log('swiper beforeSlideChangeStart');
+                            // },
+                            // beforeTransitionStart: function () {
+                            //     console.log('swiper beforeTransitionStart');
+                            // },
+                            // breakpoint: function () {
+                            //     console.log('swiper breakpoint');
+                            // },
+                            // changeDirection: function () {
+                            //     console.log('swiper changeDirection');
+                            // },
+                            // click: function () {
+                            //     console.log('swiper click');
+                            //     $('#iframeId').css({
+                            //         'pointer-events': 'all'
+                            //     });
+                            //     $('audio').css({
+                            //         'pointer-events': 'all'
+                            //     });
+                            // },
+                            // destroy: function () {
+                            //     console.log('swiper destroy');
+                            // },
+                            // doubleClick: function () {
+                            //     console.log('swiper doubleClick');
+                            // },
+                            // doubleTap: function () {
+                            //     console.log('swiper doubleTap');
+                            // },
+                            // fromEdge: function () {
+                            //     console.log('swiper fromEdge');
+                            // },
+                            // imagesReady: function () {
+                            //     console.log('swiper imagesReady');
+                            // },
+                            // loopFix: function () {
+                            //     console.log('swiper loopFix');
+                            // },
+                            // momentumBounce: function () {
+                            //     console.log('swiper momentumBounce');
+                            // },
+                            // observerUpdate: function () {
+                            //     console.log('swiper observerUpdate');
+                            // },
+                            // orientationchange: function () {
+                            //     console.log('swiper orientationchange');
+                            // },
+                            // progress: function () {
+                            //     console.log('swiper progress');
+                            // },
+                            // reachBeginning: function () {
+                            //     console.log('swiper reachBeginning');
+                            // },
+                            // reachEnd: function () {
+                            //     console.log('swiper reachEnd');
+                            // },
+                            // realIndexChange: function () {
+                            //     console.log('swiper realIndexChange');
+                            // },
+                            // resize: function () {
+                            //     console.log('swiper resize');
+                            // },
+                            // setTransition: function () {
+                            //     console.log('swiper setTransition');
+                            // },
+                            // setTranslate: function () {
+                            //     console.log('swiper setTranslate');
+                            // },
                             slideChange: function () {
                                 console.log('swiper slideChange');
-                                $('#iframeId').css({
-                                    'pointer-events': 'none'
-                                });
-                                $('audio').css({
-                                    'pointer-events': 'none'
-                                });
+                                // debugger;
+                                setTimeout(function(){
+                                    $(`.youTube`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                                    $(`.pauseVideo`).hide();
+                                    $(`.playVideo`).show();
+                                }, 100)
                             },
-                            slideChangeTransitionEnd: function () {
-                                console.log('swiper slideChangeTransitionEnd');
-                            },
-                            slideChangeTransitionStart: function () {
-                                console.log('swiper slideChangeTransitionStart');
-                            },
-                            slideNextTransitionEnd: function () {
-                                console.log('swiper slideNextTransitionEnd');
-                            },
-                            slideNextTransitionStart: function () {
-                                console.log('swiper slideNextTransitionStart');
-                            },
-                            slidePrevTransitionEnd: function () {
-                                console.log('swiper slidePrevTransitionEnd');
-                            },
-                            slidePrevTransitionStart: function () {
-                                console.log('swiper slidePrevTransitionStart');
-                            },
-                            slideResetTransitionEnd: function () {
-                                console.log('swiper slideResetTransitionEnd');
-                            },
-                            slideResetTransitionStart: function () {
-                                console.log('swiper slideResetTransitionStart');
-                            },
-                            sliderFirstMove: function () {
-                                console.log('swiper sliderFirstMove');
-                            },
-                            sliderMove: function () {
-                                console.log('swiper sliderMove');
-                            },
-                            slidesGridLengthChange: function () {
-                                console.log('swiper slidesGridLengthChange');
-                            },
-                            slidesLengthChange: function () {
-                                console.log('swiper slidesLengthChange');
-                            },
-                            snapGridLengthChange: function () {
-                                console.log('swiper snapGridLengthChange');
-                            },
-                            snapIndexChange: function () {
-                                console.log('swiper snapIndexChange');
-                            },
-                            snapIndexChange: function () {
-                                console.log('swiper snapIndexChange');
-                            },
-                            tap: function () {
-                                console.log('swiper tap');
-                            },
-                            toEdge: function () {
-                                console.log('swiper toEdge');
-                            },
+                            // slideChangeTransitionEnd: function () {
+                            //     console.log('swiper slideChangeTransitionEnd');
+                            // },
+                            // slideChangeTransitionStart: function () {
+                            //     console.log('swiper slideChangeTransitionStart');
+                            // },
+                            // slideNextTransitionEnd: function () {
+                            //     console.log('swiper slideNextTransitionEnd');
+                            // },
+                            // slideNextTransitionStart: function () {
+                            //     console.log('swiper slideNextTransitionStart');
+                            // },
+                            // slidePrevTransitionEnd: function () {
+                            //     console.log('swiper slidePrevTransitionEnd');
+                            // },
+                            // slidePrevTransitionStart: function () {
+                            //     console.log('swiper slidePrevTransitionStart');
+                            // },
+                            // slideResetTransitionEnd: function () {
+                            //     console.log('swiper slideResetTransitionEnd');
+                            // },
+                            // slideResetTransitionStart: function () {
+                            //     console.log('swiper slideResetTransitionStart');
+                            // },
+                            // sliderFirstMove: function () {
+                            //     console.log('swiper sliderFirstMove');
+                            // },
+                            // sliderMove: function () {
+                            //     console.log('swiper sliderMove');
+                            // },
+                            // slidesGridLengthChange: function () {
+                            //     console.log('swiper slidesGridLengthChange');
+                            // },
+                            // slidesLengthChange: function () {
+                            //     console.log('swiper slidesLengthChange');
+                            // },
+                            // snapGridLengthChange: function () {
+                            //     console.log('swiper snapGridLengthChange');
+                            // },
+                            // snapIndexChange: function () {
+                            //     console.log('swiper snapIndexChange');
+                            // },
+                            // snapIndexChange: function () {
+                            //     console.log('swiper snapIndexChange');
+                            // },
+                            // tap: function () {
+                            //     console.log('swiper tap');
+                            // },
+                            // toEdge: function () {
+                            //     console.log('swiper toEdge');
+                            // },
 
                             // beforeSlideChangeStart: function () {
                             //     console.log('swiper beforeSlideChangeStart');
@@ -364,25 +394,30 @@ $(window).scroll(function () {
         'pointer-events': 'none'
     });
 })
-$("iframe").on("swipe", function () {
-    alert(123);
-});
-function playVideo(ev, id) {
-    debugger;
+// $("iframe").on("swipe", function () {
+//     alert(123);
+// });
+// function playVideo(ev, id) {
+//     debugger;
+//     ev.preventDefault();
+//     const Player = document.getElementById(`iframeId`);
+//     console.log('tt', Player);
+//     let times = 0, playY;
+//     if (times == 0) {
+//         playY = Player.src += '?autoplay=1';
+//         times = 1;
+//     }
+// }
+function stopVideo(ev, videoUrl, i) {
+    $("#iframeId"+i)[0].src = videoUrl+'?rel=0';
+    $("#iframeId"+i).parent().addClass('overlay-video');
+    $("#stop"+i).hide();
     ev.preventDefault();
-    const Player = document.getElementById(`iframeId`);
-    console.log('tt', Player);
-    let times = 0, playY;
-    if (times == 0) {
-        playY = Player.src += '?autoplay=1';
-        times = 1;
-    }
+    
 }
-function stopVideo(ev, id) {
-    ev.preventDefault();
-    const Player = document.getElementById(`iframeId${id}`);
-    let times = 0, playY;
-    playY = playY.slice(0, -11);
-    Player.src = playY;
-    times = 0;
+function playVideo(event, i) {
+    $("#iframeId"+i)[0].src += "&autoplay=1";
+    $("#iframeId"+i).parent().removeClass('overlay-video');
+    $("#stop"+i).show();
+    event.preventDefault();
 }
