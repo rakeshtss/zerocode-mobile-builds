@@ -23,6 +23,7 @@ var categoryName = localStorage.getItem('categoryName');
 var editions = [];
 var availableDates = [];
 $(document).ready(function () {
+    $('.edition-date-selector .dropdown-toggle').dropdown()
     if (document.getElementById('editionSelector')) {
         document.getElementById('editionSelector').innerText = zc.params.module.replace('_', ' ').toUpperCase();
         document.getElementById('divEditionSelector').style.display = "block";

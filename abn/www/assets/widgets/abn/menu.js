@@ -7,7 +7,7 @@ var staticLinks = `<div class="static-links">
 <a onclick="zc.actionService.navigateByUrl('/zcbase/pages/contact-us')">CONTACT US</a>
 <a onclick="zc.actionService.navigateByUrl('/zcbase/pages/privacy-policy')">PRIVACY POLICY</a>
 <a onclick="zc.actionService.navigateByUrl('/zcbase/pages/terms-and-conditions')">TERMS AND CONDITIONS</a>
-</div>`
+</div>`;
 $(document).ready(function () {
     if(localStorage.ZC_user) {
         let editionsElement = `<a class="editions-link" onclick="zc.actionService.navigateByUrl('/epa/editions/editions')">Editions</a>`
@@ -60,7 +60,9 @@ $(document).ready(function () {
                 });
                 menuList += '</ul>';
                 $('.zc-main-menu').html(menuList);
-                $('.zc-main-menu').append(staticLinks);
+                if(window.innerWidth <= 991) {
+                    $('.zc-main-menu').append(staticLinks);
+                }
                 // if ($(window).width() < 992) {
                 //     setTimeout(function(){
 
@@ -153,6 +155,13 @@ setTimeout(function(){
     })
 }, 1000)
 });
+$(window).on('resize', function(){
+    if(window.innerWidth > 991) {
+        $('.zc-main-menu .static-links').hide();
+    } else {
+        $('.zc-main-menu').append(staticLinks);
+    }
+})
 // $(window).on('load', function () {
 //     if ($(window).width() < 992) {
 //         setTimeout(function () {
@@ -207,7 +216,14 @@ function getSelectedCatogory(name, code, childs) {
         // window.location.href = "/?s="+code;
         // window.location.href = "/t/11227/"+code;
         // zc.actionService.router.navigateByUrl("/?s=" + code);
-        zc.actionService.navigateByUrl('/?s=' + code);
+        var navigateUrl= '/zcbase/account/home/?s=';
+        if(zc.config && zc.config.platform == 'mobile') {
+            navigateUrl = '/zcbase/account/home/?s=';
+            zc.actionService.navigateByUrl(navigateUrl + code);
+        } else {
+            zc.actionService.navigateByUrl(navigateUrl + code);
+            // location.href = navigateUrl + code;
+        }        
         closeMenu();
     } else {
         // window.location.href = "/t/11227/"+code;

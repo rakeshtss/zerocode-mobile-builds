@@ -1,0 +1,28 @@
+<header class="zc-news-header zc-edition-header">
+    <a class="sidebar-toggle" href="javascript:;" id="nav-toggle" mattooltip="Click to toggle Menu"
+        mattooltipposition="right"><img alt="" src="assets/themes/abn/images/menu_bars.png"></a>
+    <a [routerLink]="['/']" class="zc-news-logo">
+        <img src="assets/themes/abn/images/logo.png" alt="logo">
+    </a>
+</header>
+<div class="zc-edition-header-right zc-new-header-right" [ngClass]="zc.config.page">
+    <a class="icon-close menu-close-btn" id="nav-close"></a>
+    <div class="zc-main-menu">
+        <ul class="main-menu-list">
+            <li class="home-icon"><a onclick="goHome()" class="icon-home"></a></li>
+        </ul>
+        <div class="static-links">
+            <a href="javascript:;" [ngClass]="{'active': zc.config.page=='about-us'}" routerLink='/zcbase/pages/about-us'>ABOUT US</a>
+            <a href="javascript:;" [ngClass]="{'active': zc.config.page=='contact-us'}" routerLink='/zcbase/pages/contact-us'>CONTACT US</a>
+            <a href="javascript:;" [ngClass]="{'active': zc.config.page=='privacy-policy'}" routerLink='/zcbase/pages/privacy-policy'>PRIVACY POLICY</a>
+            <a href="javascript:;" [ngClass]="{'active': zc.config.page=='terms-and-conditions'}" routerLink='/zcbase/pages/terms-and-conditions'>TERMS AND
+                CONDITIONS</a>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="zc-news-header">
+    <a [routerLink]="['/']" class="zc-news-logo">
+        <img src="assets/themes/abn/images/logo.png" alt="logo">
+    </a>
+</div> -->
