@@ -7,6 +7,7 @@ var baseUrl = zc.config.apiUrl;
 var date = new Date(zc.params.page.split("-").reverse().join("-"));
 var day = date.getDay();
 var currentDate = date.getDate();
+var header = { 'Content-Type': 'application/json' };
 var month = date.getMonth();
 var year = date.getFullYear().toString().substr(-2);
 var dayText = '';
@@ -55,7 +56,13 @@ $(document).ready(function () {
     }
 
     let payload = {};
-    payload.sub_category = zc.params.module;
+    if (zc.queryParams.s) {
+        payload.childs = true;
+        payload.sub_category = null;
+        payload.sub_sub_category = zc.params.module;
+    } else {
+        payload.sub_category = zc.params.module;
+    }
     var firstDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
     var lastDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0);
     payload.start_date = selectedDate.getFullYear() + '-' + (selectedDate.getMonth() + 1) + '-' + firstDay.getDate();
@@ -65,7 +72,8 @@ $(document).ready(function () {
         url: `${baseUrl}abn/api/edition/list/publish`,
         type: "POST",
         dataType: "json",
-        data: payload,
+        data: JSON.stringify(payload),
+        headers: header,
         success: function (res) {
             editions = res.data.listData.rows;
             // var tempDate = new Date();
@@ -96,6 +104,9 @@ $(document).ready(function () {
                     if (eDate.getTime() === todayDate.getTime()) {
                         var eCategory = (item.sub_sub_category.code) ? item.sub_sub_category.code : item.sub_category.code;
                         var url = "/" + item.uid_actual + "/" + eCategory + "/" + item.date.split("-").reverse().join("-");
+                        if (zc.queryParams.s) {
+                            url = url + '?s=' + zc.queryParams.s;
+                        }
                         lastWeekDayDiv = `<a class="week" onclick="zc.actionService.navigateByUrl('${url}')"> ${dayName}</a>`;
                         lastWeekDaysId.append(lastWeekDayDiv);
                     }
@@ -148,7 +159,11 @@ $(document).ready(function () {
                     }
                     var eCategory = (editionDetails.sub_sub_category.code) ? editionDetails.sub_sub_category.code : editionDetails.sub_category.code;
                     // window.location.replace("/" + editionDetails.uid_actual + "/" + eCategory + "/" + editionDetails.date.split("-").reverse().join("-"))
-                    zc.actionService.navigateByUrl("/" + editionDetails.uid_actual + "/" + eCategory + "/" + editionDetails.date.split("-").reverse().join("-"));
+                    var turl = "/" + editionDetails.uid_actual + "/" + eCategory + "/" + editionDetails.date.split("-").reverse().join("-");
+                    if(zc.queryParams.s) {
+                        turl = turl + '?s='+ zc.queryParams.s;
+                    }
+                    zc.actionService.navigateByUrl(turl);
                     return false;
                     // day = date.getDay();
                     // currentDate = date.getDate();
@@ -189,20 +204,35 @@ $(document).ready(function () {
                 },
                 onChangeMonthYear: function (year, month, inst) {
                     let payload = {};
-                    payload.sub_category = zc.params.module;
+                    if (zc.queryParams.s) {
+                        payload.childs = true;
+                        payload.sub_category = null;
+                        payload.sub_sub_category = zc.params.module;
+                    } else {
+                        payload.sub_category = zc.params.module;
+                    }
+                    // payload.sub_category = zc.params.module;
                     var flDate = new Date(year, month - 1, 1);
                     var fDay = new Date(flDate.getFullYear(), flDate.getMonth(), 1);
-                    var lDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0);
+                    // var lDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0);
+                    var lDay = new Date(flDate.getFullYear(), flDate.getMonth() + 1, 0);
                     payload.start_date = year + '-' + month + '-' + fDay.getDate();
                     payload.end_date = year + '-' + month + '-' + lDay.getDate();
-
+                    console.log('flDate -->', flDate);
+                    //console.log('selectedDate -->', selectedDate);
                     $.ajax({
                         url: `${baseUrl}abn/api/edition/list/publish`,
                         type: "POST",
                         dataType: "json",
-                        data: payload,
+                        data: JSON.stringify(payload),
+                        headers: header,
                         success: function (res) {
-                            editions = res.data.listData.rows;
+                            if(res.data.listData && res.data.listData.rows) {
+                                editions = res.data.listData.rows;
+                            } else {
+                                editions = [];
+                            }
+                           
                             // availableDates = [];
                             if (editions.length > 0) {
                                 editions.forEach(edition => {
@@ -404,3 +434,11 @@ $(window).scroll(function () {
         }
     }
 })
+function goHome() {
+    zc.actionService.navigateByUrl('/');
+    closeMenu();
+}
+function closeMenu() {
+    $("body").removeClass("show-menu")
+    $("body").addClass("hide-menu")
+}

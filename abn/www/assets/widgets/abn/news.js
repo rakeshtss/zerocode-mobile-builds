@@ -40,6 +40,7 @@ $.ajax({
   }
 });
 
+
 $("#example").change(function () {
   //var news_li_data = "";
   rssFeedUrl = $(this).find(':selected').val();
@@ -116,12 +117,12 @@ function feedData(xml) {
     news_li_data += '<img src="' + feedImage + '" alt="news-img">';
     news_li_data += '</div>' +
       '<div class="news-content">' +
-      '<h3>' + feedTitle + '</h3>';
-    if (feedShortDescription) {
-      news_li_data += '<p class="news-description">' + feedShortDescription + '</p>' + '</div>' + '</a>';
-    }
+      '<h3>' + feedTitle + '</h3></div></a>';
+    // if (feedShortDescription) {
+    //   news_li_data += '<p class="news-description">' + feedShortDescription + '</p>' + '</div>' + '</a>';
+    // }
 
-    news_li_data += '<div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png" /></span><p class="news-time">సమయం: <span>' + timeDuration + '</span></p></div></div>' +
+    news_li_data += '<div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png" /></span><p class="news-time">సమయం: <span>' + timeDuration + '</span></p></div>' +
       '</li>'
     //  console.log('title -->', x[i].childNodes[1].textContent);
     //  console.log('short description -->', x[i].childNodes[5].textContent);
@@ -177,9 +178,10 @@ function feedData(xml) {
           var desc_data = "";
           var time1 = moment(new Date(feedPubDate)).format('YYYY-MM-DD HH:mm');
           var timeDuration1 = moment(time1, 'YYYY-MM-DD HH:mm').fromNow();
+          desc_data += `<span onclick="neswDetailsClose()" class="close-news-details icon-close"></span>`;
           desc_data += '<h3>' + feedTitle + '</h3>';
           desc_data += '<img src="' + feedImage + '" alt="news-img">';
-          desc_data += '<p class="zc-news-time"><span class="source"><img src="../assets/themes/abn/images/abn-logo.png"></span><span>సమయం: <span>' + timeDuration1 + '</span></span></p>' +
+          desc_data += '<p class="zc-news-time"><span class="source"><img src="assets/themes/abn/images/abn-logo.png"></span><span>సమయం: <span>' + timeDuration1 + '</span></span></p>' +
             '<p class="zc-description-content">' + feedDescription + '</p>'
 
         }
@@ -196,3 +198,7 @@ function feedData(xml) {
   });
 }
 
+function neswDetailsClose() {
+  $('.zc-news-description').hide();
+  $('.zc-recent-stories').hide();
+}

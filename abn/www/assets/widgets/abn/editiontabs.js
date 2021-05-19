@@ -180,7 +180,7 @@ $(document).ready(function () {
                                         }
                                     })
                                     // routerLink ="/{{ row.uid_actual }}/{{row.sub_category.code}}/{{ row.date | date:'dd-MM-yyyy'}}"
-                                    let _editionListspanImage = `<a onclick="zc.actionService.navigateByUrl('${s.uid_actual}/${s.sub_category.code}/${reverseDate}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailBigWebp}"></span><p>${s.sub_category.name}</p></a>`;
+                                    let _editionListspanImage = `<a onclick="zc.actionService.navigateByUrl('${s.uid_actual}/${s.sub_category.code}/${reverseDate}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${s.sub_category.name}</p></a>`;
                                     _editionListLi.append(_editionListspanImage);
                                     editionList.append(_editionListLi);
                                 });
@@ -233,7 +233,7 @@ $(document).ready(function () {
                                                     })
                                                 }
                                             })
-                                            let _editionListspanImage = `<a class="anc" onclick="zc.actionService.navigateByUrl('${s.uid_actual}/${s.sub_category.code}/${reverseDate}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailBigWebp}"></span><p>${s.sub_category.name}</p></a>`;
+                                            let _editionListspanImage = `<a class="anc" onclick="zc.actionService.navigateByUrl('${s.uid_actual}/${s.sub_category.code}/${reverseDate}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${s.sub_category.name}</p></a>`;
                                             _editionListLi.append(_editionListspanImage);
                                             editionList.append(_editionListLi);
                                         });

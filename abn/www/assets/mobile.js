@@ -1,5 +1,12 @@
 
 document.addEventListener("deviceready", function () {
+
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    function onBackKeyDown(e) {
+    e.preventDefault();
+    // alert('Back Button is Pressed!');
+    }
+
     cordova.plugins.diagnostic.isDeviceRooted(function (rooted) {
         console.warn('rooted device', rooted);
         if (rooted) {

@@ -1,13 +1,13 @@
-if (!$) {
-    var $ = jQuery;
-}
+// if (!$) {
+//     var $ = jQuery;
+// }
 var menuClass = "";
 var oprionsList = [];
 var defaultSelectedValue;
 var no_data = "";
 var header = { 'Content-Type': 'application/json' };
 var newsInfo = {};
-const swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'vertical',
     mousewheel: true,

@@ -80,6 +80,9 @@ ul {
     z-index: 9;
 }
 
+.zc-clip-right-block {
+    padding-top: 5px;
+}
 .zc-clip-right-block zc-form {
     background: transparent;
     padding: 0;
@@ -390,6 +393,7 @@ header.zc-header {
     background-image: linear-gradient(to bottom, #fbda01, #f48312);
     border-bottom: 2px solid #004ba1;
     height: 90px;
+    justify-content: space-between;
 }
 
 .zc-header-left {
@@ -4787,7 +4791,7 @@ body .zc-edition-header .ui-datepicker table td>a {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    padding: 0px 15px 0;
+    padding: 10px 15px 0;
     max-width: 500px;
     margin: 0 auto;
 }
@@ -4850,6 +4854,7 @@ body .zc-edition-header .ui-datepicker table td>a {
     background-repeat: no-repeat;
     font-family: 'Ramabhadra', sans-serif;
     padding: 15px;
+    position: relative;
 }
 
 .zc-news-description iframe {
@@ -4974,7 +4979,7 @@ body .zc-edition-header .ui-datepicker table td>a {
 }
 
 .shortnews-list li {
-    padding: 16px 0;
+    padding: 10px 0;
     list-style-type: none;
     border-bottom: 1px solid #e7e7e7;
 }
@@ -5064,7 +5069,7 @@ body .zc-edition-header .ui-datepicker table td>a {
 
 .shortnews-list .short-news .video-time-div {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin-top: 5px;
 }
@@ -5966,6 +5971,44 @@ zc-form zc-date i, zc-form zc-date-range i {
     color: #a80000;
     background-color: transparent;
 }
+.zc-close-dp{
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    color: #ed1c24;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+.zc-close-dp::after{
+    display: none !important;
+}
+.close-news-details{
+    position: absolute;
+    right: 4px;
+    top: -15px;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    color: #880000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0px 0px 6px #333;
+}
 @media(min-width: 1024px){
     .zc-main-menu{
         display: flex;
@@ -5976,7 +6019,6 @@ zc-form zc-date i, zc-form zc-date-range i {
         right: 15px;
         width: auto;
         top: 7px;
-        
     }
     .zc-new-header-right.speed-news{
         right: 180px;
@@ -6853,10 +6895,10 @@ zc-form zc-date i, zc-form zc-date-range i {
     }
     /*XML news styles start*/
     .shortnews-list .short-news .news-img {
-        width: 120px;
-        height: 120px;
-        min-width: 120px;
-        margin: 4px 20px 0 0;
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        margin-right: 15px;
     }
     .shortnews-list .short-news .news-content {
         width: calc(100% - 140px);
@@ -6865,6 +6907,9 @@ zc-form zc-date i, zc-form zc-date-range i {
     .download-pages .card {
         flex: 0 0 33.333%;
         margin-bottom: 15px;
+    }
+    .left-footer .static-links {
+        display: none;
     }
 }
 
@@ -7653,12 +7698,12 @@ zc-form zc-date i, zc-form zc-date-range i {
     .zc-news-description img {
         height: 200px;
     }
-    .shortnews-list .short-news .news-img {
+    /* .shortnews-list .short-news .news-img {
         width: 80px;
         height: 80px;
         min-width: 80px;
         margin-right: 15px;
-    }
+    } */
     .shortnews-list .short-news h3 {
         font-size: 17px;
         line-height: 22px;
@@ -7677,9 +7722,9 @@ zc-form zc-date i, zc-form zc-date-range i {
     .zc-news-footer ul .zc-news-footer-link img {
         height: 25px;
     }
-    .zc-news-footer ul .zc-news-footer-link.abn-logo img {
+    /* .zc-news-footer ul .zc-news-footer-link.abn-logo img {
         height: 35px;
-    }
+    } */
     .zc-news-footer ul .zc-news-footer-link p {
         font-size: 12px;
     }
