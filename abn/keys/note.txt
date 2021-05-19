@@ -13,7 +13,11 @@ contry code : 91
 
 google ads details
 
+
+
 cordova plugin add cordova-plugin-admob-free --save --variable ADMOB_APP_ID="ca-app-pub-4252617315602036~3472354702"
+
+cordova plugin add cordova-plugin-admobpro --save --variable PLAY_SERVICES_VERSION=17.0.0 --variable ADMOB_ANDROID_APP_ID="ca-app-pub-4252617315602036~3472354702" --variable ADMOB_IOS_APP_ID="ca-app-pub-4252617315602036~3472354702"
 Open the your-app-name-Info.plist file under "ionic-project-root/platforms/ios/your-app-name/" and add these lines:
 
 	<key>GADIsAdManagerApp</key>

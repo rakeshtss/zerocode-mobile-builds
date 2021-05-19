@@ -55,12 +55,12 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-inappbrowser": {},
             "cordova-plugin-statusbar": {},
-            "cordova-plugin-admob-free": {
-                "ADMOB_APP_ID": "ca-app-pub-4252617315602036~3472354702",
-                "PLAY_SERVICES_VERSION": "17.0.0"
-            },
             "cordova-admob-sdk": {
                 "PLAY_SERVICES_VERSION": "17.+"
+            },
+            "cordova-plugin-admobpro": {
+                "PLAY_SERVICES_VERSION": "17.0.0",
+                "ADMOB_APP_ID": "ca-app-pub-4252617315602036~3472354702"
             }
         },
         "platforms": [
@@ -69,8 +69,7 @@
         ]
     },
     "dependencies": {
-        "cordova-admob-sdk": "0.24.1",
-        "cordova-plugin-admob-free": "0.27.0",
-        "cordova-promise-polyfill": "0.0.2"
+        "cordova-plugin-admobpro": "2.49.0",
+        "cordova-plugin-extension": "1.5.4"
     }
 }
