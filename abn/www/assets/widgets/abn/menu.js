@@ -150,6 +150,10 @@ $(document).ready(function () {
             $("body").removeClass("show-menu")
             $("body").addClass("hide-menu")
         })
+        $(".menu-overlay").click(function () {
+            $("body").removeClass("show-menu")
+            $("body").addClass("hide-menu")
+        })
         $(".static-links a").click(function () {
             closeMenu();
         })

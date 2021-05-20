@@ -22,7 +22,7 @@ function checkIsDevice() {
 
 function onBackKeyDown(e) {
     e.preventDefault();
-    alert('Back Button is Pressed!');
+    // alert('Back Button is Pressed!');
 }
 
 function adMobBannerConfig() {

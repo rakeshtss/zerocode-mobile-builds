@@ -118,9 +118,6 @@ $(document).ready(function () {
                 editions.forEach(edition => {
                     availableDates.push(edition.date);
                 });
-            } else {
-                let defaultEnableDates = ["2020-02-09", "2020-03-10", "2021-02-09", "2021-03-10"]
-                availableDates.push(defaultEnableDates);
             }
             $("#datepicker").datepicker({
                 changeMonth: true,
@@ -218,8 +215,8 @@ $(document).ready(function () {
                     var lDay = new Date(flDate.getFullYear(), flDate.getMonth() + 1, 0);
                     payload.start_date = year + '-' + month + '-' + fDay.getDate();
                     payload.end_date = year + '-' + month + '-' + lDay.getDate();
-                    console.log('flDate -->', flDate);
-                    //console.log('selectedDate -->', selectedDate);
+                    // console.log('flDate -->', flDate);
+                    // console.log('selectedDate -->', selectedDate);
                     $.ajax({
                         url: `${baseUrl}abn/api/edition/list/publish`,
                         type: "POST",
@@ -227,29 +224,27 @@ $(document).ready(function () {
                         data: JSON.stringify(payload),
                         headers: header,
                         success: function (res) {
+                           // $('#datepicker').datepicker("destroy");
+
+                            availableDates = [];
                             if(res.data.listData && res.data.listData.rows) {
                                 editions = res.data.listData.rows;
                             } else {
                                 editions = [];
                             }
-                           
-                            // availableDates = [];
+                            // alert(1);
                             if (editions.length > 0) {
                                 editions.forEach(edition => {
                                     availableDates.push(edition.date);
                                 });
-                            } else {
-                                let defaultEnableDates = ["2020-02-09", "2020-03-10", "2021-02-09", "2021-03-10"]
-                                availableDates.push(defaultEnableDates);
                             }
+                            console.log('availableDates', availableDates);
                         },
                         complete: function () {
-
+                            $("#datepicker").datepicker("refresh");
                             console.log('request completed -->');
                         }
                     });
-
-
                 }
             })
 
@@ -257,6 +252,12 @@ $(document).ready(function () {
         complete: function () {
         }
     })
+
+    function available(date) {
+        alert(1);
+        var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+        return [availableDates.indexOf(string) != -1];
+      }
 
 
     // if (getDate) {

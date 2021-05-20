@@ -12,6 +12,10 @@ $(document).ready(function () {
         $("body").removeClass("show-menu")
         $("body").addClass("hide-menu")
     })
+    $(".menu-overlay").click(function () {
+        $("body").removeClass("show-menu")
+        $("body").addClass("hide-menu")
+    })
 })
 function goHome() {
     zc.actionService.navigateByUrl('/');
