@@ -14,9 +14,8 @@ document.addEventListener("deviceready", function () {
     document.addEventListener("backbutton", onBackKeyDown, false);
     function onBackKeyDown(e) {
         e.preventDefault();
-        alert('Back Button is Pressed!');
+       // alert('Back Button is Pressed!');
     }
-
     window['FirebasePlugin'].grantPermission(function (hasPermission) {
         // alert('has permission;'+hasPermission);
         if (hasPermission) {
@@ -26,6 +25,5 @@ document.addEventListener("deviceready", function () {
                 console.error("Error subscribing to topic: " + error);
             });
         }
-
     });
 }, false);

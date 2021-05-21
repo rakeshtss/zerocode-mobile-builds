@@ -1,14 +1,14 @@
 {
     "android": {
         "debug": {
-            "keystore": "keys/android.jks",
+            "keystore": "keys/morefreshKey.jks",
             "storePassword": "morefresh",
             "alias": "morefresh",
             "password" : "morefresh",
             "keystoreType": "jks"
         },
         "release": {
-            "keystore": "keys/android.jks",
+            "keystore": "keys/morefreshKey.jks",
             "storePassword": "morefresh",
             "alias": "morefresh",
             "password" : "morefresh",
