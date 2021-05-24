@@ -3114,6 +3114,10 @@ form label.ui-placeholder {
     right: 0;
 }
 
+.main-menu-list2>li>a{
+    padding: 12px 12px 12px !important;
+    justify-content: flex-start !important;
+}
 .main-menu-list>li>a {
     padding: 12px 12px 12px !important;
 }
@@ -3129,6 +3133,7 @@ form label.ui-placeholder {
     line-height: 18px;
 }
 
+.main-menu-list2>li.home-icon a,
 .main-menu-list>li.home-icon a {
     /* padding: 0 !important; */
     font-size: 24px;
@@ -3141,6 +3146,8 @@ form label.ui-placeholder {
     font-family: "Lato", sans-serif;
 }
 
+.main-menu-list2 li:hover>a,
+.main-menu-list2 li.active>a,
 .main-menu-list li:hover>a,
 .main-menu-list li.active>a {
     background-color: #a80000;
@@ -3481,9 +3488,7 @@ form label.ui-placeholder {
     border-top: none;
 }
 
-.e-paper-content {
-    padding-top: 15px;
-}
+
 
 .zc-edition-left-tabs .edition-tab-card .tab-card-img {
     max-width: 180px;
@@ -3507,8 +3512,7 @@ form label.ui-placeholder {
     color: #000;
     opacity: 1;
     font-size: 14px;
-    /* min-width: 50%; */
-    min-width: auto;
+    min-width: 50%;
     position: relative;
     border: 1px solid transparent;
     border-bottom-color: #ddd;
@@ -3537,7 +3541,7 @@ form label.ui-placeholder {
     top: 0px;
     height: 4px;
     background-color: #ec1b23 !important;
-    /* width: 50% !important; */
+    width: 50% !important;
 }
 
 .zc-edition-left-tabs .zc-tab-content {
@@ -5930,17 +5934,19 @@ zc-form zc-date i, zc-form zc-date-range i {
     font-weight: 400;
 }
 
-.zc-news-header .main-menu-list>li.home-icon {
+.zc-news-header .main-menu-list2>li.home-icon {
     padding: 0px !important;
 }
-.zc-new-header-right .main-menu-list>li.home-icon a,
-.zc-news-header .main-menu-list>li.home-icon a {
+.zc-new-header-right .main-menu-list2>li.home-icon a,
+.zc-news-header .main-menu-list2>li.home-icon a {
     font-size: 24px !important;
     padding: 12px 12px 12px !important;
     justify-content: flex-start !important;
+    display: block;
+    color: #000;
 }
-.zc-new-header-right .main-menu-list>li.home-icon a:hover,
-.zc-news-header .main-menu-list>li.home-icon a:hover {
+.zc-new-header-right .main-menu-list2>li.home-icon a:hover,
+.zc-news-header .main-menu-list2>li.home-icon a:hover {
     color: #fff !important;
 }
 .zc-content{
@@ -6034,7 +6040,7 @@ zc-form zc-date i, zc-form zc-date-range i {
     .zc-new-header-right.telugunews{
         right: 180px;
     }
-    .zc-new-header-right .zc-main-menu{
+    .zc-new-header-right .zc-main-menu2{
         display: flex;
     }
     .static-links {
@@ -6297,9 +6303,10 @@ zc-form zc-date i, zc-form zc-date-range i {
         padding: 0;
         margin-right: 0;
     }
+    .main-menu-list2>li a.icon-home,
     .main-menu-list>li a {
         padding: 10px 8px 10px;
-        color: #fff;
+        color: #fff !important;
     }
     .main-menu-list>li .zc-sub-menu {
         padding-bottom: 15px;
@@ -7241,6 +7248,7 @@ zc-form zc-date i, zc-form zc-date-range i {
         border-radius: 8px;
         min-width: 48%;
         color: #8c8c8c;
+        margin: 0 4px;
     }
     .zc-clip-tabs .mat-tab-label:hover,
     .zc-clip-tabs .mat-tab-label-active {
@@ -7547,7 +7555,9 @@ zc-form zc-date i, zc-form zc-date-range i {
         padding: 0;
         margin-bottom: 10px;
     }
-    
+    .e-paper-content .mat-tab-body{
+        margin-top: 15px;
+    }
 }
 
 @media (max-width: 640px) {

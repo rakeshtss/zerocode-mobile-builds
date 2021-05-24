@@ -4570,6 +4570,7 @@ padding:0 60px
     color: #000;
 }
 
+
 .zc-login-user {
     background-image: url("../images/Asset.jpg");
     background-size: cover;
@@ -5534,8 +5535,8 @@ span.zc-payment-total-fs {
 }
 
 .zc-category-list .card {
-    width: 110px;
-    min-width: 110px;
+    width: 130px;
+    min-width: 130px;
     margin-right: 6px;
     border-radius: 4px;
 }
@@ -5554,10 +5555,6 @@ span.zc-payment-total-fs {
 }
 
 
-/* 
-.zc-category-list {
-  background-color: #fff5eb;
-} */
 
 .zc-category-list .table-header-right {
     padding: 0;
@@ -12626,6 +12623,19 @@ zc-progress-bar {
     .default-masters .card:nth-child(even) {
         padding-left: 0;
     }
+    .zc-fixed-header-title h4 {
+    width: calc(100% - 152px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    }
+    .zc-user-number .form-group-label {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .zc-user-number .form-group-label .required-star {
+        padding-left: 4px;
+    }
 }
 
 @media (max-width: 424px) {
@@ -12676,6 +12686,9 @@ zc-progress-bar {
         min-width: 55px !important;
         padding: 0 8px;
     }
+    /* .zc-fixed-header-title h4 {
+        max-width: 228px;
+    } */
 }
 
 @media (max-width: 374px) {
@@ -12825,12 +12838,9 @@ zc-progress-bar {
     .order-placing-btn {
         font-size: 16px !important;
     }
-    .zc-fixed-header-title h4 {
+    /* .zc-fixed-header-title h4 {
         max-width: 185px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+    } */
     /*venkatesh styles end*/
 }
 
@@ -12838,7 +12848,7 @@ zc-progress-bar {
     .zc-orderconfirmation-page .zc-cart-card .item-price {
         padding: 0px 5px 0 5px;
     }
-    .zc-fixed-header-title h4 {
+    /* .zc-fixed-header-title h4 {
         max-width: 180px;
-    }
+    } */
 }

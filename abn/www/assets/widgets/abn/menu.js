@@ -63,6 +63,9 @@ $(document).ready(function () {
                 if (window.innerWidth <= 991) {
                     $('.zc-main-menu').append(staticLinks);
                 }
+                if (window.innerWidth > 991) {
+                    $('.zc-main-menu .static-links').hide();
+                }
                 // if ($(window).width() < 992) {
                 //     setTimeout(function(){
 
@@ -162,8 +165,6 @@ $(document).ready(function () {
 $(window).on('resize', function () {
     if (window.innerWidth > 991) {
         $('.zc-main-menu .static-links').hide();
-    } else {
-        $('.zc-main-menu').append(staticLinks);
     }
 })
 // $(window).on('load', function () {

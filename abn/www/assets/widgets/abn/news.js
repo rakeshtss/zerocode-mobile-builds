@@ -200,5 +200,6 @@ function feedData(xml) {
 
 function neswDetailsClose() {
   $('.zc-news-description').hide();
+  $('.zc-news-description').empty();
   $('.zc-recent-stories').hide();
 }

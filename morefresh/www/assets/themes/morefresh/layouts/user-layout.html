@@ -9,8 +9,8 @@
       matTooltipPosition="right">
       <i class="icon-bars"></i>
     </a> -->
-    <a *ngIf="ly.backBtn" href="javascript:;" class="sidebar-toggle">
-      <i class="icon-angle-left-1 back-btn" (click)="ly.backClicked()" title="Back"></i>
+    <a *ngIf="ly.backBtn" class="sidebar-toggle" (click)="ly.backClicked()">
+      <i class="icon-angle-left-1 back-btn"  title="Back"></i>
     </a>
     <a *ngIf="!ly.backBtn" href="javascript:;" class="sidebar-toggle" (click)="ly.toggleMenu()"
       matTooltip="Click to toggle Menu" matTooltipPosition="right">
