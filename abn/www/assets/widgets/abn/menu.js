@@ -15,7 +15,7 @@ $(document).ready(function () {
     }
     $.ajax({
         // url: "https://jsonblob.com/api/19fcfc2e-3539-11eb-9567-6d1c924f1845",
-        url: `${zc.config.apiUrl}abn/api/category/list/categories`,
+        url: "https://epaper.andhrajyothy.com/assets/static-jsons/categories.json",
         type: "GET",
         dataType: "json",
         success: function (res) {

@@ -6023,6 +6023,43 @@ zc-form zc-date i, zc-form zc-date-range i {
     z-index: 2;
     box-shadow: 0px 0px 6px #333;
 }
+.privacy-policy-content ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.privacy-policy-content ul li {
+    margin-bottom: 5px;
+}
+.terms-conditions ol {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.terms-conditions ol>li {
+    font-weight: 600;
+    font-size: 18px;
+}
+.terms-conditions ol li ul {
+    list-style: lower-alpha;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    margin-top: 4px;
+}
+.terms-conditions ol li ul li {
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 16px;
+}
+.terms-conditions ol li p {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+
+
+
+
 @media(min-width: 1024px){
     .zc-main-menu{
         display: flex;
