@@ -1,13 +1,68 @@
-if (!$) {
-    var $ = jQuery;
-}
+// if (!$) {
+//     var $ = jQuery;
+// }
 var menuClass = "";
 var oprionsList = [];
 var defaultSelectedValue;
 var no_data = "";
 var header = { 'Content-Type': 'application/json' };
-$(document).ready(function () {
+var newsInfo = {};
+var swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    mousewheel: true,
+    // speed: 700,
+    autoHeight: true,
+    lazy: true,
+    on: {
+        slideChange: function () {
+            console.log('swiper slideChange');
+            var _iframe = document.getElementsByTagName('iframe');
+            if ($('iframe').hasClass('youTube')) {
+                // debugger;
+                setTimeout(function () {
+                    $('.swiper-slide-prev iframe').addClass('active');
+                    try {
+                        $('.swiper-slide iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        // $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');                    
+                        // $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                    } catch (err) {
+                        console.warn('iframe warning');
+                    }
+                    $(`.pauseVideo`).hide();
+                    $(`.playVideo`).show();
+                }, 100)
+            }
+        },
+        // slideNextTransitionEnd: function () {
+        //     console.log('slideNextTransitionEnd');
+        //     if(document.getElementsByTagName('iframe')){
+        //         setTimeout(function(){
+        //             $('.swiper-slide-prev iframe').addClass('active');
+        //             $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        //             $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        //             $(`.pauseVideo`).hide();
+        //             $(`.playVideo`).show();
+        //         }, 1000)
+        //     }
+        // }, 
+        // slidePrevTransitionEnd: function () {
+        //     console.log('slidePrevTransitionEnd');
+        //     if(document.getElementsByTagName('iframe')){
+        //         setTimeout(function(){
+        //             $('.swiper-slide-prev iframe').addClass('active');
+        //             $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        //             $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        //             $(`.pauseVideo`).hide();
+        //             $(`.playVideo`).show();
+        //         }, 1000)
+        //     }
+        // }, 
 
+    },
+});
+var modalLoader = `<div class="spin-loader"><span class=""></span></div>`
+$(document).ready(function () {
     $.ajax({
         url: `${zc.config.apiUrl}abn/api/speednews_category/list/`,
         type: "POST",
@@ -18,6 +73,8 @@ $(document).ready(function () {
             console.log('res cat', res);
             var select = $("#speedNews");
             select.children().remove();
+            select.append($("<option>").val(0).text('All'));
+            defaultSelectedValue = 0;
             if (res.data && res.data.listData && res.data.listData.rows) {
                 oprionsList = res.data.listData.rows;
                 $(oprionsList).each(function (index, item) {
@@ -26,14 +83,17 @@ $(document).ready(function () {
                         if (zc.queryParams && zc.queryParams.category) {
                             defaultSelectedValue = zc.queryParams.category;
                         } else {
-                            defaultSelectedValue = item.uid;
+                            // defaultSelectedValue = item.uid;
                         }
                         console.log('0', defaultSelectedValue);
                     }
                 });
 
             }
-            $('#speedNews option[value="' + zc.queryParams.category + '"]').attr("selected", "selected");
+            // console.log('zc.queryParams.category -->', zc.queryParams.category);
+            if (zc.queryParams.category) {
+                $('#speedNews option[value="' + zc.queryParams.category + '"]').attr("selected", "selected");
+            }
 
             // $('select[name^="speedNews"] option[value="'+zc.queryParams.category+'"]').attr("selected","selected");
 
@@ -51,19 +111,23 @@ $(document).ready(function () {
         $('html, body').animate({
             scrollTop: $(".zc-speed-news-block").offset().top - 0
         }, 1000);
+        // $('.swiper-wrapper').css({
+        //     transform: 'translate3d(0px, 0px, 0px)'
+        // });
     });
 
     $('.loader-wrap').fadeOut();
-    
 })
 
 function getSpeednewsListByCategory(defaultSelectedValue) {
+
     $('.swiper-wrapper').empty('');
-    let payload = {
-        "speednews_category": {
-            "uid": defaultSelectedValue
-        }
-    };
+
+    const payload = {};
+    console.log('defaultSelectedValue -->', defaultSelectedValue);
+    if (defaultSelectedValue != 0 || defaultSelectedValue != '0') {
+        payload.speednews_category = { uid: defaultSelectedValue }
+    }
     $.ajax({
         url: `${zc.config.apiUrl}abn/api/speednews/list/speednews-list-by-category`,
         type: "POST",
@@ -93,13 +157,13 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                     slide_data += `<div class="swiper-slide" id='${o.uid}'>
                     <div class="swiper-lazy-preloader"></div>
                     <div class="swiper-lazy-loading"></div>
-                    <h4>${o.title}</h4>`;
-                    if(o.description) {
-                        slide_data += `<p>${o.description}</p>`;
-                    }                    
+                    <h4 onclick='showNewsModal(${JSON.stringify(o)})'>${o.title}</h4>`;
+                    if (o.description) {
+                        slide_data += `<p onclick='showNewsModal(${JSON.stringify(o)})'>${o.description}</p>`;
+                    }
                     if (o.speednews_type.uid == 'image') {
                         if (o.image[0]) {
-                            slide_data += `<div class="speed-image">
+                            slide_data += `<div class="speed-image" onclick='showNewsModal(${JSON.stringify(o)})'>
                         <img src="${o.image[0]?.path}">
                         </div>`;
                         }
@@ -119,27 +183,27 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                             <div  class="playVideo play-video${i}"></div>
                             <div  class="pauseVideo pause-video${i}"></div>
                             </div></div>`;
-                            // <button type="button" class="btn  btn-warning stop-video${i}"> stop</button>
-                    setTimeout(function(){
-                        $(`.stop-video${i}`).hide();
-                        $(`.play-video${i}`).click(function() {
-                            $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
-                            $(`.pause-video${i}`).show();
-                            $(`.play-video${i}`).hide();
-                        });
-                    
-                        $(`.stop-video${i}`).click(function() {
-                            $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        // <button type="button" class="btn  btn-warning stop-video${i}"> stop</button>
+                        setTimeout(function () {
                             $(`.stop-video${i}`).hide();
-                            $(`.play-video${i}`).show();
-                        });
-                    
-                        $(`.pause-video${i}`).click(function() {
-                            $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                            $(`.pause-video${i}`).hide();
-                            $(`.play-video${i}`).show();
-                        });
-                    }, 1000)
+                            $(`.play-video${i}`).click(function () {
+                                $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                                $(`.pause-video${i}`).show();
+                                $(`.play-video${i}`).hide();
+                            });
+
+                            $(`.stop-video${i}`).click(function () {
+                                $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                                $(`.stop-video${i}`).hide();
+                                $(`.play-video${i}`).show();
+                            });
+
+                            $(`.pause-video${i}`).click(function () {
+                                $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                                $(`.pause-video${i}`).hide();
+                                $(`.play-video${i}`).show();
+                            });
+                        }, 1000)
                         // <a href="#" id="play" onclick="playVideo(event, ${i})">Play button</a>
                     } else if (o.speednews_type.uid == 'audio') {
                         slide_data += `<div class="speed-audio">
@@ -152,211 +216,23 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                     $('.swiper-wrapper').append(slide_data);
                 })
                 if (window.innerWidth <= 767) {
-                    const swiper = new Swiper('.swiper-container', {
-                        // Optional parameters
-                        direction: 'vertical',
-                        mousewheel: true,
-                        // speed: 700,
-                        autoHeight: true,
-                        lazy:true,
-                        // If we need pagination
-                        // pagination: {
-                        //     el: '.swiper-pagination',
-                        //     clickable: true
-                        // },
-                        // Navigation arrows
-                        // navigation: {
-                        //     nextEl: '.swiper-button-next',
-                        //     prevEl: '.swiper-button-prev',
-                        // },
 
-                        // And if we need scrollbar
-                        // scrollbar: {
-                        //     el: '.swiper-scrollbar',
-                        //     draggable: true,
-                        // }
-                        on: {
-
-                            // init: function () {
-                            //     console.log('swiper init');
-                            //     // $('#iframeId').css({
-                            //     //     'pointer-events': 'none'
-                            //     // });
-                            //     // $('audio').css({
-                            //     //     'pointer-events': 'none'
-                            //     // });
-                            // },
-                            // activeIndexChange: function () {
-                            //     console.log('swiper activeIndexChange');
-                            // },
-                            // afterInit: function () {
-                            //     console.log('swiper afterInit');
-                            // },
-                            // beforeDestroy: function () {
-                            //     console.log('swiper beforeDestroy');
-                            // },
-                            // beforeInit: function () {
-                            //     console.log('swiper beforeInit');
-                            // },
-                            // beforeLoopFix: function () {
-                            //     console.log('swiper beforeLoopFix');
-                            // },
-                            // beforeResize: function () {
-                            //     console.log('swiper beforeResize');
-                            // },
-                            // beforeSlideChangeStart: function () {
-                            //     console.log('swiper beforeSlideChangeStart');
-                            // },
-                            // beforeTransitionStart: function () {
-                            //     console.log('swiper beforeTransitionStart');
-                            // },
-                            // breakpoint: function () {
-                            //     console.log('swiper breakpoint');
-                            // },
-                            // changeDirection: function () {
-                            //     console.log('swiper changeDirection');
-                            // },
-                            // click: function () {
-                            //     console.log('swiper click');
-                            //     $('#iframeId').css({
-                            //         'pointer-events': 'all'
-                            //     });
-                            //     $('audio').css({
-                            //         'pointer-events': 'all'
-                            //     });
-                            // },
-                            // destroy: function () {
-                            //     console.log('swiper destroy');
-                            // },
-                            // doubleClick: function () {
-                            //     console.log('swiper doubleClick');
-                            // },
-                            // doubleTap: function () {
-                            //     console.log('swiper doubleTap');
-                            // },
-                            // fromEdge: function () {
-                            //     console.log('swiper fromEdge');
-                            // },
-                            // imagesReady: function () {
-                            //     console.log('swiper imagesReady');
-                            // },
-                            // loopFix: function () {
-                            //     console.log('swiper loopFix');
-                            // },
-                            // momentumBounce: function () {
-                            //     console.log('swiper momentumBounce');
-                            // },
-                            // observerUpdate: function () {
-                            //     console.log('swiper observerUpdate');
-                            // },
-                            // orientationchange: function () {
-                            //     console.log('swiper orientationchange');
-                            // },
-                            // progress: function () {
-                            //     console.log('swiper progress');
-                            // },
-                            // reachBeginning: function () {
-                            //     console.log('swiper reachBeginning');
-                            // },
-                            // reachEnd: function () {
-                            //     console.log('swiper reachEnd');
-                            // },
-                            // realIndexChange: function () {
-                            //     console.log('swiper realIndexChange');
-                            // },
-                            // resize: function () {
-                            //     console.log('swiper resize');
-                            // },
-                            // setTransition: function () {
-                            //     console.log('swiper setTransition');
-                            // },
-                            // setTranslate: function () {
-                            //     console.log('swiper setTranslate');
-                            // },
-                            slideChange: function () {
-                                console.log('swiper slideChange');
-                                // debugger;
-                                setTimeout(function(){
-                                    $(`.youTube`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-                                    $(`.pauseVideo`).hide();
-                                    $(`.playVideo`).show();
-                                }, 100)
-                            },
-                            // slideChangeTransitionEnd: function () {
-                            //     console.log('swiper slideChangeTransitionEnd');
-                            // },
-                            // slideChangeTransitionStart: function () {
-                            //     console.log('swiper slideChangeTransitionStart');
-                            // },
-                            // slideNextTransitionEnd: function () {
-                            //     console.log('swiper slideNextTransitionEnd');
-                            // },
-                            // slideNextTransitionStart: function () {
-                            //     console.log('swiper slideNextTransitionStart');
-                            // },
-                            // slidePrevTransitionEnd: function () {
-                            //     console.log('swiper slidePrevTransitionEnd');
-                            // },
-                            // slidePrevTransitionStart: function () {
-                            //     console.log('swiper slidePrevTransitionStart');
-                            // },
-                            // slideResetTransitionEnd: function () {
-                            //     console.log('swiper slideResetTransitionEnd');
-                            // },
-                            // slideResetTransitionStart: function () {
-                            //     console.log('swiper slideResetTransitionStart');
-                            // },
-                            // sliderFirstMove: function () {
-                            //     console.log('swiper sliderFirstMove');
-                            // },
-                            // sliderMove: function () {
-                            //     console.log('swiper sliderMove');
-                            // },
-                            // slidesGridLengthChange: function () {
-                            //     console.log('swiper slidesGridLengthChange');
-                            // },
-                            // slidesLengthChange: function () {
-                            //     console.log('swiper slidesLengthChange');
-                            // },
-                            // snapGridLengthChange: function () {
-                            //     console.log('swiper snapGridLengthChange');
-                            // },
-                            // snapIndexChange: function () {
-                            //     console.log('swiper snapIndexChange');
-                            // },
-                            // snapIndexChange: function () {
-                            //     console.log('swiper snapIndexChange');
-                            // },
-                            // tap: function () {
-                            //     console.log('swiper tap');
-                            // },
-                            // toEdge: function () {
-                            //     console.log('swiper toEdge');
-                            // },
-
-                            // beforeSlideChangeStart: function () {
-                            //     console.log('swiper beforeSlideChangeStart');
-                            // },
-                            // touchStart: function () {
-                            //     console.log('swiper touchStart');
-                            //     $('#iframeId').css({
-                            //         'pointer-events': 'none'
-                            //     });
-                            // },
-                            // touchEnd: function () {
-                            //     console.log('swiper touchEnd');
-                            //     $('#iframeId').css({
-                            //         'pointer-events': 'all'
-                            //     });
-                            // },
-                            // touchMove: function () {
-                            //     console.log('swiper touchMove');
-                            //     $('#iframeId').css({
-                            //         'pointer-events': 'none'
-                            //     });
-                            // },
-                        },
+                    // swiper.updateProgress();
+                    // swiper.updateSize();
+                    // swiper.updateSlides();	
+                    swiper.update();
+                    $('.swiper-wrapper').css({
+                        transform: 'translate3d(0px, 0px, 0px)'
                     });
+
+
+                    // setTimeout(() => {                      
+                    //    swiper.update();
+                    //    swiper.updateProgress();
+                    //    swiper.updateSize();
+                    //    swiper.updateSlides();	
+                    // }, 1000);
+
                 }
                 // swiper.on('beforeInit', function () {
                 //     console.log('beforeInit');
@@ -409,15 +285,98 @@ $(window).scroll(function () {
 //     }
 // }
 function stopVideo(ev, videoUrl, i) {
-    $("#iframeId"+i)[0].src = videoUrl+'?rel=0';
-    $("#iframeId"+i).parent().addClass('overlay-video');
-    $("#stop"+i).hide();
+    $("#iframeId" + i)[0].src = videoUrl + '?rel=0';
+    $("#iframeId" + i).parent().addClass('overlay-video');
+    $("#stop" + i).hide();
     ev.preventDefault();
-    
+
 }
 function playVideo(event, i) {
-    $("#iframeId"+i)[0].src += "&autoplay=1";
-    $("#iframeId"+i).parent().removeClass('overlay-video');
-    $("#stop"+i).show();
+    $("#iframeId" + i)[0].src += "&autoplay=1";
+    $("#iframeId" + i).parent().removeClass('overlay-video');
+    $("#stop" + i).show();
     event.preventDefault();
+}
+// function selectedNews(uid) {
+//     // alert(123);
+//     $('.swiper-slide').hide();
+//     $('.swiper-slide.swiper-slide-active').show();
+//     swiper.detachEvents();
+//     // swiper.destroy();
+
+// }
+function showNewsModal(o) {
+    newsInfo = o;
+    if (newsInfo.news_id && newsInfo.speednews_category.rss_feed_url) {
+        // $('.loader-wrap').fadeIn();
+        // debugger;
+        $('#newsModal .modal-header h5').empty();
+        $('#newsModal .modal-body').empty();
+        $('#newsModal').modal('show');
+        $('#newsModal .modal-body').append(modalLoader);
+        getRssFeeds();
+        return false;
+    } else {
+       // return false;
+    }   
+}
+
+function getRssFeeds(rssFeedUrl) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            feedData(this);
+        }
+    };
+    xmlhttp.open("GET", newsInfo.speednews_category.rss_feed_url, true);
+    xmlhttp.send();
+}
+
+function feedData(xml) {
+    var x, i, xmlDoc, txt;
+    xmlDoc = xml.responseXML;
+    txt = "";
+    x = xmlDoc.getElementsByTagName("item");
+    var news_li_data = "";
+    var feedUid = 0, feedTitle = "", feedDescription = "", time = "", timeDuration = "";
+    for (i = 0; i < x.length; i++) {
+        if (x[i].getElementsByTagName("Articleid").item(0)) {
+            feedUid = x[i].getElementsByTagName("Articleid").item(0).innerHTML;
+        } else if (x[i].getElementsByTagName("guid").item(0)) {
+            feedUid = x[i].getElementsByTagName("guid").item(0).innerHTML;
+        } else {
+            feedUid = 0;
+        }
+        if (newsInfo.news_id == feedUid) {
+            feedTitle = x[i].getElementsByTagName("title")[0].textContent;
+            if (x[i].getElementsByTagName("content:encoded").item(0)) {
+                feedDescription = x[i].getElementsByTagName("content:encoded").item(0).textContent;
+            } else {
+                feedDescription = x[i].getElementsByTagName("description")[0].textContent;
+            }
+            feedImage = (x[i].getElementsByTagName("thumbimage")[0].textContent !== " ") ? x[i].getElementsByTagName("thumbimage")[0].textContent : "https://yt3.ggpht.com/ytc/AAUvwniduiP6bymWVZg6z3Ckxuk09muy-hzUwNH4hXDVrxI=s900-c-k-c0x00ffffff-no-rj";
+            // feedPubDate = x[i].getElementsByTagName("pubDate")[0].textContent;
+            // time = moment(new Date(feedPubDate)).format('YYYY-MM-DD HH:mm');
+            // timeDuration = moment(time, 'YYYY-MM-DD HH:mm').fromNow();
+
+            
+            // console.log('newsObj', o);
+            let innerDiv = "";
+        
+            $('#newsModal .modal-header h5').text(feedTitle);
+            innerDiv += `<div class="swiper-slider" id='${newsInfo.uid}'>`;            
+            if (feedImage) {
+                innerDiv += `<div class="speed-image">
+                            <img src="${feedImage}">
+                            </div>`;
+            } 
+            if (feedDescription) {
+                innerDiv += `<p>${feedDescription}</p>`;
+            }          
+            innerDiv += `</div>`;        
+            $('#newsModal .modal-body').append(innerDiv);
+            break;
+        }
+    }
+    $('.spin-loader').fadeOut();
 }

@@ -1,8 +1,9 @@
 var newsDetails = [];
 var url = "";
+var rssFeedUrl = "";
 var obj = "";
 $.ajax({
-  url: "https://dev-apis.zeroco.de/zc-v3.1-user-svc/2.0/abn/api/rss_feeds/list/rss-feeds-list",
+  url: `${zc.config.apiUrl}abn/api/speednews_category/list/`,
   type: "GET",
   dataType: "json",
   success: function (res) {
@@ -13,13 +14,24 @@ $.ajax({
       var oprionsList = res.data.listData.rows;
       // console.log(oprionsList)
       $(oprionsList).each(function (index, item) {
-        select.append($("<option>").val(item.feed).text(item.name));
+        // console.log('item -->', item);
+        if (item.rss_feed_url) {
+          if (!rssFeedUrl) {
+            rssFeedUrl = item.rss_feed_url;
+            getRssFeeds();
+          }
+          select.append($("<option>").val(item.rss_feed_url).text(item.name));
+        }
       });
       //var news_li_data = "";
-      url = oprionsList[0].feed;
+      // if(oprionsList[0].rss_feed_url) {
+      // url = oprionsList[0].rss_feed_url;
+     // getRssFeeds();
+      // }
+
       // url = 'https://rss.andhrajyothy.com/RssFeed.aspx?SupId=24&SubId=0';
       //  url = 'https://rss.andhrajyothy.com/news/AndhraPradesh?SupId=0&SubId=43';
-      getRssFeeds();
+
 
     }
   },
@@ -31,8 +43,7 @@ $.ajax({
 
 $("#example").change(function () {
   //var news_li_data = "";
-  url = $(this).find(':selected').val();
-  console.log('url', url);
+  rssFeedUrl = $(this).find(':selected').val();
   $('.loader-wrap').fadeIn();
   getRssFeeds();
   $('html, body').animate({
@@ -41,7 +52,7 @@ $("#example").change(function () {
 });
 function getRssFeeds() {
   // var RSS_URL = 'https://rss.andhrajyothy.com/news/AndhraPradesh?SupId=0&SubId=43'; 
-  var RSS_URL = url;
+  // var RSS_URL = url;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -51,7 +62,7 @@ function getRssFeeds() {
       console.log('this -->', this);
     }
   };
-  xmlhttp.open("GET", RSS_URL, true);
+  xmlhttp.open("GET", rssFeedUrl, true);
   xmlhttp.send();
 }
 
@@ -106,12 +117,13 @@ function feedData(xml) {
     news_li_data += '<img src="' + feedImage + '" alt="news-img">';
     news_li_data += '</div>' +
       '<div class="news-content">' +
-      '<h3>' + feedTitle + '</h3>';
-    if (feedShortDescription) {
-      news_li_data += '<p class="news-description">' + feedShortDescription + '</p>';
-    }
-    news_li_data += '<div class="video-time-div"><p class="news-time">సమయం: <span>' + timeDuration + '</span></p></div></div></div>' +
-      '</a>' + '</li>'
+      '<h3>' + feedTitle + '</h3></div></a>';
+    // if (feedShortDescription) {
+    //   news_li_data += '<p class="news-description">' + feedShortDescription + '</p>' + '</div>' + '</a>';
+    // }
+
+    news_li_data += '<div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png" /></span><p class="news-time">సమయం: <span>' + timeDuration + '</span></p></div>' +
+      '</li>'
     //  console.log('title -->', x[i].childNodes[1].textContent);
     //  console.log('short description -->', x[i].childNodes[5].textContent);
     //  console.log('description -->', x[i].childNodes[7].textContent);
@@ -166,9 +178,10 @@ function feedData(xml) {
           var desc_data = "";
           var time1 = moment(new Date(feedPubDate)).format('YYYY-MM-DD HH:mm');
           var timeDuration1 = moment(time1, 'YYYY-MM-DD HH:mm').fromNow();
+          desc_data += `<span onclick="neswDetailsClose()" class="close-news-details icon-close"></span>`;
           desc_data += '<h3>' + feedTitle + '</h3>';
           desc_data += '<img src="' + feedImage + '" alt="news-img">';
-          desc_data += '<p class="zc-news-time">సమయం: <span>' + timeDuration1 + '</span></p>' +
+          desc_data += '<p class="zc-news-time"><span class="source"><img src="assets/themes/abn/images/abn-logo.png"></span><span>సమయం: <span>' + timeDuration1 + '</span></span></p>' +
             '<p class="zc-description-content">' + feedDescription + '</p>'
 
         }
@@ -185,3 +198,8 @@ function feedData(xml) {
   });
 }
 
+function neswDetailsClose() {
+  $('.zc-news-description').hide();
+  $('.zc-news-description').empty();
+  $('.zc-recent-stories').hide();
+}

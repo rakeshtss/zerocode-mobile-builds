@@ -1,5 +1,5 @@
 if (!$) {
-    var $ = jQuery;
+    var $ = jQuery.noConflict();
 }
 var baseUrl = zc.config.apiUrl;
 var fadeInLoader = $("#loader").fadeIn();
@@ -139,7 +139,7 @@ $(document).ready(function () {
                     if (zc.params && zc.params.page) {
                         date = zc.params.page.split("-").reverse().join("-");
                     }
-                    const payload = { category: category, is_latest: 1, childs: false };
+                    const payload = { category: category, is_latest: 1, childs: childExists(categoryData[0]) };
                     // let payload = { category: "main_edition", date: "2021-01-20" };
                     $.ajax({
                         url: `${baseUrl}/abn/api/edition/list/publish`,
@@ -180,7 +180,13 @@ $(document).ready(function () {
                                         }
                                     })
                                     // routerLink ="/{{ row.uid_actual }}/{{row.sub_category.code}}/{{ row.date | date:'dd-MM-yyyy'}}"
-                                    let _editionListspanImage = `<a onclick="zc.actionService.navigateByUrl('${s.uid_actual}/${s.sub_category.code}/${reverseDate}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailBigWebp}"></span><p>${s.sub_category.name}</p></a>`;
+                                    var editionCategory = s.sub_category.name;
+                                    var editionUrl = s.uid_actual + '/' + s.sub_category.code + '/' + reverseDate;
+                                    if (s.sub_sub_category.code) {
+                                        editionCategory = s.sub_sub_category.name;
+                                        editionUrl = s.uid_actual + '/' + s.sub_sub_category.code + '/' + reverseDate + '?s=' + s.sub_category.code;
+                                    }
+                                    let _editionListspanImage = `<a onclick="zc.actionService.navigateByUrl('${editionUrl}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${editionCategory}</p></a>`;
                                     _editionListLi.append(_editionListspanImage);
                                     editionList.append(_editionListLi);
                                 });
@@ -203,7 +209,8 @@ $(document).ready(function () {
                             if (zc.params && zc.params.page) {
                                 date = zc.params.page.split("-").reverse().join("-");
                             }
-                            const payload = { category: category, is_latest: 1, childs: true };
+                            const payload = { category: category, is_latest: 1, childs: childExists(o) };
+
                             $.ajax({
                                 url: `${baseUrl}/abn/api/edition/list/publish`,
                                 type: "POST",
@@ -233,7 +240,13 @@ $(document).ready(function () {
                                                     })
                                                 }
                                             })
-                                            let _editionListspanImage = `<a class="anc" onclick="zc.actionService.navigateByUrl('${s.uid_actual}/${s.sub_category.code}/${reverseDate}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailBigWebp}"></span><p>${s.sub_category.name}</p></a>`;
+                                            var editionCategory = s.sub_category.name;
+                                            var editionUrl = s.uid_actual + '/' + s.sub_category.code + '/' + reverseDate;
+                                            if (s.sub_sub_category.code) {
+                                                editionCategory = s.sub_sub_category.name;
+                                                editionUrl = s.uid_actual + '/' + s.sub_sub_category.code + '/' + reverseDate + '?s=' + s.sub_category.code;
+                                            }
+                                            let _editionListspanImage = `<a class="anc" onclick="zc.actionService.navigateByUrl('${editionUrl}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${editionCategory}</p></a>`;
                                             _editionListLi.append(_editionListspanImage);
                                             editionList.append(_editionListLi);
                                         });
@@ -260,13 +273,22 @@ $(document).ready(function () {
                     var visitedEditions = JSON.parse(localStorage.getItem("recentlyVisited"));
                     var recentlyVisitedList = $('<ul/>', { class: 'recently-visited-ul' });
                     console.log('visitedEditions -->', visitedEditions);
-                    visitedEditions.forEach((edition,ind) => {
+                    visitedEditions = visitedEditions.filter((item) => { return item.uid_actual != zc.params.app});
+                    visitedEditions.forEach((edition, ind) => {
                         let _li = $("<li/>", { class: "visited-li" });
-                        var categoryCode = (edition.sub_sub_category.code) ? edition.sub_sub_category.code : edition.sub_category.code;
-                        var categoryName = (edition.sub_sub_category.name) ? edition.sub_sub_category.name : edition.sub_category.name;
-                        var url = edition.uid_actual + '/' + categoryCode + '/' + edition.date.split("-").reverse().join("-");
+
+                        var editionCategory = edition.sub_category.name;
+                        var editionUrl = edition.uid_actual + '/' + edition.sub_category.code + '/' + edition.date.split("-").reverse().join("-");
+                        if (edition.sub_sub_category.code) {
+                            editionCategory = edition.sub_sub_category.name;
+                            editionUrl = edition.uid_actual + '/' + edition.sub_sub_category.code + '/' + edition.date.split("-").reverse().join("-") + '?s=' + edition.sub_category.code;
+                        }
+
+                        // var categoryCode = (edition.sub_sub_category.code) ? edition.sub_sub_category.code : edition.sub_category.code;
+                        // var categoryName = (edition.sub_sub_category.name) ? edition.sub_sub_category.name : edition.sub_category.name;
+                        // var url = edition.uid_actual + '/' + categoryCode + '/' + edition.date.split("-").reverse().join("-");
                         // let _a = "<a href='/"+url+"' > "+categoryName+"</a>";  
-                        let _a = `<a onclick="zc.actionService.navigateByUrl('/${url}')"> ${categoryName}</a>`;      
+                        let _a = `<a onclick="zc.actionService.navigateByUrl('/${editionUrl}')"> ${editionCategory}</a>`;
                         _li.append(_a);
                         recentlyVisitedList.append(_li);
                     });
@@ -385,8 +407,8 @@ function myFunction() {
     $(".available-list").html('');
     let payload = {};
     payload.is_latest = 1;
-    if(!input.value) return false;
-    payload.globalFilter = {fieldName: 'globalFilter', key: 'globalFilter', matchType: 'any', value: input.value};
+    if (!input.value) return false;
+    payload.globalFilter = { fieldName: 'globalFilter', key: 'globalFilter', matchType: 'any', value: input.value };
     $.ajax({
         url: `${baseUrl}abn/api/edition/list/publish`,
         type: "POST",
@@ -396,14 +418,14 @@ function myFunction() {
         success: function (res) {
             editions = res.data.listData.rows;
             var availableList = $('<ul/>', { id: 'availableList' });
-            editions.forEach((edition,ind) => {
+            editions.forEach((edition, ind) => {
                 let _li = $("<li/>", { class: "available-li" });
                 var categoryCode = (edition.sub_sub_category.code) ? edition.sub_sub_category.code : edition.sub_category.code;
                 var categoryName = (edition.sub_sub_category.name) ? edition.sub_sub_category.name : edition.sub_category.name;
                 var url = edition.uid_actual + '/' + categoryCode + '/' + edition.date.split("-").reverse().join("-");
                 // let _a = "<a href='/"+url+"'> "+categoryName+"</a>";
                 let _a = `<a onclick="zc.actionService.navigateByUrl('/${url}')"> ${categoryName}</a>`;
-                
+
                 // let _a = $("<a/>", {
                 //     id: "id_" + ind + edition.category.name, text: edition.sub_category.name, click: function (e) {
                 //        // e.preventDefault();
@@ -442,4 +464,15 @@ function myFunction() {
             }
         }
     }
+}
+function childExists(category) {
+    var childs = false;
+    if (category.sub_category.length > 0) {
+        category.sub_category.forEach(scat => {
+            if (!childs && scat.sub_sub_category && scat.sub_sub_category.length > 0) {
+                childs = true;
+            }
+        });
+    }
+    return childs;
 }

@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "keys/android.jks",
+            "storePassword": "abnabn",
+            "alias": "abn",
+            "password" : "abnabn",
+            "keystoreType": "jks"
+        },
+        "release": {
+            "keystore": "keys/android.jks",
+            "storePassword": "abnabn",
+            "alias": "abn",
+            "password" : "abnabn",
+            "keystoreType": "jks"
+        }
+    }
+}

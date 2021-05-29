@@ -1,9 +1,10 @@
+
 <div class="blank-layout" [ngClass]="ly.pageTitle">
   <div class="blank-layout-content">
     <router-outlet></router-outlet>
+    
   </div>
-   
-  <footer>
+  <footer *ngIf="zcGlobal.loadFooter">
       <!-- <div class="right-footer">
         
       </div>
@@ -16,7 +17,13 @@
         </a>
       </div> -->
     <div class="left-footer">
-      <p class="copy-right">© Copyrights 2018 - All rights reserved. Powered by <a href="https://www.zeroco.de/" target="_blank">zeroco.de</a></p>
+      <div class="static-links">
+        <a routerLink='/zcbase/pages/about-us' routerLinkActive="active">ABOUT US</a>
+        <a routerLink='/zcbase/pages/contact-us' routerLinkActive="active">CONTACT US</a>
+        <a routerLink='/zcbase/pages/privacy-policy' routerLinkActive="active">PRIVACY POLICY</a>
+        <a routerLink='/zcbase/pages/terms-and-conditions' routerLinkActive="active">TERMS AND CONDITIONS</a>
+        </div>
+      <p class="copy-right">© Copyrights 2021 - All Rights Reserved. Powered by <a href="https://www.zeroco.de" target="_blank">ZeroCode Innovations</a></p>
     </div>
     <div class="right-footer">
       <!-- <ul class="download-apps">
@@ -40,5 +47,5 @@
         </a>
       </div>
     </div>
-    </footer>
+  </footer>
 </div>

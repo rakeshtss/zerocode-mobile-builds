@@ -1,4 +1,6 @@
+
 <header class="zc-header">
+  <div id="myCanvasNav" class="menu-overlay" (click)="ly.toggleMenu()"></div>
   <a *ngIf="!ly.backBtn" href="javascript:;" class="sidebar-toggle" (click)="ly.toggleMenu()"
       matTooltip="Click to toggle Menu" matTooltipPosition="right">
       <img src="assets/themes/abn/images/menu_bars.png" alt="">
@@ -108,7 +110,7 @@
   <a href="javascript:;" class="calender-nav-mobile"><i class="icon-calendar"></i></a>
 
 </header>
-
+<!-- <div  class="menu-overlay" ></div> -->
 <div class="breadcrumb-widget">
   <!-- <a href="javascript:;" class="icon-bars sidebar-toggle" (click)="ly.toggleMenu()" matTooltip="Click to toggle Menu"
     matTooltipPosition="right"></a> -->
@@ -164,7 +166,13 @@
         </a>
       </div> -->
     <div class="left-footer">
-      <p class="copy-right">© Copyrights 2018 - All rights reserved. Powered by <a href="https://www.zeroco.de/" target="_blank">zeroco.de</a></p>
+      <div class="static-links">
+        <a routerLink='/zcbase/pages/about-us' routerLinkActive="active">ABOUT US</a>
+        <a routerLink='/zcbase/pages/contact-us' routerLinkActive="active">CONTACT US</a>
+        <a routerLink='/zcbase/pages/privacy-policy' routerLinkActive="active">PRIVACY POLICY</a>
+        <a routerLink='/zcbase/pages/terms-and-conditions' routerLinkActive="active">TERMS AND CONDITIONS</a>
+      </div>
+      <p class="copy-right">© Copyrights 2021 - All Rights Reserved. Powered by <a href="https://www.zeroco.de" target="_blank">ZeroCode Innovations</a></p>
     </div>
     <div class="right-footer">
       <ul class="download-apps">

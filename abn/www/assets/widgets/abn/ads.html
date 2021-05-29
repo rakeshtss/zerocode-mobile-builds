@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ads</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    header{
+        min-height: 70px;
+        box-shadow: 0px 0px 6px #ccc;
+    }
+    .parent{
+        display: flex;
+        flex-wrap: wrap;
+        min-height: calc(100vh - 140px);
+    }
+    .child{
+        box-shadow: 0px 0px 6px #ccc;
+    }
+    .child-1{
+        flex: 0 0 70%;
+    }
+    .child-2{
+        flex: 0 0 30%;
+    }
+    footer{
+        min-height: 70px;
+        box-shadow: 0px 0px 6px #ccc;
+    }
+</style>
+<body>
+    <header>
+        this is header
+        <div id='div-gpt-ad-1609325723337-0' style='width: 728px; height: 90px;'></div>
+    </header>
+    <section>
+        <div class="parent">
+            <div class="child child-1">
+                child-1
+                <div id='div-gpt-ad-1609325864412-0' style='width: 728px; height: 90px;'></div>
+            </div>
+            <div class="child child-2">
+                child-2
+                <!-- Right Top -->
+                <div id='div-gpt-ad-1609325440841-0' style='width: 300px; height: 250px;'></div>
+                
+                <!-- Right mid -->
+                <div id='div-gpt-ad-1609325346001-0' style='width: 300px; height: 600px;'></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        this is footer
+        <!-- /1769731/Epaper_Footer -->
+        <div id='div-gpt-ad-1609324985902-0' style='width: 970px; height: 250px;'></div>
+
+    </footer>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        // window.googletag = window.googletag || { cmd: [] };
+        // googletag.cmd.push(function () { googletag.display('div-gpt-ad-1609324985902-0'); });
+        // googletag.cmd.push(function () {
+        //     googletag.defineSlot('/1769731/Epaper_Footer', [970, 250], 'div-gpt-ad-1609324985902-0').addService(googletag.pubads());
+        //     googletag.pubads().enableSingleRequest();
+        //     googletag.enableServices();
+        // });
+        debugger;
+        function loadAds(divId, sizes, type) {
+            setTimeout(function(){
+                window.googletag = window.googletag || { cmd: [] };
+                googletag.cmd.push(function () {
+                    googletag.defineSlot('/1769731/' + type, sizes, divId).addService(googletag.pubads());
+                    googletag.pubads().enableSingleRequest();
+                    googletag.enableServices();
+                });
+                googletag.cmd.push(function () { googletag.display(divId); });
+            }, 1000)
+        }
+        loadAds('div-gpt-ad-1609324985902-0', [970, 250], 'Epaper_Footer');
+        loadAds('div-gpt-ad-1609325723337-0', [728, 90], 'Epaper_Top_NS');
+        loadAds('div-gpt-ad-1609325864412-0', [728, 90], 'Epaper_Top_NS_2');
+        loadAds('div-gpt-ad-1609325440841-0', [300, 250], 'Epaper_RT_Top');
+        loadAds('div-gpt-ad-1609325346001-0', [300, 600], 'Epaper_RT_Mid');
+    </script>
+
+</body>
+
+</html>

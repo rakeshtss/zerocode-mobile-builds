@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "keys/morefreshKey.jks",
+            "storePassword": "morefresh",
+            "alias": "morefresh",
+            "password" : "morefresh",
+            "keystoreType": "jks"
+        },
+        "release": {
+            "keystore": "keys/morefreshKey.jks",
+            "storePassword": "morefresh",
+            "alias": "morefresh",
+            "password" : "morefresh",
+            "keystoreType": "jks"
+        }
+    }
+}
