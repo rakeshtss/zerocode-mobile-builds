@@ -58,7 +58,7 @@
         <preference name="scheme" value="app" />
         <preference name="hostname" value="localhost" />
         <config-file target="*-Info.plist" parent="GADApplicationIdentifier">
-            <string>ca-app-pub-4071928387898761~7554663953</string>
+            <string>ca-app-pub-4252617315602036~3472354702</string>
         </config-file>
          <config-file target="*-Info.plist" parent="GADIsAdManagerApp">
             <true></true>

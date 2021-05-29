@@ -25,38 +25,38 @@ function onBackKeyDown(e) {
     // alert('Back Button is Pressed!');
 }
 
-function adMobBannerConfig() {
-    admob.interstitial.config({
-        id: 'ca-app-pub-4252617315602036/5779303425',
-        autoShow: false
-    });
+// function adMobBannerConfig() {
+//     admob.interstitial.config({
+//         id: 'ca-app-pub-4252617315602036/5779303425',
+//         autoShow: false
+//     });
 
-    admob.interstitial.prepare().then(() => {
-        // alert('interstitial ok');
-    }).catch(e => {
-        console.warn('interstitial err', e);
-        // alert('er');
-    });
-    admob.interstitial.show()
+//     admob.interstitial.prepare().then(() => {
+//         // alert('interstitial ok');
+//     }).catch(e => {
+//         console.warn('interstitial err', e);
+//         // alert('er');
+//     });
+//     admob.interstitial.show()
 
-    // Show the banner
-    admob.banner.show({
-        id: 'ca-app-pub-4252617315602036/2851895361',
-        autoShow: true,
-        isTesting: false
-    });
-    admob.banner.prepare().then(() => {
-        // alert('ok');
-    }).catch(e => {
-        console.warn('add error', e);
-        // alert('er');
-    });
-}
+//     // Show the banner
+//     admob.banner.show({
+//         id: 'ca-app-pub-4252617315602036/2851895361',
+//         autoShow: true,
+//         isTesting: false
+//     });
+//     admob.banner.prepare().then(() => {
+//         // alert('ok');
+//     }).catch(e => {
+//         console.warn('add error', e);
+//         // alert('er');
+//     });
+// }
 function adMobProBannerConfig() {
     var admobid = {};
 
     admobid = {
-        banner: 'ca-app-pub-4252617315602036/2851895361', // or DFP format "/6253334/dfp_example_ad"
+        banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
         interstitial: 'ca-app-pub-4252617315602036/5779303425'
     };
     
