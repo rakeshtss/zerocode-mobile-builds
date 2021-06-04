@@ -3,7 +3,7 @@ if (!$) {
 }
 var zc;
 var selectedDate = null;
-var baseUrl = zc.config.apiUrl;
+var baseUrl = zc.config.apiUrl + zc.config.client;
 var date = new Date(zc.params.page.split("-").reverse().join("-"));
 var day = date.getDay();
 var currentDate = date.getDate();
@@ -58,7 +58,7 @@ $(document).ready(function () {
     let payload = {};
     if (zc.queryParams.s) {
         payload.childs = true;
-        payload.sub_category = null;
+       // payload.sub_category = null;
         payload.sub_sub_category = zc.params.module;
     } else {
         payload.sub_category = zc.params.module;
@@ -69,12 +69,13 @@ $(document).ready(function () {
     payload.end_date = selectedDate.getFullYear() + '-' + (selectedDate.getMonth() + 1) + '-' + lastDay.getDate();
 
     $.ajax({
-        url: `${baseUrl}abn/api/edition/list/publish`,
-        type: "POST",
+        url: `${baseUrl}/api/edition/list/publish`,
+        type: "GET",
         dataType: "json",
-        data: JSON.stringify(payload),
-        headers: header,
+        data: payload,
+        // headers: header,
         success: function (res) {
+            console.log('calendar --->',res);
             editions = res.data.listData.rows;
             // var tempDate = new Date();
             var todayDate = new Date();
@@ -203,7 +204,7 @@ $(document).ready(function () {
                     let payload = {};
                     if (zc.queryParams.s) {
                         payload.childs = true;
-                        payload.sub_category = null;
+                       // payload.sub_category = null;
                         payload.sub_sub_category = zc.params.module;
                     } else {
                         payload.sub_category = zc.params.module;
@@ -218,11 +219,11 @@ $(document).ready(function () {
                     // console.log('flDate -->', flDate);
                     // console.log('selectedDate -->', selectedDate);
                     $.ajax({
-                        url: `${baseUrl}abn/api/edition/list/publish`,
-                        type: "POST",
+                        url: `${baseUrl}/api/edition/list/publish`,
+                        type: "GET",
                         dataType: "json",
-                        data: JSON.stringify(payload),
-                        headers: header,
+                        data: payload,
+                       // headers: header,
                         success: function (res) {
                            // $('#datepicker').datepicker("destroy");
 

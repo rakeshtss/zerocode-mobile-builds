@@ -10,6 +10,7 @@ var sortedPages = [];
 var editionDetails = {};
 var pagesAvailableSections = [];
 var selectedSection = {};
+var baseUrl = zc.config.apiUrl + zc.config.client;
 $(document).ready(function () {
     // getSections();
     if (zc && zc.user && zc.user.token) {
@@ -24,7 +25,7 @@ function getEditionDetails() {
     var payload = {};
     payload.uid = zc.params.uid;
     $.ajax({
-        url: `${zc.config.apiUrl}abn/api/edition/select/issue-info`,
+        url: `${baseUrl}/api/edition/select/issue-info`,
         type: "POST",
         dataType: "json",
         headers: headers,

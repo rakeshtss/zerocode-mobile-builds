@@ -2,8 +2,9 @@ var newsDetails = [];
 var url = "";
 var rssFeedUrl = "";
 var obj = "";
+var baseUrl = zc.config.apiUrl + zc.config.client;
 $.ajax({
-  url: `${zc.config.apiUrl}abn/api/speednews_category/list/`,
+  url: `${baseUrl}/api/speednews_category/list/`,
   type: "GET",
   dataType: "json",
   success: function (res) {

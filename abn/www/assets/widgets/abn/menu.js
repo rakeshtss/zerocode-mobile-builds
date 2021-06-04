@@ -1,6 +1,7 @@
 if (!$) {
     var $ = jQuery;
 }
+var zc;
 var menuClass = "";
 var staticLinks = `<div class="static-links">
 <a onclick="zc.actionService.navigateByUrl('/zcbase/pages/about-us')">ABOUT US</a>
@@ -13,9 +14,14 @@ $(document).ready(function () {
         let editionsElement = `<a class="editions-link" onclick="zc.actionService.navigateByUrl('/epa/editions/editions')">Editions</a>`
         $('#editionsLink').prepend(editionsElement);
     }
+    var categoryApiUrl = "assets/static-jsons/categories.json";
+    if (zc.config.platform == 'mobile') {
+        categoryApiUrl = 'https://epaper.andhrajyothy.com/' + categoryApiUrl;
+    }
+
     $.ajax({
         // url: "https://jsonblob.com/api/19fcfc2e-3539-11eb-9567-6d1c924f1845",
-        url: "https://epaper.andhrajyothy.com/assets/static-jsons/categories.json",
+        url: `${categoryApiUrl}`,
         type: "GET",
         dataType: "json",
         success: function (res) {

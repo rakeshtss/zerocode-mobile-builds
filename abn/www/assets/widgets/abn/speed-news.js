@@ -7,6 +7,7 @@ var defaultSelectedValue;
 var no_data = "";
 var header = { 'Content-Type': 'application/json' };
 var newsInfo = {};
+var baseUrl = zc.config.apiUrl + zc.config.client;
 var swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'vertical',
@@ -64,7 +65,7 @@ var swiper = new Swiper('.swiper-container', {
 var modalLoader = `<div class="spin-loader"><span class=""></span></div>`
 $(document).ready(function () {
     $.ajax({
-        url: `${zc.config.apiUrl}abn/api/speednews_category/list/`,
+        url: `${baseUrl}/api/speednews_category/list/`,
         type: "POST",
         dataType: "json",
         headers: header,
@@ -129,7 +130,7 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
         payload.speednews_category = { uid: defaultSelectedValue }
     }
     $.ajax({
-        url: `${zc.config.apiUrl}abn/api/speednews/list/speednews-list-by-category`,
+        url: `${baseUrl}/api/speednews/list/speednews-list-by-category`,
         type: "POST",
         dataType: "json",
         headers: header,

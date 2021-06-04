@@ -1,7 +1,7 @@
 if (!$) {
     var $ = jQuery.noConflict();
 }
-var baseUrl = zc.config.apiUrl;
+var baseUrl = zc.config.apiUrl + zc.config.client;
 var fadeInLoader = $("#loader").fadeIn();
 var fadeOutLoader = $("#loader").fadeOut();
 // var date = new Date();
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $.ajax({
         // url: "https://jsonblob.com/api/19fcfc2e-3539-11eb-9567-6d1c924f1845",
-        url: `${baseUrl}/abn/api/category/list/categories`,
+        url: `${baseUrl}/api/category/list/categories`,
         type: "GET",
         dataType: "json",
         success: function (res) {
@@ -142,8 +142,8 @@ $(document).ready(function () {
                     const payload = { category: category, is_latest: 1, childs: childExists(categoryData[0]) };
                     // let payload = { category: "main_edition", date: "2021-01-20" };
                     $.ajax({
-                        url: `${baseUrl}/abn/api/edition/list/publish`,
-                        type: "POST",
+                        url: `${baseUrl}/api/edition/list/publish`,
+                        type: "GET",
                         dataType: "json",
                         data: payload,
                         success: function (res) {
@@ -169,10 +169,10 @@ $(document).ready(function () {
                                             //     recentVisited.push({ "paperName": s.sub_category.name, "url_id": s.uid_actual, "url": s.uid }); localStorage.setItem("recentVisited", JSON.stringify(recentVisited));
                                             // }
                                             $.ajax({
-                                                url: `${baseUrl}/abn/api/edition/select/publish`,
-                                                type: "POST",
+                                                url: `${baseUrl}/api/edition/select/publish`,
+                                                type: "GET",
                                                 dataType: "json",
-                                                data: JSON.stringify({ uid: s.uid_actual }),
+                                                data: { uid: s.uid_actual },
                                                 success: function (res) {
                                                     console.log('select', res);
                                                 }
@@ -212,8 +212,8 @@ $(document).ready(function () {
                             const payload = { category: category, is_latest: 1, childs: childExists(o) };
 
                             $.ajax({
-                                url: `${baseUrl}/abn/api/edition/list/publish`,
-                                type: "POST",
+                                url: `${baseUrl}/api/edition/list/publish`,
+                                type: "GET",
                                 dataType: "json",
                                 data: payload,
                                 success: function (res) {
@@ -230,10 +230,10 @@ $(document).ready(function () {
                                             let _editionListLi = $("<li/>", {
                                                 class: "category-li", click: function () {
                                                     $.ajax({
-                                                        url: `${baseUrl}/abn/api/edition/select/publish`,
-                                                        type: "POST",
+                                                        url: `${baseUrl}/api/edition/select/publish`,
+                                                        type: "GET",
                                                         dataType: "json",
-                                                        data: JSON.stringify({ uid: s.uid_actual }),
+                                                        data: { uid: s.uid_actual },
                                                         success: function (res) {
                                                             console.log('select', res);
                                                         }
@@ -410,11 +410,11 @@ function myFunction() {
     if (!input.value) return false;
     payload.globalFilter = { fieldName: 'globalFilter', key: 'globalFilter', matchType: 'any', value: input.value };
     $.ajax({
-        url: `${baseUrl}abn/api/edition/list/publish`,
-        type: "POST",
+        url: `${baseUrl}/api/edition/list/publish`,
+        type: "GET",
         dataType: "json",
-        data: JSON.stringify(payload),
-        contentType: "application/json",
+        data: payload,
+       // contentType: "application/json",
         success: function (res) {
             editions = res.data.listData.rows;
             var availableList = $('<ul/>', { id: 'availableList' });

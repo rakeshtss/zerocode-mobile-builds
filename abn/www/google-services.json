@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:264407310063:android:41dfd6c787396efd5c451a",
+        "mobilesdk_app_id": "1:264407310063:android:6be2024a6f63d76b5c451a",
         "android_client_info": {
-          "package_name": "com.abnebeta.zerocode"
+          "package_name": "com.abn.jyothy"
         }
       },
       "oauth_client": [
@@ -34,8 +34,59 @@
               "client_id": "264407310063-63s5kvvgi2vc7iodqsldfe90ksl5rcqr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.abnebeta.zerocode",
-                "app_store_id": "1564696088"
+                "bundle_id": "com.abnebeta.zerocode"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264407310063:android:41dfd6c787396efd5c451a",
+        "android_client_info": {
+          "package_name": "com.abnebeta.zerocode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264407310063-9cn3u8ljal28ugg4vkk1rj3l5vnlrift.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abnebeta.zerocode",
+            "certificate_hash": "d657c86d738bbf656588ded7f2e90ead6efb4d02"
+          }
+        },
+        {
+          "client_id": "264407310063-hd0mukjt5ghs0sb0kq12ofvujvdr2spn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abnebeta.zerocode",
+            "certificate_hash": "d018226cd11b0cf85070050db11c8c47f2b19184"
+          }
+        },
+        {
+          "client_id": "264407310063-s97cdun6u1ocq76h945ia2khf887j5ov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMlwm_x3VgdMLaTdknm_EPNY2ewETBpY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264407310063-s97cdun6u1ocq76h945ia2khf887j5ov.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "264407310063-63s5kvvgi2vc7iodqsldfe90ksl5rcqr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.abnebeta.zerocode"
               }
             }
           ]
