@@ -4,7 +4,8 @@ var rssFeedUrl = "";
 var obj = "";
 var baseUrl = zc.config.apiUrl + zc.config.client;
 $.ajax({
-  url: `${baseUrl}/api/speednews_category/list/`,
+ // url: `${baseUrl}/api/speednews_category/list/`,
+  url: `${zc.config.apiUrl}abn/api/rss_feeds/list/rss-feeds-list`,
   type: "GET",
   dataType: "json",
   success: function (res) {
@@ -16,12 +17,12 @@ $.ajax({
       // console.log(oprionsList)
       $(oprionsList).each(function (index, item) {
         // console.log('item -->', item);
-        if (item.rss_feed_url) {
+        if (item.feed) {
           if (!rssFeedUrl) {
-            rssFeedUrl = item.rss_feed_url;
+            rssFeedUrl = item.feed;
             getRssFeeds();
           }
-          select.append($("<option>").val(item.rss_feed_url).text(item.name));
+          select.append($("<option>").val(item.feed).text(item.name));
         }
       });
       //var news_li_data = "";

@@ -5331,7 +5331,8 @@ iframe {
 
 .swiper-slide p {
     padding: 0px 10px;
-    margin: 0;
+    margin: 0 0 10px;
+    display: inline-block;
 }
 
 .speed-audio {
@@ -6055,6 +6056,14 @@ zc-form zc-date i, zc-form zc-date-range i {
     font-weight: normal;
 }
 
+.read-full-news {
+    text-align: right;
+    color: #007bcf;
+    float: right;
+}
+.read-full-news:hover {
+    color: #007bcf;
+}
 
 
 

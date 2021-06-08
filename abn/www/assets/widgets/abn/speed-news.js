@@ -158,13 +158,17 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                     slide_data += `<div class="swiper-slide" id='${o.uid}'>
                     <div class="swiper-lazy-preloader"></div>
                     <div class="swiper-lazy-loading"></div>
-                    <h4 onclick='showNewsModal(${JSON.stringify(o)})'>${o.title}</h4>`;
+                    <h4>${o.title}</h4>`;
                     if (o.description) {
-                        slide_data += `<p onclick='showNewsModal(${JSON.stringify(o)})'>${o.description}</p>`;
+                        slide_data += `<p>${o.description}</p>`;
+                        if(o.news_id && o.speednews_category && o.speednews_category.rss_feed_url) {
+                            slide_data += `<a href="javascript:;" class="read-full-news" onclick='showNewsModal(${JSON.stringify(o)})'>Read full news</a>`;
+                        }
+                        slide_data += `</p>`;
                     }
                     if (o.speednews_type.uid == 'image') {
                         if (o.image[0]) {
-                            slide_data += `<div class="speed-image" onclick='showNewsModal(${JSON.stringify(o)})'>
+                            slide_data += `<div class="speed-image">
                         <img src="${o.image[0]?.path}">
                         </div>`;
                         }
@@ -308,6 +312,7 @@ function playVideo(event, i) {
 // }
 function showNewsModal(o) {
     newsInfo = o;
+    console.log('newsInfo -->', newsInfo);
     if (newsInfo.news_id && newsInfo.speednews_category.rss_feed_url) {
         // $('.loader-wrap').fadeIn();
         // debugger;
@@ -349,6 +354,7 @@ function feedData(xml) {
             feedUid = 0;
         }
         if (newsInfo.news_id == feedUid) {
+            console.log('selected news id -->', feedUid);
             feedTitle = x[i].getElementsByTagName("title")[0].textContent;
             if (x[i].getElementsByTagName("content:encoded").item(0)) {
                 feedDescription = x[i].getElementsByTagName("content:encoded").item(0).textContent;
