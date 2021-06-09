@@ -1,5 +1,5 @@
 Android key store file details
-
+// android.jsk
 firsth name : ABN
 Password : abnabn
 alias: abn
@@ -8,6 +8,11 @@ city : HYD
 state :INDIA
 contry code : 91
 
+// production ABNKEYS
+
+keyAlias: "dexter labs"
+storePassword: "deXterlab$"
+keyPassword: "deXterlab$"
 
 
 

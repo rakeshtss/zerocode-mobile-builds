@@ -1,6 +1,22 @@
 // if (!$) {
 //     var $ = jQuery;
 // }
+
+// youtube state change
+
+function stopAllVideos(){
+    $('.youTube').each(function(){
+        this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
+       });
+}
+function speedNewsModalClose(){
+    $('#newsModal .modal-header h5').empty();
+    $('#newsModal .modal-body').empty();
+    $('#newsModal .modal-body').empty();
+}
+
+
+
 var menuClass = "";
 var oprionsList = [];
 var defaultSelectedValue;
@@ -18,22 +34,23 @@ var swiper = new Swiper('.swiper-container', {
     on: {
         slideChange: function () {
             console.log('swiper slideChange');
-            var _iframe = document.getElementsByTagName('iframe');
-            if ($('iframe').hasClass('youTube')) {
-                // debugger;
-                setTimeout(function () {
-                    $('.swiper-slide-prev iframe').addClass('active');
-                    try {
-                        $('.swiper-slide iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-                        // $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');                    
-                        // $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-                    } catch (err) {
-                        console.warn('iframe warning');
-                    }
-                    $(`.pauseVideo`).hide();
-                    $(`.playVideo`).show();
-                }, 100)
-            }
+            stopAllVideos();
+            // var _iframe = document.getElementsByTagName('iframe');
+            // if ($('iframe').hasClass('youTube')) {
+            //    //  debugger;
+            //     setTimeout(function () {
+            //         $('.swiper-slide-prev iframe').addClass('active');
+            //         try {
+            //             $('.swiper-slide iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            //             // $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');                    
+            //             // $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+            //         } catch (err) {
+            //             console.warn('iframe warning');
+            //         }
+            //         $(`.pauseVideo`).hide();
+            //         $(`.playVideo`).show();
+            //     }, 100)
+            // }
         },
         // slideNextTransitionEnd: function () {
         //     console.log('slideNextTransitionEnd');
@@ -62,7 +79,7 @@ var swiper = new Swiper('.swiper-container', {
 
     },
 });
-var modalLoader = `<div class="spin-loader"><span class=""></span></div>`
+var modalLoader = `<div class="spin-loader"><span class=""></span></div>`;
 $(document).ready(function () {
     $.ajax({
         url: `${baseUrl}/api/speednews_category/list/`,
@@ -160,8 +177,8 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                     <div class="swiper-lazy-loading"></div>
                     <h4>${o.title}</h4>`;
                     if (o.description) {
-                        slide_data += `<p>${o.description}</p>`;
-                        if(o.news_id && o.speednews_category && o.speednews_category.rss_feed_url) {
+                        slide_data += `<p>${o.description}`;
+                        if (o.news_id) {
                             slide_data += `<a href="javascript:;" class="read-full-news" onclick='showNewsModal(${JSON.stringify(o)})'>Read full news</a>`;
                         }
                         slide_data += `</p>`;
@@ -189,6 +206,7 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                             <div  class="pauseVideo pause-video${i}"></div>
                             </div></div>`;
                         // <button type="button" class="btn  btn-warning stop-video${i}"> stop</button>
+                     
                         setTimeout(function () {
                             $(`.stop-video${i}`).hide();
                             $(`.play-video${i}`).click(function () {
@@ -311,9 +329,10 @@ function playVideo(event, i) {
 
 // }
 function showNewsModal(o) {
+    stopAllVideos();
     newsInfo = o;
     console.log('newsInfo -->', newsInfo);
-    if (newsInfo.news_id && newsInfo.speednews_category.rss_feed_url) {
+    if (newsInfo.news_id) {
         // $('.loader-wrap').fadeIn();
         // debugger;
         $('#newsModal .modal-header h5').empty();
@@ -323,8 +342,8 @@ function showNewsModal(o) {
         getRssFeeds();
         return false;
     } else {
-       // return false;
-    }   
+        // return false;
+    }
 }
 
 function getRssFeeds(rssFeedUrl) {
@@ -334,7 +353,7 @@ function getRssFeeds(rssFeedUrl) {
             feedData(this);
         }
     };
-    xmlhttp.open("GET", newsInfo.speednews_category.rss_feed_url, true);
+    xmlhttp.open("GET", "https://rss.andhrajyothy.com/znews/article?guid=" + newsInfo.news_id, true);
     xmlhttp.send();
 }
 
@@ -366,24 +385,25 @@ function feedData(xml) {
             // time = moment(new Date(feedPubDate)).format('YYYY-MM-DD HH:mm');
             // timeDuration = moment(time, 'YYYY-MM-DD HH:mm').fromNow();
 
-            
+
             // console.log('newsObj', o);
             let innerDiv = "";
-        
+
             $('#newsModal .modal-header h5').text(feedTitle);
-            innerDiv += `<div class="swiper-slider" id='${newsInfo.uid}'>`;            
+            innerDiv += `<div class="swiper-slider" id='${newsInfo.uid}'>`;
             if (feedImage) {
                 innerDiv += `<div class="speed-image">
                             <img src="${feedImage}">
                             </div>`;
-            } 
+            }
             if (feedDescription) {
                 innerDiv += `<p>${feedDescription}</p>`;
-            }          
-            innerDiv += `</div>`;        
+            }
+            innerDiv += `</div>`;
             $('#newsModal .modal-body').append(innerDiv);
             break;
         }
     }
     $('.spin-loader').fadeOut();
 }
+

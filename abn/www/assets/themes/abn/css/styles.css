@@ -5836,7 +5836,7 @@ zc-form zc-date i, zc-form zc-date-range i {
 .zc-speed-news-form {
     position: sticky !important;
     top: 137px;
-    z-index: 99;
+    z-index: 98;
 }
 .zc-speed-news-form zc-form{
     padding: 5px 10px 10px  !important;
