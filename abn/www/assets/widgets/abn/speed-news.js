@@ -4,26 +4,26 @@
 
 // youtube state change
 
-function stopAllVideos(){
-    $('.youTube').each(function(){
+function stopAllVideos() {
+    $('.youTube').each(function () {
         this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
-       });
+    });
 }
 function speedNewsModalClose(){
     $('#newsModal .modal-header h5').empty();
     $('#newsModal .modal-body').empty();
     $('#newsModal .modal-body').empty();
 }
-
-
-
 var menuClass = "";
 var oprionsList = [];
-var defaultSelectedValue;
+var selectedCategory;
 var no_data = "";
 var header = { 'Content-Type': 'application/json' };
 var newsInfo = {};
 var baseUrl = zc.config.apiUrl + zc.config.client;
+var totalRecords = 0;
+var rows = 5;
+var page = 1;
 var swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'vertical',
@@ -34,76 +34,43 @@ var swiper = new Swiper('.swiper-container', {
     on: {
         slideChange: function () {
             console.log('swiper slideChange');
-            stopAllVideos();
-            // var _iframe = document.getElementsByTagName('iframe');
-            // if ($('iframe').hasClass('youTube')) {
-            //    //  debugger;
-            //     setTimeout(function () {
-            //         $('.swiper-slide-prev iframe').addClass('active');
-            //         try {
-            //             $('.swiper-slide iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-            //             // $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');                    
-            //             // $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-            //         } catch (err) {
-            //             console.warn('iframe warning');
-            //         }
-            //         $(`.pauseVideo`).hide();
-            //         $(`.playVideo`).show();
-            //     }, 100)
-            // }
+            stopAllVideos();          
         },
-        // slideNextTransitionEnd: function () {
-        //     console.log('slideNextTransitionEnd');
-        //     if(document.getElementsByTagName('iframe')){
-        //         setTimeout(function(){
-        //             $('.swiper-slide-prev iframe').addClass('active');
-        //             $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-        //             $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-        //             $(`.pauseVideo`).hide();
-        //             $(`.playVideo`).show();
-        //         }, 1000)
-        //     }
-        // }, 
-        // slidePrevTransitionEnd: function () {
-        //     console.log('slidePrevTransitionEnd');
-        //     if(document.getElementsByTagName('iframe')){
-        //         setTimeout(function(){
-        //             $('.swiper-slide-prev iframe').addClass('active');
-        //             $('.swiper-slide-prev iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-        //             $('.swiper-slide-next iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-        //             $(`.pauseVideo`).hide();
-        //             $(`.playVideo`).show();
-        //         }, 1000)
-        //     }
-        // }, 
-
+        transitionEnd: function () {            
+            var currentIndex = swiper.realIndex;
+            var totalSlides = swiper.slides.length;
+            console.log('*** currentIndex', currentIndex);
+            console.log('*** totalSlides', totalSlides);
+            if ((totalRecords >= totalSlides) && currentIndex > 0 && currentIndex == totalSlides - 2 ) {
+                page = (totalSlides / rows) + 1;
+                getSpeednewsListByCategory();
+            }
+        }       
     },
 });
 var modalLoader = `<div class="spin-loader"><span class=""></span></div>`;
 $(document).ready(function () {
     $.ajax({
         url: `${baseUrl}/api/speednews_category/list/`,
-        type: "POST",
+        type: "GET",
         dataType: "json",
-        headers: header,
+      //  headers: header,
         data: {},
         success: function (res) {
-            console.log('res cat', res);
             var select = $("#speedNews");
             select.children().remove();
             select.append($("<option>").val(0).text('All'));
-            defaultSelectedValue = 0;
+            selectedCategory = 0;
             if (res.data && res.data.listData && res.data.listData.rows) {
                 oprionsList = res.data.listData.rows;
                 $(oprionsList).each(function (index, item) {
                     select.append($("<option>").val(item.uid).text(item.name));
                     if (index === 0) {
                         if (zc.queryParams && zc.queryParams.category) {
-                            defaultSelectedValue = zc.queryParams.category;
+                            selectedCategory = zc.queryParams.category;
                         } else {
-                            // defaultSelectedValue = item.uid;
+                            // selectedCategory = item.uid;
                         }
-                        console.log('0', defaultSelectedValue);
                     }
                 });
 
@@ -116,16 +83,17 @@ $(document).ready(function () {
             // $('select[name^="speedNews"] option[value="'+zc.queryParams.category+'"]').attr("selected","selected");
 
             // $("#speedNews").val(zc.queryParams.category);
-            getSpeednewsListByCategory(defaultSelectedValue)
+            page = 1;
+            getSpeednewsListByCategory(selectedCategory);
         }
     })
     $("#speedNews").change(function () {
-        //var news_li_data = "";
-        url = $(this).find(':selected').val();
-        console.log('url', url);
+        selectedCategory = $(this).find(':selected').val();
         $('.loader-wrap').fadeIn();
-        // getspeedNews(url);
-        getSpeednewsListByCategory(url);
+        $('.swiper-wrapper').empty('');
+        page = 1;
+        swiper.realIndex = 0;
+        getSpeednewsListByCategory();
         $('html, body').animate({
             scrollTop: $(".zc-speed-news-block").offset().top - 0
         }, 1000);
@@ -137,15 +105,13 @@ $(document).ready(function () {
     $('.loader-wrap').fadeOut();
 })
 
-function getSpeednewsListByCategory(defaultSelectedValue) {
-
-    $('.swiper-wrapper').empty('');
-
+function getSpeednewsListByCategory() {
     const payload = {};
-    console.log('defaultSelectedValue -->', defaultSelectedValue);
-    if (defaultSelectedValue != 0 || defaultSelectedValue != '0') {
-        payload.speednews_category = { uid: defaultSelectedValue }
+    if (selectedCategory != 0 || selectedCategory != '0') {
+        payload.speednews_category = { uid: selectedCategory }
     }
+    payload.page = page;
+    payload.rows = rows;
     $.ajax({
         url: `${baseUrl}/api/speednews/list/speednews-list-by-category`,
         type: "POST",
@@ -153,11 +119,12 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
         headers: header,
         data: JSON.stringify(payload),
         success: function (res) {
-            console.log('resss', res);
+            // res = {};
             if (res.data && res.data.listData && res.data.listData.rows && res.data.listData.rows.length) {
                 // debugger;
                 var newsInfo = {};
                 list = res.data.listData.rows;
+                totalRecords = res.data.listData.records;
 
                 if (zc.params && zc.params.uid) {
                     newsInfo = list.find((item) => { return item.uid == zc.params.uid; });
@@ -167,7 +134,6 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                         list.unshift(newsInfo);
                     }
                 }
-                console.log('list length', list.length);
                 var slide_data;
                 $(list).each(function (i, o) {
                     // debugger;
@@ -206,7 +172,7 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                             <div  class="pauseVideo pause-video${i}"></div>
                             </div></div>`;
                         // <button type="button" class="btn  btn-warning stop-video${i}"> stop</button>
-                     
+
                         setTimeout(function () {
                             $(`.stop-video${i}`).hide();
                             $(`.play-video${i}`).click(function () {
@@ -244,10 +210,11 @@ function getSpeednewsListByCategory(defaultSelectedValue) {
                     // swiper.updateSize();
                     // swiper.updateSlides();	
                     swiper.update();
-                    $('.swiper-wrapper').css({
-                        transform: 'translate3d(0px, 0px, 0px)'
-                    });
-
+                    if (page == 1) {
+                        $('.swiper-wrapper').css({
+                            transform: 'translate3d(0px, 0px, 0px)'
+                        });
+                    }
 
                     // setTimeout(() => {                      
                     //    swiper.update();

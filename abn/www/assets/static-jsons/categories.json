@@ -1,0 +1,1033 @@
+{
+  "message": null,
+  "success": true,
+  "data": {
+    "listData": {
+      "records": "6",
+      "select": false,
+      "total": 1,
+      "page": 0,
+      "rows": [
+        {
+          "uid": "52E2C8F5C204B5BD03DF3A73EB096484",
+          "code": "main_edition",
+          "name": "MAIN EDITION",
+          "order": 1,
+          "inactive": false,
+          "sub_category": [
+            {
+              "uid": "97A318ACE84930236386DB1A70944825",
+              "code": "hyderabad",
+              "name": "Hyderabad",
+              "order": 1,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "9370BDBD701E49BA59A9418CA849AB22",
+              "code": "andhra_pradesh",
+              "name": "Andhra Pradesh",
+              "order": 2,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "EA4EED0B2C4D12CE92047C715E78DCB6",
+              "code": "telangana",
+              "name": "Telangana",
+              "order": 3,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "9E668BA2A88D860BC6674C01CE132A0F",
+              "code": "navya_daily",
+              "name": "Navya Daily",
+              "order": 5,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "9D8114B4BB4E76147EC31317763E8261",
+              "code": "sunday_magazine",
+              "name": "Sunday Magazine",
+              "order": 6,
+              "inactive": null,
+              "sub_sub_category": []
+            }
+          ]
+        },
+        {
+          "uid": "97A318ACE84930236386DB1A70944825",
+          "code": "andhra_pradesh",
+          "name": "ANDHRA PRADESH",
+          "order": 2,
+          "inactive": null,
+          "sub_category": [
+            {
+              "uid": "C4EB6C6A46A6E5C449C548281B68AE0B",
+              "code": "guntur",
+              "name": "Guntur",
+              "order": 1,
+              "inactive": false,
+              "sub_sub_category": [
+                {
+                  "uid": "52E2C8F5C204B5BD03DF3A73EB096484",
+                  "code": "guntur_main",
+                  "name": "Guntur Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "97A318ACE84930236386DB1A70944825",
+                  "code": "guntur_district",
+                  "name": "Guntur District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "9370BDBD701E49BA59A9418CA849AB22",
+                  "code": "guntur_constituencies",
+                  "name": "Guntur Constituencies",
+                  "order": 3,
+                  "inactive": null
+                },
+                {
+                  "uid": "C4EB6C6A46A6E5C449C548281B68AE0B",
+                  "code": "guntur_-amaravathi",
+                  "name": "Guntur -Amaravathi",
+                  "order": 4,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "10AFB36C5908C1C70722280E5841EEB4",
+              "code": "krishna",
+              "name": "Krishna",
+              "order": 2,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "031A91726B604CE2BCE88269D115DFDF",
+                  "code": "krishna_main",
+                  "name": "Krishna Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "2023CCD4FF9AECCD0B28A2A0C4330852",
+                  "code": "krishna_district",
+                  "name": "Krishna District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "8BD1D62A29FE128265414AC17E0D4685",
+                  "code": "krishna_constituencies",
+                  "name": "Krishna Constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "795F97BB0A934086545168A4D5C0D024",
+              "code": "vijayawada",
+              "name": "Vijayawada",
+              "order": 3,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "795F97BB0A934086545168A4D5C0D024",
+                  "code": "vijayawada",
+                  "name": "Vijayawada",
+                  "order": null,
+                  "inactive": null
+                },
+                {
+                  "uid": "8BF65E4AF2168D78FC927D9EB8C6F6FB",
+                  "code": "vjayawada_constituencies",
+                  "name": "Vjayawada Constituencies",
+                  "order": null,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "A2C5D33D22BB6FD69BCB9A39DDC29E3A",
+              "code": "visakhapatnam",
+              "name": "Visakhapatnam",
+              "order": 4,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "940259E15F7608493E4BC016893F8566",
+                  "code": "visakhapatnam_main",
+                  "name": "Visakhapatnam Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "DEB5721EE7EF4CF44F339FE6231AA78D",
+                  "code": "visakhapatnam_district",
+                  "name": "Visakhapatnam District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "4916E340AFA01D322533BCF69CB3AF1F",
+                  "code": "visakhapatnam_constituencies",
+                  "name": "Visakhapatnam constituencies",
+                  "order": 3,
+                  "inactive": null
+                },
+                {
+                  "uid": "BB7887EE3E15B4C70DDF7A4E7A23CC68",
+                  "code": "visakhapatnam_city",
+                  "name": "Visakhapatnam City",
+                  "order": 4,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "493F1270ED9B3B9B9E2792B11E7E2C01",
+              "code": "chitoor",
+              "name": "Chitoor",
+              "order": 5,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "EB4D989729C8723D3DB935DA2470D2D2",
+                  "code": "chittoor_main",
+                  "name": "Chittoor Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "D0FC0D4C0B067F5158E7613AE18C91B7",
+                  "code": "chittoor_district",
+                  "name": "Chittoor District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "9F9FFB04D2D68EA6CBAD9122AE85E5E2",
+                  "code": "chittoor_constituencies",
+                  "name": "Chittoor constituencies",
+                  "order": 3,
+                  "inactive": null
+                },
+                {
+                  "uid": "EA4EED0B2C4D12CE92047C715E78DCB6",
+                  "code": "tirupati_city",
+                  "name": "Tirupati city",
+                  "order": 4,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "00FF9C8527A1280F0EE3FCC487C63C17",
+              "code": "east_godavari",
+              "name": "East Godavari",
+              "order": 6,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "8327645F0A3FF64768E51FE8973BB1EF",
+                  "code": "east_godavari_main",
+                  "name": "East Godavari Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "EB7066ED32EACA5644D42B77612CB2B7",
+                  "code": "east_godavari_district",
+                  "name": "East Godavari District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "0A8567878CF87CFD984E04A0B4E2F3D8",
+                  "code": "east_godavari_constituencies",
+                  "name": "East Godavari constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "BB0AC0039C4D86152510BF6D1E1C91A4",
+              "code": "west_godavari",
+              "name": "West Godavari",
+              "order": 7,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "D9E2AB3E01144BBE4CEC3A03A868EECD",
+                  "code": "west_godavari_main",
+                  "name": "West Godavari Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "9D8114B4BB4E76147EC31317763E8261",
+                  "code": "west_godavari_district",
+                  "name": "West Godavari District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "9E668BA2A88D860BC6674C01CE132A0F",
+                  "code": "west_godavari_constituencies",
+                  "name": "West Godavari Constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "FC1A2B7638B6E3444EBD9BBFE3C1193B",
+              "code": "prakasam",
+              "name": "Prakasam",
+              "order": 8,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "1CE83DBC157BE128D1555D5A86BC0002",
+                  "code": "prakasam_main",
+                  "name": "Prakasam Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "116A5F975442B86BF7157CF6C3640D9B",
+                  "code": "prakasam_district",
+                  "name": "Prakasam District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "0DEBD8BC82844F094ECDF7D66D130348",
+                  "code": "prakasam_constituencies",
+                  "name": "Prakasam constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "59AAF9BD776F14F9098D345A0ADDF5E1",
+              "code": "nellore",
+              "name": "Nellore",
+              "order": 9,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "493F1270ED9B3B9B9E2792B11E7E2C01",
+                  "code": "nellore_main",
+                  "name": "Nellore Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "BB0AC0039C4D86152510BF6D1E1C91A4",
+                  "code": "nellore_district",
+                  "name": "Nellore District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "59AAF9BD776F14F9098D345A0ADDF5E1",
+                  "code": "nellore_city",
+                  "name": "Nellore City",
+                  "order": 3,
+                  "inactive": null
+                },
+                {
+                  "uid": "E8EFDDF35955A4B6902776A14F89CACD",
+                  "code": "nellore_constituencies",
+                  "name": "Nellore constituencies",
+                  "order": 4,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "031A91726B604CE2BCE88269D115DFDF",
+              "code": "kadapa",
+              "name": "Kadapa",
+              "order": 10,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "E13F14DBE0ADEEFDD063CE6D59879A07",
+                  "code": "kadapa_main",
+                  "name": "kadapa Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "43A0A201F67768073A5AA73D6175E8F4",
+                  "code": "kadapa_district",
+                  "name": "kadapa District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "09F0204C1748EEDD26DD0D13A1E05696",
+                  "code": "kadapa_constituencies",
+                  "name": "Kadapa Constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "E8EFDDF35955A4B6902776A14F89CACD",
+              "code": "kurnool",
+              "name": "Kurnool",
+              "order": 11,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "362394E1283F573B862E0EDD7680B45F",
+                  "code": "kurnool_main",
+                  "name": "Kurnool Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "5372763B205FBC80E817E04C0CB1ED08",
+                  "code": "kurnool_district",
+                  "name": "Kurnool District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "10AFB36C5908C1C70722280E5841EEB4",
+                  "code": "kurnool_constituencies",
+                  "name": "Kurnool constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "2023CCD4FF9AECCD0B28A2A0C4330852",
+              "code": "anathapur",
+              "name": "Anathapur",
+              "order": 12,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "BC3A3CA90C08CE33619136785B35EA41",
+                  "code": "ananthapur_main",
+                  "name": "Ananthapur Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "2543DF8C9B4BB6163BA855B7851FCEE7",
+                  "code": "ananthapur_constituencies",
+                  "name": "Ananthapur Constituencies",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "2176DC5CF4F327FA584BD72DFFF45502",
+                  "code": "ananthapur_district",
+                  "name": "Ananthapur District",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "362394E1283F573B862E0EDD7680B45F",
+              "code": "srikakulam",
+              "name": "Srikakulam",
+              "order": 13,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "A2C5D33D22BB6FD69BCB9A39DDC29E3A",
+                  "code": "srikakulam_main",
+                  "name": "Srikakulam Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "00FF9C8527A1280F0EE3FCC487C63C17",
+                  "code": "srikakulam_district",
+                  "name": "Srikakulam District",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "FC1A2B7638B6E3444EBD9BBFE3C1193B",
+                  "code": "srikakulam_constituencies",
+                  "name": "Srikakulam Constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "8BD1D62A29FE128265414AC17E0D4685",
+              "code": "vizianagaram",
+              "name": "Vizianagaram",
+              "order": 14,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "F687405499C7E4B68C6226A8356134C3",
+                  "code": "vizianagaram_main",
+                  "name": "Vizianagaram Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "658BB2409FD541EF00FC17A50129E998",
+                  "code": "vizianagaram",
+                  "name": "Vizianagaram",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "FEC1BE6E89BA33C6CF106067D18D9C4F",
+                  "code": "vizianagaram_constituencies",
+                  "name": "Vizianagaram Constituencies",
+                  "order": 3,
+                  "inactive": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "uid": "9370BDBD701E49BA59A9418CA849AB22",
+          "code": "telangana",
+          "name": "TELANGANA",
+          "order": 3,
+          "inactive": null,
+          "sub_category": [
+            {
+              "uid": "8BF65E4AF2168D78FC927D9EB8C6F6FB",
+              "code": "hyderabad",
+              "name": "Hyderabad",
+              "order": 1,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "B4EA5CB09A017A373B2C301E7FF9F2A7",
+                  "code": "hyderabad_main",
+                  "name": "Hyderabad Main",
+                  "order": null,
+                  "inactive": null
+                },
+                {
+                  "uid": "43601EADBB834DB90C124CBD9B2EA6BA",
+                  "code": "hyderabad_constituencies",
+                  "name": "Hyderabad Constituencies",
+                  "order": 2,
+                  "inactive": null
+                },
+                {
+                  "uid": "67F38B08EE0C9A4C210617A06E3292B7",
+                  "code": "hyderabad_city",
+                  "name": "Hyderabad City",
+                  "order": 2,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "B4EA5CB09A017A373B2C301E7FF9F2A7",
+              "code": "medak",
+              "name": "Medak",
+              "order": 2,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "67F38B08EE0C9A4C210617A06E3292B7",
+              "code": "medchal",
+              "name": "Medchal",
+              "order": 3,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "5372763B205FBC80E817E04C0CB1ED08",
+              "code": "rangareddy",
+              "name": "Rangareddy",
+              "order": 4,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "E13F14DBE0ADEEFDD063CE6D59879A07",
+              "code": "sanga_reddy",
+              "name": "Sanga Reddy",
+              "order": 5,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "E2785B2F7105B39AE41E5AFBC8A84D53",
+              "code": "siddipet",
+              "name": "Siddipet",
+              "order": 6,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "940259E15F7608493E4BC016893F8566",
+              "code": "vikarabad",
+              "name": "Vikarabad",
+              "order": 7,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "43A0A201F67768073A5AA73D6175E8F4",
+              "code": "warangal_urban",
+              "name": "Warangal Urban",
+              "order": 8,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "6C189DF8CCC948F9B406038CBFFFED6A",
+                  "code": "warangal_urban_main",
+                  "name": "Warangal Urban Main",
+                  "order": 1,
+                  "inactive": false
+                },
+                {
+                  "uid": "8CBAE51353471541AA682C0EFA805FC9",
+                  "code": "warangal_urban",
+                  "name": "Warangal urban",
+                  "order": 2,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "8B8065091FB6E37582BD2A8F591226D9",
+              "code": "warangal_rural",
+              "name": "Warangal Rural",
+              "order": 9,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "DEB5721EE7EF4CF44F339FE6231AA78D",
+              "code": "jayashankar_bhupalpally",
+              "name": "Jayashankar Bhupalpally",
+              "order": 10,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "09F0204C1748EEDD26DD0D13A1E05696",
+              "code": "jangaon",
+              "name": "Jangaon",
+              "order": 11,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "4DC91574DBD6A6250FAAE66451E7B224",
+              "code": "mahabubabad",
+              "name": "Mahabubabad",
+              "order": 12,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "4916E340AFA01D322533BCF69CB3AF1F",
+              "code": "mulugu",
+              "name": "Mulugu",
+              "order": 13,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "BC3A3CA90C08CE33619136785B35EA41",
+              "code": "nalgonda",
+              "name": "Nalgonda",
+              "order": 14,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "0ADB03D8A9E02CB4FA3A7E7FA8C0CF84",
+                  "code": "nalgonda_main",
+                  "name": "Nalgonda Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "CC5495545221F19B6EFBF4B13525C5CB",
+                  "code": "nalgonda_district",
+                  "name": "Nalgonda District",
+                  "order": 2,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "6C189DF8CCC948F9B406038CBFFFED6A",
+              "code": "suryapet",
+              "name": "Suryapet",
+              "order": 15,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "BB7887EE3E15B4C70DDF7A4E7A23CC68",
+              "code": "yadadri",
+              "name": "Yadadri",
+              "order": 16,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "2543DF8C9B4BB6163BA855B7851FCEE7",
+              "code": "khammam",
+              "name": "khammam",
+              "order": 17,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "1023032A71C32D91E46DC7FEA44C0054",
+                  "code": "khammam_main",
+                  "name": "Khammam Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "71CEF25F1DD34A87150C48812A739B00",
+                  "code": "khammam_district",
+                  "name": "Khammam District",
+                  "order": 2,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "8CBAE51353471541AA682C0EFA805FC9",
+              "code": "bhadradri_kothagudem",
+              "name": "Bhadradri Kothagudem",
+              "order": 18,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "8327645F0A3FF64768E51FE8973BB1EF",
+              "code": "nizamabad",
+              "name": "Nizamabad",
+              "order": 19,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "8B8065091FB6E37582BD2A8F591226D9",
+                  "code": "nizamabad_main",
+                  "name": "Nizamabad Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "4DC91574DBD6A6250FAAE66451E7B224",
+                  "code": "nizamabad_district",
+                  "name": "Nizamabad District",
+                  "order": 2,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "2176DC5CF4F327FA584BD72DFFF45502",
+              "code": "kamareddy",
+              "name": "Kamareddy",
+              "order": 20,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "0ADB03D8A9E02CB4FA3A7E7FA8C0CF84",
+              "code": "mahabubnagar",
+              "name": "Mahabubnagar",
+              "order": 21,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "B1052C98BDFE77C7B4087A465D161E9F",
+                  "code": "mahabubnagar_main",
+                  "name": "Mahabubnagar Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "A6ECE5D3E156FA71727ADFD20CFA1167",
+                  "code": "mahabubnagar_district",
+                  "name": "Mahabubnagar District",
+                  "order": 2,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "EB7066ED32EACA5644D42B77612CB2B7",
+              "code": "wanaparthy",
+              "name": "Wanaparthy",
+              "order": 22,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "F687405499C7E4B68C6226A8356134C3",
+              "code": "jogulamba_gadwal",
+              "name": "Jogulamba Gadwal",
+              "order": 23,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "CC5495545221F19B6EFBF4B13525C5CB",
+              "code": "nagarkurnool",
+              "name": "Nagarkurnool",
+              "order": 24,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "0A8567878CF87CFD984E04A0B4E2F3D8",
+              "code": "narayanpet",
+              "name": "Narayanpet",
+              "order": 25,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "658BB2409FD541EF00FC17A50129E998",
+              "code": "karimnagar",
+              "name": "Karimnagar",
+              "order": 26,
+              "inactive": null,
+              "sub_sub_category": [
+                {
+                  "uid": "168D0B60F881C82152A76E0F6D2B14DA",
+                  "code": "karimnagar_main",
+                  "name": "Karimnagar Main",
+                  "order": 1,
+                  "inactive": null
+                },
+                {
+                  "uid": "5CE736C52F497F0FCCD8D236D97860D3",
+                  "code": "karimnagar_district",
+                  "name": "Karimnagar District",
+                  "order": 2,
+                  "inactive": null
+                }
+              ]
+            },
+            {
+              "uid": "1023032A71C32D91E46DC7FEA44C0054",
+              "code": "peddapalli",
+              "name": "Peddapalli",
+              "order": 27,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "1CE83DBC157BE128D1555D5A86BC0002",
+              "code": "rajanna_siricilla",
+              "name": "Rajanna Siricilla",
+              "order": 28,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "FEC1BE6E89BA33C6CF106067D18D9C4F",
+              "code": "jagtial",
+              "name": "Jagtial",
+              "order": 29,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "71CEF25F1DD34A87150C48812A739B00",
+              "code": "adilabad",
+              "name": "Adilabad",
+              "order": 30,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "116A5F975442B86BF7157CF6C3640D9B",
+              "code": "nirmal",
+              "name": "Nirmal",
+              "order": 31,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "B44E2AA2A974D07BB3762B6B6173A3EC",
+              "code": "mancherial",
+              "name": "Mancherial",
+              "order": 32,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "E8D14BEEDD2C89CA7441E3D1D704D7DC",
+              "code": "karimnagar",
+              "name": "Karimnagar",
+              "order": 33,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "0DEBD8BC82844F094ECDF7D66D130348",
+              "code": "kumuram_bheem",
+              "name": "Kumuram Bheem",
+              "order": 34,
+              "inactive": null,
+              "sub_sub_category": []
+            }
+          ]
+        },
+        {
+          "uid": "C4EB6C6A46A6E5C449C548281B68AE0B",
+          "code": "karnataka",
+          "name": "KARNATAKA",
+          "order": 4,
+          "inactive": null,
+          "sub_category": [
+            {
+              "uid": "DEAB5C173B23FFB7F0129DF5B982AF67",
+              "code": "karnataka_main",
+              "name": "Karnataka Main",
+              "order": null,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "43601EADBB834DB90C124CBD9B2EA6BA",
+              "code": "karnataka",
+              "name": "Karnataka",
+              "order": null,
+              "inactive": null,
+              "sub_sub_category": []
+            }
+          ]
+        },
+        {
+          "uid": "795F97BB0A934086545168A4D5C0D024",
+          "code": "tamil_nadu",
+          "name": "TAMIL NADU",
+          "order": 5,
+          "inactive": null,
+          "sub_category": [
+            {
+              "uid": "498DA96C612D21956508945D24896C6D",
+              "code": "tamilnadu_main",
+              "name": "Tamilnadu Main",
+              "order": null,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "215FBDD91B39C2B6E1106B1A2C4E972E",
+              "code": "tamilnadu",
+              "name": "Tamilnadu",
+              "order": null,
+              "inactive": null,
+              "sub_sub_category": []
+            }
+          ]
+        },
+        {
+          "uid": "8BF65E4AF2168D78FC927D9EB8C6F6FB",
+          "code": "magazines",
+          "name": "MAGAZINES",
+          "order": 6,
+          "inactive": null,
+          "sub_category": [
+            {
+              "uid": "B9D419A6ECD076366DD4F872DD5CCDF9",
+              "code": "sunday_telangana",
+              "name": "Sunday Telangana",
+              "order": 1,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "D0FC0D4C0B067F5158E7613AE18C91B7",
+              "code": "sunday_magazine",
+              "name": "Sunday Magazine",
+              "order": 3,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "5CE736C52F497F0FCCD8D236D97860D3",
+              "code": "diksuchi_ap",
+              "name": "Diksuchi AP",
+              "order": 4,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "B1052C98BDFE77C7B4087A465D161E9F",
+              "code": "diksuchi_ts",
+              "name": "Diksuchi TS",
+              "order": 5,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "320404361115E61FA5A08B6442C35C85",
+              "code": "navya_drushyam",
+              "name": "Navya Drushyam",
+              "order": 6,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "A08D96D6D4E2462095FF0F3337A1DC3F",
+              "code": "navya_smart",
+              "name": "Navya Smart",
+              "order": 7,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "24491FDDD8D1208FEDCC60DCFB475722",
+              "code": "navya_young",
+              "name": "Navya Young",
+              "order": 8,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
+              "uid": "A6ECE5D3E156FA71727ADFD20CFA1167",
+              "code": "editorial",
+              "name": "Editorial",
+              "order": 9,
+              "inactive": null,
+              "sub_sub_category": []
+            }
+          ]
+        }
+      ],
+      "zc_extra": null,
+      "pivotData": null,
+      "aggregation": null,
+      "size": 2147483647
+    }
+  }
+}

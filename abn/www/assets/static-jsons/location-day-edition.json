@@ -1,0 +1,1088 @@
+{
+  "data": {
+    "uid": "031A91726B604CE2BCE88269D115DFDF",
+    "app": "zcbase",
+    "publicAccess": true,
+    "accessBased": false,
+    "code": "location-day-edition",
+    "icon": "icon-address",
+    "label": "Location day edition",
+    "layout": "blank",
+    "module": "account",
+    "theme": "abn",
+    "instructions": {
+      "definition": {
+        "widgets": [
+          {
+            "definition": {
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "",
+                    "id": "html_5184",
+                    "pbId": "html_5740",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_2240"
+                  }
+                },
+                {
+                  "definition": {
+                    "template": "<div class=\"zc-edition-header zc-no-side-menu\">\n    <a class=\"sidebar-toggle\" href=\"javascript:;\" id=\"nav-toggle\" mattooltip=\"Click to toggle Menu\"\n        mattooltipposition=\"right\"><img alt=\"\" src=\"assets/themes/abn/images/menu_bars.png\"></a>\n    <div class=\"zc-edition-header-left\">\n        <a [routerLink]=\"['/']\" class=\"zc-logo\">\n            <img src=\"assets/themes/abn/images/logo.png\" alt=\"Logo\" />\n            <p id=\"date\" class=\"zc-date\"></p>\n        </a>\n\n\n    </div>\n    <div class=\"zc-edition-header-right\">\n        <ul>\n            <li (click)=\"zc.zc_modal_2410.open()\" class=\"edition-selector\" id=\"divEditionSelector\" style=\"display: none;\"><span id=\"editionSelector\"></span><span\n                    class=\"icon-angle-down\"></span></li>\n            <li class=\"edition-date-selector\">\n                <div class=\"dropdown keep-inside-clicks-open\" id=\"divDateSelector\" >\n                    <a class=\"btn dropdown-toggle date-text\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                      <span id=\"formatedDate\"></span>\n\n                    </a>\n                    <ul class=\"dropdown-menu dropdown-menu-center\" aria-labelledby=\"dropdownMenuButton\">\n                        <li class=\"weeks-list\" id=\"lastWeekDaysList\">\n\n                        </li>\n                      <li>\n\n                        <div id=\"datepicker\"></div>\n                      </li>\n                    </ul>\n                  </div>\n            </li>\n        </ul>\n        <div class=\"zc-social-media-block\">\n            <a *ngIf=\"zc.user\" class=\"editions-link\" routerLink=\"/epa/editions/editions\">Editions</a>\n            <div class=\"social-icons\">\n               \n                <a href=\"https://www.facebook.com/abntelugutv\" target=\"_blank\" class=\"icon-facebook\"></a>\n                <a href=\"https://twitter.com/abntelugutv\" target=\"_blank\" class=\"icon-twitter\"></a>\n            </div>\n            <a href=\"javascript:;\" class=\"email-link\">\n                <input type=\"mail\" class=\"form-control\" id=\"subscribeEmail\" placeholder=\"Email\">\n            </a>\n            <a href=\"javascript:;\" class=\"subscribe-link\" id=\"subscribe\">Subscribe</a>\n        </div>\n    </div>\n</div>",
+                    "id": "html_6273",
+                    "pbId": "html_7536",
+                    "type": "custom-html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "src": "https://code.jquery.com/jquery-3.5.1.min.js",
+                        "name": "jquery"
+                      },
+                      {
+                        "src": "https://code.jquery.com/ui/1.12.1/jquery-ui.js",
+                        "name": "jquery-ui"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
+                        "name": "popper"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js",
+                        "name": "bootstrap"
+                      },
+                      {
+                        "src": "assets/widgets/abn/custom-header.js",
+                        "name": "custom header"
+                      },
+                      {
+                        "src": "assets/widgets/abn/subscribe.js",
+                        "name": "subscribe"
+                      }
+                    ],
+                    "css": [],
+                    "htmlUrl": "assets/widgets/abn/custom-header.html"
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_9954"
+                  }
+                }
+              ],
+              "id": "block_9452",
+              "pbId": "block_6748",
+              "inlineStyle": {}
+            },
+            "info": {
+              "type": "block",
+              "id": "block_6808"
+            }
+          },
+          {
+            "definition": {
+              "style": "row col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325864412-0' style='text-align:center;margin-bottom:15px'> </div>",
+                          "id": "html_2619",
+                          "pbId": "html_412",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_9233"
+                        }
+                      }
+                    ],
+                    "id": "block_859",
+                    "pbId": "block_7195",
+                    "inlineStyle": {},
+                    "customClass": "zc-google-ad",
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_8049"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325286686-0'style='text-align:center;margin-bottom:15px'> </div>",
+                          "id": "html_7823",
+                          "pbId": "html_3954",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_943"
+                        }
+                      }
+                    ],
+                    "id": "block_8597",
+                    "pbId": "block_5346",
+                    "inlineStyle": {},
+                    "customClass": "zc-google-ad",
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_7825"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "id": "epaper_6186",
+                                "pbId": "epaper_4629",
+                                "css": [],
+                                "mode": "view",
+                                "api": {
+                                  "method": "get",
+                                  "onSuccess": [
+                                    {
+                                      "type": "script",
+                                      "script": "var recentlyVisited = []; if(localStorage.getItem('recentlyVisited')) { recentlyVisited = JSON.parse(localStorage.getItem('recentlyVisited'));} recentlyVisited = recentlyVisited.filter((item) => { return item.uid_actual != zc.params.app}); recentlyVisited.unshift(data); localStorage.setItem('recentlyVisited', JSON.stringify(recentlyVisited)); if(window.innerWidth>767) { zc.loadAds('div-gpt-ad-1609325864412-0',[728, 90],'Epaper_Top_NS_2'); zc.loadAds('div-gpt-ad-1609325440841-0',[300, 250],'Epaper_RT_Top');\nzc.loadAds('div-gpt-ad-1609325346001-0',[300, 600],'Epaper_RT_Mid'); zc.loadAds('div-gpt-ad-1609324985902-0',[970, 250],'Epaper_Footer');} else { zc.loadAds('div-gpt-ad-1609325286686-0', [[300, 250], [336, 280]],'Epaper_Mobile_Masterhead');zc.loadAds('div-gpt-ad-1609325973804-0',[[300, 250], [336, 280]],'Epaper-Mobile_Bottom');} zc.gptAds('gpt-passback'); zc.taboolaAds('taboola-below-article-thumbnails');"
+                                    }
+                                  ],
+                                  "params": [
+                                    {
+                                      "type": "script",
+                                      "name": "uid",
+                                      "value": "zc.params.app"
+                                    }
+                                  ],
+                                  "url": "api/edition/select/publish"
+                                }
+                              },
+                              "info": {
+                                "type": "e-paper",
+                                "id": "e-paper_6807"
+                              }
+                            }
+                          ],
+                          "id": "block_5859",
+                          "pbId": "block_6973",
+                          "inlineStyle": {},
+                          "customClass": "col-md pl-0 pr-0 zc-clip-tabs"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_17"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "title": "Form Title",
+                                "fields": [
+                                  {
+                                    "fieldClass": " justify-content-center d-flex",
+                                    "containerClass": "row zc-download-feed-group justify-content-center",
+                                    "fieldItems": [
+                                      {
+                                        "name": "button",
+                                        "label": "Download",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-cloud-download-1",
+                                          "cssClass": "btn btn-default mr-1"
+                                        },
+                                        "id": "button_9951",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "page",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [
+                                              {
+                                                "type": "script",
+                                                "name": "uid",
+                                                "value": "zc.params.app"
+                                              }
+                                            ],
+                                            "queryParams": [],
+                                            "url": "zcbase/download/newspaper"
+                                          },
+                                          "component": {
+                                            "params": []
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "mr-1",
+                                        "inlineStyle": {
+                                          "background-color": "#ffffff"
+                                        },
+                                        "conditions": {
+                                          "hiddenType": "Hide"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Feedback",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-pencil",
+                                          "cssClass": "btn btn-default mr-1"
+                                        },
+                                        "id": "button_6481",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "component",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "id": "zc_modal_61",
+                                            "type": "action",
+                                            "method": "open"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {
+                                          "background-color": "#ffffff"
+                                        },
+                                        "conditions": {
+                                          "hiddenType": "Hide"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "About",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-android-1",
+                                          "cssClass": "btn btn-default"
+                                        },
+                                        "id": "button_2371",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "component",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "id": "zc_modal_443",
+                                            "type": "action",
+                                            "method": "open"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "bg-white",
+                                        "inlineStyle": {
+                                          "background-color": "#ffffff"
+                                        },
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "true"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      }
+                                    ],
+                                    "id": "undefined_7671"
+                                  }
+                                ],
+                                "id": "form_1291",
+                                "pbId": "form_5371",
+                                "properties": {
+                                  "web": true,
+                                  "mobile": true,
+                                  "preFillApi": {
+                                    "method": "post",
+                                    "onSuccess": [],
+                                    "map": [],
+                                    "params": []
+                                  },
+                                  "hideTitle": true
+                                },
+                                "inlineStyle": {},
+                                "conditions": {}
+                              },
+                              "info": {
+                                "type": "form",
+                                "id": "form_2002"
+                              }
+                            },
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "widgets": [
+                                  {
+                                    "definition": {
+                                      "template": "<div id='div-gpt-ad-1609325440841-0' style='text-align:center;margin-bottom:15px;'></div>\n<div class='mt-2' id='div-gpt-ad-1609325346001-0' style='text-align:center;'></div>",
+                                      "id": "html_7441",
+                                      "pbId": "html_9701",
+                                      "type": "html",
+                                      "apiCode": "html",
+                                      "js": [],
+                                      "css": []
+                                    },
+                                    "info": {
+                                      "type": "html",
+                                      "id": "html_469"
+                                    }
+                                  }
+                                ],
+                                "id": "block_1452",
+                                "pbId": "block_3564",
+                                "inlineStyle": {},
+                                "customClass": "zc-google-ad m-0 p-0",
+                                "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                              },
+                              "info": {
+                                "type": "block",
+                                "id": "block_6780"
+                              }
+                            }
+                          ],
+                          "id": "block_8760",
+                          "pbId": "block_7305",
+                          "inlineStyle": {},
+                          "customClass": "col-md-auto pr-0 zc-clip-right-block"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_1649"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div id='div-gpt-ad-1609324985902-0' style='margin:0 auto;padding:10px 0;' ></div>",
+                                "id": "html_9244",
+                                "pbId": "html_4041",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_6790"
+                              }
+                            }
+                          ],
+                          "id": "block_7131",
+                          "pbId": "block_4868",
+                          "inlineStyle": {},
+                          "customClass": "zc-footer-ad1 zc-google-ad",
+                          "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_9584"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div id='div-gpt-ad-1609325973804-0' style='margin:0 auto; display:flex; justify-content:center;' class=\"d-flex\"></div>",
+                                "id": "html_3539",
+                                "pbId": "html_2086",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_4981"
+                              }
+                            }
+                          ],
+                          "id": "block_7922",
+                          "pbId": "block_3451",
+                          "inlineStyle": {},
+                          "customClass": "zc-footer-ad1 zc-google-ad",
+                          "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_4357"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div id='gpt-passback'></div>",
+                                "id": "html_45310",
+                                "pbId": "html_3087",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_5982"
+                              }
+                            }
+                          ],
+                          "id": "block_8922",
+                          "pbId": "block_4451",
+                          "inlineStyle": {},
+                          "customClass": "zc-footer-ad1 zc-google-ad",
+                          "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_4357"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div id='taboola-below-article-thumbnails'></div>",
+                                "id": "html_35310",
+                                "pbId": "html_2087",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_4982"
+                              }
+                            }
+                          ],
+                          "id": "block_7922",
+                          "pbId": "block_3451",
+                          "inlineStyle": {},
+                          "customClass": "zc-footer-ad1 zc-google-ad",
+                          "hidden": "zc.config.platform == \"mobile\""
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_4357"
+                        }
+                      }
+                    ],
+                    "id": "block_1212",
+                    "pbId": "block_8127",
+                    "inlineStyle": {},
+                    "customClass": "text-center row m-0 p-0"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_7076"
+                  }
+                }
+              ],
+              "id": "block_9452",
+              "pbId": "block_6748",
+              "customClass": "zc-blank-layout-content m-0 zc-no-menu-block",
+              "inlineStyle": {}
+            },
+            "info": {
+              "type": "block",
+              "id": "block_6808"
+            }
+          },
+          {
+            "definition": {
+              "title": "Hyderabad",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "HTML content here",
+                    "id": "html_6362",
+                    "pbId": "html_7946",
+                    "type": "custom-html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "name": "tabs",
+                        "src": "assets\\widgets\\abn\\editiontabs.js"
+                      }
+                    ],
+                    "css": [],
+                    "htmlUrl": "assets\\widgets\\abn\\editiontabs.html"
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_4804"
+                  }
+                }
+              ],
+              "id": "zc_modal_2410",
+              "pbId": "zc-modal_6651",
+              "size": "lg",
+              "cssClass": "zc-edition-modal"
+            },
+            "info": {
+              "type": "zc-modal",
+              "id": "zc-modal_3029"
+            }
+          },
+          {
+            "definition": {
+              "title": "Epaper Feedback",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "title": "Epaper Feedback",
+                    "fields": [
+                      {
+                        "name": "text",
+                        "label": "Text Field",
+                        "type": "text",
+                        "properties": {
+                          "placeholder": "Enter text",
+                          "messages": {},
+                          "mode": "view",
+                          "hideLabel": true,
+                          "displayFormat": "<span style=\"font-weight:normal;\">Please use this for epaper related feedback only. For other messages, please write to the newspaper's editor.</span>"
+                        },
+                        "id": "text_2721",
+                        "events": {
+                          "onload": {
+                            "actions": [],
+                            "conditions": []
+                          },
+                          "click": {
+                            "actions": []
+                          }
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      },
+                      {
+                        "name": "comments",
+                        "label": "How do we improve the epaper?",
+                        "id": "textarea_4421",
+                        "type": "textarea",
+                        "defaultValue": "",
+                        "properties": {
+                          "displayStyle": "htmleditor",
+                          "placeholder": "Enter you feedback",
+                          "maxLength": 10000,
+                          "minLength": 0,
+                          "pattern": "",
+                          "required": true,
+                          "rows": "",
+                          "cols": "",
+                          "messages": {
+                            "maxLength": "",
+                            "minLength": "",
+                            "pattern": "",
+                            "required": "Feedback can not be blank. Please enter your feedback."
+                          }
+                        },
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {}
+                      },
+                      {
+                        "name": "email",
+                        "label": "Your email address:",
+                        "fieldClass": "",
+                        "type": "email",
+                        "properties": {
+                          "required": true,
+                          "placeholder": "Enter email",
+                          "pattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+                          "messages": {
+                            "required": "Please enter your valid email.",
+                            "pattern": "Please enter valid email"
+                          }
+                        },
+                        "id": "email_3001",
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        },
+                        "inlineStyle": {}
+                      },
+                      {
+                        "name": "button",
+                        "label": "Send",
+                        "type": "button",
+                        "properties": {
+                          "web": true,
+                          "mobile": true,
+                          "cssClass": "btn-light w-100 border justify-content-center"
+                        },
+                        "id": "button_111",
+                        "actions": [],
+                        "action": {
+                          "type": "api",
+                          "download": {
+                            "method": "post",
+                            "params": []
+                          },
+                          "page": {
+                            "type": "internal",
+                            "target": "self",
+                            "params": [],
+                            "queryParams": []
+                          },
+                          "component": {
+                            "params": []
+                          },
+                          "api": {
+                            "method": "post",
+                            "component": {
+                              "method": "submit",
+                              "invalidMsg": "Enter valid form data.",
+                              "id": "form_4375",
+                              "validate": true
+                            },
+                            "onSuccess": [
+                              {
+                                "web": true,
+                                "mobile": true,
+                                "api": {
+                                  "method": "post",
+                                  "params": []
+                                },
+                                "component": {
+                                  "id": "zc_modal_61",
+                                  "method": "close"
+                                },
+                                "page": {
+                                  "params": [],
+                                  "queryParams": []
+                                },
+                                "type": "component"
+                              }
+                            ],
+                            "onFailure": [],
+                            "params": [],
+                            "extraParams": [],
+                            "url": "api/feedback/save-update/"
+                          }
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      }
+                    ],
+                    "id": "form_4375",
+                    "pbId": "form_394",
+                    "properties": {
+                      "web": true,
+                      "mobile": true,
+                      "preFillApi": {
+                        "method": "post",
+                        "onSuccess": [],
+                        "map": [],
+                        "params": []
+                      },
+                      "hideTitle": true
+                    },
+                    "inlineStyle": {},
+                    "conditions": {}
+                  },
+                  "info": {
+                    "type": "form",
+                    "id": "form_60"
+                  }
+                }
+              ],
+              "id": "zc_modal_61",
+              "pbId": "zc-modal_741",
+              "size": "sm",
+              "cssClass": "zc-feedback-modal zc-form-no-border"
+            },
+            "info": {
+              "type": "zc-modal",
+              "id": "zc-modal_2261"
+            }
+          },
+          {
+            "definition": {
+              "title": "About",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id=\"about-panel\" class=\"p-2\">\n      <div style=\"text-align:center;\">\n        <img src=\"https://sf.readwhere.com/img/readwherelogo2.png\" style=\"width: 150px;\">\n      </div>\n      <p class=\"\" style=\"text-align:center;\">Epaper powered by Readwhere digital publishing platform</p>\n      <!--<p style=\"text-align:center\"><a target=\"_top\" href=\"https://www.readwhere.com/\">Learn more</a></p>-->\n      <p class=\"\">Download Readwhere app to read on the go</p>\n      <div style=\"text-align:center\"><a target=\"_top\" class=\"\" style=\"padding-right:0;\" href=\"https://rdwh.re/iosapp\"><img src=\"https://cache.epapr.in/static/mapp/img/appstore-btn.png\" height=\"40\"></a>\n      <a target=\"_top\" style=\"padding-left:0;\" class=\"\" href=\"https://rdwh.re/androidapp\"><img src=\"https://cache.epapr.in/static/mapp/img/play-store.png\" height=\"40\"></a>\n      </div>\n    </div>",
+                    "id": "html_628",
+                    "pbId": "html_8454",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_2050"
+                  }
+                }
+              ],
+              "id": "zc_modal_443",
+              "pbId": "zc-modal_2441",
+              "size": "sm",
+              "cssClass": "about-modal"
+            },
+            "info": {
+              "type": "zc-modal",
+              "id": "zc-modal_2332"
+            }
+          },
+          {
+            "definition": {
+              "title": "Email Clip",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "title": "Email Clip",
+                    "fields": [
+                      {
+                        "name": "textarea",
+                        "label": "Send To:",
+                        "id": "textarea_5261",
+                        "type": "textarea",
+                        "defaultValue": "",
+                        "properties": {
+                          "displayStyle": "htmleditor",
+                          "placeholder": "Example: info@gmail.com, info@yahoo.com",
+                          "maxLength": 10000,
+                          "minLength": 0,
+                          "pattern": "",
+                          "required": true,
+                          "rows": "",
+                          "cols": "",
+                          "messages": {
+                            "maxLength": "",
+                            "minLength": "",
+                            "pattern": "",
+                            "required": "Please enter email address"
+                          }
+                        },
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {}
+                      },
+                      {
+                        "name": "text",
+                        "label": "Your Name",
+                        "type": "text",
+                        "properties": {
+                          "placeholder": "Enter your name",
+                          "messages": {}
+                        },
+                        "id": "text_9581",
+                        "events": {
+                          "onload": {
+                            "actions": [],
+                            "conditions": []
+                          },
+                          "click": {
+                            "actions": []
+                          }
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      },
+                      {
+                        "name": "button",
+                        "label": "Send",
+                        "type": "button",
+                        "properties": {
+                          "web": true,
+                          "mobile": true,
+                          "cssClass": "btn btn-default w-100 justify-content-center"
+                        },
+                        "id": "button_4901",
+                        "actions": [],
+                        "action": {
+                          "type": "api",
+                          "download": {
+                            "method": "post",
+                            "params": []
+                          },
+                          "page": {
+                            "type": "internal",
+                            "target": "self",
+                            "params": [],
+                            "queryParams": []
+                          },
+                          "component": {
+                            "params": []
+                          },
+                          "api": {
+                            "method": "post",
+                            "url": "api/user_clip/save-update/for-mail",
+                            "component": {
+                              "id": "form_5561",
+                              "method": "submit",
+                              "invalidMsg": "Enter valid form data.",
+                              "validate": true
+                            },
+                            "onSuccess": [],
+                            "onFailure": [],
+                            "params": [],
+                            "extraParams": []
+                          }
+                        },
+                        "cssClass": "text-center",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      }
+                    ],
+                    "id": "form_5561",
+                    "pbId": "form_6778",
+                    "properties": {
+                      "web": true,
+                      "mobile": true,
+                      "preFillApi": {
+                        "method": "post",
+                        "onSuccess": [],
+                        "map": [],
+                        "params": []
+                      }
+                    },
+                    "inlineStyle": {},
+                    "conditions": {}
+                  },
+                  "info": {
+                    "type": "form",
+                    "id": "form_4482"
+                  }
+                }
+              ],
+              "id": "zc_modal_7944",
+              "pbId": "zc-modal_2811",
+              "size": "sm"
+            },
+            "info": {
+              "type": "zc-modal",
+              "id": "zc-modal_715"
+            }
+          }
+        ],
+        "breadcrumb": [],
+        "onLoad": {
+          "actions": [
+            {
+              "type": "script",
+              "script": "\nvar head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);if(window && window.googletag){ googletag.destroySlots();}"
+            },
+            {
+              "type": "script",
+              "script": "zc.loadAds= (divId, sizes, type) => { \nwindow.googletag = window.googletag || {cmd: []};\n  googletag.cmd.push(function() {\n    googletag.defineSlot('/1769731/'+type, sizes, divId).addService(googletag.pubads());\n    googletag.pubads().enableSingleRequest();\n    googletag.enableServices();\n  });\ngoogletag.cmd.push(function() { googletag.display(divId); });\n  }"
+            },
+            {
+              "type": "script",
+              "script": "zc.taboolaAds= (divId) => {window._taboola = window._taboola || [];_taboola.push({mode: 'alternating-thumbnails-a',container: divId,placement: 'Below Article Thumbnails',target_type: 'mix'});}"
+            },
+            {
+              "type": "script",
+              "script": "window._taboola = window._taboola || [];_taboola.push({article:'auto'});!function (e, f, u, i) {if (!document.getElementById(i)){e.async = 1;e.src = u;e.id = i;f.parentNode.insertBefore(e, f);}}(document.createElement('script'),document.getElementsByTagName('script')[0],'//cdn.taboola.com/libtrc/andhrajyothy-epaper/loader.js','tb_loader_script');if(window.performance && typeof window.performance.mark == 'function'){window.performance.mark('tbl_ic');}"
+            },
+            {
+              "type": "script",
+              "script": "window._taboola = window._taboola || [];_taboola.push({flush: true});"
+            },
+            {
+              "type": "script",
+              "script1": "var cachebuster = parseInt((Math.round(new Date().getTime() / 1000))/10000)*10000; url = 'https://cdn.jsdelivr.net/gh/unib0ts/unibots@latest/iplbowl2/script.js?cb='+cachebuster; s1 = document.createElement('script'); s1.src = url; s1.async = 'async';s1.type = 'text/javascript'; document.getElementsByTagName('head')[0].appendChild(s1);"
+            },
+            {
+              "type": "script",
+              "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+            },
+            {
+              "type": "script",
+              "script": "var gptUrl = 'https://securepubads.g.doubleclick.net/tag/js/gpt.js'; var gptScript = document.createElement('script'); gptScript.src = gptUrl; gptScript.async = 'async';gptScript.type = 'text/javascript'; document.getElementsByTagName('head')[0].appendChild(gptScript);"
+            },
+            {
+              "type": "script",
+              "script": "zc.gptAds= (divId) => {window.googletag = window.googletag || {cmd: []}; googletag.cmd.push(function() {googletag.defineSlot('/1009127/ePaper_AndhraJyothy_DT_Sticky', [728, 90], divId).addService(googletag.pubads()); googletag.enableServices();googletag.display(divId); });}"
+            }
+          ]
+        },
+        "backBtn": true
+      },
+      "info": {
+        "type": "page"
+      }
+    },
+    "is_fixed": 1,
+    "apis": [
+      "api/feedback/SAVE-UPDATE/",
+      "api/user_clip/SAVE-UPDATE/for-mail",
+      "api/edition/SELECT/publish"
+    ],
+    "cacheKey": "zcbase:account:location-day-edition",
+    "zc-ttl": 1622699772538
+  },
+  "success": true,
+  "zcServerDateTime": "2021-06-03 11:28:41",
+  "zcServerIp": "ip-10-1-4-191/10.1.4.191",
+  "zcServerHost": "ip-10-1-4-191"
+}

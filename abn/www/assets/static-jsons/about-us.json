@@ -1,0 +1,108 @@
+{
+  "data": {
+    "uid": "67F38B08EE0C9A4C210617A06E3292B7",
+    "app": "zcbase",
+    "publicAccess": true,
+    "accessBased": false,
+    "code": "about-us",
+    "icon": "",
+    "label": "About Us",
+    "layout": "blank",
+    "module": "pages",
+    "theme": "abn",
+    "instructions": {
+      "definition": {
+        "widgets": [
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "HTML content here",
+                    "id": "html_7877",
+                    "pbId": "html_6018",
+                    "type": "custom-html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "src": "https://code.jquery.com/jquery-3.5.1.min.js",
+                        "name": "jquery"
+                      },
+                      {
+                        "src": "assets/widgets/abn/new-header.js",
+                        "name": "new header"
+                      }
+                    ],
+                    "css": [],
+                    "htmlUrl": "assets/widgets/abn/new-header.html"
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_8284"
+                  }
+                }
+              ],
+              "id": "block_290",
+              "pbId": "block_1377",
+              "inlineStyle": {}
+            },
+            "info": {
+              "type": "block",
+              "id": "block_1337"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div class=\"zc-content\">\n<div class=\"contact-us\">\n<h3 class=\"mt-0\">About Us</h3>\n<p>AndhraJyothy App is an one point interface for E-Paper, ABN Live TV, Telugu News portal, English News portal and Navya Weekly. Watch breaking news of Telangana and Andhra Pradesh.</p>\n<p>ABN AndhraJyothy is a Telugu news channel which was launched on 15 October 2009 from the stable of the Telugu daily – AndhraJyothy. AndhraJyothy (Telugu: ఆంధ్రజ్యోతి) is a Telugu daily newspaper in Telangana and AndhraPradesh, India.</p>\n</div>\n</div>",
+                    "id": "html_9374",
+                    "pbId": "html_7513",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_8511"
+                  }
+                }
+              ],
+              "id": "block_5841",
+              "pbId": "block_5102",
+              "inlineStyle": {},
+              "customClass": "zc-content-block"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_363"
+            }
+          }
+        ],
+        "onLoad": {
+          "actions": [
+            {
+              "type": "script",
+              "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+            }
+          ]
+        }
+      },
+      "info": {
+        "type": "page"
+      }
+    },
+    "is_fixed": 1,
+    "apis": [],
+    "cacheKey": "zcbase:pages:about-us",
+    "zc-ttl": 1622000974760
+  },
+  "success": true,
+  "zcServerDateTime": "2021-05-26 09:19:34",
+  "zcServerIp": "ip-10-1-3-238/10.1.3.238",
+  "zcServerHost": "ip-10-1-3-238"
+}

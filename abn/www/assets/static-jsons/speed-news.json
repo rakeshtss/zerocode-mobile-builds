@@ -1,0 +1,177 @@
+{
+  "data": {
+    "uid": "2543DF8C9B4BB6163BA855B7851FCEE7",
+    "app": "epaper",
+    "publicAccess": true,
+    "accessBased": false,
+    "code": "speed-news",
+    "icon": "",
+    "label": "Speed News",
+    "layout": "blank",
+    "module": "news",
+    "theme": "abn",
+    "instructions": {
+      "definition": {
+        "widgets": [
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div class=\"zc-news-header\">\n<a [routerLink]=\"['/']\" class=\"zc-news-logo\">\n<img src=\"assets/themes/abn/images/logo.png\" alt=\"logo\">\n</a>\n</div>",
+                    "id": "html_9387",
+                    "pbId": "html_5988",
+                    "type": "custom-html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "src": "https://code.jquery.com/jquery-3.5.1.min.js",
+                        "name": "jquery"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
+                        "name": "popper"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js",
+                        "name": "bootstrap"
+                      },
+                      {
+                        "src": "assets/widgets/abn/new-header.js",
+                        "name": "new header"
+                      }
+                    ],
+                    "css": [],
+                    "htmlUrl": "assets/widgets/abn/new-header.html"
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_888"
+                  }
+                }
+              ],
+              "id": "block_9203",
+              "pbId": "block_2955",
+              "inlineStyle": {}
+            },
+            "info": {
+              "type": "block",
+              "id": "block_2347"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "HTML content here",
+                    "id": "html_3726",
+                    "pbId": "html_6868",
+                    "type": "custom-html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "src": "https://unpkg.com/swiper/swiper-bundle.js",
+                        "name": "swiper-bundle"
+                      },
+                      {
+                        "src": "https://unpkg.com/swiper/swiper-bundle.min.js",
+                        "name": "swiper-bundle-min"
+                      },
+                      {
+                        "src": "assets/widgets/abn/speed-news.js"
+                      }
+                    ],
+                    "css": [
+                      {
+                        "src": "https://unpkg.com/swiper/swiper-bundle.css",
+                        "name": "swiper-bundle"
+                      },
+                      {
+                        "src": "https://unpkg.com/swiper/swiper-bundle.min.css",
+                        "name": "swiper-bundle-min"
+                      }
+                    ],
+                    "htmlUrl": "assets/widgets/abn/speed-news.html"
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_2863"
+                  }
+                }
+              ],
+              "id": "block_3223",
+              "pbId": "block_6918",
+              "inlineStyle": {},
+              "customClass": "zc-speed-news-block zc-news-list-block"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4026"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div class=\"zc-news-footer\">\n    <ul>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/telugunews\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n                <p>E-Papers</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link active\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n    </ul>\n</div>",
+                    "id": "html_5255",
+                    "pbId": "html_802",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": [
+                      {
+                        "src": "https://unpkg.com/swiper/swiper-bundle.css",
+                        "name": "swiper-bundle"
+                      },
+                      {
+                        "src": "https://unpkg.com/swiper/swiper-bundle.min.css",
+                        "name": "swiper-bundle-min"
+                      }
+                    ]
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_4894"
+                  }
+                }
+              ],
+              "id": "block_1973",
+              "pbId": "block_5192",
+              "inlineStyle": {},
+              "customClass": ""
+            },
+            "info": {
+              "type": "block",
+              "id": "block_1664"
+            }
+          }
+        ],
+        "onLoad": {
+          "actions": [
+            {
+              "type": "script",
+              "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+            }
+          ]
+        }
+      },
+      "info": {
+        "type": "page"
+      }
+    },
+    "is_fixed": 1,
+    "apis": [],
+    "cacheKey": "epaper:news:speed-news",
+    "zc-ttl": 1621939070994
+  },
+  "success": true,
+  "zcServerDateTime": "2021-05-25 16:11:44",
+  "zcServerIp": "ip-10-1-3-13/10.1.3.13",
+  "zcServerHost": "ip-10-1-3-13"
+}

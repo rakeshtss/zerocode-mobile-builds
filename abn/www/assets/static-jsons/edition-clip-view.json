@@ -1,0 +1,1627 @@
+{
+  "data": {
+    "uid": "8327645F0A3FF64768E51FE8973BB1EF",
+    "app": "zcbase",
+    "publicAccess": true,
+    "accessBased": false,
+    "code": "edition-clip-view",
+    "icon": "icon-clipboard",
+    "label": "Edition Clip View",
+    "layout": "blank",
+    "module": "account",
+    "theme": "abn",
+    "instructions": {
+      "definition": {
+        "widgets": [
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div class=\"zc-edition-header\">\n<a class=\"sidebar-toggle\" href=\"javascript:;\" id=\"nav-toggle\" mattooltip=\"Click to toggle Menu\" mattooltipposition=\"right\"><img alt=\"\" src=\"assets/themes/abn/images/menu_bars.png\"></a>\n<div class=\"zc-edition-header-left\">\n<a routerLink=\"/\" class=\"zc-logo\">\n      <img src=\"assets/themes/abn/images/logo.png\" alt=\"Logo\" />\n     <p id=\"date\" class=\"zc-date\"></p>\n    </a>\n\n\n  </div>\n<div class=\"zc-edition-header-right\">\n<a class=\"icon-close menu-close-btn\" id=\"nav-close\"></a>\n<ul>\n<!--<li><a routerLink=\"/\">HOME</a></li>-->\n\n</ul>\n<div class=\"zc-social-media-block\">\n<a *ngIf=\"zc.user\" class=\"editions-link\" routerLink=\"/epa/editions/editions\">Editions</a>\n<div class=\"social-icons\">\n<!--<a href=\"http://www.youtube.com/user/abntelugutv?sub_confirmation=1\" target=\"_blank\" class=\"btn btn-danger icon-youtube\"></a>-->\n                <a href=\"https://www.facebook.com/abntelugutv\" target=\"_blank\" class=\"icon-facebook\"></a>\n                <a href=\"https://twitter.com/abntelugutv\" target=\"_blank\" class=\"icon-twitter\"></a>\n</div>\n</div></div>\n</div>",
+                    "id": "html_6186",
+                    "pbId": "html_4629",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "name": "jquery",
+                        "src": "https://code.jquery.com/jquery-3.5.1.min.js"
+                      },
+                      {
+                        "name": "menu",
+                        "src": "assets/widgets/abn/menu.js"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
+                        "name": "popper"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js",
+                        "name": "bootstrap"
+                      }
+                    ],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_6807"
+                  }
+                }
+              ],
+              "id": "block_9452",
+              "pbId": "block_6748",
+              "customClass": "p-0 zc-edition-header-block",
+              "inlineStyle": {}
+            },
+            "info": {
+              "type": "block",
+              "id": "block_6808"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325601079-0' style='text-align:center;margin-bottom:15px'> </div>",
+                          "id": "html_7378",
+                          "pbId": "html_8009",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_9765"
+                        }
+                      }
+                    ],
+                    "id": "block_2759",
+                    "pbId": "block_1115",
+                    "inlineStyle": {},
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_1515"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325286686-0'style='text-align:center;margin-bottom:15px'> </div>",
+                          "id": "html_7823",
+                          "pbId": "html_3954",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_943"
+                        }
+                      }
+                    ],
+                    "id": "block_8597",
+                    "pbId": "block_5346",
+                    "inlineStyle": {},
+                    "customClass": "zc-google-ad",
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_7825"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "HTML content here",
+                                "id": "html_9141",
+                                "pbId": "html_5312",
+                                "type": "custom-html",
+                                "apiCode": "html",
+                                "js": [
+                                  {
+                                    "name": "jquery",
+                                    "src": "https://code.jquery.com/jquery-3.5.1.min.js"
+                                  },
+                                  {
+                                    "src": "assets/widgets/abn/clip-view.js",
+                                    "name": "clip-view"
+                                  }
+                                ],
+                                "css": [],
+                                "htmlUrl": "assets/widgets/abn/clip-view.html"
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_6429"
+                              }
+                            },
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "title": "Action buttons",
+                                "fields": [
+                                  {
+                                    "fieldClass": "col-12",
+                                    "containerClass": "row justify-content-center clip-view-share-widget",
+                                    "fieldItems": [
+                                      {
+                                        "name": "text",
+                                        "label": "Download",
+                                        "type": "text",
+                                        "properties": {
+                                          "placeholder": "Enter text",
+                                          "messages": {},
+                                          "hideLabel": true,
+                                          "displayFormat": "<a href=\"{{zc?.config?.E_PAPER_S3_URL}}{{zc?.clip?.edition?.edition_info?.basePath}}{{zc?.clip?.jpg_path}}\" class=\"btn btn-outline-secondary btn-open\" >\n          <i class=\"icon-cloud-download-1\"></i>Download\n        </a>",
+                                          "mode": "view"
+                                        },
+                                        "id": "text_5771",
+                                        "events": {
+                                          "onload": {
+                                            "actions": [],
+                                            "conditions": []
+                                          },
+                                          "click": {
+                                            "actions": []
+                                          }
+                                        },
+                                        "cssClass": "col-md-auto p-0 mr-2",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "!zc.clip"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Download",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "mode": "",
+                                          "icon": "icon-cloud-download-1",
+                                          "cssClass": "btn-outline-secondary btn-open mr-2"
+                                        },
+                                        "id": "button_71",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "page",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [
+                                              {
+                                                "type": "script",
+                                                "name": "uid",
+                                                "value": "zc.params.module",
+                                                "keys": []
+                                              }
+                                            ],
+                                            "queryParams": [],
+                                            "url": "zcbase/download/clip"
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "invalidMsg": "Enter valid form data"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "true"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Full Page",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-external-link",
+                                          "cssClass": "btn-outline-secondary btn-open mr-2 ml-2"
+                                        },
+                                        "id": "button_4231",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "script",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": [],
+                                            "url": "zcbase/account/location-day-edition"
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "invalidMsg": "Enter valid form data"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          },
+                                          "script": "location.href = '/'+zc.clip.edition.uid+'/'+zc.clip.edition.sub_category.code+'/' + zc.clip.edition.date.split('-').reverse().join('-');"
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "!zc.clip"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "WHATSAPP",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-whatsapp",
+                                          "cssClass": "btn-success"
+                                        },
+                                        "id": "button_4351",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "script",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "invalidMsg": "Enter valid form data",
+                                            "params": []
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          },
+                                          "script": "var whatShareUrl = \"https://api.whatsapp.com/send?text=\";\nvar clipUrl = zc.config.application_url+\"/c/\"+zc.params.module;\n window.open(whatShareUrl +clipUrl);"
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "!zc.clip"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Facebook",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-facebook",
+                                          "cssClass": "btn-primary btn-facebook mr-2"
+                                        },
+                                        "id": "button_1141",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "script",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "params": []
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          },
+                                          "script": "zc.shareClip('fb');"
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "!zc.clip"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Tweet",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-twitter",
+                                          "cssClass": "btn-primary btn-twitter mr-2"
+                                        },
+                                        "id": "button_5241",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "script",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "params": []
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          },
+                                          "script": "zc.shareClip('twitter');"
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "!zc.clip"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Email",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "tss-email",
+                                          "cssClass": "btn-primary btn-email"
+                                        },
+                                        "id": "button_7011",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "component",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "id": "zc_modal_683",
+                                            "type": "action",
+                                            "method": "open"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "!zc.clip"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      }
+                                    ],
+                                    "id": "undefined_521"
+                                  }
+                                ],
+                                "id": "form_6466",
+                                "pbId": "form_736",
+                                "properties": {
+                                  "web": true,
+                                  "mobile": true,
+                                  "preFillApi": {
+                                    "method": "post",
+                                    "onSuccess": [],
+                                    "map": [],
+                                    "params": []
+                                  },
+                                  "hideTitle": true
+                                },
+                                "inlineStyle": {},
+                                "hidden1": "!zc.clip",
+                                "conditions": {}
+                              },
+                              "info": {
+                                "type": "form",
+                                "id": "form_5523"
+                              }
+                            },
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "widgets": [
+                                  {
+                                    "definition": {
+                                      "template": "HTML content here",
+                                      "id": "html_3477",
+                                      "pbId": "html_146",
+                                      "type": "custom-html",
+                                      "apiCode": "html",
+                                      "js": [
+                                        {
+                                          "src": "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=524798584261092&autoLogAppEvents=1",
+                                          "name": "fb-script"
+                                        },
+                                        {
+                                          "src": "assets/widgets/abn/fb-comments.js",
+                                          "name": "Fb-comments"
+                                        }
+                                      ],
+                                      "css": [],
+                                      "htmlUrl": "assets/widgets/abn/fb-comments.html"
+                                    },
+                                    "info": {
+                                      "type": "html",
+                                      "id": "html_6923"
+                                    }
+                                  }
+                                ],
+                                "id": "block_5231",
+                                "pbId": "block_9008",
+                                "inlineStyle": {},
+                                "customClass": "zc-fb-comments"
+                              },
+                              "info": {
+                                "type": "block",
+                                "id": "block_6644"
+                              }
+                            }
+                          ],
+                          "id": "block_8170",
+                          "pbId": "block_3551",
+                          "inlineStyle": {},
+                          "customClass": "col-md p-0 action-buttons"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_6379"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "title": "Form Title",
+                                "fields": [
+                                  {
+                                    "fieldClass": "",
+                                    "containerClass": "row zc-download-feed-group m-0 justify-content-center",
+                                    "fieldItems": [
+                                      {
+                                        "name": "text",
+                                        "label": "Text Field",
+                                        "fieldClass": "col-12",
+                                        "type": "text",
+                                        "properties": {
+                                          "placeholder": "Enter text",
+                                          "messages": {},
+                                          "hideLabel": true,
+                                          "displayFormat": "<a href=\"{{zc?.config?.E_PAPER_S3_URL}}{{zc?.clip?.edition?.edition_info?.basePath}}{{zc?.clip?.jpg_path}}\" class=\"btn btn-default mr-1\" >\n          <i class=\"icon-cloud-download-1 mr-1\"></i>Download\n        </a>",
+                                          "mode": "view"
+                                        },
+                                        "id": "text_5281",
+                                        "events": {
+                                          "onload": {
+                                            "actions": [],
+                                            "conditions": []
+                                          },
+                                          "click": {
+                                            "actions": []
+                                          }
+                                        },
+                                        "cssClass": "col-md-auto p-0",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Download",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-cloud-download-1",
+                                          "cssClass": "btn btn-default mr-1"
+                                        },
+                                        "id": "button_2811",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "page",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [
+                                              {
+                                                "type": "script",
+                                                "name": "uid",
+                                                "value": "zc.params.module",
+                                                "keys": []
+                                              }
+                                            ],
+                                            "queryParams": [],
+                                            "url": "zcbase/download/clip"
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "invalidMsg": "Enter valid form data"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "true"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "Feedback",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-pencil",
+                                          "cssClass": "btn btn-default mr-1"
+                                        },
+                                        "id": "button_4501",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "component",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "id": "zc_modal_6784",
+                                            "type": "action",
+                                            "method": "open"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      },
+                                      {
+                                        "name": "button",
+                                        "label": "About",
+                                        "type": "button",
+                                        "properties": {
+                                          "web": true,
+                                          "mobile": true,
+                                          "icon": "icon-android-1",
+                                          "cssClass": "btn btn-default"
+                                        },
+                                        "id": "button_7571",
+                                        "actions": [],
+                                        "action": {
+                                          "type": "component",
+                                          "download": {
+                                            "method": "post",
+                                            "params": []
+                                          },
+                                          "page": {
+                                            "type": "internal",
+                                            "target": "self",
+                                            "params": [],
+                                            "queryParams": []
+                                          },
+                                          "component": {
+                                            "params": [],
+                                            "id": "zc_modal_8615",
+                                            "type": "action",
+                                            "method": "open"
+                                          },
+                                          "api": {
+                                            "method": "post",
+                                            "component": {
+                                              "method": "submit",
+                                              "invalidMsg": "Enter valid form data."
+                                            },
+                                            "onSuccess": [],
+                                            "onFailure": [],
+                                            "params": [],
+                                            "extraParams": []
+                                          }
+                                        },
+                                        "cssClass": "",
+                                        "inlineStyle": {},
+                                        "conditions": {
+                                          "hiddenType": "Hide",
+                                          "hidden": "true"
+                                        },
+                                        "conditionsRef": {
+                                          "hiddenCondition": {},
+                                          "requiredCondition": {},
+                                          "readonlyCondition": {},
+                                          "labelCondition": {}
+                                        }
+                                      }
+                                    ],
+                                    "id": "undefined_5251"
+                                  }
+                                ],
+                                "id": "form_9685",
+                                "pbId": "form_3572",
+                                "properties": {
+                                  "web": true,
+                                  "mobile": true,
+                                  "preFillApi": {
+                                    "method": "post",
+                                    "onSuccess": [],
+                                    "map": [],
+                                    "params": []
+                                  },
+                                  "hideTitle": true
+                                },
+                                "inlineStyle": {},
+                                "conditions": {}
+                              },
+                              "info": {
+                                "type": "form",
+                                "id": "form_9070"
+                              }
+                            },
+                            {
+                              "definition": {
+                                "template": "<div id='div-gpt-ad-1609325440841-0' style='text-align:center;margin-bottom:15px'> </div>\n<div id='div-gpt-ad-1609325346001-0' style='text-align:center;'> </div>",
+                                "id": "html_4134",
+                                "pbId": "html_4902",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_8617"
+                              }
+                            }
+                          ],
+                          "id": "block_9591",
+                          "pbId": "block_5086",
+                          "inlineStyle": {},
+                          "customClass": "col-md-auto pr-0 zc-clip-right-block",
+                          "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_6090"
+                        }
+                      }
+                    ],
+                    "id": "block_7138",
+                    "pbId": "block_5988",
+                    "inlineStyle": {},
+                    "customClass": " row m-0"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_4469"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div class=\"top-clips-title\">Top Clips Of {{ zc?.clip?.edition?.sub_sub_category.name || zc?.clip?.edition?.sub_category?.name }}</div>",
+                          "id": "html_2763",
+                          "pbId": "html_7944",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_6809"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "cols": [],
+                          "properties": {
+                            "type": "card",
+                            "filter": {
+                              "action": {
+                                "submit": {
+                                  "label": "Search"
+                                },
+                                "reset": {}
+                              },
+                              "position": "left",
+                              "submissionMode": "all"
+                            },
+                            "pagination": {},
+                            "styling": {
+                              "container": {
+                                "cssStyle": {}
+                              },
+                              "header": {
+                                "cssStyle": {}
+                              },
+                              "row": {
+                                "cssStyle": {}
+                              }
+                            },
+                            "web": true,
+                            "mobile": true,
+                            "lazy": true,
+                            "api": {
+                              "method": "post",
+                              "onSuccess": [
+                                {
+                                  "api": {
+                                    "method": "post",
+                                    "params": []
+                                  },
+                                  "component": {},
+                                  "page": {
+                                    "params": [],
+                                    "queryParams": []
+                                  },
+                                  "type": "script",
+                                  "script": "if(window.innerWidth>767) { zc.loadAds('div-gpt-ad-1609325601079-0',[970, 90],'Epaper_Top'); zc.loadAds('div-gpt-ad-1609325440841-0',[300, 250],'Epaper_RT_Top');\nzc.loadAds('div-gpt-ad-1609325346001-0',[300, 600],'Epaper_RT_Mid'); zc.loadAds('div-gpt-ad-1609324985902-0',[970, 250],'Epaper_Footer');} else { zc.loadAds('div-gpt-ad-1609325286686-0', [[300, 250], [336, 280]],'Epaper_Mobile_Masterhead');zc.loadAds('div-gpt-ad-1609325973804-0',[[300, 250], [336, 280]],'Epaper-Mobile_Bottom');} zc.taboolaAds('taboola-below-article-thumbnails');"
+                                }
+                              ],
+                              "params": [],
+                              "extraParams": [
+                                {
+                                  "type": "script",
+                                  "name": "edition",
+                                  "value": "zc.clip.edition.uid",
+                                  "keys": []
+                                }
+                              ],
+                              "url": "api/user_clip/list/by-admin"
+                            },
+                            "kanban": {
+                              "style": "column",
+                              "dataSource": {
+                                "type": "api",
+                                "api": {
+                                  "method": "post",
+                                  "params": []
+                                }
+                              }
+                            },
+                            "rowSelection": {
+                              "action": {
+                                "api": {
+                                  "method": "post",
+                                  "params": []
+                                },
+                                "component": {
+                                  "type": "action",
+                                  "params": []
+                                },
+                                "page": {
+                                  "type": "internal",
+                                  "target": "self",
+                                  "params": [],
+                                  "queryParams": []
+                                },
+                                "download": {
+                                  "method": "post",
+                                  "params": []
+                                },
+                                "styling": {}
+                              },
+                              "actions": [],
+                              "disableCondition": {}
+                            },
+                            "defaultOrder": [],
+                            "groupRow": {},
+                            "cardTemplate": "<div class=\"top-clip\" [routerLink] =\"'/c/'+row.uid +'/'\">\n<img [src]=\"zc.config.E_PAPER_S3_URL + row.edition.edition_info.basePath + row.jpg_path\" />\n</div>",
+                            "exportExcel": {
+                              "params": []
+                            },
+                            "exportPdf": {
+                              "params": []
+                            },
+                            "hideTitle": true,
+                            "container": {},
+                            "header": {},
+                            "row": {}
+                          },
+                          "actions": {
+                            "group": {
+                              "items": [],
+                              "displayStyle": "button"
+                            },
+                            "row": {
+                              "items": [],
+                              "displayStyle": "button"
+                            }
+                          },
+                          "title": "Top clips",
+                          "id": "list_5509",
+                          "pbId": "list_4251",
+                          "footer": []
+                        },
+                        "info": {
+                          "type": "list",
+                          "id": "list_5765"
+                        }
+                      }
+                    ],
+                    "id": "block_4247",
+                    "pbId": "block_9857",
+                    "inlineStyle": {},
+                    "customClass": "zc-top-clips p-0 mt-3",
+                    "hidden": "!zc.showclips"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_7657"
+                  }
+                }
+              ],
+              "id": "block_9666",
+              "pbId": "block_3332",
+              "inlineStyle": {},
+              "customClass": "zc-clip-view-layout-content"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_6650"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id='div-gpt-ad-1609324985902-0' style='text-align:center;'> </div>",
+                    "id": "html_8254",
+                    "pbId": "html_4756",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_6290"
+                  }
+                }
+              ],
+              "id": "block_8121",
+              "pbId": "block_5483",
+              "inlineStyle": {},
+              "customClass": "zc-footer-ad1",
+              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_6603"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id='div-gpt-ad-1609325973804-0' style='margin:0 auto; display:flex; justify-content:center;' class=\"d-flex\"></div>",
+                    "id": "html_3539",
+                    "pbId": "html_2086",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_4981"
+                  }
+                }
+              ],
+              "id": "block_7922",
+              "pbId": "block_3451",
+              "inlineStyle": {},
+              "customClass": "zc-footer-ad1 zc-google-ad",
+              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4357"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id='taboola-below-article-thumbnails'></div>",
+                    "id": "html_35310",
+                    "pbId": "html_2087",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_4982"
+                  }
+                }
+              ],
+              "id": "block_7922",
+              "pbId": "block_3451",
+              "inlineStyle": {},
+              "customClass": "zc-footer-ad1 zc-google-ad",
+              "hidden": "zc.config.platform == \"mobile\""
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4357"
+            }
+          },
+          {
+            "definition": {
+              "title": "Epaper Feedback",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "title": "Epaper Feedback",
+                    "fields": [
+                      {
+                        "name": "text",
+                        "label": "Text Field",
+                        "type": "text",
+                        "properties": {
+                          "placeholder": "Enter text",
+                          "messages": {},
+                          "mode": "view",
+                          "hideLabel": true,
+                          "displayFormat": "<span style=\"font-weight:normal;\">Please use this for epaper related feedback only. For other messages, please write to the newspaper's editor.</span>"
+                        },
+                        "id": "text_2721",
+                        "events": {
+                          "onload": {
+                            "actions": [],
+                            "conditions": []
+                          },
+                          "click": {
+                            "actions": []
+                          }
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      },
+                      {
+                        "name": "comments",
+                        "label": "How do we improve the epaper?",
+                        "id": "textarea_4421",
+                        "type": "textarea",
+                        "defaultValue": "",
+                        "properties": {
+                          "displayStyle": "htmleditor",
+                          "placeholder": "Enter you feedback",
+                          "maxLength": 10000,
+                          "minLength": 0,
+                          "pattern": "",
+                          "required": true,
+                          "rows": "",
+                          "cols": "",
+                          "messages": {
+                            "maxLength": "",
+                            "minLength": "",
+                            "pattern": "",
+                            "required": "Feedback can not be blank. Please enter your feedback."
+                          }
+                        },
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {}
+                      },
+                      {
+                        "name": "email",
+                        "label": "Your email address:",
+                        "fieldClass": "",
+                        "type": "email",
+                        "properties": {
+                          "placeholder": "Enter email",
+                          "required": true,
+                          "pattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+                          "messages": {
+                            "required": "Please enter your valid email.",
+                            "pattern": "Please enter valid email"
+                          }
+                        },
+                        "id": "email_3001",
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        },
+                        "inlineStyle": {}
+                      },
+                      {
+                        "name": "button",
+                        "label": "Send",
+                        "type": "button",
+                        "properties": {
+                          "web": true,
+                          "mobile": true,
+                          "cssClass": "btn-light w-100 border justify-content-center"
+                        },
+                        "id": "button_111",
+                        "actions": [],
+                        "action": {
+                          "type": "api",
+                          "download": {
+                            "method": "post",
+                            "params": []
+                          },
+                          "page": {
+                            "type": "internal",
+                            "target": "self",
+                            "params": [],
+                            "queryParams": []
+                          },
+                          "component": {
+                            "params": []
+                          },
+                          "api": {
+                            "method": "post",
+                            "component": {
+                              "method": "submit",
+                              "invalidMsg": "Enter valid form data.",
+                              "id": "form_4375",
+                              "validate": true
+                            },
+                            "onSuccess": [
+                              {
+                                "web": true,
+                                "mobile": true,
+                                "api": {
+                                  "method": "post",
+                                  "params": []
+                                },
+                                "component": {
+                                  "id": "zc_modal_6784",
+                                  "method": "close"
+                                },
+                                "page": {
+                                  "params": [],
+                                  "queryParams": []
+                                },
+                                "type": "component"
+                              }
+                            ],
+                            "onFailure": [],
+                            "params": [],
+                            "extraParams": [],
+                            "url": "api/feedback/save-update/"
+                          }
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      }
+                    ],
+                    "id": "form_4375",
+                    "pbId": "form_394",
+                    "properties": {
+                      "web": true,
+                      "mobile": true,
+                      "preFillApi": {
+                        "method": "post",
+                        "onSuccess": [],
+                        "map": [],
+                        "params": []
+                      },
+                      "hideTitle": true
+                    },
+                    "inlineStyle": {},
+                    "conditions": {}
+                  },
+                  "info": {
+                    "type": "form",
+                    "id": "form_60"
+                  }
+                }
+              ],
+              "id": "zc_modal_6784",
+              "pbId": "zc-modal_9455",
+              "size": "sm",
+              "cssClass": ""
+            },
+            "info": {
+              "type": "zc-modal",
+              "id": "zc-modal_7868"
+            }
+          },
+          {
+            "definition": {
+              "title": "About",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id=\"about-panel\" class=\"p-2\">\n      <div style=\"text-align:center;\">\n        <!-- <img src=\"https://sf.readwhere.com/img/readwherelogo2.png\" style=\"width: 150px;\">-->\n      </div>\n      <p class=\"\" style=\"text-align:center;\">Epaper powered by Readwhere digital publishing platform</p>\n      <p style=\"text-align:center\"><a target=\"_top\" href=\"https://www.readwhere.com/\">Learn more</a></p>\n      <p class=\"\">Download Readwhere app to read on the go</p>\n      <div style=\"text-align:center\"><a target=\"_top\" class=\"\" style=\"padding-right:0;\" href=\"https://rdwh.re/iosapp\"><img src=\"https://cache.epapr.in/static/mapp/img/appstore-btn.png\" height=\"40\"></a>\n      <a target=\"_top\" style=\"padding-left:0;\" class=\"\" href=\"https://rdwh.re/androidapp\"><img src=\"https://cache.epapr.in/static/mapp/img/play-store.png\" height=\"40\"></a>\n      </div>\n    </div>",
+                    "id": "html_628",
+                    "pbId": "html_8454",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_8044"
+                  }
+                }
+              ],
+              "id": "zc_modal_8615",
+              "pbId": "zc-modal_5643",
+              "size": "sm",
+              "cssClass": ""
+            },
+            "info": {
+              "type": "zc-modal",
+              "id": "zc-modal_6937"
+            }
+          },
+          {
+            "definition": {
+              "title": "Email",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "title": "Email Clip",
+                    "fields": [
+                      {
+                        "name": "to",
+                        "label": "Send To:",
+                        "id": "textarea_5261",
+                        "fieldClass": "col-12",
+                        "type": "textarea",
+                        "defaultValue": "",
+                        "properties": {
+                          "displayStyle": "htmleditor",
+                          "placeholder": "Example: info@gmail.com, info@yahoo.com",
+                          "maxLength": 10000,
+                          "minLength": 0,
+                          "pattern": "",
+                          "required": true,
+                          "rows": "",
+                          "cols": "",
+                          "messages": {
+                            "maxLength": "",
+                            "minLength": "",
+                            "pattern": "",
+                            "required": "Please enter email address"
+                          }
+                        },
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {}
+                      },
+                      {
+                        "name": "from_name",
+                        "label": "Your Name",
+                        "fieldClass": "col-12",
+                        "type": "text",
+                        "properties": {
+                          "placeholder": "Enter your name",
+                          "messages": {}
+                        },
+                        "id": "text_9581",
+                        "events": {
+                          "onload": {
+                            "actions": [],
+                            "conditions": []
+                          },
+                          "click": {
+                            "actions": []
+                          }
+                        },
+                        "cssClass": "",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      },
+                      {
+                        "name": "button",
+                        "label": "Send",
+                        "type": "button",
+                        "fieldClass": "col-12",
+                        "properties": {
+                          "web": true,
+                          "mobile": true
+                        },
+                        "id": "button_4901",
+                        "actions": [],
+                        "action": {
+                          "type": "api",
+                          "download": {
+                            "method": "post",
+                            "params": []
+                          },
+                          "page": {
+                            "type": "internal",
+                            "target": "self",
+                            "params": [],
+                            "queryParams": []
+                          },
+                          "component": {
+                            "params": []
+                          },
+                          "api": {
+                            "method": "post",
+                            "component": {
+                              "method": "submit",
+                              "invalidMsg": "Enter valid form data.",
+                              "id": "form_5561",
+                              "validate": true
+                            },
+                            "onSuccess": [],
+                            "onFailure": [],
+                            "params": [],
+                            "extraParams": [
+                              {
+                                "type": "script",
+                                "name": "clip",
+                                "value": "window.location.origin + '/c/' + zc.params.module"
+                              },
+                              {
+                                "type": "script",
+                                "name": "clipImage",
+                                "value": "zc.config.E_PAPER_S3_URL + zc.clip.edition.edition_info.basePath + zc.clip.jpg_path"
+                              }
+                            ],
+                            "url": "api/user_clip/save-update/for-mail"
+                          }
+                        },
+                        "cssClass": "text-center",
+                        "inlineStyle": {},
+                        "conditions": {
+                          "hiddenType": "Hide"
+                        },
+                        "conditionsRef": {
+                          "hiddenCondition": {},
+                          "requiredCondition": {},
+                          "readonlyCondition": {},
+                          "labelCondition": {}
+                        }
+                      }
+                    ],
+                    "id": "form_5561",
+                    "pbId": "form_6778",
+                    "properties": {
+                      "web": true,
+                      "mobile": true,
+                      "preFillApi": {
+                        "method": "post",
+                        "onSuccess": [],
+                        "map": [],
+                        "params": []
+                      }
+                    },
+                    "inlineStyle": {},
+                    "conditions": {}
+                  },
+                  "info": {
+                    "type": "form",
+                    "id": "form_4482"
+                  }
+                }
+              ],
+              "id": "zc_modal_683",
+              "pbId": "zc-modal_9573",
+              "size": "sm",
+              "cssClass": ""
+            },
+            "info": {
+              "type": "zc-modal",
+              "id": "zc-modal_2175"
+            }
+          }
+        ],
+        "breadcrumb": [],
+        "onLoad": {
+          "actions": [
+            {
+              "type": "script",
+              "script": "var head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);\n\n\n\nif(window && window.googletag){ googletag.destroySlots();}"
+            },
+            {
+              "type": "script",
+              "script": "var head = document.getElementsByTagName('head')[0];\nvar meta = document.createElement('meta');\n meta.name = 'twitter:card';\n meta.content = 'summary_large_image';\n head.appendChild(meta);\n\n\n\n"
+            },
+            {
+              "type": "script",
+              "script": "var head = document.getElementsByTagName('head')[0];\nvar meta = document.createElement('meta');\n meta.name = 'twitter:description';\n meta.content = 'sample description';\n head.appendChild(meta);\n\n\n\n"
+            },
+            {
+              "type": "script",
+              "script": "var head = document.getElementsByTagName('head')[0];\nvar meta = document.createElement('meta');\n meta.name = 'twitter:site';\n meta.content = '@myreadwhere';\n head.appendChild(meta);\n\n\n\n"
+            },
+            {
+              "type": "script",
+              "script": "zc.loadAds= (divId, sizes, type) => { \nwindow.googletag = window.googletag || {cmd: []};\n  googletag.cmd.push(function() {\n    googletag.defineSlot('/1769731/'+type, sizes, divId).addService(googletag.pubads());\n    googletag.pubads().enableSingleRequest();\n    googletag.enableServices();\n  });\ngoogletag.cmd.push(function() { googletag.display(divId); });\n  }"
+            },
+            {
+              "type": "script",
+              "script": "zc.shareClip = (type) => { \nconst params = new URLSearchParams();\n  if (type == 'fb') {params.set('u', window.location.href);const fbShareUrl = 'https://www.facebook.com/sharer/sharer.php?' + params;\nwindow.open(fbShareUrl, '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=650,height=450');} else if (type == 'twitter') {params.set('url', window.location.href);const twitterShareUrl = 'https://twitter.com/share?' + params;window.open(twitterShareUrl, '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=650,height=450');}\n  }"
+            },
+            {
+              "type": "script",
+              "script": "zc.taboolaAds= (divId) => {window._taboola = window._taboola || [];_taboola.push({mode: 'alternating-thumbnails-a',container: divId,placement: 'Below Article Thumbnails',target_type: 'mix'});}"
+            },
+            {
+              "type": "script",
+              "script": "window._taboola = window._taboola || [];_taboola.push({article:'auto'});!function (e, f, u, i) {if (!document.getElementById(i)){e.async = 1;e.src = u;e.id = i;f.parentNode.insertBefore(e, f);}}(document.createElement('script'),document.getElementsByTagName('script')[0],'//cdn.taboola.com/libtrc/andhrajyothy-epaper/loader.js','tb_loader_script');if(window.performance && typeof window.performance.mark == 'function'){window.performance.mark('tbl_ic');}"
+            },
+            {
+              "type": "script",
+              "script": "window._taboola = window._taboola || [];_taboola.push({flush: true});"
+            },
+            {
+              "type": "script",
+              "script": "var cachebuster = parseInt((Math.round(new Date().getTime() / 1000))/10000)*10000; url = 'https://cdn.jsdelivr.net/gh/unib0ts/unibots@latest/iplbowl2/script.js?cb='+cachebuster; s1 = document.createElement('script'); s1.src = url; s1.async = 'async';s1.type = 'text/javascript'; document.getElementsByTagName('head')[0].appendChild(s1);"
+            }
+          ]
+        }
+      },
+      "info": {
+        "type": "page"
+      }
+    },
+    "is_fixed": 1,
+    "apis": [
+      "api/feedback/SAVE-UPDATE/",
+      "api/user_clip/LIST/by-admin",
+      "api/user_clip/SAVE-UPDATE/for-mail"
+    ],
+    "cacheKey": "zcbase:account:edition-clip-view",
+    "zc-ttl": 1621942163964
+  },
+  "success": true,
+  "zcServerDateTime": "2021-05-25 16:59:23",
+  "zcServerIp": "ip-10-1-3-238/10.1.3.238",
+  "zcServerHost": "ip-10-1-3-238"
+}

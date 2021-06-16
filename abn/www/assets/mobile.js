@@ -57,7 +57,7 @@ function adMobProBannerConfig() {
 
     admobid = {
         banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-4252617315602036/5779303425'
+        interstitial: 'ca-app-pub-4252617315602036/3370770117'
     };
     
     if (AdMob) AdMob.createBanner({
@@ -67,6 +67,22 @@ function adMobProBannerConfig() {
         //isTesting: true,// works on emulator
     }, function(){console.log("Success Ad");},
     function(error){console.log("Error ad: "+error);});
+
+
+    if (AdMob) AdMob.prepareInterstitial({
+        adId: admobid.interstitial,
+        autoShow: false,
+         isTesting: true,
+        //isTesting: true,// works on emulator
+    }, function(){console.log("Success Ad");},
+    function(error){console.log("Error ad: "+error);});
+
+    // if(AdMob){
+
+    //     AdMob.prepareInterstitial( {adId:'ca-app-pub-4252617315602036/5779303425', autoShow:false} );
+    //     AdMob.showInterstitial();
+    // } 
+
 
 
 }

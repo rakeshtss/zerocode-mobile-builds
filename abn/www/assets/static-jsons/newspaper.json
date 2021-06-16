@@ -1,0 +1,465 @@
+{
+  "data": {
+    "uid": "1CE83DBC157BE128D1555D5A86BC0002",
+    "app": "zcbase",
+    "publicAccess": true,
+    "accessBased": false,
+    "code": "newspaper",
+    "icon": "icon-newspaper-o",
+    "label": "newspaper",
+    "layout": "blank",
+    "module": "download",
+    "theme": "abn",
+    "instructions": {
+      "definition": {
+        "widgets": [
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "HTML content here",
+                    "id": "html_1832",
+                    "pbId": "html_559",
+                    "type": "custom-html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "src": "https://code.jquery.com/jquery-3.5.1.min.js",
+                        "name": "jquery"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
+                        "name": "popper"
+                      },
+                      {
+                        "src": "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js",
+                        "name": "bootstrap"
+                      },
+                      {
+                        "src": "assets/widgets/abn/date.js",
+                        "name": "date"
+                      },
+                      {
+                        "src": "assets/widgets/abn/menu.js",
+                        "name": "menu"
+                      }
+                    ],
+                    "css": [],
+                    "htmlUrl": "assets/widgets/abn/menu.html"
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_1999"
+                  }
+                }
+              ],
+              "id": "block_1948",
+              "pbId": "block_4488",
+              "inlineStyle": {},
+              "customClass": "p-0"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4704"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325723337-0' style=''> </div>",
+                          "id": "html_3162",
+                          "pbId": "html_1008",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [
+                            {
+                              "src": "https://code.jquery.com/jquery-3.5.1.min.js",
+                              "name": "jquery"
+                            }
+                          ],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_810"
+                        }
+                      }
+                    ],
+                    "id": "block_112",
+                    "pbId": "block_3416",
+                    "inlineStyle": {},
+                    "customClass": "text-center mb-3 zc-google-ad"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_2604"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "widgets": [
+                                  {
+                                    "definition": {
+                                      "style": "col-12",
+                                      "title": "News paper",
+                                      "fields": [
+                                        {
+                                          "fieldClass": "",
+                                          "containerClass": "row justify-content-center zc-fg-no-margin",
+                                          "fieldItems": [
+                                            {
+                                              "name": "text",
+                                              "label": "Text Field",
+                                              "fieldClass": "col-12",
+                                              "type": "text",
+                                              "properties": {
+                                                "placeholder": "Enter text",
+                                                "messages": {},
+                                                "displayFormat": "<div class=\"d-flex justify-content-center\"><a class=\"btn btn-success btn-download\" [href]=\"zc.config.E_PAPER_S3_URL + model.edition_info.basePath + model.edition_info.fullPdf\">DOWNLOAD FULL NEWSPAPER</a></div>",
+                                                "hideLabel": true,
+                                                "mode": "view"
+                                              },
+                                              "id": "text_8741",
+                                              "events": {
+                                                "onload": {
+                                                  "actions": [],
+                                                  "conditions": []
+                                                },
+                                                "click": {
+                                                  "actions": []
+                                                }
+                                              },
+                                              "cssClass": "",
+                                              "inlineStyle": {},
+                                              "conditions": {
+                                                "hiddenType": "Hide",
+                                                "hidden": "true"
+                                              },
+                                              "conditionsRef": {
+                                                "hiddenCondition": {},
+                                                "requiredCondition": {},
+                                                "readonlyCondition": {},
+                                                "labelCondition": {}
+                                              }
+                                            }
+                                          ],
+                                          "id": "undefined_4011"
+                                        }
+                                      ],
+                                      "id": "form_8804",
+                                      "pbId": "form_7796",
+                                      "properties": {
+                                        "web": true,
+                                        "mobile": true,
+                                        "preFillApi": {
+                                          "method": "post",
+                                          "onSuccess": [
+                                            {
+                                              "type": "script",
+                                              "script": "zc.list_8541.table.rows = data.edition_meta.edition_full_info.pages;"
+                                            }
+                                          ],
+                                          "map": [],
+                                          "params": [
+                                            {
+                                              "type": "string",
+                                              "keys": [],
+                                              "name": "uid",
+                                              "value": "uid"
+                                            }
+                                          ],
+                                          "url": "api/edition/select/publish"
+                                        },
+                                        "hideTitle": true
+                                      },
+                                      "inlineStyle": {},
+                                      "conditions": {}
+                                    },
+                                    "info": {
+                                      "type": "form",
+                                      "id": "form_4881"
+                                    }
+                                  }
+                                ],
+                                "id": "block_2324",
+                                "pbId": "block_543",
+                                "inlineStyle": {},
+                                "customClass": "text-center zc-form-block p-0 zc-download-fullpage"
+                              },
+                              "info": {
+                                "type": "block",
+                                "id": "block_5834"
+                              }
+                            },
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "widgets": [
+                                  {
+                                    "definition": {
+                                      "style": "col-12",
+                                      "cols": [],
+                                      "properties": {
+                                        "type": "card",
+                                        "filter": {
+                                          "action": {
+                                            "submit": {
+                                              "label": "Search"
+                                            },
+                                            "reset": {}
+                                          },
+                                          "position": "left",
+                                          "submissionMode": "all"
+                                        },
+                                        "pagination": {
+                                          "position": "none"
+                                        },
+                                        "styling": {
+                                          "container": {
+                                            "cssStyle": {}
+                                          },
+                                          "header": {
+                                            "cssStyle": {}
+                                          },
+                                          "row": {
+                                            "cssStyle": {}
+                                          }
+                                        },
+                                        "web": true,
+                                        "mobile": true,
+                                        "lazy": true,
+                                        "api": {
+                                          "method": "post",
+                                          "onSuccess": [],
+                                          "params": [],
+                                          "extraParams": [],
+                                          "url": ""
+                                        },
+                                        "kanban": {
+                                          "style": "column",
+                                          "dataSource": {
+                                            "type": "api",
+                                            "api": {
+                                              "method": "post",
+                                              "params": []
+                                            }
+                                          }
+                                        },
+                                        "rowSelection": {
+                                          "action": {
+                                            "api": {
+                                              "method": "post",
+                                              "params": []
+                                            },
+                                            "component": {
+                                              "type": "action",
+                                              "params": []
+                                            },
+                                            "page": {
+                                              "type": "internal",
+                                              "target": "self",
+                                              "params": [],
+                                              "queryParams": []
+                                            },
+                                            "download": {
+                                              "method": "post",
+                                              "params": []
+                                            },
+                                            "styling": {}
+                                          },
+                                          "actions": [],
+                                          "disableCondition": {}
+                                        },
+                                        "defaultOrder": [],
+                                        "groupRow": {},
+                                        "cardTemplate": "<div class=\"download-page\">\n<img [src]=\"zc.config.E_PAPER_S3_URL + zc.form_8804.model.edition_info.basePath + row.thumbnailSmallWebp\" />\n<p>PAGE-{{index}}</p>\n<a class=\"overlay-a\" [href]=\"zc.config.E_PAPER_S3_URL + zc.form_8804.model.edition_info.basePath + row.pdfPath\"><div class=\"download-text\">Download</div><i class=\"icon-download-1\"></i></a>\n</div>\n<div><a class=\"btn btn-success btn-download\" [href]=\"zc.config.E_PAPER_S3_URL + zc.form_8804.model.edition_info.basePath + row.pdfPath\">DOWNLOAD NOW</a></div>",
+                                        "exportExcel": {
+                                          "params": []
+                                        },
+                                        "exportPdf": {
+                                          "params": []
+                                        },
+                                        "container": {},
+                                        "header": {},
+                                        "row": {}
+                                      },
+                                      "actions": {
+                                        "group": {
+                                          "items": [],
+                                          "displayStyle": "button"
+                                        },
+                                        "row": {
+                                          "items": [],
+                                          "displayStyle": "button"
+                                        }
+                                      },
+                                      "title": "Download Pages Below",
+                                      "id": "list_8541",
+                                      "pbId": "list_1354",
+                                      "footer": []
+                                    },
+                                    "info": {
+                                      "type": "list",
+                                      "id": "list_2470"
+                                    }
+                                  }
+                                ],
+                                "id": "block_5928",
+                                "pbId": "block_9160",
+                                "inlineStyle": {},
+                                "customClass": "download-pages"
+                              },
+                              "info": {
+                                "type": "block",
+                                "id": "block_3486"
+                              }
+                            }
+                          ],
+                          "id": "block_2975",
+                          "pbId": "block_3871",
+                          "inlineStyle": {},
+                          "customClass": "col-md p-0 px-lg-3"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_1711"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div id='div-gpt-ad-1609325973804-0' style='text-align:center;margin-bottom:15px'> </div>",
+                                "id": "html_7352",
+                                "pbId": "html_619",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_7931"
+                              }
+                            }
+                          ],
+                          "id": "block_2122",
+                          "pbId": "block_8129",
+                          "inlineStyle": {},
+                          "customClass": "col-md-auto pr-0 zc-google-ad",
+                          "hidden": "zc.config.platform == \"mobile\""
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_5426"
+                        }
+                      }
+                    ],
+                    "id": "block_4404",
+                    "pbId": "block_8310",
+                    "inlineStyle": {},
+                    "customClass": "row p-0 m-0"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_561"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325864412-0' style=''> </div>",
+                          "id": "html_6516",
+                          "pbId": "html_1643",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [
+                            {
+                              "src": "assets/widgets/abn/ads.js",
+                              "name": "ads"
+                            }
+                          ],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_6985"
+                        }
+                      }
+                    ],
+                    "id": "block_160",
+                    "pbId": "block_6283",
+                    "inlineStyle": {},
+                    "customClass": "text-center zc-google-ad mt-3",
+                    "hidden": "zc.config.platform == \"mobile\""
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_726"
+                  }
+                }
+              ],
+              "id": "block_6920",
+              "pbId": "block_829",
+              "inlineStyle": {},
+              "customClass": "block zc-blank-layout-content"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_7428"
+            }
+          }
+        ],
+        "breadcrumb": [],
+        "onLoad": {
+          "actions": [
+            {
+              "type": "script",
+              "script": "var head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);if(window && window.googletag){ googletag.destroySlots();}"
+            },
+            {
+              "type": "script",
+              "script": "zc.loadAds= (divId, sizes, type) => { \nwindow.googletag = window.googletag || {cmd: []};\n  googletag.cmd.push(function() {\n    googletag.defineSlot('/1769731/'+type, sizes, divId).addService(googletag.pubads());\n    googletag.pubads().enableSingleRequest();\n    googletag.enableServices();\n  });\ngoogletag.cmd.push(function() { googletag.display(divId); });\n  }"
+            }
+          ]
+        }
+      },
+      "info": {
+        "type": "page"
+      }
+    },
+    "is_fixed": 1,
+    "apis": [
+      "api/edition/SELECT/publish"
+    ],
+    "cacheKey": "zcbase:download:newspaper",
+    "zc-ttl": 1621936206703
+  },
+  "success": true,
+  "zcServerDateTime": "2021-05-25 15:51:52",
+  "zcServerIp": "ip-10-1-3-13/10.1.3.13",
+  "zcServerHost": "ip-10-1-3-13"
+}

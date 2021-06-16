@@ -1,0 +1,696 @@
+{
+  "data": {
+    "uid": "00FF9C8527A1280F0EE3FCC487C63C17",
+    "app": "zcbase",
+    "publicAccess": true,
+    "accessBased": false,
+    "code": "home",
+    "icon": "icon-action-items",
+    "label": "Home",
+    "layout": "blank",
+    "module": "account",
+    "theme": "abn",
+    "instructions": {
+      "definition": {
+        "widgets": [
+          {
+            "definition": {
+              "style": "row col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "HTML content here",
+                          "id": "html_921",
+                          "pbId": "html_8337",
+                          "type": "custom-html",
+                          "apiCode": "html",
+                          "js": [
+                            {
+                              "name": "jquery",
+                              "src": "https://code.jquery.com/jquery-3.5.1.min.js"
+                            },
+                            {
+                              "name": "date",
+                              "src": "assets/widgets/abn/date.js"
+                            },
+                            {
+                              "name": "menu",
+                              "src": "assets/widgets/abn/menu.js"
+                            }
+                          ],
+                          "css": [],
+                          "htmlUrl": "assets/widgets/abn/menu.html"
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_5712"
+                        }
+                      }
+                    ],
+                    "id": "block_4717",
+                    "pbId": "block_4300",
+                    "customClass": "p-0"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_327"
+                  }
+                }
+              ],
+              "id": "block_3923",
+              "pbId": "block_9162",
+              "inlineStyle": {}
+            },
+            "info": {
+              "type": "block",
+              "id": "block_9188"
+            }
+          },
+          {
+            "definition": {
+              "widgets": [
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325601079-0'style='text-align:center;margin-bottom:15px'> </div>",
+                          "id": "html_7822",
+                          "pbId": "html_3953",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_942"
+                        }
+                      }
+                    ],
+                    "id": "block_8597",
+                    "pbId": "block_5346",
+                    "inlineStyle": {},
+                    "customClass": "zc-google-ad",
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_7825"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "template": "<div id='div-gpt-ad-1609325286686-0'style='text-align:center;margin-bottom:15px'> </div>",
+                          "id": "html_7823",
+                          "pbId": "html_3954",
+                          "type": "html",
+                          "apiCode": "html",
+                          "js": [],
+                          "css": []
+                        },
+                        "info": {
+                          "type": "html",
+                          "id": "html_943"
+                        }
+                      }
+                    ],
+                    "id": "block_8597",
+                    "pbId": "block_5346",
+                    "inlineStyle": {},
+                    "customClass": "zc-google-ad",
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_7825"
+                  }
+                },
+                {
+                  "definition": {
+                    "style": "col-12",
+                    "widgets": [
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<h2 class=\"zc-edition-heading\"><span>{{ ((zc.queryParams.s)? zc.queryParams.s.replace('_',' ') : 'MAIN EDITIONS') | uppercase}}</span></h2>",
+                                "id": "html_4839",
+                                "pbId": "html_2993",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_5000"
+                              }
+                            },
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "cols": [],
+                                "properties": {
+                                  "type": "card",
+                                  "filter": {
+                                    "action": {
+                                      "submit": {
+                                        "label": "Search"
+                                      },
+                                      "reset": {}
+                                    },
+                                    "position": "left",
+                                    "submissionMode": "all"
+                                  },
+                                  "pagination": {
+                                    "position": "none"
+                                  },
+                                  "styling": {
+                                    "container": {
+                                      "cssStyle": {}
+                                    },
+                                    "header": {
+                                      "cssStyle": {}
+                                    },
+                                    "row": {
+                                      "cssStyle": {}
+                                    }
+                                  },
+                                  "web": true,
+                                  "mobile": true,
+                                  "lazy": true,
+                                  "api": {
+                                    "method": "get",
+                                    "onSuccess": [
+                                      {
+                                        "type": "script",
+                                        "script": "if(window.innerWidth>767) { zc.loadAds('div-gpt-ad-1609325601079-0',[970, 90],'Epaper_Top'); zc.loadAds('div-gpt-ad-1609325440841-0',[300, 250],'Epaper_RT_Top');\nzc.loadAds('div-gpt-ad-1609325346001-0',[300, 600],'Epaper_RT_Mid'); zc.loadAds('div-gpt-ad-1609324985902-0',[970, 250],'Epaper_Footer');} else { zc.loadAds('div-gpt-ad-1609325286686-0', [[300, 250], [336, 280]],'Epaper_Mobile_Masterhead');zc.loadAds('div-gpt-ad-1609325973804-0',[[300, 250], [336, 280]],'Epaper-Mobile_Bottom');} zc.gptAds('gpt-passback'); zc.taboolaAds('taboola-below-article-thumbnails');",
+                                        "api": {
+                                          "method": "post",
+                                          "params": []
+                                        },
+                                        "component": {},
+                                        "page": {
+                                          "params": [],
+                                          "queryParams": []
+                                        }
+                                      }
+                                    ],
+                                    "params": [],
+                                    "extraParams": [
+                                      {
+                                        "type": "script",
+                                        "name": "category",
+                                        "value": "(zc.queryParams && zc.queryParams.s) ? null : 'main_edition'",
+                                        "keys": []
+                                      },
+                                      {
+                                        "type": "script",
+                                        "name": "sub_category",
+                                        "value": "(zc.queryParams && zc.queryParams.s) ? zc.queryParams.s : null",
+                                        "keys": []
+                                      },
+                                      {
+                                        "type": "script",
+                                        "name": "childs",
+                                        "value": "(zc.queryParams && zc.queryParams.s) ? true : false",
+                                        "keys": []
+                                      },
+                                      {
+                                        "type": "script",
+                                        "name": "is_latest",
+                                        "value": "1",
+                                        "keys": []
+                                      }
+                                    ],
+                                    "url": "api/edition/list/publish"
+                                  },
+                                  "kanban": {
+                                    "style": "column",
+                                    "dataSource": {
+                                      "type": "api",
+                                      "api": {
+                                        "method": "post",
+                                        "params": []
+                                      }
+                                    }
+                                  },
+                                  "rowSelection": {
+                                    "action": {
+                                      "api": {
+                                        "method": "post",
+                                        "params": []
+                                      },
+                                      "component": {
+                                        "type": "action",
+                                        "params": []
+                                      },
+                                      "page": {
+                                        "type": "internal",
+                                        "target": "self",
+                                        "params": [],
+                                        "queryParams": [],
+                                        "url": "zcbase/account/location-day-edition"
+                                      },
+                                      "download": {
+                                        "method": "post",
+                                        "params": []
+                                      },
+                                      "styling": {}
+                                    },
+                                    "actions": [],
+                                    "type": "row",
+                                    "disableCondition": {}
+                                  },
+                                  "defaultOrder": [],
+                                  "groupRow": {},
+                                  "cardTemplate": "<div class=\"paper-card\"  [routerLink]=\"'/t/' + row.uid_actual + '/' + ( row.sub_sub_category.code || row.sub_category.code) + '/' + ((row.sub_sub_category.code) ? row.sub_category.code : '')\">\n<zc-actions  [actions]='options.actions' type='row' class=\"action-icons lession-card-action\" [currentRow]='row' [id]='options.id'   autoClose='true'></zc-actions>\n<div class=\"paper-img\"><img [src]=\"zc.config.E_PAPER_S3_URL + row.edition_info.basePath + row.edition_info.thumbnailBig\"/></div>\n<p class=\"paper-location-name\">{{row.sub_sub_category.name || row.sub_category.name}}</p>\n</div>\n\n\n",
+                                  "exportExcel": {
+                                    "params": []
+                                  },
+                                  "exportPdf": {
+                                    "params": []
+                                  },
+                                  "hideTitle": true,
+                                  "container": {},
+                                  "header": {},
+                                  "row": {}
+                                },
+                                "actions": {
+                                  "group": {
+                                    "items": [],
+                                    "displayStyle": "button"
+                                  },
+                                  "row": {
+                                    "items": [],
+                                    "displayStyle": "button"
+                                  }
+                                },
+                                "title": "List Title",
+                                "id": "list_5798",
+                                "pbId": "list_927",
+                                "footer": []
+                              },
+                              "info": {
+                                "type": "list",
+                                "id": "list_1325"
+                              }
+                            }
+                          ],
+                          "id": "block_8691",
+                          "pbId": "block_5478",
+                          "customClass": "col-md m-0 p-0 zc-edition-list",
+                          "inlineStyle": {},
+                          "hidden": ""
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_2014"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div class=\"zc-mob-abnhead\">\n<p class=\"zc-news-quote\">You can setup your interested in to help your persolnlize your news experience.</p>\n<ul class=\"zc-edition-services\">\n    <li>\n        <a routerLink=\"/epaper/news/telugunews\">\n            <img src=\"assets/themes/abn/images/news.png\" alt=\"\">\n            <p>News</p>\n        </a>\n    </li>\n    <li>\n        <a href=\"javascript:;\" class=\"active\">\n            <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n            <p>E-Papers</p>\n        </a>\n    </li>\n    <li class=\"abn-logo\">\n        <a routerLink=\"/epaper/news/livetv\">\n            <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n            <p>Live <span>TV</span></p>\n        </a>\n    </li>\n    <li>\n        <a routerLink=\"//epaper/news/speed-news\">\n            <img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n            <p>Speed News</p>\n        </a>\n    </li>\n</ul>\n</div>",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": [],
+                                "id": "html_8962",
+                                "pbId": "html_7454"
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_1116"
+                              }
+                            },
+                            {
+                              "definition": {
+                                "style": "col-12",
+                                "widgets": [
+                                  {
+                                    "definition": {
+                                      "template": "HTML content here",
+                                      "type": "custom-html",
+                                      "apiCode": "html",
+                                      "js": [
+                                        {
+                                          "name": "jquery",
+                                          "src": "https://code.jquery.com/jquery-3.5.1.min.js"
+                                        },
+                                        {
+                                          "name": "slick",
+                                          "src": "assets/widgets/abn/slick.min.js"
+                                        },
+                                        {
+                                          "name": "slider",
+                                          "src": "assets/widgets/abn/edition-slider.js"
+                                        }
+                                      ],
+                                      "css": [
+                                        {
+                                          "src": "assets/widgets/abn/slick.css",
+                                          "name": "slick"
+                                        },
+                                        {
+                                          "name": "slick theme",
+                                          "src": "assets/widgets/abn/slick-theme.css"
+                                        }
+                                      ],
+                                      "htmlUrl": "assets/widgets/abn/edition-slider.html",
+                                      "id": "html_2027",
+                                      "pbId": "html_1604"
+                                    },
+                                    "info": {
+                                      "type": "html",
+                                      "id": "html_213"
+                                    }
+                                  },
+                                  {
+                                    "definition": {
+                                      "template": "<div class=\"zc-mob-abnfoot\">\n<p class=\"zc-abn-quote\">Andhra Jyothi is an Indian Telugu language newspaper published from 21 centers across the states of Andhra Pradesh, Telangana, Karnataka and Tamil Nadu</p>\n</div>",
+                                      "type": "html",
+                                      "apiCode": "html",
+                                      "js": [],
+                                      "css": [],
+                                      "id": "html_5566",
+                                      "pbId": "html_4636"
+                                    },
+                                    "info": {
+                                      "type": "html",
+                                      "id": "html_1814"
+                                    }
+                                  }
+                                ],
+                                "inlineStyle": {},
+                                "id": "block_8934",
+                                "pbId": "block_3142",
+                                "customClass": "m-0 p-0 zc-mobile-slider-block zc-mobile-slider-block"
+                              },
+                              "info": {
+                                "type": "block",
+                                "id": "block_9033"
+                              }
+                            }
+                          ],
+                          "inlineStyle": {},
+                          "id": "block_3678",
+                          "pbId": "block_3801",
+                          "customClass": "zc-mobile-edition-list p-0",
+                          "hidden": "true"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_9972"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div id='div-gpt-ad-1609325440841-0' style='text-align:center;margin-bottom:15px'></div><div id='div-gpt-ad-1609325346001-0' style='text-align:center;'> </div>",
+                                "id": "html_3913",
+                                "pbId": "html_9743",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": []
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_6680"
+                              }
+                            }
+                          ],
+                          "id": "block_2437",
+                          "pbId": "block_3878",
+                          "inlineStyle": {},
+                          "customClass": "col-md-auto zc-google-ad",
+                          "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_1062"
+                        }
+                      },
+                      {
+                        "definition": {
+                          "style": "col-12",
+                          "widgets": [
+                            {
+                              "definition": {
+                                "template": "<div class=\"zc-news-footer\">\n    <ul>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/telugunews\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link active\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/epaper-red.png\" alt=\"\">\n                <p>E-Papers</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news-white.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n    </ul>\n</div>",
+                                "type": "html",
+                                "apiCode": "html",
+                                "js": [],
+                                "css": [],
+                                "id": "html_1243",
+                                "pbId": "html_1612"
+                              },
+                              "info": {
+                                "type": "html",
+                                "id": "html_2863"
+                              }
+                            }
+                          ],
+                          "inlineStyle": {},
+                          "id": "block_5666",
+                          "pbId": "block_2309",
+                          "customClass": "home-bottom-menu d-md-none",
+                          "hidden": "zc.config.platform == 'web'"
+                        },
+                        "info": {
+                          "type": "block",
+                          "id": "block_7849"
+                        }
+                      }
+                    ],
+                    "id": "block_8655",
+                    "pbId": "block_3392",
+                    "inlineStyle": {},
+                    "customClass": "row m-0 p-0"
+                  },
+                  "info": {
+                    "type": "block",
+                    "id": "block_3081"
+                  }
+                }
+              ],
+              "id": "block_1738",
+              "pbId": "block_7558",
+              "inlineStyle": {},
+              "customClass": "row zc-blank-layout-content ml-0 mr-0 zc-mobile-dashboard"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_9897"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id='div-gpt-ad-1609324985902-0' style='margin:0 auto; display:flex; justify-content:center;' class=\"d-flex\"></div>",
+                    "id": "html_3538",
+                    "pbId": "html_2085",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_4980"
+                  }
+                }
+              ],
+              "id": "block_7922",
+              "pbId": "block_3451",
+              "inlineStyle": {},
+              "customClass": "zc-footer-ad1 zc-google-ad",
+              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4357"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id='div-gpt-ad-1609325973804-0' style='margin:0 auto; display:flex; justify-content:center;' class=\"d-flex\"></div>",
+                    "id": "html_3539",
+                    "pbId": "html_2086",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_4981"
+                  }
+                }
+              ],
+              "id": "block_7922",
+              "pbId": "block_3451",
+              "inlineStyle": {},
+              "customClass": "zc-footer-ad1 zc-google-ad",
+              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4357"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id='gpt-passback'></div>",
+                    "id": "html_45310",
+                    "pbId": "html_3087",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_5982"
+                  }
+                }
+              ],
+              "id": "block_8922",
+              "pbId": "block_4451",
+              "inlineStyle": {},
+              "customClass": "zc-footer-ad1 zc-google-ad",
+              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4357"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div id='taboola-below-article-thumbnails'></div>",
+                    "id": "html_35310",
+                    "pbId": "html_2087",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_4982"
+                  }
+                }
+              ],
+              "id": "block_7922",
+              "pbId": "block_3451",
+              "inlineStyle": {},
+              "customClass": "zc-footer-ad1 zc-google-ad",
+              "hidden": "zc.config.platform == \"mobile\""
+            },
+            "info": {
+              "type": "block",
+              "id": "block_4357"
+            }
+          }
+        ],
+        "breadcrumb": [],
+        "onLoad": {
+          "actions": [
+            {
+              "type": "page",
+              "condition": "zc.config.platform == 'mobile' && (!zc.params.app)",
+              "page": {
+                "url": "epaper/news/telugunews",
+                "type": "internal"
+              }
+            },
+            {
+              "type": "script",
+              "script": "var head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);\n\n\n\n if(window && window.googletag){ googletag.destroySlots(); }"
+            },
+            {
+              "type": "script",
+              "script": "zc.loadAds= (divId, sizes, type) => { \nwindow.googletag = window.googletag || {cmd: []};\n  googletag.cmd.push(function() {\n    googletag.defineSlot('/1769731/'+type, sizes, divId).addService(googletag.pubads());\n    googletag.pubads().enableSingleRequest();\n    googletag.enableServices();\n  });\ngoogletag.cmd.push(function() { googletag.display(divId); });\n  }"
+            },
+            {
+              "type": "script",
+              "script": "zc.taboolaAds= (divId) => {window._taboola = window._taboola || [];_taboola.push({mode: 'alternating-thumbnails-a',container: divId,placement: 'Below Article Thumbnails',target_type: 'mix'});}"
+            },
+            {
+              "type": "script",
+              "script": "window._taboola = window._taboola || [];_taboola.push({article:'auto'});!function (e, f, u, i) {if (!document.getElementById(i)){e.async = 1;e.src = u;e.id = i;f.parentNode.insertBefore(e, f);}}(document.createElement('script'),document.getElementsByTagName('script')[0],'//cdn.taboola.com/libtrc/andhrajyothy-epaper/loader.js','tb_loader_script');if(window.performance && typeof window.performance.mark == 'function'){window.performance.mark('tbl_ic');}"
+            },
+            {
+              "type": "script",
+              "script": "window._taboola = window._taboola || [];_taboola.push({flush: true});"
+            },
+            {
+              "type": "script",
+              "script1": "var cachebuster = parseInt((Math.round(new Date().getTime() / 1000))/10000)*10000; url = 'https://cdn.jsdelivr.net/gh/unib0ts/unibots@latest/iplbowl2/script.js?cb='+cachebuster; s1 = document.createElement('script'); s1.src = url; s1.async = 'async';s1.type = 'text/javascript'; document.getElementsByTagName('head')[0].appendChild(s1);"
+            },
+            {
+              "type": "script",
+              "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+            },
+            {
+              "type": "script",
+              "script": "var gptUrl = 'https://securepubads.g.doubleclick.net/tag/js/gpt.js'; var gptScript = document.createElement('script'); gptScript.src = gptUrl; gptScript.async = 'async';gptScript.type = 'text/javascript'; document.getElementsByTagName('head')[0].appendChild(gptScript);"
+            },
+            {
+              "type": "script",
+              "script": "zc.gptAds= (divId) => {window.googletag = window.googletag || {cmd: []}; googletag.cmd.push(function() {googletag.defineSlot('/1009127/ePaper_AndhraJyothy_DT_Sticky', [728, 90], divId).addService(googletag.pubads()); googletag.enableServices();googletag.display(divId); });}"
+            }
+          ]
+        }
+      },
+      "info": {
+        "type": "page"
+      }
+    },
+    "is_fixed": 1,
+    "apis": [
+      "api/edition/LIST/publish"
+    ],
+    "cacheKey": "zcbase:_:_",
+    "zc-ttl": 1622699727264
+  },
+  "success": true,
+  "zcServerDateTime": "2021-06-03 11:25:27",
+  "zcServerIp": "ip-10-1-4-191/10.1.4.191",
+  "zcServerHost": "ip-10-1-4-191"
+}

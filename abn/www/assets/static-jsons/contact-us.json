@@ -1,0 +1,108 @@
+{
+  "data": {
+    "uid": "E2785B2F7105B39AE41E5AFBC8A84D53",
+    "app": "zcbase",
+    "publicAccess": true,
+    "accessBased": false,
+    "code": "contact-us",
+    "icon": "",
+    "label": "Contact Us",
+    "layout": "blank",
+    "module": "pages",
+    "theme": "abn",
+    "instructions": {
+      "definition": {
+        "widgets": [
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "HTML content here",
+                    "id": "html_7877",
+                    "pbId": "html_6018",
+                    "type": "custom-html",
+                    "apiCode": "html",
+                    "js": [
+                      {
+                        "src": "https://code.jquery.com/jquery-3.5.1.min.js",
+                        "name": "jquery"
+                      },
+                      {
+                        "src": "assets/widgets/abn/new-header.js",
+                        "name": "new header"
+                      }
+                    ],
+                    "css": [],
+                    "htmlUrl": "assets/widgets/abn/new-header.html"
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_8284"
+                  }
+                }
+              ],
+              "id": "block_290",
+              "pbId": "block_1377",
+              "inlineStyle": {}
+            },
+            "info": {
+              "type": "block",
+              "id": "block_1337"
+            }
+          },
+          {
+            "definition": {
+              "style": "col-12",
+              "widgets": [
+                {
+                  "definition": {
+                    "template": "<div class=\"zc-content\">\n<div class=\"contact-us\">\n<h3 class=\"mt-0\">Contact Us at</h3>\n<p>\nWe appreciate your feedback.<br>\nHelp us to make andhrajyothy.com better, <br>\nYour Comments will be forwarded to the appropriate editor.<br>\nProvide us with your suggestions and comments.<br>\nPlease communicate with us at:\n</p>\n<p>\n<a href=\"mailto:feedback@andhrajyothy.com\">feedback@andhrajyothy.com</a><br>\n<a href=\"mailto:feedback@abnandhrajyothy.com\">feedback@abnandhrajyothy.com</a>\n</p>\n<p>OR</p>\n<p>\nAamoda Publications Private Limited<br>\nAJ Buildings,Plot No: 76,Ashwini Layout, Huda Heights,<br>\nRd.No: 70, Jubilee Hills,Hyderabad-500033\n</p>\n<a href=\"https://www.andhrajyothy.com/\" target=\"_blank\">\nhttps://www.andhrajyothy.com/</a>\n</div>\n</div>",
+                    "id": "html_9374",
+                    "pbId": "html_7513",
+                    "type": "html",
+                    "apiCode": "html",
+                    "js": [],
+                    "css": []
+                  },
+                  "info": {
+                    "type": "html",
+                    "id": "html_8511"
+                  }
+                }
+              ],
+              "id": "block_5841",
+              "pbId": "block_5102",
+              "inlineStyle": {},
+              "customClass": "zc-content-block"
+            },
+            "info": {
+              "type": "block",
+              "id": "block_363"
+            }
+          }
+        ],
+        "onLoad": {
+          "actions": [
+            {
+              "type": "script",
+              "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+            }
+          ]
+        }
+      },
+      "info": {
+        "type": "page"
+      }
+    },
+    "is_fixed": 1,
+    "apis": [],
+    "cacheKey": "zcbase:pages:contact-us",
+    "zc-ttl": 1621938293385
+  },
+  "success": true,
+  "zcServerDateTime": "2021-05-25 15:55:37",
+  "zcServerIp": "ip-10-1-3-13/10.1.3.13",
+  "zcServerHost": "ip-10-1-3-13"
+}
