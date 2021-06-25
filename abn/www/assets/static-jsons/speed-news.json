@@ -30,14 +30,6 @@
                         "name": "jquery"
                       },
                       {
-                        "src": "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
-                        "name": "popper"
-                      },
-                      {
-                        "src": "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js",
-                        "name": "bootstrap"
-                      },
-                      {
                         "src": "assets/widgets/abn/new-header.js",
                         "name": "new header"
                       }
@@ -118,7 +110,7 @@
               "widgets": [
                 {
                   "definition": {
-                    "template": "<div class=\"zc-news-footer\">\n    <ul>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/telugunews\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n                <p>E-Papers</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link active\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n    </ul>\n</div>",
+                    "template": "<div class=\"zc-news-footer\">\n    <ul>\n<li class=\"zc-news-footer-link active\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/news-home\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n                <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>        \n    </ul>\n</div>",
                     "id": "html_5255",
                     "pbId": "html_802",
                     "type": "html",
@@ -167,11 +159,10 @@
     },
     "is_fixed": 1,
     "apis": [],
-    "cacheKey": "epaper:news:speed-news",
-    "zc-ttl": 1621939070994
+    "cacheKey": "epaper:news:speed-news"
   },
   "success": true,
-  "zcServerDateTime": "2021-05-25 16:11:44",
-  "zcServerIp": "ip-10-1-3-13/10.1.3.13",
-  "zcServerHost": "ip-10-1-3-13"
+  "zcServerDateTime": "2021-06-16 15:00:46",
+  "zcServerIp": "ip-10-1-3-196/10.1.3.196",
+  "zcServerHost": "ip-10-1-3-196"
 }

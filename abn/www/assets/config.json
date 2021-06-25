@@ -19,7 +19,7 @@
     "defaultApp": "zcbase",
     "loaderUrl": "assets/loaders/Loader3.gif",
     "profileLinks": [],
-    "platform": "web",
+    "platform": "mobile",
     "profileLinks1": [{
             "title": "Profile",
             "url": "swfc/registered-users/profile"

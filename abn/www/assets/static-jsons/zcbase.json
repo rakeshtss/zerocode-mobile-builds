@@ -326,7 +326,7 @@
                           "widgets": [
                             {
                               "definition": {
-                                "template": "<div class=\"zc-mob-abnhead\">\n<p class=\"zc-news-quote\">You can setup your interested in to help your persolnlize your news experience.</p>\n<ul class=\"zc-edition-services\">\n    <li>\n        <a routerLink=\"/epaper/news/telugunews\">\n            <img src=\"assets/themes/abn/images/news.png\" alt=\"\">\n            <p>News</p>\n        </a>\n    </li>\n    <li>\n        <a href=\"javascript:;\" class=\"active\">\n            <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n            <p>E-Papers</p>\n        </a>\n    </li>\n    <li class=\"abn-logo\">\n        <a routerLink=\"/epaper/news/livetv\">\n            <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n            <p>Live <span>TV</span></p>\n        </a>\n    </li>\n    <li>\n        <a routerLink=\"//epaper/news/speed-news\">\n            <img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n            <p>Speed News</p>\n        </a>\n    </li>\n</ul>\n</div>",
+                                "template": "<div class=\"zc-mob-abnhead\">\n<p class=\"zc-news-quote\">You can setup your interested in to help your persolnlize your news experience.</p>\n<ul class=\"zc-edition-services\">\n  <li><a routerLink=\"/epaper/news/speed-news\"><img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n      <p>Speed News</p></a></li>\n  <li><a routerLink=\"/epaper/news/news-home\"><img src=\"assets/themes/abn/images/news.png\" alt=\"\">\n      <p>News</p></a></li>\n  <li><a href=\"javascript:;\" class=\"active\"><img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n      <p>Epaper</p></a></li>\n  <li class=\"abn-logo\"><a routerLink=\"/epaper/news/livetv\"><img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n      <p>Live <span>TV</span></p></a></li>\n</ul>\n</div>",
                                 "type": "html",
                                 "apiCode": "html",
                                 "js": [],
@@ -456,7 +456,7 @@
                           "widgets": [
                             {
                               "definition": {
-                                "template": "<div class=\"zc-news-footer\">\n    <ul>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/telugunews\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link active\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/epaper-red.png\" alt=\"\">\n                <p>E-Papers</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news-white.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n    </ul>\n</div>",
+                                "template": "<div class=\"zc-news-footer\">\n    <ul>\n <li class=\"zc-news-footer-link\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news-white.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>       <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/telugunews\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link active\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/epaper-red.png\" alt=\"\">\n                <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n        \n    </ul>\n</div>",
                                 "type": "html",
                                 "apiCode": "html",
                                 "js": [],
@@ -635,7 +635,7 @@
               "type": "page",
               "condition": "zc.config.platform == 'mobile' && (!zc.params.app)",
               "page": {
-                "url": "epaper/news/telugunews",
+                "url": "epaper/news/speed-news",
                 "type": "internal"
               }
             },
@@ -686,11 +686,10 @@
     "apis": [
       "api/edition/LIST/publish"
     ],
-    "cacheKey": "zcbase:_:_",
-    "zc-ttl": 1622699727264
+    "cacheKey": "zcbase:account:home"
   },
   "success": true,
-  "zcServerDateTime": "2021-06-03 11:25:27",
-  "zcServerIp": "ip-10-1-4-191/10.1.4.191",
-  "zcServerHost": "ip-10-1-4-191"
+  "zcServerDateTime": "2021-06-16 15:10:45",
+  "zcServerIp": "ip-10-1-3-233/10.1.3.233",
+  "zcServerHost": "ip-10-1-3-233"
 }

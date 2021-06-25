@@ -58,7 +58,7 @@ $(document).ready(function () {
     let payload = {};
     if (zc.queryParams.s) {
         payload.childs = true;
-       // payload.sub_category = null;
+        // payload.sub_category = null;
         payload.sub_sub_category = zc.params.module;
     } else {
         payload.sub_category = zc.params.module;
@@ -75,7 +75,7 @@ $(document).ready(function () {
         data: payload,
         // headers: header,
         success: function (res) {
-            console.log('calendar --->',res);
+            // console.log('calendar --->',res);
             editions = res.data.listData.rows;
             // var tempDate = new Date();
             var todayDate = new Date();
@@ -158,8 +158,8 @@ $(document).ready(function () {
                     var eCategory = (editionDetails.sub_sub_category.code) ? editionDetails.sub_sub_category.code : editionDetails.sub_category.code;
                     // window.location.replace("/" + editionDetails.uid_actual + "/" + eCategory + "/" + editionDetails.date.split("-").reverse().join("-"))
                     var turl = "/" + editionDetails.uid_actual + "/" + eCategory + "/" + editionDetails.date.split("-").reverse().join("-");
-                    if(zc.queryParams.s) {
-                        turl = turl + '?s='+ zc.queryParams.s;
+                    if (zc.queryParams.s) {
+                        turl = turl + '?s=' + zc.queryParams.s;
                     }
                     zc.actionService.navigateByUrl(turl);
                     return false;
@@ -204,7 +204,7 @@ $(document).ready(function () {
                     let payload = {};
                     if (zc.queryParams.s) {
                         payload.childs = true;
-                       // payload.sub_category = null;
+                        // payload.sub_category = null;
                         payload.sub_sub_category = zc.params.module;
                     } else {
                         payload.sub_category = zc.params.module;
@@ -223,12 +223,12 @@ $(document).ready(function () {
                         type: "GET",
                         dataType: "json",
                         data: payload,
-                       // headers: header,
+                        // headers: header,
                         success: function (res) {
-                           // $('#datepicker').datepicker("destroy");
+                            // $('#datepicker').datepicker("destroy");
 
                             availableDates = [];
-                            if(res.data.listData && res.data.listData.rows) {
+                            if (res.data.listData && res.data.listData.rows) {
                                 editions = res.data.listData.rows;
                             } else {
                                 editions = [];
@@ -258,7 +258,7 @@ $(document).ready(function () {
         alert(1);
         var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
         return [availableDates.indexOf(string) != -1];
-      }
+    }
 
 
     // if (getDate) {
@@ -334,6 +334,7 @@ $(document).ready(function () {
     // })
     if (window.innerWidth > 768) {
         $('.zoomin').click(function () {
+            console.log('zoomin event -->')
             $('.zc-clip-right-block').hide();
             $('.zc-google-ad').hide();
             $(".pinch-zoom-content").draggable({
@@ -366,6 +367,18 @@ $(document).ready(function () {
                 'transform': 'matrix(1, 0, 0, 1, 0, 0)'
             });
         })
+    }
+
+    zc.zoomIn = () => {
+        console.log('zoomin event -->')
+        $('.zc-clip-right-block').hide();
+        $('.zc-google-ad').hide();
+        $(".pinch-zoom-content").draggable({
+            disabled: false
+        });
+        $(".pinch-zoom-content").css({
+            'cursor': 'all-scroll'
+        });
     }
 
 })
@@ -428,7 +441,6 @@ $(document).on('click', '.ui-datepicker-prev', function (e) {
 $(window).scroll(function () {
     if (window.innerWidth >= 1024) {
         var scrollTop = window.scrollY;
-        console.log('scrollTop', scrollTop);
         if (scrollTop > 50) {
             $('.e-paper-strip').addClass('fixed');
         } else {

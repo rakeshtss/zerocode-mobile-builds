@@ -1,12 +1,20 @@
 
 document.addEventListener('deviceready', onDeviceReady, false);
-
+var admobid = {
+    banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
+    interstitial: 'ca-app-pub-4252617315602036/3370770117'
+};
+var interstitialReady = false;
 function onDeviceReady() {
     checkIsDevice();
     firebaseNotifications();
-    adMobProBannerConfig();
+
 
     document.addEventListener("backbutton", onBackKeyDown, false);
+    document.addEventListener('onAdLoaded', onAdLoaded);
+    document.addEventListener('onAdDismiss', onAdDismiss);
+    adMobProBannerConfig();
+    showInterstitialAds();
 
 }
 
@@ -52,37 +60,70 @@ function onBackKeyDown(e) {
 //         // alert('er');
 //     });
 // }
-function adMobProBannerConfig() {
-    var admobid = {};
 
-    admobid = {
-        banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-4252617315602036/3370770117'
-    };
-    
+
+
+function adMobProBannerConfig() {
+
+
     if (AdMob) AdMob.createBanner({
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true,
-        //isTesting: true,// works on emulator
-    }, function(){console.log("Success Ad");},
-    function(error){console.log("Error ad: "+error);});
+        isTesting: true,// works on emulator
+    }, function () { console.log("Success Ad"); },
+        function (error) { console.log("Error ad: " + error); });
 
 
-    if (AdMob) AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        autoShow: false,
-         isTesting: true,
-        //isTesting: true,// works on emulator
-    }, function(){console.log("Success Ad");},
-    function(error){console.log("Error ad: "+error);});
 
-    // if(AdMob){
+    //
+    //    if (AdMob) AdMob.prepareInterstitial({
+    //        adId: admobid.interstitial,
+    //        autoShow: false,
+    //         isTesting: true,
+    //        //isTesting: true,// works on emulator
+    //    }, function(){console.log("Success Ad");},
+    //    function(error){console.log("Error ad: "+error);});
+    //
+    // // window.AdMob.showInterstitial();
 
-    //     AdMob.prepareInterstitial( {adId:'ca-app-pub-4252617315602036/5779303425', autoShow:false} );
-    //     AdMob.showInterstitial();
-    // } 
 
+
+}
+
+
+function onAdLoaded(e) {
+    if (e.adType == 'interstitial') {
+        console.warn('ads loaded');
+        interstitialReady = true;
+        // AdMob.showInterstitial();
+    }
+}
+
+function onAdDismiss(e) {
+    if (e.adType == 'interstitial') {
+        interstitialReady = false;
+        showInterstitialAds();
+    }
+}
+
+
+function showInterstitialAds() {
+
+    if (interstitialReady) {
+        AdMob.showInterstitial();
+    } else {
+        AdMob.prepareInterstitial({
+            adId: admobid.interstitial,
+            autoShow: false,
+            isTesting: true
+        }, function () { console.warn("success ad: "); interstitialReady = true; },
+            function (error) { console.warn("Error ad: " + error); });
+
+    }
+}
+
+function showBanner() {
 
 
 }

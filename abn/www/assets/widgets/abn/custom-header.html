@@ -2,7 +2,7 @@
     <a class="sidebar-toggle" href="javascript:;" id="nav-toggle" mattooltip="Click to toggle Menu"
         mattooltipposition="right"><img alt="" src="assets/themes/abn/images/menu_bars.png"></a>
 
-        <a class="btn" *ngIf="zc.config.platform=='mobile'" style="font-size: 40px !important; margin-right: 60px;" routerLink="/t/{{zc.params.app}}/{{zc.params.module}}"><i  class="fa fa-angle-left"></i></a>
+        <a class="btn zc-backbtn" *ngIf="zc.config.platform=='mobile'" routerLink="/t/{{zc.params.app}}/{{zc.params.module}}"><i  class="fa fa-angle-left"></i></a>
     <div class="zc-edition-header-left">
         <a [routerLink]="['/']" class="zc-logo">
             <img src="assets/themes/abn/images/logo.png" alt="Logo" />

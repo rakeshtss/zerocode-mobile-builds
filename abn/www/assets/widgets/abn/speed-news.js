@@ -9,7 +9,7 @@ function stopAllVideos() {
         this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
     });
 }
-function speedNewsModalClose(){
+function speedNewsModalClose() {
     $('#newsModal .modal-header h5').empty();
     $('#newsModal .modal-body').empty();
     $('#newsModal .modal-body').empty();
@@ -34,18 +34,18 @@ var swiper = new Swiper('.swiper-container', {
     on: {
         slideChange: function () {
             console.log('swiper slideChange');
-            stopAllVideos();          
+            stopAllVideos();
         },
-        transitionEnd: function () {            
+        transitionEnd: function () {
             var currentIndex = swiper.realIndex;
             var totalSlides = swiper.slides.length;
             console.log('*** currentIndex', currentIndex);
             console.log('*** totalSlides', totalSlides);
-            if ((totalRecords >= totalSlides) && currentIndex > 0 && currentIndex == totalSlides - 2 ) {
+            if ((totalRecords >= totalSlides) && currentIndex > 0 && currentIndex == totalSlides - 2) {
                 page = (totalSlides / rows) + 1;
                 getSpeednewsListByCategory();
             }
-        }       
+        }
     },
 });
 var modalLoader = `<div class="spin-loader"><span class=""></span></div>`;
@@ -54,7 +54,7 @@ $(document).ready(function () {
         url: `${baseUrl}/api/speednews_category/list/`,
         type: "GET",
         dataType: "json",
-      //  headers: header,
+        //  headers: header,
         data: {},
         success: function (res) {
             var select = $("#speedNews");
@@ -142,13 +142,6 @@ function getSpeednewsListByCategory() {
                     <div class="swiper-lazy-preloader"></div>
                     <div class="swiper-lazy-loading"></div>
                     <h4>${o.title}</h4>`;
-                    if (o.description) {
-                        slide_data += `<p>${o.description}`;
-                        if (o.news_id) {
-                            slide_data += `<a href="javascript:;" class="read-full-news" onclick='showNewsModal(${JSON.stringify(o)})'>Read full news</a>`;
-                        }
-                        slide_data += `</p>`;
-                    }
                     if (o.speednews_type.uid == 'image') {
                         if (o.image[0]) {
                             slide_data += `<div class="speed-image">
@@ -200,6 +193,12 @@ function getSpeednewsListByCategory() {
                             <source src="${o.audio_video_url}" type="audio/ogg">
                         </audio>
                         </div>`;
+                    }
+                    if (o.description) {
+                        if (o.news_id) {
+                            slide_data += `<a href="javascript:;" class="read-full-news" onclick='showNewsModal(${JSON.stringify(o)})'>Read full news</a>`;
+                        }
+                        slide_data += `<p>${o.description}</p>`;
                     }
                     slide_data += `</div>`;
                     $('.swiper-wrapper').append(slide_data);
@@ -253,12 +252,12 @@ function getSpeednewsListByCategory() {
 $(window).scroll(function () {
     // alert('12');
     // debugger;
-    $('iframe').css({
-        'pointer-events': 'none'
-    });
-    $('audio').css({
-        'pointer-events': 'none'
-    });
+    // $('iframe').css({
+    //     'pointer-events': 'none'
+    // });
+    // $('audio').css({
+    //     'pointer-events': 'none'
+    // });
 })
 // $("iframe").on("swipe", function () {
 //     alert(123);

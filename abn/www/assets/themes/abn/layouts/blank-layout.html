@@ -1,8 +1,7 @@
-<zc-com-render  type="html" [options]="{ js:[{name:'google-ads',src:'https://securepubads.g.doubleclick.net/tag/js/gpt.js'}] }"></zc-com-render>
+<zc-com-render  type="html" [options]="{ template:' ',js:[{name:'google-ads',src:'https://securepubads.g.doubleclick.net/tag/js/gpt.js'}] }"></zc-com-render>
 <div class="blank-layout" [ngClass]="ly.pageTitle">
   <div class="blank-layout-content">
-    <router-outlet></router-outlet>
-    
+    <router-outlet></router-outlet>    
   </div>
   <footer *ngIf="zcGlobal.loadFooter">
       <!-- <div class="right-footer">
