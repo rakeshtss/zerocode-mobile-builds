@@ -41,8 +41,8 @@ var swiper = new Swiper('.swiper-container', {
             var totalSlides = swiper.slides.length;
             console.log('*** currentIndex', currentIndex);
             console.log('*** totalSlides', totalSlides);
-            if(currentIndex !== 0 && currentIndex % 4 == 0){
-                showInterstitialAds()
+            if(currentIndex !== 0 && currentIndex % 3 == 0){
+                showInterstitialAds();
             }
             if ((totalRecords >= totalSlides) && currentIndex > 0 && currentIndex == totalSlides - 2) {
                 page = (totalSlides / rows) + 1;

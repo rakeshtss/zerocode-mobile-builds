@@ -1030,7 +1030,7 @@
           "actions": [
             {
               "type": "script",
-              "script": "\nvar head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);if(window && window.googletag){ googletag.destroySlots();}"
+              "script": "\n showInterstitialAds();var head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);if(window && window.googletag){ googletag.destroySlots();}"
             },
             {
               "type": "script",

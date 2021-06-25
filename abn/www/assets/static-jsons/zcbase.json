@@ -641,7 +641,7 @@
             },
             {
               "type": "script",
-              "script": "var head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);\n\n\n\n if(window && window.googletag){ googletag.destroySlots(); }"
+              "script": " showInterstitialAds(); var head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);\n\n\n\n if(window && window.googletag){ googletag.destroySlots(); }"
             },
             {
               "type": "script",
