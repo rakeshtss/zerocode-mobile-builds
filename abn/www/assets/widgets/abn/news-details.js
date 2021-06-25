@@ -25,7 +25,7 @@ function getRelatedNews() {
       relatedNewsInfo(this);
     }
   };
-  xmlhttp.open("GET", "https://rss.andhrajyothy.com/znews/" + category.name + "?SupId=0&SubId=" + category.uid, true);
+  xmlhttp.open("GET", "https://rss.andhrajyothy.com/znews/" + category.name + "?SupId=" + ((zc.queryParams.type == 'districts') ? 1 : 0) + "&SubId=" + category.uid, true);
   xmlhttp.send();
 }
 function newsInfo(xml) {
@@ -33,12 +33,17 @@ function newsInfo(xml) {
   var x, i, xmlDoc;
   xmlDoc = xml.responseXML;
   x = xmlDoc.getElementsByTagName("item");
-  var title, description, image, date, time, duration, newsDiv;
+  var title, description, image, date, time, duration, newsDiv, titleMap = 'categoryTname', nameMap = 'categoryName', uidMap = 'categoryId';
+  if (zc.queryParams.type == 'districts') {
+    titleMap = 'districtTname';
+    nameMap = 'districtName';
+    uidMap = 'districtId';
+  }
   for (i = 0; i < x.length; i++) {
     if (i == 0) {
-      category.uid = x[i].getElementsByTagName("categoryId")[0].textContent;
-      category.name = x[i].getElementsByTagName("categoryName")[0].textContent;
-      category.title = x[i].getElementsByTagName("categoryTname")[0].textContent;
+      category.uid = x[i].getElementsByTagName(uidMap)[0].textContent;
+      category.name = x[i].getElementsByTagName(nameMap)[0].textContent;
+      category.title = x[i].getElementsByTagName(titleMap)[0].textContent;
       if (category.uid) {
         getRelatedNews();
       }
@@ -85,9 +90,13 @@ function relatedNewsInfo(xml) {
     // duration = moment(time, 'YYYY-MM-DD HH:mm').fromNow();
     time = new Date();
     duration = timeDifference(time, new Date(date));
-    relatedNewsDiv += `<li id='${uid}'>
-    <a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}')" 
-    class="short-news"><div class="news-img">`;
+    relatedNewsDiv += `<li id='${uid}'>`
+    if (zc.queryParams.type == 'districts') {
+      relatedNewsDiv += `<a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?districtId=${zc.queryParams.districtId}&categoryId=${zc.queryParams.categoryId}&type=districts')"`
+    } else {
+      relatedNewsDiv += `<a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?categoryId=${zc.queryParams.categoryId}')"`
+    }
+    relatedNewsDiv += `class="short-news"><div class="news-img">`;
     relatedNewsDiv += `<img src="${image}" alt="news-img">`;
     relatedNewsDiv += `</div><div class="news-content"><h3>${title}</h3></div></a>`;
     relatedNewsDiv += `<div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png" /></span><p class="news-time"> <span>${duration}</span></p></div>` +

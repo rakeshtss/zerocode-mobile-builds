@@ -102,11 +102,17 @@ function sectionNews() {
         secDiv += `<div class="news-section">
             <div class="news-section-content">
                 <h2>${cat.title}</h2>`
-        if (cat.uid == 43 || cat.uid == 44) {
-            secDiv += `<p onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews/${cat.uid}?type=districts')"><a>Districts</a>`
-        }
+        // if (cat.uid == 43 || cat.uid == 44) {
+        //      secDiv += `<p onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews/${cat.uid}?type=districts')"><a>Districts</a>`
+        // }
         secDiv += `<p><a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews/${cat.uid}')"> View all</a></p>
             </div>`;
+        if (cat.uid == 43 || cat.uid == 44) {
+            var districtsId = cat.name + "districts";
+            secDiv += `<div class="district-select"><div class="dist-name">జిల్లాలు</div><div class="dist-select"><select id="${districtsId}" name="${districtsId}"></select></div>
+                    </div>`
+            getDistricts(cat, districtsId);
+        }
         secDiv += `<ul class="shortnews-list">`;
         $(cat.news).each(function (ni, news) {
             newsDiv = `<li>`;
@@ -126,6 +132,39 @@ function sectionNews() {
         });
         secDiv += `</ul></div>`;
         $('.news-home-page').append(secDiv);
+    });
+}
+
+function getDistricts(cat, divId) {
+    // $('.loader-wrap').fadeIn();
+    var rssFeedUrl = 'https://rss.andhrajyothy.com/ZNews/districts?category=' + cat.name;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            districtsData(this, cat, divId);
+        }
+    };
+    xmlhttp.open("GET", rssFeedUrl, true);
+    xmlhttp.send();
+}
+function districtsData(xml, cat, divId) {
+    var data, i, xmlDoc, title, name, uid;
+    xmlDoc = xml.responseXML;
+    data = xmlDoc.getElementsByTagName("item");
+    var select = $("#" + divId);
+    select.children().remove();
+    select.append($("<option>").val(0).text('Select District'));
+    for (i = 0; i < data.length; i++) {
+        name = data[i].getElementsByTagName("districtName")[0].textContent;
+        uid = data[i].getElementsByTagName("districtId")[0].textContent;
+        title = data[i].getElementsByTagName("districtTname")[0].textContent;
+        select.append($("<option>").val(uid).text(title));
+    }
+    $("#" + divId).change(function () {
+        var selectedItem = $(this).find(':selected').val();
+        if (selectedItem) {
+            zc.actionService.navigateByUrl('/epaper/news/telugunews/' + selectedItem + '?categoryId=' + cat.uid + '&type=districts');
+        }
     });
 }
 

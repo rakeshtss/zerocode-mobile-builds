@@ -16,7 +16,7 @@ function getAllCategories() {
   var rssFeedUrl = 'https://rss.andhrajyothy.com/ZNews/category?catg=parentcategories';
   if (catType == 'districts') {
     var parentCategory = 'andhrapradesh';
-    if (zc.params.uid == 44) {
+    if (zc.queryParams.categoryId == 44) {
       parentCategory = 'telangana';
     }
     rssFeedUrl = 'https://rss.andhrajyothy.com/ZNews/districts?category=' + parentCategory;
@@ -31,18 +31,23 @@ function getAllCategories() {
   xmlhttp.send();
 }
 function categoriesData(xml) {
-  var data, i, xmlDoc, title, name, uid;
+  var data, i, xmlDoc, title, name, uid, titleMap = 'categoryTname', nameMap = 'categoryName', uidMap = 'categoryId';
   xmlDoc = xml.responseXML;
   data = xmlDoc.getElementsByTagName("item");
   var select = $("#categories");
   select.children().remove();
-  if (zc.params.uid && catType != 'districts') {
+  if (zc.params.uid) {
     selectedCategory = zc.params.uid;
   }
+  if (catType == 'districts') {
+    titleMap = 'districtTname';
+    nameMap = 'districtName';
+    uidMap = 'districtId';
+  }
   for (i = 0; i < data.length; i++) {
-    name = data[i].getElementsByTagName("categoryName")[0].textContent;
-    uid = data[i].getElementsByTagName("categoryId")[0].textContent;
-    title = data[i].getElementsByTagName("categoryTname")[0].textContent;
+    name = data[i].getElementsByTagName(nameMap)[0].textContent;
+    uid = data[i].getElementsByTagName(uidMap)[0].textContent;
+    title = data[i].getElementsByTagName(titleMap)[0].textContent;
     categories.push({ uid: uid, name: name, title: title });
     select.append($("<option>").val(uid).text(title));
     if (!selectedCategory && i == 0) {
@@ -67,8 +72,9 @@ function categoriesData(xml) {
 }
 function getRssFeeds() {
   var rssFeedUrl = "https://rss.andhrajyothy.com/znews/";
+  console.log('categories', categories);
   var categoryDetails = categories.filter((item) => { return item.uid == selectedCategory; });
-  if (categoryDetails) {
+  if (categoryDetails[0]) {
     $('#categoryTitle').html(categoryDetails[0].title);
     if (catType == 'districts') {
       rssFeedUrl += categoryDetails[0].name + '?SupId=1&SubId=' + categoryDetails[0].uid;
@@ -143,7 +149,11 @@ function feedData(xml) {
   var newsTitle;
   $('.shortnews-list li').click(function (e) {
     var newsId = $(this).attr('id');
-    zc.actionService.navigateByUrl('/epaper/news/telugunews-details/' + newsId + '?categoryId=' + selectedCategory + '&categoryType=' + catType);
+    if (catType == 'districts') {
+      zc.actionService.navigateByUrl('/epaper/news/telugunews-details/' + newsId + '?districtId=' + selectedCategory + '&categoryId=' + zc.queryParams.categoryId + '&type=' + catType);
+    } else {
+      zc.actionService.navigateByUrl('/epaper/news/telugunews-details/' + newsId + '?categoryId=' + selectedCategory + '&type=' + catType);
+    }
     return false;
   });
 }

@@ -23,6 +23,17 @@ var formatedDateSpan = $('#formatedDate');
 var categoryName = localStorage.getItem('categoryName');
 var editions = [];
 var availableDates = [];
+zc.zoomIn = () => {
+    console.log('zoomin event -->')
+    $('.zc-clip-right-block').hide();
+    $('.zc-google-ad').hide();
+    $(".pinch-zoom-content").draggable({
+        disabled: false
+    });
+    $(".pinch-zoom-content").css({
+        'cursor': 'all-scroll'
+    });
+}
 $(document).ready(function () {
     $('.edition-date-selector .dropdown-toggle').dropdown();
     if (document.getElementById('editionSelector')) {
@@ -369,17 +380,7 @@ $(document).ready(function () {
         })
     }
 
-    zc.zoomIn = () => {
-        console.log('zoomin event -->')
-        $('.zc-clip-right-block').hide();
-        $('.zc-google-ad').hide();
-        $(".pinch-zoom-content").draggable({
-            disabled: false
-        });
-        $(".pinch-zoom-content").css({
-            'cursor': 'all-scroll'
-        });
-    }
+
 
 })
 var lastWeek;

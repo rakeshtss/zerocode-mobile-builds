@@ -186,7 +186,7 @@ $(document).ready(function () {
                                         editionCategory = s.sub_sub_category.name;
                                         editionUrl = s.uid_actual + '/' + s.sub_sub_category.code + '/' + reverseDate + '?s=' + s.sub_category.code;
                                     }
-                                    let _editionListspanImage = `<a onclick="zc.actionService.navigateByUrl('${editionUrl}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${editionCategory}</p></a>`;
+                                    let _editionListspanImage = `<a onclick="zc.actionService.navigateByUrl('${editionUrl}')"><span><img zcImgLazy isWebp="true" src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${editionCategory}</p></a>`;
                                     _editionListLi.append(_editionListspanImage);
                                     editionList.append(_editionListLi);
                                 });
@@ -246,7 +246,7 @@ $(document).ready(function () {
                                                 editionCategory = s.sub_sub_category.name;
                                                 editionUrl = s.uid_actual + '/' + s.sub_sub_category.code + '/' + reverseDate + '?s=' + s.sub_category.code;
                                             }
-                                            let _editionListspanImage = `<a class="anc" onclick="zc.actionService.navigateByUrl('${editionUrl}')"><span><img src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${editionCategory}</p></a>`;
+                                            let _editionListspanImage = `<a class="anc" onclick="zc.actionService.navigateByUrl('${editionUrl}')"><span><img zcImgLazy isWebp="true" src="${zc.config.E_PAPER_S3_URL}${s.edition_info.basePath}${s.edition_info.thumbnailSmall}"></span><p>${editionCategory}</p></a>`;
                                             _editionListLi.append(_editionListspanImage);
                                             editionList.append(_editionListLi);
                                         });

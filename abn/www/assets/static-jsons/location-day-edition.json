@@ -109,7 +109,7 @@
                     "id": "block_859",
                     "pbId": "block_7195",
                     "inlineStyle": {},
-                    "customClass": "zc-google-ad",
+                    "customClass": "zc-google-ad-edition",
                     "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
                   },
                   "info": {
@@ -1078,11 +1078,10 @@
       "api/user_clip/SAVE-UPDATE/for-mail",
       "api/edition/SELECT/publish"
     ],
-    "cacheKey": "zcbase:account:location-day-edition",
-    "zc-ttl": 1622699772538
+    "cacheKey": "zcbase:account:location-day-edition"
   },
   "success": true,
-  "zcServerDateTime": "2021-06-03 11:28:41",
-  "zcServerIp": "ip-10-1-4-191/10.1.4.191",
-  "zcServerHost": "ip-10-1-4-191"
+  "zcServerDateTime": "2021-06-23 14:38:05",
+  "zcServerIp": "ip-10-1-3-233/10.1.3.233",
+  "zcServerHost": "ip-10-1-3-233"
 }

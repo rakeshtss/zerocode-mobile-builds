@@ -3507,6 +3507,7 @@ form label.ui-placeholder {
 .zc-edition-left-tabs .edition-tab-card .tab-card-img img {
     width: 100%;
     cursor: pointer;
+    min-height: 250px;
 }
 
 .zc-edition-left-tabs .mat-tab-label {
@@ -4786,6 +4787,7 @@ body .zc-edition-header .ui-datepicker table td>a {
 .zc-news-header .zc-news-logo {
     height: 50px;
     display: block;
+    margin-left: 45px;
 }
 
 .zc-news-header .zc-news-logo img {
@@ -6407,14 +6409,14 @@ zc-form zc-date-range i {
     background-color: #891716;
     padding: 0 !important;
     color: #fff !important;
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
     border-radius: 50% !important;
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 26px !important;
+    font-size: 22px !important;
 }
 .btn.zc-backbtn{
     background-color: #891716;
@@ -6431,7 +6433,30 @@ zc-form zc-date-range i {
     font-size: 26px !important;
 }
 /* home-slider widget style end here */
-
+.district-select{
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-end;
+    /* background-color: #d1ddf4; */
+    margin: 5px 10px 0px;
+    color: #fff;
+    border-radius: 4px;
+}
+.dist-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #386fc3;
+    font-family: 'Ramabhadra', sans-serif;
+    font-size: 20px;
+    line-height: 18px;
+    padding: 3px 10px 7px;
+}
+.dist-select{
+    padding: 0px 5px 0 2px;
+    background-color: #e5f4fd;
+    border-radius: 20px;
+}
 @media(min-width: 1024px) {
     .zc-main-menu {
         display: flex;
@@ -6608,7 +6633,7 @@ zc-form zc-date-range i {
         background-color: #fff;
         padding: 0 10px;
         height: 65px;
-        justify-content: center;
+        /* justify-content: center; */
         border-bottom: 1px solid #d0e1eb;
     }
     .zc-edition-header .zc-edition-header-right .email-link,
@@ -7308,13 +7333,13 @@ zc-form zc-date-range i {
         padding-right: 5px;
     }
     /*epaper strip start start*/
-    .zc-google-ad {
+    .zc-google-ad, .zc-google-ad-edition {
         /* display: none !important; */
         padding: 0px !important;
     }
     .maincoldiv,
     #div-gpt-ad-1609324985902-1>div,
-    .zc-google-ad iframe {
+    .zc-google-ad iframe, .zc-google-ad-edition iframe {
         width: 100% !important;
     }
     /*XML news styles start*/

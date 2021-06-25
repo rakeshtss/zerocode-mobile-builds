@@ -1,7 +1,7 @@
 <header class="zc-news-header zc-edition-header">
     <a *ngIf="zc.params.page != 'telugunews-details'" class="sidebar-toggle" href="javascript:;" id="nav-toggle" mattooltip="Click to toggle Menu"
         mattooltipposition="right"><img alt="" src="assets/themes/abn/images/menu_bars.png"></a>
-    <a class="btn zc-mobile-back" *ngIf="zc.params.page == 'telugunews-details'"  routerLink="{{ (zc.queryParams.categoryId) ? '/epaper/news/telugunews/'+zc.queryParams.categoryId : '/epaper/news/news-home' }}"><i  class="fa fa-angle-left"></i></a>
+    <a class="btn zc-mobile-back" *ngIf="zc.params.page == 'telugunews-details'" onclick="navigatePrevious()"><i  class="fa fa-angle-left"></i></a>
 
     <a [routerLink]="['/']" class="zc-news-logo">
         <img src="assets/themes/abn/images/logo.png" alt="logo">
