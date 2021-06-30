@@ -2,9 +2,10 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
-    interstitial: 'ca-app-pub-4252617315602036/3370770117'
+    interstitial: 'ca-app-pub-4252617315602036/4169831606'
 };
 var interstitialReady = false;
+var isTesting = false;
 function onDeviceReady() {
     checkIsDevice();
     firebaseNotifications();
@@ -70,7 +71,7 @@ function adMobProBannerConfig() {
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true,
-        isTesting: true,// works on emulator
+        isTesting: isTesting,// works on emulator
     }, function () { console.log("Success Ad"); },
         function (error) { console.log("Error ad: " + error); });
 
@@ -116,7 +117,7 @@ function showInterstitialAds() {
         AdMob.prepareInterstitial({
             adId: admobid.interstitial,
             autoShow: false,
-            isTesting: true
+            isTesting: isTesting
         }, function () { console.warn("success ad: "); interstitialReady = true; },
             function (error) { console.warn("Error ad: " + error); });
 
