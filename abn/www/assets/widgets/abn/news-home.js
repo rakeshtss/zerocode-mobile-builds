@@ -11,9 +11,10 @@ if (window.jQuery) {
     $(document).ready(function () {
         getAllCategories();
         getNews();
+        getDistricts({ name: 'AndhraPradesh', uid: 43, default: 'ఆంధ్రప్రదేశ్' }, 'apDistricts');
+        getDistricts({ name: 'Telangana', uid: 44, default: 'తెలంగాణ' }, 'tsDistricts');
     })
 }
-
 function getAllCategories() {
     $('.loader-wrap').fadeIn();
     var rssFeedUrl = 'https://rss.andhrajyothy.com/ZNews/category?catg=parentcategories';
@@ -26,7 +27,6 @@ function getAllCategories() {
     xmlhttp.open("GET", rssFeedUrl, true);
     xmlhttp.send();
 }
-
 function categoriesData(xml) {
     var data, i, xmlDoc, title, name, uid;
     xmlDoc = xml.responseXML;
@@ -47,7 +47,6 @@ function categoriesData(xml) {
         }
     });
 }
-
 function getNews() {
     $('.loader-wrap').fadeIn();
     var rssFeedUrl = 'https://rss.andhrajyothy.com/ZNews/Home%20Page%20News?SupId=0&SubId=0';
@@ -60,7 +59,6 @@ function getNews() {
     xmlhttp.open("GET", rssFeedUrl, true);
     xmlhttp.send();
 }
-
 function newsData(xml) {
     var data, i, xmlDoc, category, news, articles;
     xmlDoc = xml.responseXML;
@@ -93,7 +91,6 @@ function newsData(xml) {
     }
     sectionNews();
 }
-
 function sectionNews() {
     var secDiv = '';
     var newsDiv = '';
@@ -107,12 +104,12 @@ function sectionNews() {
         // }
         secDiv += `<p><a onclick="showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews/${cat.uid}')"> View all</a></p>
             </div>`;
-        if (cat.uid == 43 || cat.uid == 44) {
-            var districtsId = cat.name + "districts";
-            secDiv += `<div class="district-select"><div class="dist-name">జిల్లాలు</div><div class="dist-select"><select id="${districtsId}" name="${districtsId}"></select></div>
-                    </div>`
-            getDistricts(cat, districtsId);
-        }
+        // if (cat.uid == 43 || cat.uid == 44) {
+        //     var districtsId = cat.name + "districts";
+        //     secDiv += `<div class="district-select"><div class="dist-name">జిల్లాలు</div><div class="dist-select"><select id="${districtsId}" name="${districtsId}"></select></div>
+        //             </div>`
+        //     getDistricts(cat, districtsId);
+        // }
         secDiv += `<ul class="shortnews-list">`;
         $(cat.news).each(function (ni, news) {
             newsDiv = `<li>`;
@@ -134,7 +131,6 @@ function sectionNews() {
         $('.news-home-page').append(secDiv);
     });
 }
-
 function getDistricts(cat, divId) {
     // $('.loader-wrap').fadeIn();
     var rssFeedUrl = 'https://rss.andhrajyothy.com/ZNews/districts?category=' + cat.name;
@@ -153,7 +149,7 @@ function districtsData(xml, cat, divId) {
     data = xmlDoc.getElementsByTagName("item");
     var select = $("#" + divId);
     select.children().remove();
-    select.append($("<option>").val(0).text('Select District'));
+    select.append($("<option>").val(0).text(cat.default));
     for (i = 0; i < data.length; i++) {
         name = data[i].getElementsByTagName("districtName")[0].textContent;
         uid = data[i].getElementsByTagName("districtId")[0].textContent;
@@ -167,7 +163,6 @@ function districtsData(xml, cat, divId) {
         }
     });
 }
-
 function sliderNews(cat) {
     $('.epaper-slider').empty('');
     var newsDiv = '';

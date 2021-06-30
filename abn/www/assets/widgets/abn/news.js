@@ -55,7 +55,6 @@ function categoriesData(xml) {
     }
   }
   $('#categories option[value="' + selectedCategory + '"]').attr("selected", "selected");
-
   getRssFeeds();
   $("#categories").change(function () {
     selectedCategory = $(this).find(':selected').val();
@@ -126,9 +125,9 @@ function feedData(xml) {
     var current = new Date();
     var timeDuration = timeDifference(current, new Date(feedPubDate));
     if (i == 0) {
-      news_li_data = `<li id="${feedUid}" class="chitrajoythi-newscard">`;
+      news_li_data = `<li id="${feedUid}" class="chitrajoythi-newscard news-details-li">`;
     } else {
-      news_li_data += `<li id="${feedUid}">`;
+      news_li_data += `<li id="${feedUid}" class="news-details-li">`;
     }
     news_li_data += '<a href="javascript:;" class="short-news">' +
       '<div class="news-img">';
@@ -139,15 +138,26 @@ function feedData(xml) {
     // if (feedShortDescription) {
     //   news_li_data += '<p class="news-description">' + feedShortDescription + '</p>' + '</div>' + '</a>';
     // }
-    news_li_data += '<div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png" /></span><p class="news-time"> <span>' + timeDuration + '</span></p></div>' +
-      '</li>'
+    news_li_data += '<div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png" /></span><p class="news-time"> <span>' + timeDuration + '</span></p></div>';
+    news_li_data += '</li>';
+    if (i == 0 && (zc.params.uid == 43 || zc.params.uid == 44) && catType != 'districts') {
+      news_li_data += '<li class="dist-li-select">';
+      news_li_data += `<div class="district-select ml-0 mr-0"><div class="dist-name">జిల్లాలు</div><div class="dist-select"><select id="districts" name="districts"></select></div>
+                   </div>`;
+      if (zc.params.uid == 43) {
+        getDistricts({ name: 'AndhraPradesh', uid: 43, default: 'Select' }, 'districts');
+      } else {
+        getDistricts({ name: 'Telangana', uid: 44, default: 'Select' }, 'districts');
+      }
+      news_li_data += '</li>';
+    }
   }
   $(".shortnews-list").html(news_li_data);
   $('.zc-news-description').hide();
   $('.zc-recent-stories').hide();
   $('.loader-wrap').fadeOut("slow");
   var newsTitle;
-  $('.shortnews-list li').click(function (e) {
+  $('.shortnews-list li.news-details-li').click(function (e) {
     var newsId = $(this).attr('id');
     if (catType == 'districts') {
       zc.actionService.navigateByUrl('/epaper/news/telugunews-details/' + newsId + '?districtId=' + selectedCategory + '&categoryId=' + zc.queryParams.categoryId + '&type=' + catType);
@@ -155,6 +165,39 @@ function feedData(xml) {
       zc.actionService.navigateByUrl('/epaper/news/telugunews-details/' + newsId + '?categoryId=' + selectedCategory + '&type=' + catType);
     }
     return false;
+  });
+}
+
+function getDistricts(cat, divId) {
+  // $('.loader-wrap').fadeIn();
+  var rssFeedUrl = 'https://rss.andhrajyothy.com/ZNews/districts?category=' + cat.name;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      districtsData(this, cat, divId);
+    }
+  };
+  xmlhttp.open("GET", rssFeedUrl, true);
+  xmlhttp.send();
+}
+function districtsData(xml, cat, divId) {
+  var data, i, xmlDoc, title, name, uid;
+  xmlDoc = xml.responseXML;
+  data = xmlDoc.getElementsByTagName("item");
+  var select = $("#" + divId);
+  select.children().remove();
+  select.append($("<option>").val(0).text(cat.default));
+  for (i = 0; i < data.length; i++) {
+    name = data[i].getElementsByTagName("districtName")[0].textContent;
+    uid = data[i].getElementsByTagName("districtId")[0].textContent;
+    title = data[i].getElementsByTagName("districtTname")[0].textContent;
+    select.append($("<option>").val(uid).text(title));
+  }
+  $("#" + divId).change(function () {
+    var selectedItem = $(this).find(':selected').val();
+    if (selectedItem) {
+      zc.actionService.navigateByUrl('/epaper/news/telugunews/' + selectedItem + '?categoryId=' + cat.uid + '&type=districts');
+    }
   });
 }
 

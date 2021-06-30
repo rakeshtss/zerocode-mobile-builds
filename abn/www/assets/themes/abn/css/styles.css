@@ -3507,6 +3507,8 @@ form label.ui-placeholder {
 .zc-edition-left-tabs .edition-tab-card .tab-card-img img {
     width: 100%;
     cursor: pointer;
+}
+.zc-edition-left-tabs .edition-tab-card.pages-tab-mobile .tab-card-img img {
     min-height: 250px;
 }
 
@@ -6456,6 +6458,32 @@ zc-form zc-date-range i {
     padding: 0px 5px 0 2px;
     background-color: #e5f4fd;
     border-radius: 20px;
+}
+.news-dist-list{
+    padding: 0 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.news-dist-list .dist-name{
+    display: block;
+    margin-bottom: 6px;
+    padding: 0;
+    margin-right: 3px;
+}
+.news-dist-list span.dist-slct{
+    background-color: #e5f4fd;
+    border-radius: 20px;
+    padding: 0px 5px 0px 1px;
+    margin: 0 2px;
+}
+.shortnews-list li.dist-li-select {
+    padding: 0 !important;
+    border-bottom: none !important;
+}
+.news-dist-list select{
+    max-width: 120px;
 }
 @media(min-width: 1024px) {
     .zc-main-menu {

@@ -183,6 +183,54 @@ app-page {
 zc-social-login .row {
   text-align: center;
 }
+.zc-login-right input::-webkit-outer-spin-button,
+.zc-login-right input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.zc-login-right input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.zc-login-right .zc-verify-number {
+  margin: 0 auto 20px;
+}
+.zc-login-right .user-number-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+  background-color: #fff;
+  padding: 5px 50px;
+}
+.zc-login-right .user-number-strip .icon-cell {
+  font-size: 25px;
+}
+.zc-login-right .zc-verify-number h6 {
+  color: #000;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: normal;
+  width: max-content;
+  padding-right: 16px;
+  position: relative;
+}
+.zc-login-right .zc-verify-number h5 {
+  margin: 0;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+}
+.zc-login-right .user-number-strip div.close-div {
+  line-height: 1;
+}
+.zc-login-right .zc-verify-number .icon-close {
+  color: #000;
+}
+.zc-login-right .zc-login-btn-user {
+  padding: 20px 0 10px 0;
+}
 
 .back-groud-image {
   background-image: url("../images/login-bg.jpg");
@@ -6147,6 +6195,31 @@ body .ui-accordion .ui-accordion-content {
 
 /*DEMO Pages styles ends here*/
 
+/*super 100 student payment update form styles start here*/
+.zc-payment-status-block zc-form h3 {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 15px;
+  text-align: center;
+}
+.zc-payment-status-block zc-form {
+  padding: 0;
+  border: none;
+}
+.zc-payment-status-block form {
+  padding: 0 15px;
+}
+.zc-payment-status-block {
+  border: 1px solid #ccc;
+  padding: 0;
+  margin: 0 20px;
+  border-radius: 3px;
+}
+.zc-payment-status-page{
+  height: 100vh;
+  display: flex !important;
+  align-items: center;
+}
+/*super 100 student payment update form styles end here*/
 @media (max-width: 1440px) {
   .ui-table-thead tr th {
     font-size: 14px;
