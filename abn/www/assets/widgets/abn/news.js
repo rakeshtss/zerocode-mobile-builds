@@ -158,6 +158,7 @@ function feedData(xml) {
   $('.loader-wrap').fadeOut("slow");
   var newsTitle;
   $('.shortnews-list li.news-details-li').click(function (e) {
+     showInterstitialAds();
     var newsId = $(this).attr('id');
     if (catType == 'districts') {
       zc.actionService.navigateByUrl('/epaper/news/telugunews-details/' + newsId + '?districtId=' + selectedCategory + '&categoryId=' + zc.queryParams.categoryId + '&type=' + catType);

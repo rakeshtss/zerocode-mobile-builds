@@ -1,129 +1,56 @@
 {
   "project_info": {
-    "project_number": "125034094364",
-    "firebase_url": "https://zero-code-v3.firebaseio.com",
-    "project_id": "zero-code-v3",
-    "storage_bucket": "zero-code-v3.appspot.com"
+    "project_number": "264407310063",
+    "project_id": "abn-andhrajyothy-ebeta",
+    "storage_bucket": "abn-andhrajyothy-ebeta.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:71a9c854a9a7c45a4a24d9",
+        "mobilesdk_app_id": "1:264407310063:android:6be2024a6f63d76b5c451a",
         "android_client_info": {
-          "package_name": "com.abn.zerocode"
+          "package_name": "com.abn.jyothy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:56d74154b845a4f34a24d9",
-        "android_client_info": {
-          "package_name": "com.efc.zerocode"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "125034094364-tdg4s27tbmrrb6nmh8p9u50o4guv21rt.apps.googleusercontent.com",
+          "client_id": "264407310063-k3ohbmbs6oolsa90f3b4q9ea584nsij5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.efc.zerocode",
-            "certificate_hash": "34ead96f8e5e533dbc1d61e7027e5a092ac4f3bc"
+            "package_name": "com.abn.jyothy",
+            "certificate_hash": "d018226cd11b0cf85070050db11c8c47f2b19184"
           }
         },
         {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:2f1edadad5f27d334a24d9",
-        "android_client_info": {
-          "package_name": "com.fa.zerocode"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "125034094364-8un7gongd6rfps5gp6bsplnhmaaat8ds.apps.googleusercontent.com",
+          "client_id": "264407310063-v3mhua071rj39ovk0t59vmcv3eu57jto.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.fa.zerocode",
-            "certificate_hash": "34ead96f8e5e533dbc1d61e7027e5a092ac4f3bc"
+            "package_name": "com.abn.jyothy",
+            "certificate_hash": "d657c86d738bbf656588ded7f2e90ead6efb4d02"
           }
         },
         {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
+          "client_id": "264407310063-s97cdun6u1ocq76h945ia2khf887j5ov.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
+          "current_key": "AIzaSyCMlwm_x3VgdMLaTdknm_EPNY2ewETBpY4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
+              "client_id": "264407310063-s97cdun6u1ocq76h945ia2khf887j5ov.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
+              "client_id": "264407310063-63s5kvvgi2vc7iodqsldfe90ksl5rcqr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
+                "bundle_id": "com.abnebeta.zerocode"
               }
             }
           ]
@@ -132,246 +59,50 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:9cbdac94bcd8a3854a24d9",
+        "mobilesdk_app_id": "1:264407310063:android:41dfd6c787396efd5c451a",
         "android_client_info": {
-          "package_name": "com.morefresh.zerocode"
+          "package_name": "com.abnebeta.zerocode"
         }
       },
       "oauth_client": [
         {
-          "client_id": "125034094364-771mbvkf50oqem2d5kaa9bai54iifsjk.apps.googleusercontent.com",
+          "client_id": "264407310063-9cn3u8ljal28ugg4vkk1rj3l5vnlrift.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.morefresh.zerocode",
-            "certificate_hash": "34ead96f8e5e533dbc1d61e7027e5a092ac4f3bc"
+            "package_name": "com.abnebeta.zerocode",
+            "certificate_hash": "d657c86d738bbf656588ded7f2e90ead6efb4d02"
           }
         },
         {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:8891cae047d2f0094a24d9",
-        "android_client_info": {
-          "package_name": "com.ocoa.zerocode"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "125034094364-1j0ht4aeo2u6jb6kdia1og40ui4ck081.apps.googleusercontent.com",
+          "client_id": "264407310063-hd0mukjt5ghs0sb0kq12ofvujvdr2spn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ocoa.zerocode",
-            "certificate_hash": "34ead96f8e5e533dbc1d61e7027e5a092ac4f3bc"
+            "package_name": "com.abnebeta.zerocode",
+            "certificate_hash": "d018226cd11b0cf85070050db11c8c47f2b19184"
           }
         },
         {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
+          "client_id": "264407310063-s97cdun6u1ocq76h945ia2khf887j5ov.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
+          "current_key": "AIzaSyCMlwm_x3VgdMLaTdknm_EPNY2ewETBpY4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
+              "client_id": "264407310063-s97cdun6u1ocq76h945ia2khf887j5ov.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
+              "client_id": "264407310063-63s5kvvgi2vc7iodqsldfe90ksl5rcqr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:c0effb3419c4743e4a24d9",
-        "android_client_info": {
-          "package_name": "com.zc.test"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:85afae3ec95ac7f04a24d9",
-        "android_client_info": {
-          "package_name": "fc.tuda.admin.org"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:ddc8d538163ab1124a24d9",
-        "android_client_info": {
-          "package_name": "tuda.admin.org"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "125034094364-b0d2nb7v7sm7mdra7gba58nn0af54llj.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "tuda.admin.org",
-            "certificate_hash": "70d7618f5efb1293ac03238d5d8c50b154679a6e"
-          }
-        },
-        {
-          "client_id": "125034094364-ra966jpb71a4iqio479pssbc3egh2d1p.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "tuda.admin.org",
-            "certificate_hash": "a773d2658ce691fb766cbaf8c4f1db78f0ab847d"
-          }
-        },
-        {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:125034094364:android:f30fc29470d7e8d54a24d9",
-        "android_client_info": {
-          "package_name": "tuda.zeroco.de"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCItN1y1u0AyOjdiZfhuRtlU3CJbAAWUwI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "125034094364-red58tcs85a5hn25iphhj1ieamip5lmv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "125034094364-f6bruhr5o0rgmoisvist58daop8iu8ql.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.morefresh.zerocode"
+                "bundle_id": "com.abnebeta.zerocode"
               }
             }
           ]

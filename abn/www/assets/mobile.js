@@ -2,10 +2,13 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
-    interstitial: 'ca-app-pub-4252617315602036/4169831606'
+    interstitial: 'ca-app-pub-4252617315602036/3370770117'
 };
+var interstitialAds = ['ca-app-pub-4252617315602036/3370770117', 'ca-app-pub-4252617315602036/3495231501'];
 var interstitialReady = false;
 var isTesting = false;
+var showTimeAds = true;
+
 function onDeviceReady() {
     checkIsDevice();
     firebaseNotifications();
@@ -14,9 +17,8 @@ function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener('onAdLoaded', onAdLoaded);
     document.addEventListener('onAdDismiss', onAdDismiss);
-    adMobProBannerConfig();
+    adMobProBannerConfig(); 
     showInterstitialAds();
-
 }
 
 function checkIsDevice() {
@@ -31,38 +33,7 @@ function checkIsDevice() {
 
 function onBackKeyDown(e) {
     e.preventDefault();
-    // alert('Back Button is Pressed!');
 }
-
-// function adMobBannerConfig() {
-//     admob.interstitial.config({
-//         id: 'ca-app-pub-4252617315602036/5779303425',
-//         autoShow: false
-//     });
-
-//     admob.interstitial.prepare().then(() => {
-//         // alert('interstitial ok');
-//     }).catch(e => {
-//         console.warn('interstitial err', e);
-//         // alert('er');
-//     });
-//     admob.interstitial.show()
-
-//     // Show the banner
-//     admob.banner.show({
-//         id: 'ca-app-pub-4252617315602036/2851895361',
-//         autoShow: true,
-//         isTesting: false
-//     });
-//     admob.banner.prepare().then(() => {
-//         // alert('ok');
-//     }).catch(e => {
-//         console.warn('add error', e);
-//         // alert('er');
-//     });
-// }
-
-
 
 function adMobProBannerConfig() {
 
@@ -104,18 +75,22 @@ function onAdLoaded(e) {
 function onAdDismiss(e) {
     if (e.adType == 'interstitial') {
         interstitialReady = false;
+        showTimeAds = false;
+        setTimeout(function () { showTimeAds = true; }, 10000);
         showInterstitialAds();
     }
 }
-
-
 function showInterstitialAds() {
 
     if (interstitialReady) {
-        AdMob.showInterstitial();
+        if (showTimeAds) {
+            AdMob.showInterstitial();
+        }
     } else {
+
+        var interstitial = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
         AdMob.prepareInterstitial({
-            adId: admobid.interstitial,
+            adId: interstitial,
             autoShow: false,
             isTesting: isTesting
         }, function () { console.warn("success ad: "); interstitialReady = true; },
@@ -142,58 +117,3 @@ function firebaseNotifications() {
 
     });
 }
-
-
-// document.addEventListener("deviceready", function () {
-
-
-
-
-//     // admob.config();
-//     // admob.setOptions({
-//     //     publisherId: 'ca-app-pub-4252617315602036~3472354702',
-//     // });
-
-//     admob.interstitial.config({
-//         id: 'ca-app-pub-4252617315602036/5779303425',
-//         autoShow: false
-//     });
-
-//     admob.interstitial.prepare().then(() => {
-//         // alert('interstitial ok');
-//     }).catch(e => {
-//         console.warn('interstitial err', e);
-//         // alert('er');
-//     });
-//     admob.interstitial.show()
-
-//     // Show the banner
-//     admob.banner.show({
-//         id: 'ca-app-pub-4252617315602036/2851895361',
-//         autoShow: true,
-//         isTesting: false
-//     });
-//     admob.banner.prepare().then(() => {
-//         // alert('ok');
-//     }).catch(e => {
-//         console.warn('add error', e);
-//         // alert('er');
-//     });
-//     // window['FirebasePlugin'].subscribe("/topics/all", function() {
-//     //     console.warn("Subscribed to topic");
-//     // }, function(error) {
-//     //     console.error("Error subscribing to topic: " + error);
-//     // }); 
-//     window['FirebasePlugin'].grantPermission(function (hasPermission) {
-//         // alert('has permission;'+hasPermission);
-//         if (hasPermission) {
-//             window['FirebasePlugin'].subscribe("/topics/all", function () {
-//                 console.warn("Subscribed to topic");
-//             }, function (error) {
-//                 console.error("Error subscribing to topic: " + error);
-//             });
-//         }
-
-//     });
-
-// }, false);

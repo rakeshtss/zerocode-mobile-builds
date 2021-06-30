@@ -92,9 +92,9 @@ function relatedNewsInfo(xml) {
     duration = timeDifference(time, new Date(date));
     relatedNewsDiv += `<li id='${uid}'>`
     if (zc.queryParams.type == 'districts') {
-      relatedNewsDiv += `<a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?districtId=${zc.queryParams.districtId}&categoryId=${zc.queryParams.categoryId}&type=districts')"`
+      relatedNewsDiv += `<a onclick=" showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?districtId=${zc.queryParams.districtId}&categoryId=${zc.queryParams.categoryId}&type=districts')"`
     } else {
-      relatedNewsDiv += `<a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?categoryId=${zc.queryParams.categoryId}')"`
+      relatedNewsDiv += `<a onclick=" showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?categoryId=${zc.queryParams.categoryId}')"`
     }
     relatedNewsDiv += `class="short-news"><div class="news-img">`;
     relatedNewsDiv += `<img src="${image}" alt="news-img">`;
