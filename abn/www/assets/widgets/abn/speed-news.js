@@ -28,12 +28,14 @@ var swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'vertical',
     mousewheel: true,
-    // speed: 700,
     autoHeight: true,
-    lazy: true,
+    loop: true,
     on: {
         slideChange: function () {
             console.log('swiper slideChange');
+                    $('html, body').animate({
+                        scrollTop: $(".zc-speed-news-block").offset().top - 0
+                    }, 1000);
             stopAllVideos();
         },
         transitionEnd: function () {
@@ -41,7 +43,7 @@ var swiper = new Swiper('.swiper-container', {
             var totalSlides = swiper.slides.length;
             console.log('*** currentIndex', currentIndex);
             console.log('*** totalSlides', totalSlides);
-            if(currentIndex !== 0 && currentIndex % 3 == 0){
+            if(currentIndex !== 0 && currentIndex % 5 == 0){
                 showInterstitialAds();
             }
             if ((totalRecords >= totalSlides) && currentIndex > 0 && currentIndex == totalSlides - 2) {
@@ -359,7 +361,7 @@ function feedData(xml) {
             let innerDiv = "";
 
             $('#newsModal .modal-header h5').text(feedTitle);
-            innerDiv += `<div class="swiper-slider" id='${newsInfo.uid}'>`;
+            innerDiv += `<div class="swiper-slider3" id='${newsInfo.uid}'>`;
             if (feedImage) {
                 innerDiv += `<div class="speed-image">
                             <img src="${feedImage}">

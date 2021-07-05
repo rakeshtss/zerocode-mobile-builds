@@ -30,9 +30,51 @@ function checkIsDevice() {
         }
     });
 }
-
+var lastTimeBackPress=0;
+var timePeriodToExit=2000;
 function onBackKeyDown(e) {
-    e.preventDefault();
+    if(new Date().getTime() - lastTimeBackPress < timePeriodToExit || window.location.href.match('/epaper/news/speed-news')){
+         navigator.notification.confirm(
+                   'Are you sure want to exit the app?',
+                   onConfirmQuit,
+                   'AndhraJyothy',
+                   'OK,Cancel'
+            );
+    }else{
+      lastTimeBackPress=new Date().getTime();
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        //alert(' s'+window.location);
+          if (window.location.href.match('/t/')) {
+                 // IOS DEVICE
+                zc.actionService.navigateByUrl('/zcbase/account/home');
+          }else if(window.location.href.match('epaper/news/telugunews-details/') || window.location.href.match('epaper/news/telugunews')) {
+                      zc.actionService.navigateByUrl('/epaper/news/news-home');
+          }else if(window.location.href.match('#page')){
+
+           zc.actionService.navigateByUrl('/t/'+zc.params.app+'/'+zc.params.module);
+          } else {
+                    // EVERY OTHER DEVICE
+                   zc.actionService.navigateByUrl('/epaper/news/speed-news');
+           }
+//        if (window.location.href.match('/epaper/news/speed-news')) {
+//            // IOS DEVICE
+//            history.go(-1);
+//        } else if (userAgent.match(/Android/i)) {
+//            // ANDROID DEVICE
+//            navigator.app.backHistory();
+//        } else {
+//            // EVERY OTHER DEVICE
+//            history.go(-1);
+//            history.back();
+//        }
+    }
+   // e.preventDefault();
+
+}
+function onConfirmQuit(button){
+   if(button == "1"){
+     navigator.app.exitApp();
+   }
 }
 
 function adMobProBannerConfig() {
