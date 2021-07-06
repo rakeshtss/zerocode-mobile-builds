@@ -17,7 +17,7 @@ function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener('onAdLoaded', onAdLoaded);
     document.addEventListener('onAdDismiss', onAdDismiss);
-    adMobProBannerConfig(); 
+    adMobProBannerConfig();
     showInterstitialAds();
 }
 
@@ -30,51 +30,51 @@ function checkIsDevice() {
         }
     });
 }
-var lastTimeBackPress=0;
-var timePeriodToExit=2000;
+var lastTimeBackPress = 0;
+var timePeriodToExit = 2000;
 function onBackKeyDown(e) {
-    if(new Date().getTime() - lastTimeBackPress < timePeriodToExit || window.location.href.match('/epaper/news/speed-news')){
-         navigator.notification.confirm(
-                   'Are you sure want to exit the app?',
-                   onConfirmQuit,
-                   'AndhraJyothy',
-                   'OK,Cancel'
-            );
-    }else{
-      lastTimeBackPress=new Date().getTime();
+    if (new Date().getTime() - lastTimeBackPress < timePeriodToExit || window.location.href.match('/epaper/news/speed-news')) {
+        navigator.notification.confirm(
+            'Are you sure want to exit the app?',
+            onConfirmQuit,
+            'AndhraJyothy',
+            'OK,Cancel'
+        );
+    } else {
+        lastTimeBackPress = new Date().getTime();
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
         //alert(' s'+window.location);
-          if (window.location.href.match('/t/')) {
-                 // IOS DEVICE
-                zc.actionService.navigateByUrl('/zcbase/account/home');
-          }else if(window.location.href.match('epaper/news/telugunews-details/') || window.location.href.match('epaper/news/telugunews')) {
-                      zc.actionService.navigateByUrl('/epaper/news/news-home');
-          }else if(window.location.href.match('#page')){
+        if (window.location.href.match('/t/')) {
+            // IOS DEVICE
+            zc.actionService.navigateByUrl('/zcbase/account/home');
+        } else if (window.location.href.match('epaper/news/telugunews-details/') || window.location.href.match('epaper/news/telugunews')) {
+            zc.actionService.navigateByUrl('/epaper/news/news-home');
+        } else if (window.location.href.match('#page')) {
 
-           zc.actionService.navigateByUrl('/t/'+zc.params.app+'/'+zc.params.module);
-          } else {
-                    // EVERY OTHER DEVICE
-                   zc.actionService.navigateByUrl('/epaper/news/speed-news');
-           }
-//        if (window.location.href.match('/epaper/news/speed-news')) {
-//            // IOS DEVICE
-//            history.go(-1);
-//        } else if (userAgent.match(/Android/i)) {
-//            // ANDROID DEVICE
-//            navigator.app.backHistory();
-//        } else {
-//            // EVERY OTHER DEVICE
-//            history.go(-1);
-//            history.back();
-//        }
+            zc.actionService.navigateByUrl('/t/' + zc.params.app + '/' + zc.params.module);
+        } else {
+            // EVERY OTHER DEVICE
+            zc.actionService.navigateByUrl('/epaper/news/speed-news');
+        }
+        //        if (window.location.href.match('/epaper/news/speed-news')) {
+        //            // IOS DEVICE
+        //            history.go(-1);
+        //        } else if (userAgent.match(/Android/i)) {
+        //            // ANDROID DEVICE
+        //            navigator.app.backHistory();
+        //        } else {
+        //            // EVERY OTHER DEVICE
+        //            history.go(-1);
+        //            history.back();
+        //        }
     }
-   // e.preventDefault();
+    // e.preventDefault();
 
 }
-function onConfirmQuit(button){
-   if(button == "1"){
-     navigator.app.exitApp();
-   }
+function onConfirmQuit(button) {
+    if (button == "1") {
+        navigator.app.exitApp();
+    }
 }
 
 function adMobProBannerConfig() {
@@ -157,5 +157,20 @@ function firebaseNotifications() {
             });
         }
 
+    });
+
+    window['FirebasePlugin'].onMessageReceived((data) => {
+        console.warn('Notification recieved data', data);
+        console.warn('cordova firebase Plugin mas');
+        console.warn('Notification recieved data', data);
+        if (data.tap) {
+            if (data.type == 'url' && data.url) {
+                if (data.url.match('epaper/news/telugunews-details')) {
+                    var operator = (data.url.match('/?')) ? '&' : '?';
+                    data.url = data.url + operator + 'ref=true';
+                }
+                setTimeout(function () { zc.actionService.navigateByUrl('/' + data.url); }, 3000);
+            }
+        }
     });
 }

@@ -213,7 +213,7 @@
                                       {
                                         "type": "script",
                                         "name": "category",
-                                        "value": "(zc.queryParams && zc.queryParams.s) ? null : 'main_edition'",
+                                        "value": "(zc.queryParams.p) ? zc.queryParams.p : 'main_edition'",
                                         "keys": []
                                       },
                                       {
@@ -276,7 +276,7 @@
                                   },
                                   "defaultOrder": [],
                                   "groupRow": {},
-                                  "cardTemplate": "<div class=\"paper-card\"  [routerLink]=\"'/t/' + row.uid_actual + '/' + ( row.sub_sub_category.code || row.sub_category.code) + '/' + ((row.sub_sub_category.code) ? row.sub_category.code : '')\">\n<zc-actions  [actions]='options.actions' type='row' class=\"action-icons lession-card-action\" [currentRow]='row' [id]='options.id'   autoClose='true'></zc-actions>\n<div class=\"paper-img\"><img zcImgLazy isWebp=\"true\" [src]=\"zc.config.E_PAPER_S3_URL + row.edition_info.basePath + row.edition_info.thumbnailBig\"/></div>\n<p class=\"paper-location-name\">{{row.sub_sub_category.name || row.sub_category.name}}</p>\n</div>\n\n\n",
+                                  "cardTemplate": "<div class=\"paper-card\"  [routerLink]=\"'/t/' + row.uid_actual + '/' + ( row.sub_sub_category.code || row.sub_category.code) + '/' + ((row.sub_sub_category.code) ? row.sub_category.code : '')\" [queryParams]=\"{p:row.category.code}\">\n<zc-actions  [actions]='options.actions' type='row' class=\"action-icons lession-card-action\" [currentRow]='row' [id]='options.id'   autoClose='true'></zc-actions>\n<div class=\"paper-img\"><img zcImgLazy isWebp=\"true\" [src]=\"zc.config.E_PAPER_S3_URL + row.edition_info.basePath + row.edition_info.thumbnailBig\"/></div>\n<p class=\"paper-location-name\">{{row.sub_sub_category.name || row.sub_category.name}}</p>\n</div>\n\n\n",
                                   "exportExcel": {
                                     "params": []
                                   },
@@ -689,7 +689,7 @@
     "cacheKey": "zcbase:_:_"
   },
   "success": true,
-  "zcServerDateTime": "2021-06-23 14:36:22",
-  "zcServerIp": "ip-10-1-3-13/10.1.3.13",
-  "zcServerHost": "ip-10-1-3-13"
+  "zcServerDateTime": "2021-07-01 16:10:09",
+  "zcServerIp": "ip-10-1-3-196/10.1.3.196",
+  "zcServerHost": "ip-10-1-3-196"
 }

@@ -28,14 +28,14 @@ var swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'vertical',
     mousewheel: true,
+    // speed: 700,
     autoHeight: true,
     loop: true,
     on: {
         slideChange: function () {
+             $('html, body').animate({
+            scrollTop: $(".zc-speed-news-block").offset().top - 0}, 1000);
             console.log('swiper slideChange');
-                    $('html, body').animate({
-                        scrollTop: $(".zc-speed-news-block").offset().top - 0
-                    }, 1000);
             stopAllVideos();
         },
         transitionEnd: function () {
@@ -361,7 +361,7 @@ function feedData(xml) {
             let innerDiv = "";
 
             $('#newsModal .modal-header h5').text(feedTitle);
-            innerDiv += `<div class="swiper-slider3" id='${newsInfo.uid}'>`;
+            innerDiv += `<div class="swiper-slider" id='${newsInfo.uid}'>`;
             if (feedImage) {
                 innerDiv += `<div class="speed-image">
                             <img src="${feedImage}">

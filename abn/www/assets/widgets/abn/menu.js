@@ -48,13 +48,13 @@ $(document).ready(function () {
                             // /t/11227/'+e.code+'
                             // console.log('ee', e);
                             // menuList += `<li class="li-menu"><a href="javascript:;" onClick='getSelectedCatogory(${JSON.stringify(e.name)}, ${JSON.stringify(e.code)}, ${JSON.stringify(e.sub_sub_category.length)})'>`+ e.name;
-                            menuList += `<li class="li-menu"><a onClick='getSelectedCatogory(${JSON.stringify(e.name)}, ${JSON.stringify(e.code)}, ${JSON.stringify(e.sub_sub_category.length)})'>` + e.name;
+                            menuList += `<li class="li-menu"><a onClick='getSelectedCatogory(${JSON.stringify(e.name)}, ${JSON.stringify(e.code)}, ${JSON.stringify(e.sub_sub_category.length)},${JSON.stringify(o.code)})'>` + e.name;
                             // menuList += `<li class="li-menu" ><a href="javascript:;" onClick="zc.actionService.navigateByUrl('/t/11227/${e.code}')">` + e.name;
                             //    menuList += `<li class="li-menu" ><a href="javascript:;" onClick="menuNavigate('/t/11227/${e.code}')">` + e.name;
                             if (e.sub_sub_category.length > 0 && e.sub_sub_category.length != 0) {
                                 menuList += '</a><span class="icon icon-angle-right"></span><ul class="zc-nested-menu">';
                                 $(e.sub_sub_category).each(function (inx, s) {
-                                    menuList += `<li><a href="javascript:;" onClick='getSelectedSubSubCatogory(${JSON.stringify(s.name)}, ${JSON.stringify(s.code)}, ${JSON.stringify(e.code)})'>${s.name}</a></li>`;
+                                    menuList += `<li><a href="javascript:;" onClick='getSelectedSubSubCatogory(${JSON.stringify(s.name)}, ${JSON.stringify(s.code)}, ${JSON.stringify(e.code)}, ${JSON.stringify(o.code)})'>${s.name}</a></li>`;
                                 });
                                 menuList += '</ul>'
                             }
@@ -221,33 +221,37 @@ $(window).on('resize', function () {
 //         })
 //     }
 // })
-function getSelectedCatogory(name, code, childs) {
+function getSelectedCatogory(name, code, childs, category) {
     localStorage.setItem('categoryName', name);
     if (childs) {
         // window.location.href = "/?s="+code;
         // window.location.href = "/t/11227/"+code;
         // zc.actionService.router.navigateByUrl("/?s=" + code);
-        var navigateUrl = '/zcbase/account/home/' + code + '?s=';
+        var navigateUrl = '/zcbase/account/home/' + code + '?s=' + code;
         if (zc.config && zc.config.platform == 'mobile') {
             // navigateUrl = '/zcbase/account/home/?s=';
-            zc.actionService.navigateByUrl(navigateUrl + code);
+            // zc.actionService.navigateByUrl(navigateUrl + code);
         } else {
-            zc.actionService.navigateByUrl(navigateUrl + code);
+            // zc.actionService.navigateByUrl(navigateUrl + code);
             // location.href = navigateUrl + code;
         }
+        if (category) {
+            navigateUrl += '&p=' + category;
+        }
+        zc.actionService.navigateByUrl(navigateUrl);
         closeMenu();
     } else {
         // window.location.href = "/t/11227/"+code;
         // zc.actionService.router.navigateByUrl('/t/11227/' + code);
-        zc.actionService.navigateByUrl('/t/11227/' + code);
+        zc.actionService.navigateByUrl('/t/11227/' + code + '?p=' + category);
         closeMenu();
     }
 
 }
-function getSelectedSubSubCatogory(name, code, parent) {
+function getSelectedSubSubCatogory(name, code, parent, category) {
     localStorage.setItem('categoryName', name);
     // window.location.href = "/t/11227/" + code + '/' + parent;
-    zc.actionService.navigateByUrl("/t/11227/" + code + '/' + parent);
+    zc.actionService.navigateByUrl("/t/11227/" + code + '/' + parent + '?p=' + category);
     closeMenu();
 }
 

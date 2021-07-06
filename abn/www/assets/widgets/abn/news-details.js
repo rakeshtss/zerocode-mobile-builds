@@ -1,9 +1,14 @@
 var baseUrl = zc.config.apiUrl + zc.config.client;
 var category = {};
-var newsInfo;
+// var newsInfo;
 if (zc.params.uid) {
-  getNewsDetails();
+  if (zc.queryParams.ref) {
+    setTimeout(function () { getNewsDetails(); }, 2000);
+  } else {
+    getNewsDetails();
+  }
 }
+
 function getNewsDetails() {
   // if (zc.queryParams.categoryId && zc.queryParams.categoryName) {
   //   category.uid = zc.queryParams.categoryId;
@@ -12,23 +17,13 @@ function getNewsDetails() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      newsInfo(this);
+      newsInformation(this);
     }
   };
   xmlhttp.open("GET", "https://rss.andhrajyothy.com/znews/article?guid=" + zc.params.uid, true);
   xmlhttp.send();
 }
-function getRelatedNews() {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      relatedNewsInfo(this);
-    }
-  };
-  xmlhttp.open("GET", "https://rss.andhrajyothy.com/znews/" + category.name + "?SupId=" + ((zc.queryParams.type == 'districts') ? 1 : 0) + "&SubId=" + category.uid, true);
-  xmlhttp.send();
-}
-function newsInfo(xml) {
+function newsInformation(xml) {
   $(".zc-news-description").empty();
   var x, i, xmlDoc;
   xmlDoc = xml.responseXML;
@@ -69,6 +64,17 @@ function newsInfo(xml) {
   $('.zc-recent-stories').show();
   $('.loader-wrap').fadeOut("slow");
 }
+function getRelatedNews() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      relatedNewsInfo(this);
+    }
+  };
+  xmlhttp.open("GET", "https://rss.andhrajyothy.com/znews/" + category.name + "?SupId=" + ((zc.queryParams.type == 'districts') ? 1 : 0) + "&SubId=" + category.uid, true);
+  xmlhttp.send();
+}
+
 function relatedNewsInfo(xml) {
   $('.shortnews-list').empty();
   var x, i, xmlDoc, title, image, date, uid, time, duration;
@@ -94,7 +100,7 @@ function relatedNewsInfo(xml) {
     if (zc.queryParams.type == 'districts') {
       relatedNewsDiv += `<a onclick=" showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?districtId=${zc.queryParams.districtId}&categoryId=${zc.queryParams.categoryId}&type=districts')"`
     } else {
-      relatedNewsDiv += `<a onclick=" showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?categoryId=${zc.queryParams.categoryId}')"`
+      relatedNewsDiv += `<a onclick=" showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?categoryId=${category.uid}')"`
     }
     relatedNewsDiv += `class="short-news"><div class="news-img">`;
     relatedNewsDiv += `<img src="${image}" alt="news-img">`;

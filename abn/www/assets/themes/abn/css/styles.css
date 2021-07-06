@@ -7420,6 +7420,7 @@ zc-form zc-date-range i {
 }
 
 @media(min-width:767px) {
+ 
     .zc-speed-news-block .swiper-container .swiper-wrapper {
         /* flex-direction: row;
         height: auto !important; */
@@ -8019,6 +8020,7 @@ zc-form zc-date-range i {
     }
     .e-paper-content .mat-tab-body {
         margin-top: 15px;
+        min-height: 300px; 
     }
 }
 

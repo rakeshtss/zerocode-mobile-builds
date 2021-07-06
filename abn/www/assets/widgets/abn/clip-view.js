@@ -1,12 +1,12 @@
-if(!$){
+if (!$) {
     var $ = jQuery;
 }
 var zc;
 $(document).ready(function () {
-    var apiUrl = zc.config.apiUrl+zc.config.client;
-    let payload = {'uid': zc.params.module};
+    var apiUrl = zc.config.apiUrl + zc.config.client;
+    let payload = { 'uid': zc.params.module };
     // var header = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + zc.user.token };
-    var clipUrl, clipData, clipImage,modalClipImage;
+    var clipUrl, clipData, clipImage, modalClipImage;
     var clipViewImage = $('#clipViewImage');
     var modalClipViewImage = $('#modalClipViewImage');
     var clipViewShareWidget = $('#clipViewShareWidget');
@@ -20,10 +20,10 @@ $(document).ready(function () {
             zc.showclips = true;
             zc.clip = clipData;
             console.log('clip view', clipData);
-            let baseClipUrl = zc.config.E_PAPER_S3_URL+clipData?.edition?.edition_info?.basePath;
-            clipUrl = clipData.jpg_path;
-            clipImage = $("<img />",{src: baseClipUrl+clipUrl, alt: 'Clip Image'});
-            modalClipImage = $("<img />",{src: baseClipUrl+clipUrl, alt: 'Clip Image'});
+            let baseClipUrl = zc.config.E_PAPER_S3_URL + clipData?.edition?.edition_info?.basePath;           
+            clipUrl = (isWebpSupport()) ? clipData.webp_path : clipData.jpg_path;
+            clipImage = $("<img />", { src: baseClipUrl + clipUrl, alt: 'Clip Image' });
+            modalClipImage = $("<img />", { src: baseClipUrl + clipUrl, alt: 'Clip Image' });
             clipViewImage.append(clipImage);
             $('#exampleModal').on('show.bs.modal', function (event) {
                 // console.log('clicked');
@@ -41,19 +41,31 @@ $(document).ready(function () {
         }
     })
 })
+function isWebpSupport() {
+    var elem = document.createElement('canvas');
+
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        // was able or not to get WebP representation
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    }
+    else {
+        // very old browser like IE 8, canvas not supported
+        return false;
+    }
+}
 function shareClip(type) {
     const params = new URLSearchParams();
     if (type == 'fb') {
-      params.set('u', window.location.href);
-      const fbShareUrl = 'https://www.facebook.com/sharer/sharer.php?' + params;
-      window.open(fbShareUrl, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=650,height=450");
+        params.set('u', window.location.href);
+        const fbShareUrl = 'https://www.facebook.com/sharer/sharer.php?' + params;
+        window.open(fbShareUrl, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=650,height=450");
     } else if (type == 'twitter') {
-      params.set('url', window.location.href);
-      const twitterShareUrl = 'https://twitter.com/share?' + params;
-      window.open(twitterShareUrl, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=650,height=450");
-    } else if(type == 'whatsapp') {
+        params.set('url', window.location.href);
+        const twitterShareUrl = 'https://twitter.com/share?' + params;
+        window.open(twitterShareUrl, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=650,height=450");
+    } else if (type == 'whatsapp') {
         var whatShareUrl = "https://api.whatsapp.com/send?text=" + window.location.href;
-       // var clipUrl = zc.config.application_url+"/c/"+zc.params.module;
-       window.open(whatShareUrl);
+        // var clipUrl = zc.config.application_url+"/c/"+zc.params.module;
+        window.open(whatShareUrl);
     }
 }
