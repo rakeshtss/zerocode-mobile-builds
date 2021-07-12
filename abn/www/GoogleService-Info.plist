@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>264407310063-63s5kvvgi2vc7iodqsldfe90ksl5rcqr.apps.googleusercontent.com</string>
+	<string>264407310063-6jgkjua462pq7p7rgk4a1h9qsclal2p5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.264407310063-63s5kvvgi2vc7iodqsldfe90ksl5rcqr</string>
+	<string>com.googleusercontent.apps.264407310063-6jgkjua462pq7p7rgk4a1h9qsclal2p5</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>264407310063-9cn3u8ljal28ugg4vkk1rj3l5vnlrift.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA3MjXid3nbDX-l6fzCDdvTA5PwoLXvYJY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.abnebeta.zerocode</string>
+	<string>com.Dexter-Labs.ABNAndhraJyothi</string>
 	<key>PROJECT_ID</key>
 	<string>abn-andhrajyothy-ebeta</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:264407310063:ios:d0bc3e00911d439a5c451a</string>
+	<string>1:264407310063:ios:30052ff4091904a75c451a</string>
 </dict>
 </plist>

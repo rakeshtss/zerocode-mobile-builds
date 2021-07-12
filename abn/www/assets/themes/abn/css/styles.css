@@ -3369,7 +3369,7 @@ form label.ui-placeholder {
     padding: 0 20px;
     position: fixed !important;
     width: 100%;
-    top: 0;
+    top: env(safe-area-inset-top, 20px);
     left: 0;
     z-index: 20;
 }
@@ -4776,7 +4776,7 @@ body .zc-edition-header .ui-datepicker table td>a {
     display: flex;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: env(safe-area-inset-top, 20px);
     width: 100%;
     left: 0;
     /* background: #fff; */
@@ -5134,7 +5134,8 @@ body .zc-edition-header .ui-datepicker table td>a {
 
 .zc-news-list-block .news-category {
     position: fixed;
-    top: 18px;
+    top: env(safe-area-inset-top, 20px);
+    margin-top: 20px;
     right: 15px;
     background-color: #e5f4fd;
     z-index: 999;
@@ -6917,7 +6918,7 @@ zc-form zc-date-range i {
     .zc-header .zc-header-right,
     .zc-edition-header .zc-edition-header-right {
         position: fixed !important;
-        top: 0px !important;
+        top: env(safe-area-inset-top, 20px);
         left: 0;
         background-color: rgba(0, 54, 150, 0.9) !important;
         height: 100vh !important;

@@ -1,24 +1,27 @@
 
 document.addEventListener('deviceready', onDeviceReady, false);
 var admobid = {
-    banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
+    banner: 'ca-app-pub-4252617315602036/3656537111', // or DFP format "/6253334/dfp_example_ad"
     interstitial: 'ca-app-pub-4252617315602036/3370770117'
 };
+// var interstitialAds = ['ca-app-pub-4252617315602036/5352762166'];
 var interstitialAds = ['ca-app-pub-4252617315602036/3370770117', 'ca-app-pub-4252617315602036/3495231501'];
 var interstitialReady = false;
 var isTesting = false;
 var showTimeAds = true;
 
 function onDeviceReady() {
-    checkIsDevice();
     firebaseNotifications();
-
-
-    document.addEventListener("backbutton", onBackKeyDown, false);
-    document.addEventListener('onAdLoaded', onAdLoaded);
-    document.addEventListener('onAdDismiss', onAdDismiss);
     adMobProBannerConfig();
     showInterstitialAds();
+ 
+
+
+
+    // document.addEventListener("backbutton", onBackKeyDown, false);
+    document.addEventListener('onAdLoaded', onAdLoaded);
+    document.addEventListener('onAdDismiss', onAdDismiss);
+    checkIsDevice();
 }
 
 function checkIsDevice() {
@@ -71,6 +74,7 @@ function onBackKeyDown(e) {
     // e.preventDefault();
 
 }
+
 function onConfirmQuit(button) {
     if (button == "1") {
         navigator.app.exitApp();
@@ -84,6 +88,7 @@ function adMobProBannerConfig() {
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true,
+        overlap: false,
         isTesting: isTesting,// works on emulator
     }, function () { console.log("Success Ad"); },
         function (error) { console.log("Error ad: " + error); });
@@ -115,15 +120,16 @@ function onAdLoaded(e) {
 }
 
 function onAdDismiss(e) {
+    // alert('t-'+e.adType);
     if (e.adType == 'interstitial') {
         interstitialReady = false;
         showTimeAds = false;
+        AdMob.showBanner();
         setTimeout(function () { showTimeAds = true; }, 10000);
         showInterstitialAds();
     }
 }
 function showInterstitialAds() {
-
     if (interstitialReady) {
         if (showTimeAds) {
             AdMob.showInterstitial();
@@ -142,7 +148,7 @@ function showInterstitialAds() {
 }
 
 function showBanner() {
-
+   
 
 }
 
