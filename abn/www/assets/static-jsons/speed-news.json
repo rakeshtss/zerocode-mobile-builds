@@ -65,20 +65,21 @@
                     "apiCode": "html",
                     "js": [
                       {
-                        "src": "https://unpkg.com/swiper/swiper-bundle.js",
-                        "name": "swiper-bundle"
-                      },
-                      {
-                        "src": "https://unpkg.com/swiper/swiper-bundle.min.js",
-                        "name": "swiper-bundle-min"
-                      },
-                      {
-                        "src": "assets/widgets/abn/speed-news.js"
+                        "src": "https://code.jquery.com/jquery-3.5.1.min.js",
+                        "name": "jquery"
                       },
                       {
                         "src": "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js",
                         "name": "bootstrap"
+                      },
+                      {
+                        "src": "assets/widgets/abn/swiper-bundle.min.js",
+                        "name": "swiper-bundle-min"
+                      },
+                      {
+                        "src": "assets/widgets/abn/speed-news.js"
                       }
+                      
                     ],
                     "css": [
                       {

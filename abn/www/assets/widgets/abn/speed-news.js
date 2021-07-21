@@ -38,9 +38,10 @@ var swiper = new Swiper('.swiper-container', {
             console.log('swiper slideChange');
             stopAllVideos();
         },
-        transitionEnd: function () {
-            var currentIndex = swiper.realIndex;
-            var totalSlides = swiper.slides.length;
+        transitionEnd: function (event) {
+            console.warn('inde',event);
+            var currentIndex = event.realIndex;
+            var totalSlides = event.slides.length;
             console.log('*** currentIndex', currentIndex);
             console.log('*** totalSlides', totalSlides);
             if(currentIndex !== 0 && currentIndex % 5 == 0){
@@ -55,6 +56,7 @@ var swiper = new Swiper('.swiper-container', {
 });
 var modalLoader = `<div class="spin-loader"><span class=""></span></div>`;
 $(document).ready(function () {
+ 
     $.ajax({
         url: `${baseUrl}/api/speednews_category/list/`,
         type: "GET",
@@ -207,7 +209,7 @@ function getSpeednewsListByCategory() {
                     }
                     slide_data += `</div>`;
                     $('.swiper-wrapper').append(slide_data);
-                })
+                });
                 if (window.innerWidth <= 767) {
 
                     // swiper.updateProgress();
@@ -215,9 +217,9 @@ function getSpeednewsListByCategory() {
                     // swiper.updateSlides();	
                     swiper.update();
                     if (page == 1) {
-                        $('.swiper-wrapper').css({
-                            transform: 'translate3d(0px, 0px, 0px)'
-                        });
+                        // $('.swiper-wrapper').css({
+                        //     transform: 'translate3d(0px, 0px, 0px)'
+                        // });
                     }
 
                     // setTimeout(() => {                      
@@ -227,6 +229,13 @@ function getSpeednewsListByCategory() {
                     //    swiper.updateSlides();	
                     // }, 1000);
 
+                }else{
+                    swiper.update();
+                    if (page == 1) {
+                        // $('.swiper-wrapper').css({
+                        //     transform: 'translate3d(0px, 0px, 0px)'
+                        // });
+                    }
                 }
                 // swiper.on('beforeInit', function () {
                 //     console.log('beforeInit');

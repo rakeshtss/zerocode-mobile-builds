@@ -5,9 +5,14 @@
   <meta charset="utf-8" />
   <title></title>
   <link rel="manifest" href="manifest.json" />
-  <base href="./" />
-
+  <!-- <script>document.write('<base href="' + document.location + '" />');</script> -->
+  <script>document.write('<base href="' + String(document.location.origin).replace('index.html','') + '" />');</script>
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="
+  default-src * data: blob: ws: wss: gap://ready file://*;
+  style-src * 'unsafe-inline'; 
+  script-src * 'unsafe-inline' 'unsafe-eval';
+  connect-src * ws: wss:;">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -20,9 +25,12 @@
       async
       defer
     ></script> -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" id="zc-script-jquery"></script>
+  <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js" id="zc-script-swiper-bundle-min"></script>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1976d2">
   <link rel="stylesheet" href="styles.4d5df456d8570939fbc5.css">
+  
   <style>
     body {
     padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
@@ -35,6 +43,7 @@
   <noscript>Please enable JavaScript to continue using this application.</noscript>
   <link id="theme" rel="stylesheet" />
   <zc-ui-root></zc-ui-root>
+
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="assets/mobile.js"></script>
   <script type="text/javascript" src="runtime.0ebdc99bf8ba56604249.js"></script>
