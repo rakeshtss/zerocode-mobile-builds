@@ -3,31 +3,61 @@ var admobid = {
     interstitial: 'ca-app-pub-4252617315602036/3370770117'
 };
 // var interstitialAds = ['ca-app-pub-4252617315602036/5352762166'];
-var interstitialAds = ['ca-app-pub-4252617315602036/5352762166','ca-app-pub-4252617315602036/5352762166','ca-app-pub-4252617315602036/3370770117', 'ca-app-pub-4252617315602036/3495231501'];
+var interstitialAds = ['ca-app-pub-4252617315602036/5352762166', 'ca-app-pub-4252617315602036/5352762166', 'ca-app-pub-4252617315602036/3370770117', 'ca-app-pub-4252617315602036/3495231501'];
 var interstitialReady = false;
 var isTesting = false;
 var showTimeAds = true;
+var isPrepareInterstitial = false;
 document.addEventListener('deviceready', onDeviceReady, false);
-document.addEventListener('deviceready', adMobProBannerConfig, false);
-document.addEventListener('deviceready', showInterstitialAds, false);
+// document.addEventListener('deviceready', adMobProBannerConfig, false);
+// document.addEventListener('deviceready', showInterstitialAds, false);
 document.addEventListener('deviceready', firebaseNotifications, false);
+
 
 
 function onDeviceReady() {
     interstitialReady = false;
     isTesting = false;
     showTimeAds = true;
-   
+    isPrepareInterstitial = false;
+
     // adMobProBannerConfig();
-    // showInterstitialAds();
- 
+
+
     // firebaseNotifications();
 
 
     // document.addEventListener("backbutton", onBackKeyDown, false);
-    document.addEventListener('onAdLoaded', onAdLoaded);
-    document.addEventListener('onAdDismiss', onAdDismiss);
+    if (AdMob) {
+        adMobProBannerConfig();
+        showInterstitialAds();
+        document.addEventListener('onAdDismiss', onAdDismiss, false);
+        document.addEventListener('onAdLoaded', onAdLoaded, false);
+        document.addEventListener('onAdFailLoad',failLoad);
+        document.addEventListener('onAdLeaveApp',failLoad);
+        document.addEventListener('onAdPresent',failLoad);
+
+
+        //     document.addEventListener('onReceiveAd', function(){});
+        //     document.addEventListener('onFailedToReceiveAd', function(data){ alert('onFailedToReceiveAd');});
+        //     document.addEventListener('onPresentAd', function(){ alert('onPresentAd');});
+        //     document.addEventListener('onDismissAd', function(){ alert('onDismissAd'); });
+        //     document.addEventListener('onLeaveToAd', function(){ alert('onLeaveAds'); });
+        //     document.addEventListener('onReceiveInterstitialAd', function(){ alert('va'); });
+        //     document.addEventListener('onPresentInterstitialAd', function(){ alert('onPresentInterstitialAd'); });
+        //     document.addEventListener('onDismissInterstitialAd', function(){
+        //         alert('onDismissInterstitialAd');
+        // });
+
+        // setTimeout(function () {  showInterstitialAds();}, 1000);
+
+
+    }
+
     checkIsDevice();
+}
+function failLoad(e){
+    console.warn('e----------',e);
 }
 
 function checkIsDevice() {
@@ -40,7 +70,7 @@ function checkIsDevice() {
             }
         });
     } catch (error) {
-        console.warn('checkIsDevicem err',error);
+        console.warn('checkIsDevicem err', error);
     }
 
 }
@@ -98,13 +128,10 @@ function adMobProBannerConfig() {
     if (AdMob) AdMob.createBanner({
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
-        autoShow: true,
+        autoShow: false,
         overlap: false,
-        isTesting: isTesting,// works on emulator
     }, function () { console.log("Banner Success Ad"); },
         function (error) { console.log("Error ad: " + error); });
-
-
 
     //
     //    if (AdMob) AdMob.prepareInterstitial({
@@ -128,11 +155,15 @@ function onAdLoaded(e) {
         interstitialReady = true;
         // AdMob.showInterstitial();
     }
+    if(e.adType == 'banner'){
+        AdMob.showBanner();
+    }
+    
 }
 
 function onAdDismiss(e) {
-    // alert('t-'+e.adType);
-    if (e.adType == 'interstitial') {
+    // alert('e.adType '+e.adType );
+    if (e && e.adType == 'interstitial') {
         interstitialReady = false;
         showTimeAds = false;
         AdMob.showBanner();
@@ -140,29 +171,30 @@ function onAdDismiss(e) {
         showInterstitialAds();
     }
 }
+
 function showInterstitialAds() {
     if (interstitialReady) {
         if (showTimeAds) {
             interstitialReady = false;
+            AdMob.hideBanner();
             AdMob.showInterstitial(function () { console.warn("showInterstitial  Success Ad"); },
-            function (error) { console.warn("showInterstitial Error ad: " + error); });
+                function (error) { console.warn("showInterstitial Error ad: " + error); });
         }
     } else {
 
         var interstitial = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
 
-        AdMob.prepareInterstitial({
-            adId: interstitial,
-            autoShow: false,
-            isTesting: isTesting
-        }, function () { console.warn("success ad: "); interstitialReady = true; },
-            function (error) { console.warn("Error ad: " + error); });
+            AdMob.prepareInterstitial({
+                adId: interstitial,
+                autoShow: false
+            }, function () { console.warn("success ad: "); interstitialReady = true; isPrepareInterstitial = false; },
+                function (error) { console.warn("Error ad: " + error); });
 
     }
 }
 
 function showBanner() {
-   
+
 
 }
 
@@ -170,16 +202,16 @@ function firebaseNotifications() {
     try {
         window['FirebasePlugin'].grantPermission(function (hasPermission) {
             // alert('has permission;'+hasPermission);
-            if(hasPermission) {
+            if (hasPermission) {
                 window['FirebasePlugin'].subscribe("/topics/all", function () {
                     console.warn("Subscribed to topic");
                 }, function (error) {
                     console.error("Error subscribing to topic: " + error);
                 });
             }
-    
+
         });
-    
+
         window['FirebasePlugin'].onMessageReceived((data) => {
             console.warn('Notification recieved data', data);
             console.warn('cordova firebase Plugin mas');
@@ -195,7 +227,7 @@ function firebaseNotifications() {
             }
         });
     } catch (error) {
-        console.warn('error',error);
+        console.warn('error', error);
     }
 
 }

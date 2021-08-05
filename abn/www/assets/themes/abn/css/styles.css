@@ -3,7 +3,10 @@
 .zc-loading {
     display: none !important;
 }
-
+canvas {
+    transform: scale(0.4);
+    transform-origin: left top;
+}
 .menu-overlay {
     width: 0;
     opacity: 0;
@@ -7217,9 +7220,7 @@ zc-form zc-date-range i {
         transform: scale(1.1);
         transition: transform .4s ease;
     }
-    .zc-mobile-location-edition .card {
-        width: 20%;
-    }
+  
     /* .zc-mobile-location-edition .paper-card .paper-img {
         height: 185px;
     } */
@@ -7408,6 +7409,123 @@ zc-form zc-date-range i {
     .show-menu .menu-overlay.new-header-menu {
         z-index: 9998;
     }
+
+        .e-paper-strip .e-paper-strip-middle {
+            padding-top: 5px !important;
+        }
+      .prev-arrow {
+            position: fixed;
+            left: -15px;
+            padding: 30px 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+            z-index: 7;
+            border-radius: 0 6px 6px 0;
+            color: #000;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px 5px;
+        }
+        .next-arrow {
+            position: fixed;
+            padding: 30px 5px;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px 0 0 6px;
+            top: 50%;
+            z-index: 7;
+            color: #000;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px 5px;
+        }
+     .zc-edition-middle .prev-arrow {
+            padding: 0;
+        }
+        .zc-edition-middle .next-arrow {
+            right: -15px;
+            padding: 0;
+        }
+        .zc-edition-middle .prev-arrow a,
+        .zc-edition-middle .next-arrow a {
+            padding: 30px 6px;
+        }
+        .next-arrow.zoom-arrow-fixed {
+            right: 0px !important;
+            margin-top: -55px;
+        }
+        .prev-arrow.zoom-arrow-fixed {
+            margin-top: -55px;
+        }
+        .prev-arrow,
+        .next-arrow {
+            color: #fff;
+        }
+        .zc-edition-middle .prev-arrow i,
+        .zc-edition-middle .next-arrow i {
+            color: #000;
+            font-size: 50px !important;
+        }
+     .zc-edition-middle .prev-arrow,
+        .zc-edition-middle .next-arrow {
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            position: fixed;
+            z-index: 10;
+        }
+     .zc-edition-middle .next-arrow {
+            left: unset;
+            right: 0px;
+        }
+        .zc-edition-middle .prev-arrow i,
+        .zc-edition-middle .next-arrow i {
+            font-size: 18px;
+        }
+    .zc-clip-tabs .mat-tab-labels {
+            justify-content: space-between;
+        }
+        .zc-clip-tabs .mat-tab-label {
+            border: none;
+            background: #d8e3e9;
+            height: 32px;
+            border-radius: 8px;
+            min-width: 48%;
+            color: #8c8c8c;
+            margin: 0 4px;
+        }
+        .zc-clip-tabs .mat-tab-label:hover,
+        .zc-clip-tabs .mat-tab-label-active {
+            background-color: #ed1c24;
+            color: #fff;
+            opacity: 1;
+        }
+        .zc-clip-tabs .mat-ink-bar {
+            display: none;
+        }
+        .zc-clip-tabs .mat-tab-body-content {
+            background: none;
+            border: none;
+        }
+     .zc-clip-tabs .mat-tab-header {
+            display: block;
+            /* padding: 0 15px; */
+        }
+      .cropped-links-widget {
+            width: 100%;
+        }
+    .zc-edition-middle {
+            order: -1;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+     .e-paper-content .mat-tab-body {
+            margin-top: 15px;
+            min-height: 300px; 
+        } 
+    
 }
 
 @media (max-width: 875px) {
@@ -7435,14 +7553,12 @@ zc-form zc-date-range i {
     .zc-speed-news-block .swiper-slide {
         /* width: 48%; */
         background-color: #fff;
-        margin: 4px 5px;
+        /* margin: 4px 5px; */
         border-radius: 5px;
         /* padding-bottom: 10px;
         min-height: 100% !important;
         height: auto; */
-
     }
-  
     .zc-speed-news-block .swiper-container {
         background-color: transparent;
     }
@@ -7487,9 +7603,9 @@ zc-form zc-date-range i {
         background-size: cover;
         background-repeat: no-repeat;
     }
-    .e-paper-strip .e-paper-strip-middle {
+    /* .e-paper-strip .e-paper-strip-middle {
         padding-top: 5px !important;
-    }
+    } */
     .zc-table-header.top .table-header-right {
         position: relative;
         top: 0px;
@@ -7591,7 +7707,7 @@ zc-form zc-date-range i {
     .zc-fg-no-margin .form-group {
         margin-bottom: 10px !important;
     }
-    .prev-arrow {
+    /* .prev-arrow {
         position: fixed;
         left: -15px;
         padding: 30px 5px;
@@ -7618,13 +7734,13 @@ zc-form zc-date-range i {
         color: #000;
         background-color: rgba(0, 0, 0, 0.1);
         padding: 20px 5px;
-    }
+    } */
     /* .prev-arrow:hover,
    .next-arrow:hover{
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
    } */
-    .zc-edition-middle .prev-arrow {
+    /* .zc-edition-middle .prev-arrow {
         padding: 0;
     }
     .zc-edition-middle .next-arrow {
@@ -7650,7 +7766,7 @@ zc-form zc-date-range i {
     .zc-edition-middle .next-arrow i {
         color: #000;
         font-size: 50px !important;
-    }
+    } */
     /* .zc-edition-middle .prev-arrow:hover i, 
   .zc-edition-middle .next-arrow:hover i {
     color: #fff;
@@ -7673,42 +7789,33 @@ zc-form zc-date-range i {
     .download-pages .card>div {
         max-width: 170px;
     }
-    .zc-edition-middle .prev-arrow,
+    /* .zc-edition-middle .prev-arrow,
     .zc-edition-middle .next-arrow {
-        /* width: 30px;
-    height: 30px;
-    min-width: 30px;
-    background-color: #b8d2eb;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%; */
         left: 0px;
         top: 50%;
         transform: translateY(-50%);
         position: fixed;
         z-index: 10;
-    }
+    } */
     /* .zc-edition-middle .prev-arrow a, 
   .zc-edition-middle .next-arrow a {
     padding: 0 10px;
   }  */
-    .zc-edition-middle .next-arrow {
+    /* .zc-edition-middle .next-arrow {
         left: unset;
         right: 0px;
     }
     .zc-edition-middle .prev-arrow i,
     .zc-edition-middle .next-arrow i {
         font-size: 18px;
-    }
+    } */
     /* .zc-edition-middle .next-arrow i::before {
     content: "\f061";
   }
   .zc-edition-middle .prev-arrow i::before {
     content: "\f060";
   } */
-    .zc-clip-tabs .mat-tab-labels {
+    /* .zc-clip-tabs .mat-tab-labels {
         justify-content: space-between;
     }
     .zc-clip-tabs .mat-tab-label {
@@ -7732,7 +7839,7 @@ zc-form zc-date-range i {
     .zc-clip-tabs .mat-tab-body-content {
         background: none;
         border: none;
-    }
+    } */
     .zc-pages-block .zc-edition-left-tabs {
         display: none;
     }
@@ -7945,15 +8052,15 @@ zc-form zc-date-range i {
     }
     /*clipping tabs styles start*/
     .zc-clip-tabs .mat-tab-header {
-        display: block;
+        /* display: block; */
         /* padding: 0 15px; */
     }
     .zc-pages-block {
         padding: 0;
     }
-    .cropped-links-widget {
+    /* .cropped-links-widget {
         width: 100%;
-    }
+    } */
     /*clipping tabs styles end*/
     /*XML STYlES START*/
     .shortnews-list .short-news .news-content {
@@ -8021,15 +8128,15 @@ zc-form zc-date-range i {
         justify-content: center;
         flex: 1 1 auto;
     }
-    .zc-edition-middle {
+    /* .zc-edition-middle {
         order: -1;
         padding: 0;
         margin-bottom: 10px;
-    }
-    .e-paper-content .mat-tab-body {
+    } */
+    /* .e-paper-content .mat-tab-body {
         margin-top: 15px;
         min-height: 300px; 
-    }
+    } */
 }
 
 @media (max-width: 640px) {
