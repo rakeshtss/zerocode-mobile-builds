@@ -152,7 +152,7 @@ function getSpeednewsListByCategory() {
                     if (o.speednews_type.uid == 'image') {
                         if (o.image[0]) {
                             slide_data += `<div class="speed-image">
-                        <img src="${o.image[0]?.path}">
+                        <img src="${o.image[0].path}">
                         </div>`;
                         }
                     } else if (o.speednews_type.uid == 'video') {

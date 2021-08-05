@@ -1,7 +1,3 @@
-document.addEventListener('deviceready', onDeviceReady, false);
-document.addEventListener('deviceready', adMobProBannerConfig, false);
-document.addEventListener('deviceready', showInterstitialAds, false);
-document.addEventListener('deviceready', firebaseNotifications, false);
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/3656537111', // or DFP format "/6253334/dfp_example_ad"
     interstitial: 'ca-app-pub-4252617315602036/3370770117'
@@ -11,8 +7,16 @@ var interstitialAds = ['ca-app-pub-4252617315602036/5352762166','ca-app-pub-4252
 var interstitialReady = false;
 var isTesting = false;
 var showTimeAds = true;
+document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('deviceready', adMobProBannerConfig, false);
+document.addEventListener('deviceready', showInterstitialAds, false);
+document.addEventListener('deviceready', firebaseNotifications, false);
+
 
 function onDeviceReady() {
+    interstitialReady = false;
+    isTesting = false;
+    showTimeAds = true;
    
     // adMobProBannerConfig();
     // showInterstitialAds();
