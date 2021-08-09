@@ -150,14 +150,17 @@ $(document).ready(function () {
                     // var editionDate = new Date('2021-02-09 00:00:00');
                     // editionDate = editionDate.setHours(0,0,0);
 
-                    console.log('selectedDate -->', selectedDate.getTime());
-                    console.log('editions -->', editions);
+                    console.warn('selectedDate -->', selectedDate.getTime());
+                    console.warn('editions -->', editions);
                     var editionDetails;
                     var actualDate;
                     editions.forEach(item => {
-                        editionDate = new Date(item.date + ' 00:00:00').getTime();
+                        // editionDate = new Date(item.date + ' 00:00:00').getTime();
+                        const editionDateForamate = new Date(item.date);
+                        editionDateForamate.setHours(0,0,0,0);
+                        editionDate = editionDateForamate.getTime();
                         actualDate = selectedDate.getTime();
-                        console.log('editionDate', editionDate, actualDate);
+                        console.warn('editionDate', editionDate, actualDate);
                         if (editionDate == actualDate) {
                             editionDetails = item;
                         }

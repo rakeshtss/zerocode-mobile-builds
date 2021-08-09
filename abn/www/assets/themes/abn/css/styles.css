@@ -2018,6 +2018,25 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 .zc-widget-data-list .dropdown-menu.show {
     transform: translate(0, -20%) !important;
 }
+.date-picker-container {
+    position: fixed;
+    top: 62px;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 100%;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
 
 .ui-table-wrapper .zc-filter-text .filter-searchclear,
 .ui-table-wrapper .zc-filter-text .icon-search {
@@ -6701,7 +6720,7 @@ zc-form zc-date-range i {
     .zc-edition-header .zc-edition-header-left ul>li>a {
         color: #000;
     }
-    .zc-edition-header .zc-edition-header-right .dropdown.show .dropdown-menu,
+    /* .zc-edition-header .zc-edition-header-right .dropdown.show .dropdown-menu,
     .zc-edition-header .zc-edition-header-right .dropdown.show .dropdown-menu .weeks-list {
         display: block;
     }
@@ -6713,7 +6732,7 @@ zc-form zc-date-range i {
         left: 0 !important;
         top: 65px !important;
         margin-top: 0;
-    }
+    } */
     header.zc-header {
         padding: 0 10px;
         background: #fff;

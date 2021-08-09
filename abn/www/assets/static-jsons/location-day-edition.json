@@ -609,11 +609,11 @@
                     "js": [
                       {
                         "name": "tabs",
-                        "src": "assets\\widgets\\abn\\editiontabs.js"
+                        "src": "assets/widgets/abn/editiontabs.js"
                       }
                     ],
                     "css": [],
-                    "htmlUrl": "assets\\widgets\\abn\\editiontabs.html"
+                    "htmlUrl": "assets/widgets/abn/editiontabs.html"
                   },
                   "info": {
                     "type": "html",

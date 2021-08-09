@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.abn.jyothy" ios-CFBundleIdentifier="com.Dexter-Labs.ABNAndhraJyothi" version="5.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.abn.jyothy" ios-CFBundleIdentifier="com.Dexter-Labs.ABNAndhraJyothi" version="5.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ABN AndhraJyothy</name>
     <description>
        ABN Andhra Jyothi is a Telugu news channel, launched on 15 October 2009 by the Telugu daily Andhra Jyothi. ABN stands for Aamoda Broadcasting Network. This channel was launched by Vemuri Radhakrishna after the success of the Andhra Jyothi
     </description>
-     <author email="digitalsales@andhrajyothy.com" href="https://www.andhrajyothy.com/">
+    <author email="digitalsales@andhrajyothy.com" href="https://www.andhrajyothy.com/">
         Andhrajyothy Team
-    </author>>
+    </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -40,7 +40,7 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
-     <platform name="ios">
+    <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <allow-navigation href="https://*youtube.com/*"/>
@@ -114,8 +114,4 @@
     <plugin name="cordova-admob-sdk" spec="../plugins/cordova-admob-sdk">
         <variable name="PLAY_SERVICES_VERSION" value="17.+" />
     </plugin>
-<!-- 
-    <plugin name="cordova-plugin-admob-free" spec="0.25.0">
-        <variable name="PLAY_SERVICES_VERSION" value="16.+" />
-    </plugin> -->
 </widget>

@@ -20,22 +20,14 @@
             <li class="edition-date-selector">
                 <!-- <p class="zc-date" id="date"></p> -->
                 <div class="dropdown keep-inside-clicks-open" id="divDateSelector" >
-                    <a class="btn dropdown-toggle date-text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn dropdown-toggle date-text" (click)="showDatePicker = !showDatePicker">
                       <span id="formatedDate"></span>
                       
                       <!-- <span id="currentDate"></span>
                       <span id="month"></span>
                       <span id="year"></span> -->
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
-                        <li class="weeks-list" id="lastWeekDaysList">
 
-                        </li>
-                      <li>
-
-                        <div id="datepicker"></div>
-                      </li>
-                    </ul>
                   </div>
             </li>
         </ul>
@@ -44,6 +36,7 @@
             <a href="javascript:;" class="icon-settings"></a>
 
         </div> -->
+    
         <div class="zc-social-media-block">
             <a *ngIf="zc.user" class="editions-link" routerLink="/epa/editions/editions">Editions</a>
             <div class="social-icons">
@@ -56,5 +49,15 @@
             </a>
             <a href="javascript:;" class="subscribe-link" id="subscribe">Subscribe</a>
         </div>
+    </div>
+    <div class="date-picker-container" [ngClass]="(showDatePicker)?'d-block':'d-none'">
+        <ul>
+            <li class="weeks-list" id="lastWeekDaysList">
+
+            </li>
+          <li>
+            <div id="datepicker"></div>
+          </li>
+        </ul>
     </div>
 </div>

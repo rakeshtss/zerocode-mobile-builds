@@ -27,15 +27,15 @@ function onDeviceReady() {
     // firebaseNotifications();
 
 
-    // document.addEventListener("backbutton", onBackKeyDown, false);
+    document.addEventListener("backbutton", onBackKeyDown, false);
     if (AdMob) {
-        adMobProBannerConfig();
-        showInterstitialAds();
-        document.addEventListener('onAdDismiss', onAdDismiss, false);
-        document.addEventListener('onAdLoaded', onAdLoaded, false);
-        document.addEventListener('onAdFailLoad',failLoad);
-        document.addEventListener('onAdLeaveApp',failLoad);
-        document.addEventListener('onAdPresent',failLoad);
+        // adMobProBannerConfig();
+        // showInterstitialAds();
+        // document.addEventListener('onAdDismiss', onAdDismiss, false);
+        // document.addEventListener('onAdLoaded', onAdLoaded, false);
+        // document.addEventListener('onAdFailLoad',failLoad);
+        // document.addEventListener('onAdLeaveApp',failLoad);
+        // document.addEventListener('onAdPresent',failLoad);
 
 
         //     document.addEventListener('onReceiveAd', function(){});
@@ -124,7 +124,6 @@ function onConfirmQuit(button) {
 
 function adMobProBannerConfig() {
 
-
     if (AdMob) AdMob.createBanner({
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
@@ -133,19 +132,6 @@ function adMobProBannerConfig() {
     }, function () { console.log("Banner Success Ad"); },
         function (error) { console.log("Error ad: " + error); });
 
-    //
-    //    if (AdMob) AdMob.prepareInterstitial({
-    //        adId: admobid.interstitial,
-    //        autoShow: false,
-    //         isTesting: true,
-    //        //isTesting: true,// works on emulator
-    //    }, function(){console.log("Success Ad");},
-    //    function(error){console.log("Error ad: "+error);});
-    //
-    // // window.AdMob.showInterstitial();
-
-
-
 }
 
 
@@ -153,7 +139,6 @@ function onAdLoaded(e) {
     if (e.adType == 'interstitial') {
         console.warn('ads loaded');
         interstitialReady = true;
-        // AdMob.showInterstitial();
     }
     if(e.adType == 'banner'){
         AdMob.showBanner();
@@ -162,7 +147,6 @@ function onAdLoaded(e) {
 }
 
 function onAdDismiss(e) {
-    // alert('e.adType '+e.adType );
     if (e && e.adType == 'interstitial') {
         interstitialReady = false;
         showTimeAds = false;
@@ -173,24 +157,24 @@ function onAdDismiss(e) {
 }
 
 function showInterstitialAds() {
-    if (interstitialReady) {
-        if (showTimeAds) {
-            interstitialReady = false;
-            AdMob.hideBanner();
-            AdMob.showInterstitial(function () { console.warn("showInterstitial  Success Ad"); },
-                function (error) { console.warn("showInterstitial Error ad: " + error); });
-        }
-    } else {
+    // if (interstitialReady) {
+    //     if (showTimeAds) {
+    //         interstitialReady = false;
+    //         AdMob.hideBanner();
+    //         AdMob.showInterstitial(function () { console.warn("showInterstitial  Success Ad"); },
+    //             function (error) { console.warn("showInterstitial Error ad: " + error); });
+    //     }
+    // } else {
 
-        var interstitial = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
+    //     var interstitial = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
 
-            AdMob.prepareInterstitial({
-                adId: interstitial,
-                autoShow: false
-            }, function () { console.warn("success ad: "); interstitialReady = true; isPrepareInterstitial = false; },
-                function (error) { console.warn("Error ad: " + error); });
+    //         AdMob.prepareInterstitial({
+    //             adId: interstitial,
+    //             autoShow: false
+    //         }, function () { console.warn("success ad: "); interstitialReady = true; isPrepareInterstitial = false; },
+    //             function (error) { console.warn("Error ad: " + error); });
 
-    }
+    // }
 }
 
 function showBanner() {
