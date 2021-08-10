@@ -51,6 +51,7 @@
         <preference name="StatusBarStyle" value="lightcontent" />
         <preference name="ScrollEnabled" value="true" />
         <preference name="WKWebViewOnly" value="true" />
+        <preference name="orientation" value="portrait" />
         <feature name="CDVWKWebViewEngine">
             <param name="ios-package" value="CDVWKWebViewEngine" />
         </feature>
