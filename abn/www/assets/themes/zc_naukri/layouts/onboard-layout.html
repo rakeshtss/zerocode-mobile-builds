@@ -1,0 +1,46 @@
+<header class="zc-header zc-login-header">
+  <div class="zc-header-left">
+    <a class="zc-logo">
+      <img src="assets/themes/zc_naukri/images/naukri_Logo.png" alt="Logo" />
+    </a>
+  </div>
+  <div class="zc-header-right">
+     <p>Already Registered? <a href="javscript:;">Login</a> here</p>
+  </div>
+</header>
+<div class="login-container">
+<router-outlet></router-outlet>
+  <div class="app-links" *ngIf="ly.appList && ly.appList.length>1">
+    <ul class="nav">
+      <li class="nav-item" *ngFor="let app of ly.appList">
+        <a class="nav-link active" [routerLink]="[ '/'+app.code]">{{app.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<footer class="zc-login-footer">
+    <ul class="zc-footer-link">
+      <li>
+        <a href="javacript:;">About Us</a>
+      </li>
+      <li>
+        <a href="javacript:;">Contact Us</a>
+      </li>
+      <li>
+        <a href="javacript:;">FAQ's</a>
+      </li>
+      <li>
+        <a href="javacript:;">Terms and Condition</a>
+      </li>
+      <li>
+        <a href="javacript:;">Report a Problem</a>
+      </li>
+      <li>
+        <a href="javacript:;">Privacy Policy</a>
+      </li>
+    </ul>
+    <p>All rights reserved © 2021 Info Edge India Ltd.</p>
+</footer>
+
+
+

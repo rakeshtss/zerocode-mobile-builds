@@ -1,0 +1,52 @@
+/*Anil styles for site visit vs sales reports */
+#site-visit-vs-sales-table {
+  width: auto;
+  /* border-spacing: 5px 0; */
+  border-collapse: collapse;
+}
+#site-visit-vs-sales-table td {
+  padding: 5px;
+  border:1px solid #ccc;
+  text-align: center;
+}
+#site-visit-vs-sales-table td:first-child {
+  border:none;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 60px;
+}
+#site-visit-vs-sales-table thead tr > th {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+#site-visit-vs-sales-table thead tr:last-child > th {
+  font-weight: normal;
+}
+#site-visit-vs-sales-table thead tr > th:first-child {
+  border: none;
+}
+.total-row td {
+  text-align: center;
+  background-color: #ffe0c1 !important;
+}
+.total-row td:first-child {
+  text-align: right;
+  background-color: transparent !important;
+  border: none;
+}
+/*Anil styles for site visit vs sales reports ended */
+.period-lst-td {
+  position: relative;
+}
+.period-lst-td:after {
+  content: "";
+  height: 100%;
+  vertical-align: bottom;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  background-color: #ccc;
+  top: 0;
+}

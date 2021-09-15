@@ -1,0 +1,86 @@
+.excutive-sale-info ,
+.excutive-vs-site-visit-table {
+    width: auto;
+    border-spacing: 0 5px;
+  }
+  .excutive-sale-info th table tr th ,
+  .excutive-vs-site-visit-table th table tr th {
+    text-transform: uppercase;
+    padding: 6px 0px;
+    border-right: 2px solid #f6f8fa;
+    width: 36px;
+    font-weight: normal;
+  }
+  .excutive-vs-site-visit-table-footer td{
+    font-weight: bold;
+    text-align: center;
+  }
+  .excutive-sale-info > tbody > tr > td ,
+  .excutive-vs-site-visit-table > tbody > tr > td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    border-right: 0;
+  }
+  .excutive-sale-info > tbody > tr > td:last-child ,
+  .excutive-vs-site-visit-table > tbody > tr > td:last-child {
+    border-right: 0px !important;
+  }
+  .excutive-sale-info tr td table td ,
+  .excutive-vs-site-visit-table tr td table td {
+    border: 1px solid #ccc;
+    height: 38px;
+    width: 36px;
+    min-width: 36px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #fff;
+  }
+  tr.tfoot-cls td{
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffe0c1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-right: 0px solid #ccc;
+  }
+  .excutive-sale-info > tbody > tr > td:first-child ,
+  .excutive-vs-site-visit-table > tbody > tr > td:first-child {
+    border: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+  }
+  .excutive-sale-info thead tr > th ,
+  .excutive-vs-site-visit-table thead tr > th {
+    padding: 5px;
+    font-weight: normal;
+  }
+  .excutive-sale-info thead tr > th:last-child ,
+  .excutive-vs-site-visit-table thead tr > th:last-child {
+    border-right: 0px !important;
+  }
+  .excutive-sale-info thead tr > th.self ,
+  .excutive-vs-site-visit-table thead tr > th.self {
+    background-color: #ae8c4c;
+    color: #fff;
+  }
+  
+  
+  .excutive-sale-info tr td a ,
+  .excutive-vs-site-visit-table tr td a {
+    color: #000;
+  }
+
+  .excutive-sale-info > tbody > tr > td:last-child, 
+  .excutive-sale-info > thead > tr > th:last-child, 
+  .excutive-vs-site-visit-table > tbody > tr > td:last-child, 
+  .excutive-vs-site-visit-table > thead > tr > th:last-child {
+    right: 0 !important;
+  }
+  .excutive-sale-info > tbody > tr > td:nth-last-child(2), 
+  .excutive-sale-info > thead > tr > th:nth-last-child(2), 
+  .excutive-vs-site-visit-table > tbody > tr > td:nth-last-child(2), 
+  .excutive-vs-site-visit-table > thead > tr > th:nth-last-child(2) {
+    padding-right: 5px !important;
+  }

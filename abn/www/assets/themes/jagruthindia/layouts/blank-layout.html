@@ -1,0 +1,55 @@
+<div class="blank-layout">
+    <header class="zc-header community-header">
+        <div class="menu-overlay" id="closeMenu"></div>
+        <div class="zc-header-left">
+    
+            <!-- <div class="col-1 sidebar-toggle">
+            <a  fxHide fxShow.lt-sm class="icon-bars " (click)="ly.toggleMenu();"></a>
+          </div> -->
+            <!-- <a href="javascript:;" class="sidebar-toggle" (click)="ly.toggleMenu()" matTooltip="Click to toggle Menu"
+          matTooltipPosition="right"><img src="assets/themes/contactree/images/menubars.png" alt="menubars" /></a> -->
+            <!-- <a href="javascript:;" *ngIf="ly.backBtn" class="icon-chevron-left back-btn d-lg-none" (click)="ly.backClicked()"></a>
+            <a href="javascript:;" *ngIf="!ly.backBtn" class="icon-bars sidebar-toggle" (click)="ly.toggleMenu()" matTooltip="Click to toggle Menu" matTooltipPosition="right"> -->
+                <!-- <img src="assets/themes/jagruthindia/images/menubars.png" alt=""> -->
+            <!-- </a> -->
+            <!-- <a *ngIf="ly.userDetails.role.code != 'Admin'" class="icon-bars jagruthicare-menu sidebar-toggle" href="javascript:;" mattooltip="Click to toggle Menu" mattooltipposition="right"></a> -->
+            <!-- <a  href="javascript:;" *ngIf="(!ly.backBtn) && (ly.userDetails.role.code != 'Admin')" class=" icon-bars sidebar-toggle jagruthicare-menu" (click)="ly.toggleMenu()" matTooltip="Click to toggle Menu" matTooltipPosition="right">
+            </a> -->
+            <div *ngIf="ly.userDetails">
+                <a class="zc-logo  d-md-flex" routerLink="/zcbase/account/user-login" *ngIf="ly.siteConfig.clientLogo">
+                    <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+                </a>
+            </div>
+            <div *ngIf="!ly.userDetails">
+                <a class="zc-logo  d-md-flex" routerLink="/jagruthindia/dashboard/dashboard" *ngIf="ly.siteConfig.clientLogo">
+                    <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+                </a>
+            </div>
+        </div>
+        <div class="zc-header-middle">
+            <!-- <div class="side-menu" [ngClass]="ly.menuState">
+                <zc-com-render type="menu" [options]="{ app: ly.currentApp }"></zc-com-render>
+            </div> -->
+
+            <div class="side-menu">
+                <div class="close-toggle">
+                    <a class="icon-close menu-close-btn" (click)="ly.toggleMenu();"></a>
+                </div>
+                <ul class="zc-menu">                   
+                    <li class="nav-item"><a class="nav-link" routerLink="/jagruthindia/dashboard/dashboard" routerLinkActive="active">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" [routerLink]="['/jagruthindia/about-us/about-us/'+ ly?.pl?.params?.uid]" routerLinkActive="active">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" [routerLink]="['/jagruthindia/team/team/'+ ly?.pl?.params?.uid]" routerLinkActive="active">Team</a></li>
+                </ul>
+            </div> 
+        </div>
+        <div class="zc-mobile-menu">
+            <!-- <div class="zc-header-right">
+                <button type="button" class="btn btn-primary start-caring-btn">Start Caring</button>
+            </div> -->
+            <a href="javascript:;" *ngIf="!ly.backBtn" class="icon-ellipsis sidebar-toggle" (click)="ly.toggleMenu()"
+            matTooltip="Click to toggle Menu" matTooltipPosition="right">
+           </a> 
+        </div>
+    </header>
+    <router-outlet></router-outlet>
+</div>

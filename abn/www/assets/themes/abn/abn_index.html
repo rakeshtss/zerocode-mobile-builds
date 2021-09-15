@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="manifest" href="manifest.json" />
+    <script>
+        document.write('<base href="' + String(document.location.origin).replace('index.html', '') + '" />');
+    </script>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src * data: blob: ws: wss: gap://ready file://*;
+  style-src * 'unsafe-inline'; 
+  script-src * 'unsafe-inline' 'unsafe-eval';
+  connect-src * ws: wss:;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="assets/fonts/icon-fonts/styles.css" />
+    <link rel="stylesheet" href="assets/fonts/icon-fonts/fonts-styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- <script
+      src="https://www.google.com/recaptcha/api.js?render=explicit&onload=loadCaptcha"
+      async
+      defer
+    ></script> -->
+    <script type="text/javascript" src="/assets/themes/abn/js/jquery-3.5.1.min.js" id="zc-script-jquery"></script>
+    <script type="text/javascript" src="/assets/themes/abn/js/popper.min.js" id="zc-script-popper"></script>
+    <script type="text/javascript" src="/assets/themes/abn/js/swiper-bundle.min.js" id="zc-script-swiper-bundle-min"></script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1976d2">
+    <link rel="stylesheet" href="styles.273a6f90f08e200d2e84.css">
+    <style>
+        body {
+            padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+    </style>
+</head>
+
+<body class="show-menu">
+    <noscript>Please enable JavaScript to continue using this application.</noscript>
+    <link id="theme" rel="stylesheet" />
+    <zc-ui-root></zc-ui-root>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="assets/themes/abn/js/mobile.js"></script>
+    <script type="text/javascript" src="runtime.c8c304b18be115b2b84a.js"></script>
+    <script type="text/javascript" src="polyfills.8b31b1afb411b797743c.js"></script>
+    <script type="text/javascript" src="scripts.7282a4d921420b018101.js"></script>
+    <script type="text/javascript" src="main.9e81ce314095d3356c1a.js"></script>
+</body>
+
+</html>

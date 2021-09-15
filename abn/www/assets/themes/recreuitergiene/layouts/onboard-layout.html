@@ -1,0 +1,54 @@
+
+<header class="zc-header zc-login-header">
+  <!-- <div class="zc-header-left">
+    <a class="zc-logo" *ngIf="ly.siteConfig.clientLogo">
+      <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+    </a>
+  </div> -->
+  <div class="zc-header-right">
+    <span>+1-703-342-6531</span>
+   </div>
+</header>
+<div class="login-container">
+<router-outlet></router-outlet>
+  <div class="app-links" *ngIf="ly.appList && ly.appList.length>1">
+    <ul class="nav">
+      <li class="nav-item" *ngFor="let app of ly.appList">
+        <a class="nav-link active" [routerLink]="[ '/'+app.code]">{{app.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- <footer>
+  <div class="left-footer">
+      <a  href="http://zeroco.de/">
+        <div class="footer-logo-img">
+          <img src="assets/themes/naarm/images/icar.png" alt="">
+        </div>
+      </a>
+      <a  href="http://zeroco.de/">
+        <div class="footer-logo-img">
+          <img src="assets/themes/naarm/images/naarm.png" alt="">
+        </div>
+      </a>
+      <a  href="http://zeroco.de/">
+        <div class="footer-logo-img">
+          <img src="assets/themes/naarm/images/threshold-foot.png" alt="">
+        </div>
+      </a>
+  </div>
+  <div class="right-footer">
+    <h4>Our Partners:</h4>
+    <a  href="http://zeroco.de/">
+      <div class="footer-logo-img">
+        <img src="assets/themes/naarm/images/sci_tech.png" alt="">
+      </div>
+    </a>
+    <a  href="http://zeroco.de/">
+      <div class="footer-logo-img">
+        <img src="assets/themes/naarm/images/asti.png" alt="">
+      </div>
+    </a>
+    
+  </div>
+</footer> -->
