@@ -16,7 +16,7 @@ function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener('onAdLoaded', onAdLoaded);
     document.addEventListener('onAdDismiss', onAdDismiss);
-    adMobProBannerConfig();
+    showBanner();
     showInterstitialAds();
 }
 
@@ -78,7 +78,7 @@ function onConfirmQuit(button) {
     }
 }
 
-function adMobProBannerConfig(bannerId) {
+function showBanner(bannerId) {
     if (!bannerId) {
         bannerId = admobid.banner
     }
@@ -149,7 +149,7 @@ function showInterstitialAds(interstitialId) {
     }
 }
 
-function showBanner() {
+function showBanner_old() {
 
     if (AdMob) AdMob.showBanner();
 }
