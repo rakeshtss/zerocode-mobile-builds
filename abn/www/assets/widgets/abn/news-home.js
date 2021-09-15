@@ -102,7 +102,7 @@ function sectionNews() {
         // if (cat.uid == 43 || cat.uid == 44) {
         //      secDiv += `<p onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews/${cat.uid}?type=districts')"><a>Districts</a>`
         // }
-        secDiv += `<p><a onclick="showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews/${cat.uid}')"> View all</a></p>
+        secDiv += `<p><a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews/${cat.uid}')"> View all</a></p>
             </div>`;
         // if (cat.uid == 43 || cat.uid == 44) {
         //     var districtsId = cat.name + "districts";
@@ -116,7 +116,7 @@ function sectionNews() {
             if (cat.uid == 47 && ni == 0) {
                 newsDiv = `<li class="chitrajoythi-newscard">`;
             }
-            newsDiv += `<a onclick="showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${news.uid}')" class="short-news">
+            newsDiv += `<a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${news.uid}')" class="short-news">
                 <div class="news-img">
                     <img src="${news.image}">
                 </div>

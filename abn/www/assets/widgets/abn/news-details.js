@@ -98,9 +98,9 @@ function relatedNewsInfo(xml) {
     duration = timeDifference(time, new Date(date));
     relatedNewsDiv += `<li id='${uid}'>`
     if (zc.queryParams.type == 'districts') {
-      relatedNewsDiv += `<a onclick=" showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?districtId=${zc.queryParams.districtId}&categoryId=${zc.queryParams.categoryId}&type=districts')"`
+      relatedNewsDiv += `<a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?districtId=${zc.queryParams.districtId}&categoryId=${zc.queryParams.categoryId}&type=districts')"`
     } else {
-      relatedNewsDiv += `<a onclick=" showInterstitialAds();zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?categoryId=${category.uid}')"`
+      relatedNewsDiv += `<a onclick="zc.actionService.navigateByUrl('/epaper/news/telugunews-details/${uid}?categoryId=${category.uid}')"`
     }
     relatedNewsDiv += `class="short-news"><div class="news-img">`;
     relatedNewsDiv += `<img src="${image}" alt="news-img">`;
@@ -112,36 +112,23 @@ function relatedNewsInfo(xml) {
   $('.shortnews-list').show();
 }
 function timeDifference(current, previous) {
-
   var msPerMinute = 60 * 1000;
   var msPerHour = msPerMinute * 60;
   var msPerDay = msPerHour * 24;
   var msPerMonth = msPerDay * 30;
   var msPerYear = msPerDay * 365;
-
   var elapsed = current - previous;
-
   if (elapsed < msPerMinute) {
-    return Math.round(elapsed / 1000) + ' seconds ago';
-  }
-
-  else if (elapsed < msPerHour) {
-    return Math.round(elapsed / msPerMinute) + ' minutes ago';
-  }
-
-  else if (elapsed < msPerDay) {
-    return Math.round(elapsed / msPerHour) + ' hours ago';
-  }
-
-  else if (elapsed < msPerMonth) {
-    return 'approximately ' + Math.round(elapsed / msPerDay) + ' days ago';
-  }
-
-  else if (elapsed < msPerYear) {
-    return 'approximately ' + Math.round(elapsed / msPerMonth) + ' months ago';
-  }
-
-  else {
-    return 'approximately ' + Math.round(elapsed / msPerYear) + ' years ago';
+    return Math.round(elapsed / 1000) + ' second'+ ((Math.round(elapsed / 1000) > 1)?'s':'') +' ago';
+  } else if (elapsed < msPerHour) {
+    return Math.round(elapsed / msPerMinute) + ' minute'+ ((Math.round(elapsed / msPerMinute) > 1)?'s':'') +' ago';
+  } else if (elapsed < msPerDay) {
+    return Math.round(elapsed / msPerHour) + ' hour'+ ((Math.round(elapsed / msPerHour) > 1)?'s':'') +' ago';
+  } else if (elapsed < msPerMonth) {
+    return  Math.round(elapsed / msPerDay) + ' day'+ ((Math.round(elapsed / msPerDay) > 1)?'s':'') +' ago';
+  } else if (elapsed < msPerYear) {
+    return Math.round(elapsed / msPerMonth) + ' month'+ ((Math.round(elapsed / msPerMonth) > 1)?'s':'') +' ago';
+  } else {
+    return Math.round(elapsed / msPerYear) + ' year'+ ((Math.round(elapsed / msPerYear) > 1)?'s':'') +' ago';
   }
 }

@@ -46,7 +46,7 @@ if (window.jQuery) {
 
         function getSliderList() {
             $.ajax({
-                url: url + '/abn/api/edition/list/publish',
+                url: url + 'abn/api/edition/list/publish',
                 type: 'POST',
                 dataType: 'json',
                 headers: header,

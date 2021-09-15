@@ -48,10 +48,18 @@
               "sub_sub_category": []
             },
             {
+              "uid": "986ADC145ADE4FCA71FE044F4C178C23",
+              "code": "sunday_telangana",
+              "name": "Sunday TS",
+              "order": 6,
+              "inactive": null,
+              "sub_sub_category": []
+            },
+            {
               "uid": "9D8114B4BB4E76147EC31317763E8261",
               "code": "sunday_magazine",
-              "name": "Sunday Magazine",
-              "order": 6,
+              "name": "Sunday AP",
+              "order": 7,
               "inactive": null,
               "sub_sub_category": []
             }
@@ -529,16 +537,16 @@
                   "inactive": null
                 },
                 {
-                  "uid": "43601EADBB834DB90C124CBD9B2EA6BA",
-                  "code": "hyderabad_constituencies",
-                  "name": "Hyderabad Constituencies",
+                  "uid": "67F38B08EE0C9A4C210617A06E3292B7",
+                  "code": "hyderabad_city",
+                  "name": "Hyderabad City",
                   "order": 2,
                   "inactive": null
                 },
                 {
-                  "uid": "67F38B08EE0C9A4C210617A06E3292B7",
-                  "code": "hyderabad_city",
-                  "name": "Hyderabad City",
+                  "uid": "43601EADBB834DB90C124CBD9B2EA6BA",
+                  "code": "hyderabad_constituencies",
+                  "name": "Hyderabad Constituencies",
                   "order": 2,
                   "inactive": null
                 }
@@ -594,22 +602,22 @@
             },
             {
               "uid": "43A0A201F67768073A5AA73D6175E8F4",
-              "code": "warangal_urban",
-              "name": "Warangal Urban",
+              "code": "hanumakonda",
+              "name": "Hanumakonda",
               "order": 8,
               "inactive": null,
               "sub_sub_category": [
                 {
                   "uid": "6C189DF8CCC948F9B406038CBFFFED6A",
-                  "code": "warangal_urban_main",
-                  "name": "Warangal Urban Main",
+                  "code": "hanumakonda_main",
+                  "name": "Hanumakonda Main",
                   "order": 1,
                   "inactive": false
                 },
                 {
                   "uid": "8CBAE51353471541AA682C0EFA805FC9",
-                  "code": "warangal_urban",
-                  "name": "Warangal urban",
+                  "code": "hanumakonda",
+                  "name": "Hanumakonda",
                   "order": 2,
                   "inactive": null
                 }
@@ -617,8 +625,8 @@
             },
             {
               "uid": "8B8065091FB6E37582BD2A8F591226D9",
-              "code": "warangal_rural",
-              "name": "Warangal Rural",
+              "code": "warangal",
+              "name": "Warangal",
               "order": 9,
               "inactive": null,
               "sub_sub_category": []
@@ -936,7 +944,7 @@
               "uid": "498DA96C612D21956508945D24896C6D",
               "code": "tamilnadu_main",
               "name": "Tamilnadu Main",
-              "order": null,
+              "order": 1,
               "inactive": null,
               "sub_sub_category": []
             },
@@ -944,7 +952,7 @@
               "uid": "215FBDD91B39C2B6E1106B1A2C4E972E",
               "code": "tamilnadu",
               "name": "Tamilnadu",
-              "order": null,
+              "order": 2,
               "inactive": null,
               "sub_sub_category": []
             }
@@ -960,7 +968,7 @@
             {
               "uid": "B9D419A6ECD076366DD4F872DD5CCDF9",
               "code": "sunday_telangana",
-              "name": "Sunday Telangana",
+              "name": "Sunday TS",
               "order": 1,
               "inactive": null,
               "sub_sub_category": []
@@ -968,7 +976,7 @@
             {
               "uid": "D0FC0D4C0B067F5158E7613AE18C91B7",
               "code": "sunday_magazine",
-              "name": "Sunday Magazine",
+              "name": "Sunday AP",
               "order": 3,
               "inactive": null,
               "sub_sub_category": []
@@ -1029,5 +1037,8 @@
       "aggregation": null,
       "size": 2147483647
     }
-  }
+  },
+  "zcServerDateTime": "2021-07-19 12:19:48",
+  "zcServerIp": "ip-10-1-3-233/10.1.3.233",
+  "zcServerHost": "ip-10-1-3-233"
 }

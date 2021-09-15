@@ -158,7 +158,7 @@ function feedData(xml) {
   $('.loader-wrap').fadeOut("slow");
   var newsTitle;
   $('.shortnews-list li.news-details-li').click(function (e) {
-     showInterstitialAds();
+    // showInterstitialAds();
     var newsId = $(this).attr('id');
     if (catType == 'districts') {
       zc.actionService.navigateByUrl('/epaper/news/telugunews-details/' + newsId + '?districtId=' + selectedCategory + '&categoryId=' + zc.queryParams.categoryId + '&type=' + catType);
@@ -215,16 +215,16 @@ function timeDifference(current, previous) {
   var msPerYear = msPerDay * 365;
   var elapsed = current - previous;
   if (elapsed < msPerMinute) {
-    return Math.round(elapsed / 1000) + ' seconds ago';
+    return Math.round(elapsed / 1000) + ' second'+ ((Math.round(elapsed / 1000) > 1)?'s':'') +' ago';
   } else if (elapsed < msPerHour) {
-    return Math.round(elapsed / msPerMinute) + ' minutes ago';
+    return Math.round(elapsed / msPerMinute) + ' minute'+ ((Math.round(elapsed / msPerMinute) > 1)?'s':'') +' ago';
   } else if (elapsed < msPerDay) {
-    return Math.round(elapsed / msPerHour) + ' hours ago';
+    return Math.round(elapsed / msPerHour) + ' hour'+ ((Math.round(elapsed / msPerHour) > 1)?'s':'') +' ago';
   } else if (elapsed < msPerMonth) {
-    return 'approximately ' + Math.round(elapsed / msPerDay) + ' days ago';
+    return  Math.round(elapsed / msPerDay) + ' day'+ ((Math.round(elapsed / msPerDay) > 1)?'s':'') +' ago';
   } else if (elapsed < msPerYear) {
-    return 'approximately ' + Math.round(elapsed / msPerMonth) + ' months ago';
+    return Math.round(elapsed / msPerMonth) + ' month'+ ((Math.round(elapsed / msPerMonth) > 1)?'s':'') +' ago';
   } else {
-    return 'approximately ' + Math.round(elapsed / msPerYear) + ' years ago';
+    return Math.round(elapsed / msPerYear) + ' year'+ ((Math.round(elapsed / msPerYear) > 1)?'s':'') +' ago';
   }
 }

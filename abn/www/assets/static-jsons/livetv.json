@@ -24,11 +24,7 @@
                     "pbId": "html_1038",
                     "type": "custom-html",
                     "apiCode": "html",
-                    "js": [
-                      {
-                        "src": "https://code.jquery.com/jquery-3.5.1.min.js",
-                        "name": "jquery"
-                      },
+                    "js": [                      
                       {
                         "src": "assets/widgets/abn/new-header.js",
                         "name": "new header"
@@ -87,7 +83,7 @@
           "actions": [
             {
               "type": "script",
-              "script": "showInterstitialAds(); setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+              "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
             }
           ]
         }

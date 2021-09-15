@@ -24,11 +24,7 @@
                     "pbId": "html_7943",
                     "type": "custom-html",
                     "apiCode": "html",
-                    "js": [
-                      {
-                        "name": "jquery",
-                        "src": "https://code.jquery.com/jquery-3.5.1.min.js"
-                      },
+                    "js": [                     
                       {
                         "src": "assets/widgets/abn/new-header.js",
                         "name": "new header"
@@ -67,11 +63,7 @@
                           "pbId": "html_6027",
                           "type": "custom-html",
                           "apiCode": "html",
-                          "js": [
-                            {
-                              "name": "jquery",
-                              "src": "https://code.jquery.com/jquery-3.5.1.min.js"
-                            },
+                          "js": [                           
                             {
                               "src": "assets/widgets/abn/news.js",
                               "name": "news"

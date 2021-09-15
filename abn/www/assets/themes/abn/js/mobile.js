@@ -130,13 +130,13 @@ function showInterstitialAds(interstitialId) {
 
     if (interstitialReady) {
         if (showTimeAds) {
-            AdMob.showInterstitial();
+            if (AdMob) AdMob.showInterstitial();
         }
     } else {
         if (!interstitialId) {
             var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
         }
-        AdMob.prepareInterstitial({
+        if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
                 autoShow: false,
                 isTesting: isTesting

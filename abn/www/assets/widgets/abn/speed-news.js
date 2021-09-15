@@ -22,7 +22,7 @@ var header = { 'Content-Type': 'application/json' };
 var newsInfo = {};
 var baseUrl = zc.config.apiUrl + zc.config.client;
 var totalRecords = 0;
-var rows = 5;
+var rows = 20;
 var page = 1;
 var swiper = new Swiper('.swiper-container', {
     // Optional parameters
@@ -35,14 +35,14 @@ var swiper = new Swiper('.swiper-container', {
         slideChange: function () {
              $('html, body').animate({
             scrollTop: $(".zc-speed-news-block").offset().top - 0}, 1000);
-            console.log('swiper slideChange');
+            // console.log('swiper slideChange');
             stopAllVideos();
         },
-        transitionEnd: function () {
-            var currentIndex = swiper.realIndex;
-            var totalSlides = swiper.slides.length;
-            console.log('*** currentIndex', currentIndex);
-            console.log('*** totalSlides', totalSlides);
+        transitionEnd: function (event) {
+            var currentIndex = event.realIndex;
+            var totalSlides = event.slides.length;
+           // console.log('*** currentIndex', currentIndex);
+           // console.log('*** totalSlides', totalSlides);
             if(currentIndex !== 0 && currentIndex % 5 == 0){
                 showInterstitialAds();
             }
@@ -55,6 +55,7 @@ var swiper = new Swiper('.swiper-container', {
 });
 var modalLoader = `<div class="spin-loader"><span class=""></span></div>`;
 $(document).ready(function () {
+ 
     $.ajax({
         url: `${baseUrl}/api/speednews_category/list/`,
         type: "GET",
@@ -119,10 +120,10 @@ function getSpeednewsListByCategory() {
     payload.rows = rows;
     $.ajax({
         url: `${baseUrl}/api/speednews/list/speednews-list-by-category`,
-        type: "POST",
+        type: "GET",
         dataType: "json",
-        headers: header,
-        data: JSON.stringify(payload),
+       // headers: header,
+        data: payload,
         success: function (res) {
             // res = {};
             if (res.data && res.data.listData && res.data.listData.rows && res.data.listData.rows.length) {
@@ -130,7 +131,6 @@ function getSpeednewsListByCategory() {
                 var newsInfo = {};
                 list = res.data.listData.rows;
                 totalRecords = res.data.listData.records;
-
                 if (zc.params && zc.params.uid) {
                     newsInfo = list.find((item) => { return item.uid == zc.params.uid; });
                     list = list.filter((item) => { return item.uid != zc.params.uid });
@@ -150,27 +150,20 @@ function getSpeednewsListByCategory() {
                     if (o.speednews_type.uid == 'image') {
                         if (o.image[0]) {
                             slide_data += `<div class="speed-image">
-                        <img src="${o.image[0]?.path}">
+                        <img src="${o.image[0].path}">
                         </div>`;
                         }
                     } else if (o.speednews_type.uid == 'video') {
                         var videoUrl = o.audio_video_url;
                         if (!videoUrl.includes('youtube') && videoUrl) {
                             videoUrl = 'https://www.youtube.com/embed/' + videoUrl;
-                        }
-                        // slide_data += `<div class="speed-video-widget"><div class="speed-video overlay-video" onclick="playVideo(event, ${i})">
-                        // <iframe class="iframeSwipe" id="iframeId${i}" width="100%" height="315" src="${videoUrl}?rel=0" frameborder='0' allowtransparency="true" allowfullscreen allow="autoplay"></iframe>
-                        // </div>
-                        // <div class="stopVideo" id="stop${i}" onclick='stopVideo(event, ${JSON.stringify(videoUrl)}, ${i})'></div>
-                        // </div>`;
+                        }                       
                         slide_data += `<div class="speed-video-widget"><div class="speed-video overlay-video">
                         <iframe class="youTube youtube-video${i}" src="${videoUrl}?enablejsapi=1&version=3&playerapiid=ytplayer" width="100%" height="250" modestbranding="0" controls="0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                             <div  class="playVideo play-video${i}"></div>
                             <div  class="pauseVideo pause-video${i}"></div>
                             </div></div>`;
-                        // <button type="button" class="btn  btn-warning stop-video${i}"> stop</button>
-
                         setTimeout(function () {
                             $(`.stop-video${i}`).hide();
                             $(`.play-video${i}`).click(function () {
@@ -178,13 +171,11 @@ function getSpeednewsListByCategory() {
                                 $(`.pause-video${i}`).show();
                                 $(`.play-video${i}`).hide();
                             });
-
                             $(`.stop-video${i}`).click(function () {
                                 $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                                 $(`.stop-video${i}`).hide();
                                 $(`.play-video${i}`).show();
                             });
-
                             $(`.pause-video${i}`).click(function () {
                                 $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
                                 $(`.pause-video${i}`).hide();
@@ -207,8 +198,8 @@ function getSpeednewsListByCategory() {
                     }
                     slide_data += `</div>`;
                     $('.swiper-wrapper').append(slide_data);
-                })
-                if (window.innerWidth <= 767) {
+                });
+                if (window.innerWidth <= 991) {
 
                     // swiper.updateProgress();
                     // swiper.updateSize();
@@ -227,6 +218,13 @@ function getSpeednewsListByCategory() {
                     //    swiper.updateSlides();	
                     // }, 1000);
 
+                }else{
+                    swiper.update();
+                    if (page == 1) {
+                        // $('.swiper-wrapper').css({
+                        //     transform: 'translate3d(0px, 0px, 0px)'
+                        // });
+                    }
                 }
                 // swiper.on('beforeInit', function () {
                 //     console.log('beforeInit');

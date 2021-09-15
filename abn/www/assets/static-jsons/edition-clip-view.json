@@ -19,16 +19,12 @@
               "widgets": [
                 {
                   "definition": {
-                    "template": "<div class=\"zc-edition-header\">\n<a class=\"sidebar-toggle\" href=\"javascript:;\" id=\"nav-toggle\" mattooltip=\"Click to toggle Menu\" mattooltipposition=\"right\"><img alt=\"\" src=\"assets/themes/abn/images/menu_bars.png\"></a>\n<div class=\"zc-edition-header-left\">\n<a routerLink=\"/\" class=\"zc-logo\">\n      <img src=\"assets/themes/abn/images/logo.png\" alt=\"Logo\" />\n     <p id=\"date\" class=\"zc-date\"></p>\n    </a>\n\n\n  </div>\n<div class=\"zc-edition-header-right\">\n<a class=\"icon-close menu-close-btn\" id=\"nav-close\"></a>\n<ul>\n<!--<li><a routerLink=\"/\">HOME</a></li>-->\n\n</ul>\n<div class=\"zc-social-media-block\">\n<a *ngIf=\"zc.user\" class=\"editions-link\" routerLink=\"/epa/editions/editions\">Editions</a>\n<div class=\"social-icons\">\n<!--<a href=\"http://www.youtube.com/user/abntelugutv?sub_confirmation=1\" target=\"_blank\" class=\"btn btn-danger icon-youtube\"></a>-->\n                <a href=\"https://www.facebook.com/abntelugutv\" target=\"_blank\" class=\"icon-facebook\"></a>\n                <a href=\"https://twitter.com/abntelugutv\" target=\"_blank\" class=\"icon-twitter\"></a>\n</div>\n</div></div>\n</div>",
+                    "template": "<div class=\"zc-edition-header zc-no-side-menu\">\n<a class=\"sidebar-toggle\" href=\"javascript:;\" id=\"nav-toggle\" mattooltip=\"Click to toggle Menu\" mattooltipposition=\"right\"><img alt=\"\" src=\"assets/themes/abn/images/menu_bars.png\"></a>\n<div class=\"zc-edition-header-left\">\n<a routerLink=\"/\" class=\"zc-logo\">\n      <img src=\"assets/themes/abn/images/logo.png\" alt=\"Logo\" />\n     <p id=\"date\" class=\"zc-date\"></p>\n    </a>\n\n\n  </div>\n<div class=\"zc-edition-header-right\">\n<a class=\"icon-close menu-close-btn\" id=\"nav-close\"></a>\n<ul>\n<!--<li><a routerLink=\"/\">HOME</a></li>-->\n\n</ul>\n<div class=\"zc-social-media-block\">\n<a *ngIf=\"zc.user\" class=\"editions-link\" routerLink=\"/epa/editions/editions\">Editions</a>\n<div class=\"social-icons\">\n<!--<a href=\"http://www.youtube.com/user/abntelugutv?sub_confirmation=1\" target=\"_blank\" class=\"btn btn-danger icon-youtube\"></a>-->\n                <a href=\"https://www.facebook.com/abntelugutv\" target=\"_blank\" class=\"icon-facebook\"></a>\n                <a href=\"https://twitter.com/abntelugutv\" target=\"_blank\" class=\"icon-twitter\"></a>\n</div>\n</div></div>\n</div>",
                     "id": "html_6186",
                     "pbId": "html_4629",
                     "type": "html",
                     "apiCode": "html",
                     "js": [
-                      {
-                        "name": "jquery",
-                        "src": "https://code.jquery.com/jquery-3.5.1.min.js"
-                      },
                       {
                         "name": "menu",
                         "src": "assets/widgets/abn/menu.js"
@@ -87,7 +83,7 @@
                     "id": "block_2759",
                     "pbId": "block_1115",
                     "inlineStyle": {},
-                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth <= 991"
                   },
                   "info": {
                     "type": "block",
@@ -118,7 +114,7 @@
                     "pbId": "block_5346",
                     "inlineStyle": {},
                     "customClass": "zc-google-ad",
-                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+                    "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 991"
                   },
                   "info": {
                     "type": "block",
@@ -140,11 +136,7 @@
                                 "pbId": "html_5312",
                                 "type": "custom-html",
                                 "apiCode": "html",
-                                "js": [
-                                  {
-                                    "name": "jquery",
-                                    "src": "https://code.jquery.com/jquery-3.5.1.min.js"
-                                  },
+                                "js": [                                 
                                   {
                                     "src": "assets/widgets/abn/clip-view.js",
                                     "name": "clip-view"
@@ -303,7 +295,7 @@
                                             "params": [],
                                             "extraParams": []
                                           },
-                                          "script": "location.href = '/'+zc.clip.edition.uid+'/'+zc.clip.edition.sub_category.code+'/' + zc.clip.edition.date.split('-').reverse().join('-');"
+                                          "script": "var pageFullPath = '/'+((zc.clip.edition.uid_actual) ? zc.clip.edition.uid_actual : zc.clip.edition.uid)+'/'+((zc.clip.edition.sub_sub_category.code)? zc.clip.edition.sub_sub_category.code : zc.clip.edition.sub_category.code) +'/' + zc.clip.edition.date.split('-').reverse().join('-'); pageFullPath = pageFullPath + '/' + ((zc.queryParams.page) ? zc.queryParams.page : 1) + ((zc.clip.edition.sub_sub_category.code) ? '?s='+zc.clip.edition.sub_category.code+'#page/1/1' : '#page/1/1'); location.href = pageFullPath;"
                                         },
                                         "cssClass": "",
                                         "inlineStyle": {},
@@ -357,7 +349,7 @@
                                             "params": [],
                                             "extraParams": []
                                           },
-                                          "script": "var whatShareUrl = \"https://api.whatsapp.com/send?text=\";\nvar clipUrl = zc.config.application_url+\"/c/\"+zc.params.module;\n window.open(whatShareUrl +clipUrl);"
+                                          "script": "var whatsAppUrl = 'https://api.whatsapp.com/send?text='; var clipUrl = zc.config.application_url+'/c/'+zc.params.module; if(zc.queryParams.page) {clipUrl = clipUrl + '?page='+zc.queryParams.page;} window.open(whatsAppUrl + clipUrl);"
                                         },
                                         "cssClass": "",
                                         "inlineStyle": {},
@@ -872,7 +864,7 @@
                           "pbId": "block_5086",
                           "inlineStyle": {},
                           "customClass": "col-md-auto pr-0 zc-clip-right-block",
-                          "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+                          "hidden": "zc.config.platform == \"mobile\" || window.innerWidth <= 991"
                         },
                         "info": {
                           "type": "block",
@@ -1084,7 +1076,7 @@
               "pbId": "block_5483",
               "inlineStyle": {},
               "customClass": "zc-footer-ad1",
-              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 768"
+              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth <= 991"
             },
             "info": {
               "type": "block",
@@ -1115,7 +1107,7 @@
               "pbId": "block_3451",
               "inlineStyle": {},
               "customClass": "zc-footer-ad1 zc-google-ad",
-              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 768"
+              "hidden": "zc.config.platform == \"mobile\" || window.innerWidth > 991"
             },
             "info": {
               "type": "block",
@@ -1402,7 +1394,7 @@
                         "name": "to",
                         "label": "Send To:",
                         "id": "textarea_5261",
-                        "fieldClass": "col-12",
+                        "fieldClass": "",
                         "type": "textarea",
                         "defaultValue": "",
                         "properties": {
@@ -1412,7 +1404,7 @@
                           "minLength": 0,
                           "pattern": "",
                           "required": true,
-                          "rows": "",
+                          "rows": "3",
                           "cols": "",
                           "messages": {
                             "maxLength": "",
@@ -1436,7 +1428,7 @@
                       {
                         "name": "from_name",
                         "label": "Your Name",
-                        "fieldClass": "col-12",
+                        "fieldClass": "",
                         "type": "text",
                         "properties": {
                           "placeholder": "Enter your name",
@@ -1457,18 +1449,14 @@
                         "conditions": {
                           "hiddenType": "Hide"
                         },
-                        "conditionsRef": {
-                          "hiddenCondition": {},
-                          "requiredCondition": {},
-                          "readonlyCondition": {},
-                          "labelCondition": {}
+                        "conditionsRef": {                        
                         }
                       },
                       {
                         "name": "button",
                         "label": "Send",
                         "type": "button",
-                        "fieldClass": "col-12",
+                        "fieldClass": "",
                         "properties": {
                           "web": true,
                           "mobile": true
@@ -1498,14 +1486,17 @@
                               "id": "form_5561",
                               "validate": true
                             },
-                            "onSuccess": [],
+                            "onSuccess": [{
+                              "type":"script",
+                              "script":"zc.zc_modal_683.close()"
+                            }],
                             "onFailure": [],
                             "params": [],
                             "extraParams": [
                               {
                                 "type": "script",
                                 "name": "clip",
-                                "value": "window.location.origin + '/c/' + zc.params.module"
+                                "value": "zc.config.application_url + '/c/' + zc.params.module + ((zc.queryParams.page) ? '/'+zc.queryParams.page+'#page/1/1' : '')"
                               },
                               {
                                 "type": "script",
@@ -1566,7 +1557,7 @@
           "actions": [
             {
               "type": "script",
-              "script": "var head = document.getElementsByTagName('head')[0];\nvar script = document.createElement('script');\nscript.type = 'text/javascript';\nscript.src = \"https://securepubads.g.doubleclick.net/tag/js/gpt.js\";\nhead.appendChild(script);\n\n\n\nif(window && window.googletag){ googletag.destroySlots();}"
+              "script": "if(window && window.googletag){ googletag.destroySlots();}"
             },
             {
               "type": "script",
@@ -1599,10 +1590,6 @@
             {
               "type": "script",
               "script": "window._taboola = window._taboola || [];_taboola.push({flush: true});"
-            },
-            {
-              "type": "script",
-              "script": "var cachebuster = parseInt((Math.round(new Date().getTime() / 1000))/10000)*10000; url = 'https://cdn.jsdelivr.net/gh/unib0ts/unibots@latest/iplbowl2/script.js?cb='+cachebuster; s1 = document.createElement('script'); s1.src = url; s1.async = 'async';s1.type = 'text/javascript'; document.getElementsByTagName('head')[0].appendChild(s1);"
             }
           ]
         }
