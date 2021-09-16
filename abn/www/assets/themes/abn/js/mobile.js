@@ -191,9 +191,9 @@ function firebaseNotifications() {
 function checkAppVersion(){
     zcGlobal.zc_modal_9676.open();
     if(zc && zc.http){
-        zc.http.getExternalUrl('http://dev.thresholdsoft.com/vecv/version.json').subscribe(res=>{
+        zc.http.getExternalUrl('assets/themes/static-jsons/version.json').subscribe(res=>{
            // alert(0);
-            console.log(res);
+            console.warn(res);
             zcGlobal.zc_modal_9676.open();
         });
     }
