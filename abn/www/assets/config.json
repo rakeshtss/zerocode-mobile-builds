@@ -1,6 +1,6 @@
 {
     "apiUrl_dev": "https://dev-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
-    "apiUrl": "https://betazcapis.andhrajyothy.com/zc-v3.1-user-svc/2.0/",
+    "apiUrl": "https://dev-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
     "apiUrl5": "https://prod-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
     "apiUrl1": "https://fc-test.zeroco.de/zc-v3.1-user-svc/2.0/",
     "client": "abn",

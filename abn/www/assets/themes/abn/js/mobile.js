@@ -1,11 +1,13 @@
 document.addEventListener('deviceready', onDeviceReady, false);
+var iosVersion = "1.4.5";
+var androidVersion ="4.5.0";
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
     interstitial: 'ca-app-pub-4252617315602036/3370770117'
 };
 var interstitialAds = ['ca-app-pub-4252617315602036/3370770117', 'ca-app-pub-4252617315602036/3495231501'];
 var interstitialReady = false;
-var isTesting = false;
+var isTesting = true;
 var showTimeAds = true;
 
 function onDeviceReady() {
@@ -16,7 +18,7 @@ function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener('onAdLoaded', onAdLoaded);
     document.addEventListener('onAdDismiss', onAdDismiss);
-    showBanner();
+    // showBanner();
     showInterstitialAds();
 }
 
@@ -82,14 +84,14 @@ function showBanner(bannerId) {
     if (!bannerId) {
         bannerId = admobid.banner
     }
-
+    console.warn('bannerId',bannerId);
     if (AdMob) AdMob.createBanner({
             adId: bannerId,
             position: AdMob.AD_POSITION.BOTTOM_CENTER,
             autoShow: true,
             isTesting: isTesting, // works on emulator
-        }, function() { console.log("Success Ad"); },
-        function(error) { console.log("Error ad: " + error); });
+        }, function() { console.warn("Success Ad"); },
+        function(error) { console.warn("Error ad: " + error); });
 
 
 
@@ -185,4 +187,14 @@ function firebaseNotifications() {
             }
         }
     });
+}
+function checkAppVersion(){
+    zcGlobal.zc_modal_9676.open();
+    if(zc && zc.http){
+        zc.http.getExternalUrl('http://dev.thresholdsoft.com/vecv/version.json').subscribe(res=>{
+           // alert(0);
+            console.log(res);
+            zcGlobal.zc_modal_9676.open();
+        });
+    }
 }

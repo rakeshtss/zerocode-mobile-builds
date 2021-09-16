@@ -118,7 +118,7 @@
                 "onLoad": {
                     "actions": [{
                             "type": "script",
-                            "script": "showBanner();"
+                            "script": "alert(0);showBanner();checkAppVersion();"
                         },
                         {
                             "type": "script",

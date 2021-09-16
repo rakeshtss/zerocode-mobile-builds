@@ -1,0 +1,22 @@
+{
+    "android": {
+      "version": "1.5.1",
+      "build_no": 16,
+      "url": "http://ap.thresholdsoft.com/vecv/download.html",
+      "force_update": "false",
+      "title": "New update (1.5.1) available",
+      "message": "Make your testing more easier, faster and get new features.",
+      "app_availability": "true",
+      "message_maintance": "We are under maintance, please check after 1 hour."
+    },
+    "windows": {
+      "version": "1.2.4.0",
+      "build_no": 8,
+      "url": "http://ap.thresholdsoft.com/vecv/download_desktop.html",
+      "force_update": "false",
+      "title": "New update (1.2.4.0) available",
+      "message": "Make your testing more easier, faster and get new features.",
+      "app_availability": "true",
+      "message_maintance": "We are under maintance, please check after 1 hour."
+    }
+  }
