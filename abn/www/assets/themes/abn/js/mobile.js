@@ -1,11 +1,11 @@
 document.addEventListener('deviceready', onDeviceReady, false);
-var iosVersion = "1.4.5";
-var androidVersion ="4.5.0";
+var iosVersion = "5.1.0";
+var androidVersion ="4.1.0";
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
     interstitial: 'ca-app-pub-4252617315602036/3370770117'
 };
-var interstitialAds = ['ca-app-pub-4252617315602036/3370770117', 'ca-app-pub-4252617315602036/3495231501'];
+var interstitialAds = ['ca-app-pub-4252617315602036/3370770117'];
 var interstitialReady = false;
 var isTesting = true;
 var showTimeAds = true;
@@ -14,12 +14,11 @@ function onDeviceReady() {
     checkIsDevice();
     firebaseNotifications();
 
-
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener('onAdLoaded', onAdLoaded);
     document.addEventListener('onAdDismiss', onAdDismiss);
-    // showBanner();
-    showInterstitialAds();
+    //showMobileAdBanner();
+    // showInterstitialAds2();
 }
 
 function checkIsDevice() {
@@ -80,20 +79,20 @@ function onConfirmQuit(button) {
     }
 }
 
-function showBanner(bannerId) {
+function showBannerAd(bannerId) {
     if (!bannerId) {
         bannerId = admobid.banner
     }
     console.warn('bannerId',bannerId);
     if (AdMob) AdMob.createBanner({
-            adId: bannerId,
+            adId: admobid.banner,
             position: AdMob.AD_POSITION.BOTTOM_CENTER,
             autoShow: true,
-            isTesting: isTesting, // works on emulator
+            isTesting: true, // works on emulator
         }, function() { console.warn("Success Ad"); },
         function(error) { console.warn("Error ad: " + error); });
 
-
+    if (AdMob) AdMob.showAdBanner();
 
     //
     //    if (AdMob) AdMob.prepareInterstitial({
@@ -127,21 +126,35 @@ function onAdDismiss(e) {
         showInterstitialAds();
     }
 }
+function showInterstitialAds(interstitialId){
+    hideBannerAd();
+    if (!interstitialId) {
+        var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
+    }
+    if (AdMob) AdMob.prepareInterstitial({
+            adId: interstitialId,
+            autoShow: true,
+            isTesting: false
+        }, function() {
+            console.warn("success ad: ");
+            interstitialReady = true;
+        },
+        function(error) { console.warn("Error ad: " + error); });
+}
 
-function showInterstitialAds(interstitialId) {
-
+function showInterstitialAds2(interstitialId) {
     if (interstitialReady) {
-        if (showTimeAds) {
             if (AdMob) AdMob.showInterstitial();
-        }
     } else {
         if (!interstitialId) {
             var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
         }
+    hideBannerAd();
+
         if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
                 autoShow: false,
-                isTesting: isTesting
+                isTesting: false
             }, function() {
                 console.warn("success ad: ");
                 interstitialReady = true;
@@ -156,13 +169,13 @@ function showBanner_old() {
     if (AdMob) AdMob.showBanner();
 }
 
-function hideBanner() {
+function hideBannerAd() {
     if (AdMob) AdMob.hideBanner();
 }
 
 function firebaseNotifications() {
     window['FirebasePlugin'].grantPermission(function(hasPermission) {
-        // alert('has permission;'+hasPermission);
+         alert('has permission;'+hasPermission);
         if (hasPermission) {
             window['FirebasePlugin'].subscribe("/topics/all", function() {
                 console.warn("Subscribed to topic");
@@ -189,12 +202,66 @@ function firebaseNotifications() {
     });
 }
 function checkAppVersion(){
-    zcGlobal.zc_modal_9676.open();
+   
     if(zc && zc.http){
-        zc.http.getExternalUrl('assets/themes/static-jsons/version.json').subscribe(res=>{
-           // alert(0);
-            console.warn(res);
-            zcGlobal.zc_modal_9676.open();
+        zc.http.getExternalUrl('assets/static-jsons/version.json').subscribe(res=>{
+           // alert('window.cordova.platformId',window.cordova.platformId);
+           zc['versionInfo']=res;
+           if(window.cordova){
+                if(window.cordova.platformId == 'ios'){
+                    if(res.ios.app_availability=="false"){
+                        zc['versionInfo']['title'] = res.ios.message_maintance;
+                        zc['versionInfo']['message'] = " ";
+                        zc['versionInfo']['app_availability'] = "false";
+                        zcGlobal.zc_modal_9676.open();
+                      
+                    }else{
+                        if(res.ios.force_update=="true"){
+                            if(res.ios && res.ios.version !== iosVersion){
+                                zcGlobal.zc_modal_9676.open();
+                                zc['versionInfo']['title'] = res.ios.title;
+                                zc['versionInfo']['message'] = res.ios.message;
+                            }
+                        }
+                    }
+                }
+                if(res.android && window.cordova.platformId=='android'){
+                    if(res.android.app_availability=="false"){
+                        zc['versionInfo']['title'] = res.ios.message_maintance;;
+                        zc['versionInfo']['message'] = " ";
+                        zc['versionInfo']['app_availability'] = "false";
+                        zcGlobal.zc_modal_9676.open();
+                    }else{
+                        if(res.android.force_update=="true"){
+                            if(res.android.version !== androidVersion){
+                                zc['versionInfo']['title'] = res.android.title;
+                                zc['versionInfo']['message'] = res.android.message;
+                                zcGlobal.zc_modal_9676.open();
+                            }
+                        }
+                    }
+                }
+           }
         });
     }
+}
+
+function downloadFile(file){
+    var fileTransfer = new FileTransfer();
+    var uri = encodeURI(file);
+
+        fileTransfer.download(
+            uri,
+            fileURL,
+            function(entry) {
+                console.log("download complete: " + entry.toURL());
+            },
+            function(error) {
+                console.log("download error source " + error.source);
+                console.log("download error target " + error.target);
+                console.log("download error code" + error.code);
+            },
+            false,
+            {}
+        );
 }

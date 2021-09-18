@@ -118,7 +118,7 @@
                 "onLoad": {
                     "actions": [{
                             "type": "script",
-                            "script": "alert(0);showBanner();checkAppVersion();"
+                            "script": "setTimeout(function(){ if(zcGlobal.zc_modal_9676) checkAppVersion(); showBannerAd('ca-app-pub-4252617315602036/8649009347') }, 2000);"
                         },
                         {
                             "type": "script",

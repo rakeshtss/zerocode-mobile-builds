@@ -83,7 +83,7 @@
           "actions": [
             {
               "type": "script",
-              "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+              "script": "hideBannerAd();setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
             }
           ]
         }

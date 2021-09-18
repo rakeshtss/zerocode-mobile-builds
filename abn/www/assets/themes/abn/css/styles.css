@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&family=Ramabhadra&display=swap');
 @import "../../../../assets/main.css";
+
+.app-update-notification > .modal-header{
+	display: none;
+}
  .zc-loading {
 	display: none !important;
 }
