@@ -8,7 +8,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "android": "cordova run android --device",
         "android:build": "cordova build android --prod --release",
-        "keyfiger":"keytool -list -v -keystore keys/ABNKEYS -alias 'dexter labs' -storepass deXterlab$ -keypass deXterlab$"
+        "keyfiger": "keytool -list -v -keystore keys/ABNKEYS -alias 'dexter labs' -storepass deXterlab$ -keypass deXterlab$"
     },
     "keywords": [
         "ecosystem:cordova"
