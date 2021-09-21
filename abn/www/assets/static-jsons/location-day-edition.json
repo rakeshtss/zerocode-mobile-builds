@@ -306,7 +306,7 @@
                                 "pbId": "block_3564",
                                 "inlineStyle": {},
                                 "customClass": "zc-google-ad m-0 p-0",
-                                "hidden": "zc.config.platform == \"mobile\""
+                                "hidden": "zc.config.platform == \"mobile\" || window.innerWidth < 991"
                               },
                               "info": {
                                 "type": "block",
