@@ -54,16 +54,13 @@
                                     "type": "custom-html",
                                     "apiCode": "html",
                                     "js": [{
-                                            "src": "assets/themes/abn/js/swiper-bundle.min.js",
-                                            "name": "swiper-bundle-min"
+                                            "src": "assets/themes/abn/js/bootstrap.min.js",
+                                            "name": "bootstrap"
                                         },
                                         {
                                             "src": "assets/widgets/abn/speed-news.js"
-                                        },
-                                        {
-                                            "src": "assets/themes/abn/js/bootstrap.min.js",
-                                            "name": "bootstrap"
                                         }
+
                                     ],
                                     "css": [{
                                         "src": "assets/themes/abn/css/swiper-bundle.min.css",

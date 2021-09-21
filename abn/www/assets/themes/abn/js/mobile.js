@@ -1,6 +1,6 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var iosVersion = "5.1.0";
-var androidVersion ="4.1.0";
+var androidVersion = "4.1.0";
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
     interstitial: 'ca-app-pub-4252617315602036/3370770117'
@@ -83,12 +83,13 @@ function showBannerAd(bannerId) {
     if (!bannerId) {
         bannerId = admobid.banner
     }
-    console.warn('bannerId',bannerId);
+    console.warn('bannerId', bannerId);
+
+    // isTesting: true, // works on emulator
     if (AdMob) AdMob.createBanner({
             adId: admobid.banner,
             position: AdMob.AD_POSITION.BOTTOM_CENTER,
             autoShow: true,
-            isTesting: true, // works on emulator
         }, function() { console.warn("Success Ad"); },
         function(error) { console.warn("Error ad: " + error); });
 
@@ -126,15 +127,17 @@ function onAdDismiss(e) {
         showInterstitialAds();
     }
 }
-function showInterstitialAds(interstitialId){
+
+function showInterstitialAds(interstitialId) {
     hideBannerAd();
     if (!interstitialId) {
         var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
     }
+    // isTesting: false
     if (AdMob) AdMob.prepareInterstitial({
             adId: interstitialId,
             autoShow: true,
-            isTesting: false
+
         }, function() {
             console.warn("success ad: ");
             interstitialReady = true;
@@ -144,12 +147,12 @@ function showInterstitialAds(interstitialId){
 
 function showInterstitialAds2(interstitialId) {
     if (interstitialReady) {
-            if (AdMob) AdMob.showInterstitial();
+        if (AdMob) AdMob.showInterstitial();
     } else {
         if (!interstitialId) {
             var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
         }
-    hideBannerAd();
+        hideBannerAd();
 
         if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
@@ -175,7 +178,7 @@ function hideBannerAd() {
 
 function firebaseNotifications() {
     window['FirebasePlugin'].grantPermission(function(hasPermission) {
-         alert('has permission;'+hasPermission);
+        // alert('has permission;' + hasPermission);
         if (hasPermission) {
             window['FirebasePlugin'].subscribe("/topics/all", function() {
                 console.warn("Subscribed to topic");
@@ -201,67 +204,81 @@ function firebaseNotifications() {
         }
     });
 }
-function checkAppVersion(){
-   
-    if(zc && zc.http){
-        zc.http.getExternalUrl('assets/static-jsons/version.json').subscribe(res=>{
-           // alert('window.cordova.platformId',window.cordova.platformId);
-           zc['versionInfo']=res;
-           if(window.cordova){
-                if(window.cordova.platformId == 'ios'){
-                    if(res.ios.app_availability=="false"){
+
+function checkAppVersion() {
+
+    if (zc && zc.http) {
+        zc.http.getExternalUrl('https://ebeta.andhrajyothy.com/assets/static-jsons/version.json').subscribe(res => {
+            // alert('window.cordova.platformId',window.cordova.platformId);
+            zc['versionInfo'] = res;
+            if (window.cordova) {
+                if (window.cordova.platformId == 'ios') {
+                    zc['versionInfo'] = res.ios;
+                    if (res.ios.app_availability == "false") {
                         zc['versionInfo']['title'] = res.ios.message_maintance;
                         zc['versionInfo']['message'] = " ";
                         zc['versionInfo']['app_availability'] = "false";
                         zcGlobal.zc_modal_9676.open();
-                      
-                    }else{
-                        if(res.ios.force_update=="true"){
-                            if(res.ios && res.ios.version !== iosVersion){
+
+                    } else {
+                        if (res.ios && res.ios.version !== iosVersion) {
+                            zc['versionInfo']['title'] = res.ios.title;
+                            zc['versionInfo']['message'] = res.ios.message;
+                            if (res.ios.force_update == "true") {
                                 zcGlobal.zc_modal_9676.open();
-                                zc['versionInfo']['title'] = res.ios.title;
-                                zc['versionInfo']['message'] = res.ios.message;
+                            } else {
+                                var reminderTime = parseInt(localStorage.getItem('version_reminder') || 0);
+                                var localTime = new Date().getTime();
+                                if (localTime < reminderTime || reminderTime == 0) {
+                                    zcGlobal.zc_modal_9676.open();
+                                }
                             }
                         }
                     }
                 }
-                if(res.android && window.cordova.platformId=='android'){
-                    if(res.android.app_availability=="false"){
+                if (res.android && window.cordova.platformId == 'android') {
+                    if (res.android.app_availability == "false") {
                         zc['versionInfo']['title'] = res.ios.message_maintance;;
                         zc['versionInfo']['message'] = " ";
                         zc['versionInfo']['app_availability'] = "false";
                         zcGlobal.zc_modal_9676.open();
-                    }else{
-                        if(res.android.force_update=="true"){
-                            if(res.android.version !== androidVersion){
-                                zc['versionInfo']['title'] = res.android.title;
-                                zc['versionInfo']['message'] = res.android.message;
+                    } else {
+                        if (res.android && res.android.version !== iosVersion) {
+                            zc['versionInfo']['title'] = res.android.title;
+                            zc['versionInfo']['message'] = res.android.message;
+                            if (res.android.force_update == "true") {
                                 zcGlobal.zc_modal_9676.open();
+                            } else {
+                                var reminderTime = parseInt(localStorage.getItem('version_reminder') || 0);
+                                var localTime = new Date().getTime();
+                                if (localTime < reminderTime || reminderTime == 0) {
+                                    zcGlobal.zc_modal_9676.open();
+                                }
+
                             }
                         }
                     }
                 }
-           }
+            }
         });
     }
 }
 
-function downloadFile(file){
+function downloadFile(file) {
     var fileTransfer = new FileTransfer();
     var uri = encodeURI(file);
 
-        fileTransfer.download(
-            uri,
-            fileURL,
-            function(entry) {
-                console.log("download complete: " + entry.toURL());
-            },
-            function(error) {
-                console.log("download error source " + error.source);
-                console.log("download error target " + error.target);
-                console.log("download error code" + error.code);
-            },
-            false,
-            {}
-        );
+    fileTransfer.download(
+        uri,
+        fileURL,
+        function(entry) {
+            console.log("download complete: " + entry.toURL());
+        },
+        function(error) {
+            console.log("download error source " + error.source);
+            console.log("download error target " + error.target);
+            console.log("download error code" + error.code);
+        },
+        false, {}
+    );
 }
