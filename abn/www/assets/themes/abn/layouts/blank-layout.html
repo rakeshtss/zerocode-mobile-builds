@@ -1,4 +1,4 @@
 <div class="blank-layout-content">
-    <zc-com-render type='html' [options]="{type:'page', pageUrl:'epaper/speed-news/app-update-notification'}"></zc-com-render>
+    <zc-com-render *ngIf="ly && ly.siteConfig.platform=='mobile'" type='html' [options]="{type:'page', pageUrl:'epaper/speed-news/app-update-notification'}"></zc-com-render>
     <router-outlet></router-outlet>
 </div>

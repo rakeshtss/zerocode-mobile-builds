@@ -3,9 +3,10 @@
     "apiUrl": "https://betazcapis.andhrajyothy.com/zc-v3.1-user-svc/2.0/",
     "apiUrl5": "https://prod-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
     "apiUrl1": "https://fc-test.zeroco.de/zc-v3.1-user-svc/2.0/",
+    "assetsUrl2": "https://ebeta.andhrajyothy.com/",
     "client": "abn",
     "platform": "mobile",
-    "offline": "true",
+    "offline": "false",
     "captchaKey": "6LcifpQUAAAAAAtWYdlTi23dNXYQdJm00QRxVDSx",
     "googleMapKey": "AIzaSyDlqvq37mmAUE1TPHzvToOdPfQaq2W7GJk",
     "GOOGLE_OAUTH_API_KEY": "771881444052-69jl5p70dnqph56sq02riksfqajsiqlu.apps.googleusercontent.com",
@@ -20,5 +21,6 @@
     "profileLinks1": [
         { "title": "Profile", "url": "swfc/registered-users/profile" },
         { "title": "Change Password", "url": "zcbase/account/change-password" }
-    ]
+    ],
+    "version": "1.4.82"
 }

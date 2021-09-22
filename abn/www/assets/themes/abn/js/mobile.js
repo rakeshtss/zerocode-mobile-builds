@@ -51,8 +51,11 @@ function onBackKeyDown(e) {
         } else if (window.location.href.match('epaper/news/telugunews-details/') || window.location.href.match('epaper/news/telugunews')) {
             zc.actionService.navigateByUrl('/epaper/news/news-home');
         } else if (window.location.href.match('#page')) {
-
-            zc.actionService.navigateByUrl('/t/' + zc.params.app + '/' + zc.params.module);
+            if (zc.queryParams.s) {
+                zc.actionService.navigateByUrl('/t/' + zc.params.app + '/' + zc.params.module + '/' + zc.queryParams.s);
+            } else {
+                zc.actionService.navigateByUrl('/t/' + zc.params.app + '/' + zc.params.module);
+            }
         } else {
             // EVERY OTHER DEVICE
             zc.actionService.navigateByUrl('/epaper/news/speed-news');
@@ -93,8 +96,7 @@ function showBannerAd(bannerId) {
         }, function() { console.warn("Success Ad"); },
         function(error) { console.warn("Error ad: " + error); });
 
-    if (AdMob) AdMob.showAdBanner();
-
+    // if (AdMob) AdMob.showBanner();
     //
     //    if (AdMob) AdMob.prepareInterstitial({
     //        adId: admobid.interstitial,
@@ -124,7 +126,7 @@ function onAdDismiss(e) {
         interstitialReady = false;
         showTimeAds = false;
         setTimeout(function() { showTimeAds = true; }, 10000);
-        showInterstitialAds();
+        // showInterstitialAds();
     }
 }
 
@@ -208,7 +210,8 @@ function firebaseNotifications() {
 function checkAppVersion() {
 
     if (zc && zc.http) {
-        zc.http.getExternalUrl('https://ebeta.andhrajyothy.com/assets/static-jsons/version.json').subscribe(res => {
+        var timeStamp = new Date().getTime();
+        zc.http.getExternalUrl('https://ebeta.andhrajyothy.com/assets/static-jsons/version.json?cache=' + timeStamp).subscribe(res => {
             // alert('window.cordova.platformId',window.cordova.platformId);
             zc['versionInfo'] = res;
             if (window.cordova) {
@@ -229,7 +232,7 @@ function checkAppVersion() {
                             } else {
                                 var reminderTime = parseInt(localStorage.getItem('version_reminder') || 0);
                                 var localTime = new Date().getTime();
-                                if (localTime < reminderTime || reminderTime == 0) {
+                                if (localTime > reminderTime || reminderTime == 0) {
                                     zcGlobal.zc_modal_9676.open();
                                 }
                             }
@@ -243,7 +246,7 @@ function checkAppVersion() {
                         zc['versionInfo']['app_availability'] = "false";
                         zcGlobal.zc_modal_9676.open();
                     } else {
-                        if (res.android && res.android.version !== iosVersion) {
+                        if (res.android && res.android.version !== androidVersion) {
                             zc['versionInfo']['title'] = res.android.title;
                             zc['versionInfo']['message'] = res.android.message;
                             if (res.android.force_update == "true") {
@@ -251,7 +254,7 @@ function checkAppVersion() {
                             } else {
                                 var reminderTime = parseInt(localStorage.getItem('version_reminder') || 0);
                                 var localTime = new Date().getTime();
-                                if (localTime < reminderTime || reminderTime == 0) {
+                                if (localTime > reminderTime || reminderTime == 0) {
                                     zcGlobal.zc_modal_9676.open();
                                 }
 

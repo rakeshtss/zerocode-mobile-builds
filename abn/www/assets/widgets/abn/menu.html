@@ -1,24 +1,25 @@
 <header class="zc-header">
-	<div id="closeMenu" class="menu-overlay"></div>
-	<a href="javascript:;" class="sidebar-toggle" id="nav-toggle" matTooltip="Click to toggle Menu" matTooltipPosition="right">
-		<img src="assets/themes/abn/images/menu_bars.png" alt="">
-	</a>
-	<div class="zc-header-left">
-		<a [routerLink]="['/']" class="zc-logo">
-			<img src="assets/themes/abn/images/logo.png" alt="Logo" />
-		</a>
-		<p class="today-date logo-date" id="logo-date"></p>
-	</div>
-	<div class="zc-header-right">
-		<a class="icon-close menu-close-btn" id="nav-close"></a>
-		<div class="header-right-top"> <span class="custom-editions-link" id="editionsLink"></span>
-			<span class="today-date" id="date"></span>
-		</div>
-		<!-- <div class="zc-main-menu">
+    <div id="closeMenu" class="menu-overlay"></div>
+    <a *ngIf="!(zc.config.platform =='mobile' && zc.params.page =='newspaper');else backnav" class="sidebar-toggle" id="nav-toggle" matTooltip="Click to toggle Menu" matTooltipPosition="right">
+        <img src="assets/themes/abn/images/menu_bars.png" alt="">
+    </a>
+    <ng-template #backnav><a class="btn zc-backbtn" href="/t/15722/hyderabad"><i class="fa fa-angle-left"></i></a></ng-template>
+    <div class="zc-header-left">
+        <a [routerLink]="['/']" class="zc-logo">
+            <img src="assets/themes/abn/images/logo.png" alt="Logo" />
+        </a>
+        <p class="today-date logo-date" id="logo-date"></p>
+    </div>
+    <div class="zc-header-right">
+        <a class="icon-close menu-close-btn" id="nav-close"></a>
+        <div class="header-right-top"> <span class="custom-editions-link" id="editionsLink"></span>
+            <span class="today-date" id="date"></span>
+        </div>
+        <!-- <div class="zc-main-menu">
   
       </div> -->
-		<div class="zc-main-menu">
-			<!-- <ul class="main-menu-list">
+        <div class="zc-main-menu">
+            <!-- <ul class="main-menu-list">
           <li><a [routerLink]="['/']" class="icon-home" style="font-size:18px"></a></li>
           <li *ngFor="let menuItem of zc.menuData">
             <a href="javascript:;" >{{menuItem.name}}
@@ -36,8 +37,8 @@
             </ul>
           </li>
         </ul> -->
-		</div>
-		<!-- <div class="static-links">
+        </div>
+        <!-- <div class="static-links">
         <a routerLink="/zcbase/pages/about-us">About Us</a>
         <a routerLink="/zcbase/pages/contact-us">Contact Us</a>
         <a routerLink="/zcbase/pages/privacy-policy">Privacy Policy</a>
