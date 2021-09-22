@@ -140,7 +140,15 @@
               "id": "block_1786"
             }
           }
-        ]
+        ],
+        "onLoad": {
+          "actions": [          
+            {
+              "type": "script",
+              "script": "if(zc.config.platform=='mobile'){setTimeout(function(){ checkAppVersion(); }, 3000);showBannerAd();}"
+            }
+          ]
+        }
       },
       "info": {
         "type": "page"

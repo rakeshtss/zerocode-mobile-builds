@@ -20,16 +20,17 @@ $(document).ready(function() {
             clipData = res.data;
             zc.showclips = true;
             zc.clip = clipData;
-            console.log('clip view', clipData);
+            console.log('clip view ww', clipData);
             let baseClipUrl = zc.config.E_PAPER_S3_URL + clipData.edition.edition_info.basePath;
             clipUrl = (isWebpSupport()) ? clipData.webp_path : clipData.jpg_path;
             clipImage = $("<img />", { src: baseClipUrl + clipUrl, alt: 'Clip Image' });
             modalClipImage = $("<img />", { src: baseClipUrl + clipUrl, alt: 'Clip Image' });
             clipViewImage.append(clipImage);
-            $('#exampleModal').on('show.bs.modal', function(event) {
-                // console.log('clicked');
+            // $('#exampleModal').on('hidden.bs.modal');
+            $('#exampleModal').on('shown.bs.modal', function(event) {
                 modalClipViewImage.append(modalClipImage);
             })
+            modalClipViewImage.append(modalClipImage);
             let fullpageUrl = ((clipData.edition.uid_actual) ? clipData.edition.uid_actual : clipData.edition.uid) + '/' + ((clipData.edition.sub_sub_category.code) ? clipData.edition.sub_sub_category.code : clipData.edition.sub_category.code) + '/' + clipData.edition.date.split('-').reverse().join('-');
             var pageIndex = 1;
             if (!zc.queryParams.page) {

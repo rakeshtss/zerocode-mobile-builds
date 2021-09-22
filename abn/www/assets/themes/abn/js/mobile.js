@@ -56,6 +56,8 @@ function onBackKeyDown(e) {
             } else {
                 zc.actionService.navigateByUrl('/t/' + zc.params.app + '/' + zc.params.module);
             }
+        } else if (window.location.href.match('zcbase/download/newspaper')) {
+            zc.actionService.navigateByUrl(zc.queryParams.redirect);
         } else {
             // EVERY OTHER DEVICE
             zc.actionService.navigateByUrl('/epaper/news/speed-news');
@@ -127,11 +129,12 @@ function onAdDismiss(e) {
         showTimeAds = false;
         setTimeout(function() { showTimeAds = true; }, 10000);
         // showInterstitialAds();
+        showBannerAd();
     }
 }
 
 function showInterstitialAds(interstitialId) {
-    hideBannerAd();
+
     if (!interstitialId) {
         var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
     }
@@ -143,11 +146,12 @@ function showInterstitialAds(interstitialId) {
         }, function() {
             console.warn("success ad: ");
             interstitialReady = true;
+            hideBannerAd();
         },
         function(error) { console.warn("Error ad: " + error); });
 }
 
-function showInterstitialAds2(interstitialId) {
+function showInterstitialAdsTimmer(interstitialId) {
     if (interstitialReady) {
         if (AdMob) AdMob.showInterstitial();
     } else {
@@ -155,7 +159,6 @@ function showInterstitialAds2(interstitialId) {
             var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
         }
         hideBannerAd();
-
         if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
                 autoShow: false,

@@ -3,7 +3,7 @@
     <a *ngIf="!(zc.config.platform =='mobile' && zc.params.page =='newspaper');else backnav" class="sidebar-toggle" id="nav-toggle" matTooltip="Click to toggle Menu" matTooltipPosition="right">
         <img src="assets/themes/abn/images/menu_bars.png" alt="">
     </a>
-    <ng-template #backnav><a class="btn zc-backbtn" href="/t/15722/hyderabad"><i class="fa fa-angle-left"></i></a></ng-template>
+    <ng-template #backnav><a class="btn zc-backbtn" [routerLink]="[zc.queryParams.redirect || '/']"><i class="fa fa-angle-left"></i></a></ng-template>
     <div class="zc-header-left">
         <a [routerLink]="['/']" class="zc-logo">
             <img src="assets/themes/abn/images/logo.png" alt="Logo" />
@@ -16,32 +16,32 @@
             <span class="today-date" id="date"></span>
         </div>
         <!-- <div class="zc-main-menu">
-  
-      </div> -->
+
+    </div> -->
         <div class="zc-main-menu">
             <!-- <ul class="main-menu-list">
-          <li><a [routerLink]="['/']" class="icon-home" style="font-size:18px"></a></li>
-          <li *ngFor="let menuItem of zc.menuData">
-            <a href="javascript:;" >{{menuItem.name}}
-              <span *ngIf="menuItem.sub_category.length > 0 && menuItem.sub_category.length != 0" class="icon icon-angle-down"></span>
-            </a>
-            <ul class="zc-sub-menu" *ngIf="menuItem.sub_category" [ngClass]="{'zc-subchild-menu': menuItem.sub_category.length>10, 'zc-submega-menu': menuItem.sub_category.length>20}">
-              <li class="li-menu" *ngFor="let subCategory of menuItem.sub_category">
-                <a onclick="closeMenu()" routerLink="/t/11227/{{subCategory.code}}">{{subCategory.name}}</a>
-                <span *ngIf="subCategory.sub_sub_category.length > 0 && subCategory.sub_sub_category.length != 0" class="icon icon-angle-right"></span>
-                <ul  class="zc-nested-menu" *ngIf="subCategory.sub_sub_category.length > 0 && subCategory.sub_sub_category.length != 0">
-                  <li *ngFor="let subSubCategory of subCategory.sub_sub_category">
-                    <a onclick="closeMenu()" routerLink="/t/11227/{{subCategory.code}}/{{subSubCategory.code}}">{{subSubCategory.name}}</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul> -->
+        <li><a [routerLink]="['/']" class="icon-home" style="font-size:18px"></a></li>
+        <li *ngFor="let menuItem of zc.menuData">
+          <a href="javascript:;" >{{menuItem.name}}
+            <span *ngIf="menuItem.sub_category.length > 0 && menuItem.sub_category.length != 0" class="icon icon-angle-down"></span>
+          </a>
+          <ul class="zc-sub-menu" *ngIf="menuItem.sub_category" [ngClass]="{'zc-subchild-menu': menuItem.sub_category.length>10, 'zc-submega-menu': menuItem.sub_category.length>20}">
+            <li class="li-menu" *ngFor="let subCategory of menuItem.sub_category">
+              <a onclick="closeMenu()" routerLink="/t/11227/{{subCategory.code}}">{{subCategory.name}}</a>
+              <span *ngIf="subCategory.sub_sub_category.length > 0 && subCategory.sub_sub_category.length != 0" class="icon icon-angle-right"></span>
+              <ul  class="zc-nested-menu" *ngIf="subCategory.sub_sub_category.length > 0 && subCategory.sub_sub_category.length != 0">
+                <li *ngFor="let subSubCategory of subCategory.sub_sub_category">
+                  <a onclick="closeMenu()" routerLink="/t/11227/{{subCategory.code}}/{{subSubCategory.code}}">{{subSubCategory.name}}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul> -->
         </div>
         <!-- <div class="static-links">
-        <a routerLink="/zcbase/pages/about-us">About Us</a>
-        <a routerLink="/zcbase/pages/contact-us">Contact Us</a>
-        <a routerLink="/zcbase/pages/privacy-policy">Privacy Policy</a>
-        <a routerLink="/zcbase/pages/terms-and-conditions">Terms and Conditions</a>
-      </div> --></div> <a class="calender-nav-mobile" href="javascript:;"><i class="icon-calendar"></i></a>
+      <a routerLink="/zcbase/pages/about-us">About Us</a>
+      <a routerLink="/zcbase/pages/contact-us">Contact Us</a>
+      <a routerLink="/zcbase/pages/privacy-policy">Privacy Policy</a>
+      <a routerLink="/zcbase/pages/terms-and-conditions">Terms and Conditions</a>
+    </div> --></div> <a class="calender-nav-mobile" href="javascript:;"><i class="icon-calendar"></i></a>
 </header>
