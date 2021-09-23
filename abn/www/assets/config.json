@@ -3,7 +3,7 @@
     "apiUrl": "https://betazcapis.andhrajyothy.com/zc-v3.1-user-svc/2.0/",
     "apiUrl5": "https://prod-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
     "apiUrl1": "https://fc-test.zeroco.de/zc-v3.1-user-svc/2.0/",
-    "assetsUrl2": "https://ebeta.andhrajyothy.com/",
+    "assetsUrl": "https://ebeta.andhrajyothy.com/",
     "client": "abn",
     "platform": "mobile",
     "offline": "false",
@@ -22,5 +22,5 @@
         { "title": "Profile", "url": "swfc/registered-users/profile" },
         { "title": "Change Password", "url": "zcbase/account/change-password" }
     ],
-    "version": "1.4.82"
+    "version": "5.1.121"
 }

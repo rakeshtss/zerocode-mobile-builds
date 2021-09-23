@@ -1,165 +1,150 @@
 {
-  "data": {
-    "uid": "0ADB03D8A9E02CB4FA3A7E7FA8C0CF84",
-    "app": "epaper",
-    "publicAccess": true,
-    "accessBased": false,
-    "code": "news-home",
-    "icon": "",
-    "label": "News Home",
-    "layout": "blank",
-    "module": "news",
-    "theme": "abn",
-    "instructions": {
-      "definition": {
-        "widgets": [
-          {
+    "data": {
+        "uid": "0ADB03D8A9E02CB4FA3A7E7FA8C0CF84",
+        "app": "epaper",
+        "publicAccess": true,
+        "accessBased": false,
+        "code": "news-home",
+        "icon": "",
+        "label": "News Home",
+        "layout": "blank",
+        "module": "news",
+        "theme": "abn",
+        "instructions": {
             "definition": {
-              "style": "col-12",
-              "widgets": [
-                {
-                  "definition": {
-                    "template": "<div class=\"zc-news-header\">\n<a [routerLink]=\"['/']\" class=\"zc-news-logo\">\n<img src=\"assets/themes/abn/images/logo.png\" alt=\"logo\">\n</a>\n</div>",
-                    "id": "html_844",
-                    "pbId": "html_7943",
-                    "type": "custom-html",
-                    "apiCode": "html",
-                    "js": [                     
-                      {
-                        "src": "assets/widgets/abn/new-header.js",
-                        "name": "new header"
-                      }
-                    ],
-                    "css": [],
-                    "htmlUrl": "assets/widgets/abn/new-header.html"
-                  },
-                  "info": {
-                    "type": "html",
-                    "id": "html_8039"
-                  }
-                }
-              ],
-              "id": "block_8969",
-              "pbId": "block_8281",
-              "inlineStyle": {}
-            },
-            "info": {
-              "type": "block",
-              "id": "block_5394"
-            }
-          },
-          {
-            "definition": {
-              "style": "col-12",
-              "widgets": [
-                {
-                  "definition": {
-                    "style": "col-12",
-                    "widgets": [
-                      {
+                "widgets": [{
                         "definition": {
-                          "template": "assets/widgets/abn/edition-slider.html",
-                          "id": "html_9589",
-                          "pbId": "html_729",
-                          "type": "custom-html",
-                          "apiCode": "html",
-                          "js": [                           
-                            {
-                              "src": "assets/widgets/abn/slick.min.js",
-                              "name": "slick-min"
-                            },
-                            {
-                              "src": "assets/widgets/abn/news-home.js",
-                              "name": "news-home"
-                            }
-                          ],
-                          "css": [
-                            {
-                              "src": "assets/widgets/abn/slick.css",
-                              "name": "slick"
-                            },
-                            {
-                              "src": "assets/widgets/abn/slick-theme.css",
-                              "name": "slick-theme"
-                            }
-                          ],
-                          "htmlUrl": "assets/widgets/abn/news-home.html"
+                            "style": "col-12",
+                            "widgets": [{
+                                "definition": {
+                                    "template": "<div class=\"zc-news-header\">\n<a [routerLink]=\"['/']\" class=\"zc-news-logo\">\n<img src=\"assets/themes/abn/images/logo.png\" alt=\"logo\">\n</a>\n</div>",
+                                    "id": "html_844",
+                                    "pbId": "html_7943",
+                                    "type": "custom-html",
+                                    "apiCode": "html",
+                                    "js": [{
+                                        "src": "assets/widgets/abn/new-header.js",
+                                        "name": "new header"
+                                    }],
+                                    "css": [],
+                                    "htmlUrl": "assets/widgets/abn/new-header.html"
+                                },
+                                "info": {
+                                    "type": "html",
+                                    "id": "html_8039"
+                                }
+                            }],
+                            "id": "block_8969",
+                            "pbId": "block_8281",
+                            "inlineStyle": {}
                         },
                         "info": {
-                          "type": "html",
-                          "id": "html_7762"
+                            "type": "block",
+                            "id": "block_5394"
                         }
-                      }
-                    ],
-                    "id": "block_5119",
-                    "pbId": "block_2717",
-                    "inlineStyle": {},
-                    "customClass": "m-0 p-0 bg-white zc-news-list-block customtop-white"
-                  },
-                  "info": {
-                    "type": "block",
-                    "id": "block_4547"
-                  }
+                    },
+                    {
+                        "definition": {
+                            "style": "col-12",
+                            "widgets": [{
+                                "definition": {
+                                    "style": "col-12",
+                                    "widgets": [{
+                                        "definition": {
+                                            "template": "assets/widgets/abn/edition-slider.html",
+                                            "id": "html_9589",
+                                            "pbId": "html_729",
+                                            "type": "custom-html",
+                                            "apiCode": "html",
+                                            "js": [{
+                                                    "src": "assets/widgets/abn/slick.min.js",
+                                                    "name": "slick-min"
+                                                },
+                                                {
+                                                    "src": "assets/widgets/abn/news-home.js",
+                                                    "name": "news-home"
+                                                }
+                                            ],
+                                            "css": [{
+                                                    "src": "assets/widgets/abn/slick.css",
+                                                    "name": "slick"
+                                                },
+                                                {
+                                                    "src": "assets/widgets/abn/slick-theme.css",
+                                                    "name": "slick-theme"
+                                                }
+                                            ],
+                                            "htmlUrl": "assets/widgets/abn/news-home.html"
+                                        },
+                                        "info": {
+                                            "type": "html",
+                                            "id": "html_7762"
+                                        }
+                                    }],
+                                    "id": "block_5119",
+                                    "pbId": "block_2717",
+                                    "inlineStyle": {},
+                                    "customClass": "m-0 p-0 bg-white zc-news-list-block customtop-white"
+                                },
+                                "info": {
+                                    "type": "block",
+                                    "id": "block_4547"
+                                }
+                            }],
+                            "id": "block_753",
+                            "pbId": "block_5226",
+                            "inlineStyle": {},
+                            "customClass": "p-0 zc-news-block"
+                        },
+                        "info": {
+                            "type": "block",
+                            "id": "block_1433"
+                        }
+                    },
+                    {
+                        "definition": {
+                            "style": "col-12",
+                            "widgets": [{
+                                "definition": {
+                                    "template": "<div class=\"zc-news-footer\">\n <ul>\n <li class=\"zc-news-footer-link\">\n <a routerLink=\"//epaper/news/speed-news\">\n<img src=\"assets/themes/abn/images/short-news-white.png\" alt=\"\">\n <p>Speed News</p>\n</a>\n</li>\n       <li class=\"zc-news-footer-link active\">\n<a routerLink=\"/epaper/news/news-home\">\n<img src=\"assets/themes/abn/images/news.png\" alt=\"\">\n <p>News</p>\n </a>\n  </li>\n  <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/zcbase/account/home\">\n <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n    </ul>\n</div>",
+                                    "id": "html_6095",
+                                    "pbId": "html_21",
+                                    "type": "html",
+                                    "apiCode": "html",
+                                    "js": [],
+                                    "css": []
+                                },
+                                "info": {
+                                    "type": "html",
+                                    "id": "html_1274"
+                                }
+                            }],
+                            "id": "block_2071",
+                            "pbId": "block_9647"
+                        },
+                        "info": {
+                            "type": "block",
+                            "id": "block_1786"
+                        }
+                    }
+                ],
+                "onLoad": {
+                    "actions": [{
+                        "type": "script",
+                        "script": "if(zc.config.platform=='mobile'){setTimeout(function(){ checkAppVersion(); }, 3000);}"
+                    }]
                 }
-              ],
-              "id": "block_753",
-              "pbId": "block_5226",
-              "inlineStyle": {},
-              "customClass": "p-0 zc-news-block"
             },
             "info": {
-              "type": "block",
-              "id": "block_1433"
+                "type": "page"
             }
-          },
-          {
-            "definition": {
-              "style": "col-12",
-              "widgets": [
-                {
-                  "definition": {
-                    "template": "<div class=\"zc-news-footer\">\n <ul>\n <li class=\"zc-news-footer-link\">\n <a routerLink=\"//epaper/news/speed-news\">\n<img src=\"assets/themes/abn/images/short-news-white.png\" alt=\"\">\n <p>Speed News</p>\n</a>\n</li>\n       <li class=\"zc-news-footer-link active\">\n<a routerLink=\"/epaper/news/news-home\">\n<img src=\"assets/themes/abn/images/news.png\" alt=\"\">\n <p>News</p>\n </a>\n  </li>\n  <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/zcbase/account/home\">\n <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n    </ul>\n</div>",
-                    "id": "html_6095",
-                    "pbId": "html_21",
-                    "type": "html",
-                    "apiCode": "html",
-                    "js": [],
-                    "css": []
-                  },
-                  "info": {
-                    "type": "html",
-                    "id": "html_1274"
-                  }
-                }
-              ],
-              "id": "block_2071",
-              "pbId": "block_9647"
-            },
-            "info": {
-              "type": "block",
-              "id": "block_1786"
-            }
-          }
-        ],
-        "onLoad": {
-          "actions": [          
-            {
-              "type": "script",
-              "script": "if(zc.config.platform=='mobile'){setTimeout(function(){ checkAppVersion(); }, 3000);showBannerAd();}"
-            }
-          ]
-        }
-      },
-      "info": {
-        "type": "page"
-      }
+        },
+        "is_fixed": 1,
+        "apis": [],
+        "cacheKey": "epaper:news:news-home"
     },
-    "is_fixed": 1,
-    "apis": [],
-    "cacheKey": "epaper:news:news-home"
-  },
-  "success": true,
-  "zcServerDateTime": "2021-06-24 19:03:55",
-  "zcServerIp": "ip-10-1-3-14/10.1.3.14",
-  "zcServerHost": "ip-10-1-3-14"
+    "success": true,
+    "zcServerDateTime": "2021-06-24 19:03:55",
+    "zcServerIp": "ip-10-1-3-14/10.1.3.14",
+    "zcServerHost": "ip-10-1-3-14"
 }

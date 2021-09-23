@@ -3,7 +3,7 @@
     <a *ngIf="!(zc.config.platform =='mobile' && zc.params.page =='newspaper');else backnav" class="sidebar-toggle" id="nav-toggle" matTooltip="Click to toggle Menu" matTooltipPosition="right">
         <img src="assets/themes/abn/images/menu_bars.png" alt="">
     </a>
-    <ng-template #backnav><a class="btn zc-backbtn" [routerLink]="[zc.queryParams.redirect || '/']"><i class="fa fa-angle-left"></i></a></ng-template>
+    <ng-template #backnav><a class="btn zc-backbtn" [routerLink]="[zc.queryParams.redirect.replace('/android_asset/www', '') || '/']"><i class="fa fa-angle-left"></i></a></ng-template>
     <div class="zc-header-left">
         <a [routerLink]="['/']" class="zc-logo">
             <img src="assets/themes/abn/images/logo.png" alt="Logo" />

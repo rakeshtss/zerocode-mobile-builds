@@ -4107,6 +4107,7 @@ zc-dialog .modal-header .close:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 70px;
 }
 
 .clip-view-image img {

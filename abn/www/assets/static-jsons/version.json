@@ -5,7 +5,7 @@
       "force_update": "false",
       "title": "New update (4.1.0) available",
       "message": "Make your testing more easier, faster and get new features.",
-      "app_availability": "false",
+      "app_availability": "true",
       "message_maintance": "We are under maintance, please check after 1 hour."
     },
     "ios": {

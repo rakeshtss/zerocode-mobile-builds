@@ -191,10 +191,11 @@ function getSpeednewsListByCategory() {
                         </div>`;
                     }
                     if (o.description) {
+                        o.description = o.description.replace('<link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css\" />','');
                         if (o.news_id) {
                             slide_data += `<a href="javascript:;" class="read-full-news" onclick='showNewsModal(${JSON.stringify(o)})'>Read full news</a>`;
                         }
-                        slide_data += `<p>${o.description}</p>`;
+                        slide_data += `<p>${escapeHtml(o.description)}</p>`;
                     }
                     slide_data += `</div>`;
                     $('.swiper-wrapper').append(slide_data);
@@ -282,6 +283,10 @@ function stopVideo(ev, videoUrl, i) {
     $("#stop" + i).hide();
     ev.preventDefault();
 
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 function playVideo(event, i) {
     $("#iframeId" + i)[0].src += "&autoplay=1";

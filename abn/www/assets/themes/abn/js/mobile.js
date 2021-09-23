@@ -57,7 +57,7 @@ function onBackKeyDown(e) {
                 zc.actionService.navigateByUrl('/t/' + zc.params.app + '/' + zc.params.module);
             }
         } else if (window.location.href.match('zcbase/download/newspaper')) {
-            zc.actionService.navigateByUrl(zc.queryParams.redirect);
+            zc.actionService.navigateByUrl(zc.queryParams.redirect.replace('/android_asset/www', ''));
         } else {
             // EVERY OTHER DEVICE
             zc.actionService.navigateByUrl('/epaper/news/speed-news');
@@ -129,9 +129,11 @@ function onAdDismiss(e) {
         showTimeAds = false;
         setTimeout(function() { showTimeAds = true; }, 10000);
         // showInterstitialAds();
+        interstitialAdsRunning = false;
         showBannerAd();
     }
 }
+var interstitialAdsRunning = false;
 
 function showInterstitialAds(interstitialId) {
 
@@ -139,16 +141,20 @@ function showInterstitialAds(interstitialId) {
         var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
     }
     // isTesting: false
-    if (AdMob) AdMob.prepareInterstitial({
-            adId: interstitialId,
-            autoShow: true,
+    if (!interstitialAdsRunning) {
+        interstitialAdsRunning = true;
+        // hideBannerAd();
+        if (AdMob) AdMob.prepareInterstitial({
+                adId: interstitialId,
+                autoShow: true,
 
-        }, function() {
-            console.warn("success ad: ");
-            interstitialReady = true;
-            hideBannerAd();
-        },
-        function(error) { console.warn("Error ad: " + error); });
+            }, function() {
+                interstitialAdsRunning = true;
+                console.warn("success interaials ad: ");
+            },
+            function(error) { console.warn("Error ad: " + error); });
+    }
+
 }
 
 function showInterstitialAdsTimmer(interstitialId) {
