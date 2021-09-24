@@ -33,13 +33,13 @@ $(document).ready(function() {
             modalClipViewImage.append(modalClipImage);
             let fullpageUrl = ((clipData.edition.uid_actual) ? clipData.edition.uid_actual : clipData.edition.uid) + '/' + ((clipData.edition.sub_sub_category.code) ? clipData.edition.sub_sub_category.code : clipData.edition.sub_category.code) + '/' + clipData.edition.date.split('-').reverse().join('-');
             var pageIndex = 1;
-            if (!zc.queryParams.page) {
-                pageIndex = 1;
+            if (zc.queryParams.page) {
+                pageIndex = zc.queryParams.page;
             }
             if (clipData.edition.sub_sub_category.code) {
-                fullpageUrl = fullpageUrl + '/' + pageIndex + '?s=' + clipData.edition.sub_category.code + '#page/1/1';
+                fullpageUrl = fullpageUrl + '/' + pageIndex + '?s=' + clipData.edition.sub_category.code + '#page/' + pageIndex + '/1';
             } else {
-                fullpageUrl = fullpageUrl + '/' + pageIndex + '#page/1/1';
+                fullpageUrl = fullpageUrl + '/' + pageIndex + '#page/' + pageIndex + '/1';
             }
             let shareLinks = `
             <a href="${baseClipUrl}${clipData.jpg_path}" class="btn btn-outline-secondary btn-open"><i class="icon-cloud-download-1"></i> <span>Download</span></a>

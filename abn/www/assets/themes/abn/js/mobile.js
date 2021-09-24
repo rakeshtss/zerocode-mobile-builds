@@ -17,8 +17,6 @@ function onDeviceReady() {
     document.addEventListener("backbutton", onBackKeyDown, false);
     document.addEventListener('onAdLoaded', onAdLoaded);
     document.addEventListener('onAdDismiss', onAdDismiss);
-    //showMobileAdBanner();
-    // showInterstitialAds2();
 }
 
 function checkIsDevice() {
@@ -119,7 +117,6 @@ function onAdLoaded(e) {
     if (e.adType == 'interstitial') {
         console.warn('ads loaded');
         interstitialReady = true;
-        // AdMob.showInterstitial();
     }
 }
 
@@ -127,8 +124,7 @@ function onAdDismiss(e) {
     if (e.adType == 'interstitial') {
         interstitialReady = false;
         showTimeAds = false;
-        setTimeout(function() { showTimeAds = true; }, 10000);
-        // showInterstitialAds();
+        setTimeout(function() { showTimeAds = true; }, 60 * 1000);
         interstitialAdsRunning = false;
         showBannerAd();
     }
@@ -146,18 +142,45 @@ function showInterstitialAds(interstitialId) {
         // hideBannerAd();
         if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
-                autoShow: true,
-
+                autoShow: false
             }, function() {
                 interstitialAdsRunning = true;
                 console.warn("success interaials ad: ");
             },
             function(error) { console.warn("Error ad: " + error); });
+        if (AdMob) window.AdMob.showInterstitial();
     }
 
 }
 
-function showInterstitialAdsTimmer(interstitialId) {
+function interstitialEveryMinute() {
+
+
+    // it will display smart banner at top center, using the default options
+    // if (AdMob) AdMob.createBanner({
+    //     adId: admobid.banner,
+    //     bannerId: admobid.banner,
+    //     position: AdMob.AD_POSITION.BOTTOM_CENTER,
+    //     autoShow: true,
+    //     isTesting: false,
+    //     success: function() {
+    //         console.log('banner created');
+    //     },
+    //     error: function() {
+    //         console.log('failed to create banner');
+    //     }
+    // });
+    window.AdMob.prepareInterstitial({ adId: admobid.interstitial, autoShow: false });
+    window.AdMob.showInterstitial();
+
+
+
+    //!!!add the code here!!! - so, just paste what I wrote above:
+    setInterval(window.AdMob.showInterstitial, 2 * 60 * 1000);
+
+}
+
+function showInterstitialAdsTimer(interstitialId) {
     if (interstitialReady) {
         if (AdMob) AdMob.showInterstitial();
     } else {
