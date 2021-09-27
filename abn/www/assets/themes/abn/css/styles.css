@@ -3,7 +3,9 @@
 .app-update-notification>.modal-header {
     display: none;
 }
-
+.modal {
+    top: env(safe-area-inset-top, 0px);
+}
 .zc-loading {
     display: none !important;
 }
@@ -2032,6 +2034,7 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 .date-picker-container {
     position: fixed;
     top: 62px;
+    padding-top: env(safe-area-inset-top, 62px) !important;
     /* left: 0; */
     left: 180px;
     z-index: 1000;
@@ -5362,6 +5365,7 @@ body .zc-edition-header .ui-datepicker table td>a {
     position: fixed !important;
     top: 15px !important;
     right: 15px !important;
+    padding-top: env(safe-area-inset-top, 0px) !important;
 }
 
 .page-clip-image img {

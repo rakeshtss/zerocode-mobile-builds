@@ -1,5 +1,5 @@
 document.addEventListener('deviceready', onDeviceReady, false);
-var iosVersion = "5.1.0";
+var iosVersion = "5.2.0";
 var androidVersion = "4.1.0";
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
@@ -11,7 +11,7 @@ var isTesting = true;
 var showTimeAds = true;
 
 function onDeviceReady() {
-    checkIsDevice();
+    // checkIsDevice();
     firebaseNotifications();
 
     document.addEventListener("backbutton", onBackKeyDown, false);
@@ -93,6 +93,7 @@ function showBannerAd(bannerId) {
             adId: admobid.banner,
             position: AdMob.AD_POSITION.BOTTOM_CENTER,
             autoShow: true,
+            isTesting:true
         }, function() { console.warn("Success Ad"); },
         function(error) { console.warn("Error ad: " + error); });
 
@@ -142,7 +143,8 @@ function showInterstitialAds(interstitialId) {
         // hideBannerAd();
         if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
-                autoShow: false
+                autoShow: false,
+                isTesting:true
             }, function() {
                 interstitialAdsRunning = true;
                 console.warn("success interaials ad: ");

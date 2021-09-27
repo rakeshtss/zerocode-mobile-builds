@@ -42,7 +42,7 @@ $(document).ready(function() {
                 fullpageUrl = fullpageUrl + '/' + pageIndex + '#page/' + pageIndex + '/1';
             }
             let shareLinks = `
-            <a href="${baseClipUrl}${clipData.jpg_path}" class="btn btn-outline-secondary btn-open"><i class="icon-cloud-download-1"></i> <span>Download</span></a>
+            <a onclick="zc.download('${baseClipUrl}${clipData.jpg_path}')" class="btn btn-outline-secondary btn-open"><i class="icon-cloud-download-1"></i> <span>Download</span></a>
             <a onclick="zc.actionService.navigateByUrl('/${fullpageUrl}')" class="btn btn-outline-secondary btn-open"><i class="icon-external-link"></i> <span>Full Page</span></a>
             <a onclick="shareClip('whatsapp')" class="btn  btn-success"><i class="icon-whatsapp"></i> <span>WHATSAPP</span></a>
             <a onclick="shareClip('fb')" class="btn btn-primary btn-facebook"><i class="icon-facebook"></i> <span>Facebook</span></a>

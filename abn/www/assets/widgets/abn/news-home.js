@@ -112,6 +112,7 @@ function sectionNews() {
         // }
         secDiv += `<ul class="shortnews-list">`;
         $(cat.news).each(function (ni, news) {
+            console.log('news -->', news);
             newsDiv = `<li>`;
             if (cat.uid == 47 && ni == 0) {
                 newsDiv = `<li class="chitrajoythi-newscard">`;
@@ -123,7 +124,7 @@ function sectionNews() {
                 <div class="news-content">
                     <h3>${news.title}</h3>
                 </div></a>
-                <div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png"></span><p class="news-time"><span>5 minutes ago</span></p></div>
+                <div class="video-time-div"><span class="source"><img src="assets/themes/abn/images/abn-logo.png"></span><p class="news-time"><span>${timeDifference(new Date(), new Date(news.date))}</span></p></div>
             </li>`;
             secDiv += newsDiv;
         });

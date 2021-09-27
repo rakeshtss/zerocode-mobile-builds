@@ -17,7 +17,7 @@
                             "style": "col-12",
                             "widgets": [{
                                 "definition": {
-                                    "template": "<div class=\"zc-edition-header zc-no-side-menu\">\n<a class=\"sidebar-toggle\" href=\"javascript:;\" id=\"nav-toggle\" mattooltip=\"Click to toggle Menu\" mattooltipposition=\"right\"><img alt=\"\" src=\"assets/themes/abn/images/menu_bars.png\"></a>\n<div class=\"zc-edition-header-left\">\n<a routerLink=\"/\" class=\"zc-logo\">\n      <img src=\"assets/themes/abn/images/logo.png\" alt=\"Logo\" />\n     <p id=\"date\" class=\"zc-date\"></p>\n    </a>\n\n\n  </div>\n<div class=\"zc-edition-header-right\">\n<a class=\"icon-close menu-close-btn\" id=\"nav-close\"></a>\n<ul>\n<!--<li><a routerLink=\"/\">HOME</a></li>-->\n\n</ul>\n<div class=\"zc-social-media-block\">\n<a *ngIf=\"zc.user\" class=\"editions-link\" routerLink=\"/epa/editions/editions\">Editions</a>\n<div class=\"social-icons\">\n<!--<a href=\"http://www.youtube.com/user/abntelugutv?sub_confirmation=1\" target=\"_blank\" class=\"btn btn-danger icon-youtube\"></a>-->\n                <a href=\"https://www.facebook.com/abntelugutv\" target=\"_blank\" class=\"icon-facebook\"></a>\n                <a href=\"https://twitter.com/abntelugutv\" target=\"_blank\" class=\"icon-twitter\"></a>\n</div>\n</div></div>\n</div>",
+                                    "template": "<div class=\"zc-edition-header zc-no-side-menu\">\n<a class=\"sidebar-toggle\" href=\"javascript:;\" id=\"nav-toggle\" mattooltip=\"Click to toggle Menu\" mattooltipposition=\"right\"><img alt=\"\" src=\"assets/themes/abn/images/menu_bars.png\"></a>\n<a class=\"btn zc-backbtn\" *ngIf=\"zc.config.platform =='mobile'\" onclick=\"document.getElementById('btnFullpage').click();\"><i class=\"fa fa-angle-left\"></i></a>\n<div class=\"zc-edition-header-left\"><a routerLink=\"/\" class=\"zc-logo\">\n      <img src=\"assets/themes/abn/images/logo.png\" alt=\"Logo\" />\n     <p id=\"date\" class=\"zc-date\"></p>\n    </a>\n\n\n  </div>\n<div class=\"zc-edition-header-right\">\n<a class=\"icon-close menu-close-btn\" id=\"nav-close\"></a>\n<ul>\n<!--<li><a routerLink=\"/\">HOME</a></li>-->\n\n</ul>\n<div class=\"zc-social-media-block\">\n<a *ngIf=\"zc.user\" class=\"editions-link\" routerLink=\"/epa/editions/editions\">Editions</a>\n<div class=\"social-icons\">\n<!--<a href=\"http://www.youtube.com/user/abntelugutv?sub_confirmation=1\" target=\"_blank\" class=\"btn btn-danger icon-youtube\"></a>-->\n<a href=\"https://www.facebook.com/abntelugutv\" target=\"_blank\" class=\"icon-facebook\"></a>\n                <a href=\"https://twitter.com/abntelugutv\" target=\"_blank\" class=\"icon-twitter\"></a>\n</div>\n</div></div>\n</div>",
                                     "id": "html_6186",
                                     "pbId": "html_4629",
                                     "type": "html",
@@ -152,7 +152,7 @@
                                                                                 "placeholder": "Enter text",
                                                                                 "messages": {},
                                                                                 "hideLabel": true,
-                                                                                "displayFormat": "<a href=\"{{zc?.config?.E_PAPER_S3_URL}}{{zc?.clip?.edition?.edition_info?.basePath}}{{zc?.clip?.jpg_path}}\" class=\"btn btn-outline-secondary btn-open\" >\n          <i class=\"icon-cloud-download-1\"></i>Download\n        </a>",
+                                                                                "displayFormat": "<a (click)=\"zc.download(zc.config.E_PAPER_S3_URL+zc.clip.edition.edition_info.basePath+zc.clip.jpg_path)\" class=\"btn btn-outline-secondary btn-open\" >\n          <i class=\"icon-cloud-download-1\"></i>Download\n        </a>",
                                                                                 "mode": "view"
                                                                             },
                                                                             "id": "text_5771",
@@ -239,7 +239,7 @@
                                                                             }
                                                                         },
                                                                         {
-                                                                            "name": "button",
+                                                                            "name": "btnFullpage",
                                                                             "label": "Full Page",
                                                                             "type": "button",
                                                                             "properties": {
@@ -1504,7 +1504,12 @@
                 ],
                 "breadcrumb": [],
                 "onLoad": {
-                    "actions": [{
+                    "actions": [
+                        {
+                            "type":"script",
+                            "script":"zc.download=(file)=>{ if(window.cordova && cordova.InAppBrowser){ cordova.InAppBrowser.open(file,'_system');}else{ window.open(file,'_system'); } };"
+                        },
+                        {
                             "type": "script",
                             "script": "if(window && window.googletag){ googletag.destroySlots();}"
                         },

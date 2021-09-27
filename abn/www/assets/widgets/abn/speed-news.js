@@ -5,10 +5,11 @@
 // youtube state change
 
 function stopAllVideos() {
-    $('.youTube').each(function () {
+    $('.youTube').each(function() {
         this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
     });
 }
+
 function speedNewsModalClose() {
     $('#newsModal .modal-header h5').empty();
     $('#newsModal .modal-body').empty();
@@ -32,19 +33,20 @@ var swiper = new Swiper('.swiper-container', {
     autoHeight: true,
     loop: true,
     on: {
-        slideChange: function () {
-             $('html, body').animate({
-            scrollTop: $(".zc-speed-news-block").offset().top - 0}, 1000);
+        slideChange: function() {
+            $('html, body').animate({
+                scrollTop: $(".zc-speed-news-block").offset().top - 0
+            }, 1000);
             // console.log('swiper slideChange');
             stopAllVideos();
         },
-        transitionEnd: function (event) {
+        transitionEnd: function(event) {
             var currentIndex = event.realIndex;
             var totalSlides = event.slides.length;
-           // console.log('*** currentIndex', currentIndex);
-           // console.log('*** totalSlides', totalSlides);
-            if(currentIndex !== 0 && currentIndex % 5 == 0){
-                showInterstitialAds();
+            // console.log('*** currentIndex', currentIndex);
+            // console.log('*** totalSlides', totalSlides);
+            if (currentIndex !== 0 && currentIndex % 5 == 0) {
+                // showInterstitialAdsTimer();
             }
             if ((totalRecords >= totalSlides) && currentIndex > 0 && currentIndex == totalSlides - 2) {
                 page = (totalSlides / rows) + 1;
@@ -54,22 +56,22 @@ var swiper = new Swiper('.swiper-container', {
     },
 });
 var modalLoader = `<div class="spin-loader"><span class=""></span></div>`;
-$(document).ready(function () {
- 
+$(document).ready(function() {
+
     $.ajax({
         url: `${baseUrl}/api/speednews_category/list/`,
         type: "GET",
         dataType: "json",
         //  headers: header,
         data: {},
-        success: function (res) {
+        success: function(res) {
             var select = $("#speedNews");
             select.children().remove();
             select.append($("<option>").val(0).text('All'));
             selectedCategory = 0;
             if (res.data && res.data.listData && res.data.listData.rows) {
                 oprionsList = res.data.listData.rows;
-                $(oprionsList).each(function (index, item) {
+                $(oprionsList).each(function(index, item) {
                     select.append($("<option>").val(item.uid).text(item.name));
                     if (index === 0) {
                         if (zc.queryParams && zc.queryParams.category) {
@@ -93,7 +95,7 @@ $(document).ready(function () {
             getSpeednewsListByCategory(selectedCategory);
         }
     })
-    $("#speedNews").change(function () {
+    $("#speedNews").change(function() {
         selectedCategory = $(this).find(':selected').val();
         $('.loader-wrap').fadeIn();
         $('.swiper-wrapper').empty('');
@@ -122,9 +124,9 @@ function getSpeednewsListByCategory() {
         url: `${baseUrl}/api/speednews/list/speed-news-by-category`,
         type: "GET",
         dataType: "json",
-       // headers: header,
+        // headers: header,
         data: payload,
-        success: function (res) {
+        success: function(res) {
             // res = {};
             if (res.data && res.data.listData && res.data.listData.rows && res.data.listData.rows.length) {
                 // debugger;
@@ -140,9 +142,10 @@ function getSpeednewsListByCategory() {
                     }
                 }
                 var slide_data;
-                $(list).each(function (i, o) {
+                $(list).each(function(i, o) {
                     // debugger;
                     slide_data = '';
+                    o.title = escapeHtml(o.title);
                     slide_data += `<div class="swiper-slide" id='${o.uid}'>
                     <div class="swiper-lazy-preloader"></div>
                     <div class="swiper-lazy-loading"></div>
@@ -157,32 +160,32 @@ function getSpeednewsListByCategory() {
                         var videoUrl = o.audio_video_url;
                         if (!videoUrl.includes('youtube') && videoUrl) {
                             videoUrl = 'https://www.youtube.com/embed/' + videoUrl;
-                        }                       
+                        }
                         slide_data += `<div class="speed-video-widget"><div class="speed-video overlay-video">
                         <iframe class="youTube youtube-video${i}" src="${videoUrl}?enablejsapi=1&version=3&playerapiid=ytplayer" width="100%" height="250" modestbranding="0" controls="0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                             <div  class="playVideo play-video${i}"></div>
                             <div  class="pauseVideo pause-video${i}"></div>
                             </div></div>`;
-                        setTimeout(function () {
-                            $(`.stop-video${i}`).hide();
-                            $(`.play-video${i}`).click(function () {
-                                $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
-                                $(`.pause-video${i}`).show();
-                                $(`.play-video${i}`).hide();
-                            });
-                            $(`.stop-video${i}`).click(function () {
-                                $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                        setTimeout(function() {
                                 $(`.stop-video${i}`).hide();
-                                $(`.play-video${i}`).show();
-                            });
-                            $(`.pause-video${i}`).click(function () {
-                                $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                                $(`.pause-video${i}`).hide();
-                                $(`.play-video${i}`).show();
-                            });
-                        }, 1000)
-                        // <a href="#" id="play" onclick="playVideo(event, ${i})">Play button</a>
+                                $(`.play-video${i}`).click(function() {
+                                    $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                                    $(`.pause-video${i}`).show();
+                                    $(`.play-video${i}`).hide();
+                                });
+                                $(`.stop-video${i}`).click(function() {
+                                    $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                                    $(`.stop-video${i}`).hide();
+                                    $(`.play-video${i}`).show();
+                                });
+                                $(`.pause-video${i}`).click(function() {
+                                    $(`.youtube-video${i}`)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                                    $(`.pause-video${i}`).hide();
+                                    $(`.play-video${i}`).show();
+                                });
+                            }, 1000)
+                            // <a href="#" id="play" onclick="playVideo(event, ${i})">Play button</a>
                     } else if (o.speednews_type.uid == 'audio') {
                         slide_data += `<div class="speed-audio">
                         <audio controls>
@@ -191,11 +194,12 @@ function getSpeednewsListByCategory() {
                         </div>`;
                     }
                     if (o.description) {
-                        o.description = o.description.replace('<link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css\" />','');
+                        o.description = o.description.replace('<link rel=\"stylesheet\" href=\"https://unpkg.com/swiper@6.8.1/swiper-bundle.min.css\" />', '');
+                        o.description = escapeHtml(o.description);
                         if (o.news_id) {
                             slide_data += `<a href="javascript:;" class="read-full-news" onclick='showNewsModal(${JSON.stringify(o)})'>Read full news</a>`;
                         }
-                        slide_data += `<p>${escapeHtml(o.description)}</p>`;
+                        slide_data += `<p>${o.description}</p>`;
                     }
                     slide_data += `</div>`;
                     $('.swiper-wrapper').append(slide_data);
@@ -219,7 +223,7 @@ function getSpeednewsListByCategory() {
                     //    swiper.updateSlides();	
                     // }, 1000);
 
-                }else{
+                } else {
                     swiper.update();
                     if (page == 1) {
                         // $('.swiper-wrapper').css({
@@ -253,30 +257,30 @@ function getSpeednewsListByCategory() {
         }
     })
 }
-$(window).scroll(function () {
-    // alert('12');
-    // debugger;
-    // $('iframe').css({
-    //     'pointer-events': 'none'
+$(window).scroll(function() {
+        // alert('12');
+        // debugger;
+        // $('iframe').css({
+        //     'pointer-events': 'none'
+        // });
+        // $('audio').css({
+        //     'pointer-events': 'none'
+        // });
+    })
+    // $("iframe").on("swipe", function () {
+    //     alert(123);
     // });
-    // $('audio').css({
-    //     'pointer-events': 'none'
-    // });
-})
-// $("iframe").on("swipe", function () {
-//     alert(123);
-// });
-// function playVideo(ev, id) {
-//     debugger;
-//     ev.preventDefault();
-//     const Player = document.getElementById(`iframeId`);
-//     console.log('tt', Player);
-//     let times = 0, playY;
-//     if (times == 0) {
-//         playY = Player.src += '?autoplay=1';
-//         times = 1;
-//     }
-// }
+    // function playVideo(ev, id) {
+    //     debugger;
+    //     ev.preventDefault();
+    //     const Player = document.getElementById(`iframeId`);
+    //     console.log('tt', Player);
+    //     let times = 0, playY;
+    //     if (times == 0) {
+    //         playY = Player.src += '?autoplay=1';
+    //         times = 1;
+    //     }
+    // }
 function stopVideo(ev, videoUrl, i) {
     $("#iframeId" + i)[0].src = videoUrl + '?rel=0';
     $("#iframeId" + i).parent().addClass('overlay-video');
@@ -288,6 +292,7 @@ function stopVideo(ev, videoUrl, i) {
 function escapeHtml(str) {
     return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
+
 function playVideo(event, i) {
     $("#iframeId" + i)[0].src += "&autoplay=1";
     $("#iframeId" + i).parent().removeClass('overlay-video');
@@ -322,7 +327,7 @@ function showNewsModal(o) {
 
 function getRssFeeds(rssFeedUrl) {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
+    xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             feedData(this);
         }
@@ -337,7 +342,11 @@ function feedData(xml) {
     txt = "";
     x = xmlDoc.getElementsByTagName("item");
     var news_li_data = "";
-    var feedUid = 0, feedTitle = "", feedDescription = "", time = "", timeDuration = "";
+    var feedUid = 0,
+        feedTitle = "",
+        feedDescription = "",
+        time = "",
+        timeDuration = "";
     for (i = 0; i < x.length; i++) {
         if (x[i].getElementsByTagName("Articleid").item(0)) {
             feedUid = x[i].getElementsByTagName("Articleid").item(0).innerHTML;
@@ -380,4 +389,3 @@ function feedData(xml) {
     }
     $('.spin-loader').fadeOut();
 }
-
