@@ -3052,6 +3052,10 @@ th .dropdown-menu .ui-dropdown {
 .zc-ocoa-welcome .zc-welcome-services li .zc-app-card .service-icon-hev {
   background-image: linear-gradient(to bottom right, #F7F7F7, #298834);
 }
+.zc-ocoa-welcome .zc-welcome-services li .zc-app-card .service-icon-distress {
+  background-image:linear-gradient(to bottom right, #f97f7f, #fb041d);
+}
+
 .zc-ocoa-welcome .zc-welcome-services li .zc-app-card .service-icon-other i{
   font-size: 35px;
 }
@@ -3074,7 +3078,60 @@ th .dropdown-menu .ui-dropdown {
 
 
 /*APP Welcome page styles end*/
-
+.zc-custom-upload .zc-field-image .profile.no-img .custom-file {
+  position: relative !important;
+  top: 0;
+  background-image: url("../images/default-image.png");
+  line-height: normal;
+}
+.zc-custom-upload .zc-field-image .custom-file .custom-file-input {
+  top: 0;
+}
+.zc-custom-upload .zc-field-image .no-img .custom-file::before {
+  line-height: 248px;
+}
+.zc-custom-upload .zc-field-image .profile img {
+  border-radius: 10px;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.zc-submit-request-block zc-form h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.zc-location .my-location {
+  margin-top: 6px;
+}
+.zc-ocoa-welcome .zc-welcome-services li .zc-app-card .service-icon.service-icon-distress i {
+  color: #fff;
+  font-size: 40px;
+}
+.zc-mobile-header{
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  background: #275480;
+  margin-bottom: 15px;
+}
+.zc-mobile-header a{
+  width: 60px;
+  min-width: 60px;
+  margin-right: 10px;
+  display: flex;
+}
+.zc-mobile-header img{
+  width: 100%;
+}
+.zc-mobile-header span{
+  margin: 0;
+  color: #fff !important;
+  line-height: 20px !important;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600;
+}
 @media( max-width:1874px){
   .zc-complaint-table .zc-table-body .zc-widget-data-list th .dropdown-menu.show {
     margin-top: 45px !important;
@@ -3248,9 +3305,9 @@ body .ui-inputtext,
   #sm-menu {
     transform: translateX(-106%) !important;
   }
-  .complaint-captch .form-group {
+  /* .complaint-captch .form-group {
     padding-top: 45px;
-  }
+  } */
   .zc-gallery .zc-field-image .custom-file {
     width: 50px !important;
     height: 50px;
@@ -3586,7 +3643,16 @@ body .ui-inputtext,
   .zc-widget-data-list .ui-table .card:first-child .zc-card{
     margin-top: 0;
   }
-  
+/* .login-container  .payment-page .field-label,  .login-container .payment-page a {
+    color: #000 !important;
+}
+.payment-page h2 {
+  color: #000 !important;
+  text-align: center;
+} */
+.login-container .payment-page .block {
+  color: #000 !important;
+}
 }
 @media (max-width: 640px) {
   .table-view .ui-selectable-row zc-actions {
@@ -3613,6 +3679,22 @@ body .ui-inputtext,
   }
 
 }
+@media (max-width: 575px) {
+
+  .zc-submit-btn formly-field {
+    width: 100%;
+  }
+  .zc-submit-btn .btn {
+    width: 100%;
+    display: block;
+    padding: 8px 12px !important;
+  }
+  .zc-submit-request-block zc-form h3 {
+    font-size: 18px;
+    text-align: center;
+}
+}
+
 @media (max-width: 480px) {
   .main-content {
     /* margin-bottom: 50px; */

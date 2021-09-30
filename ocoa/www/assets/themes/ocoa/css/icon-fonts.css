@@ -38,9 +38,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.tss-bus:before {
-  content: "\e000";
-}
 .tss-es:before {
   content: "\e001";
 }
@@ -55,4 +52,13 @@
 }
 .tss-sp:before {
   content: "\e006";
+}
+.tss-bus:before {
+  content: "\e000";
+}
+.tss-other:before {
+  content: "\e003";
+}
+.tss-icon-01:before {
+  content: "\e007";
 }
