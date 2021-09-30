@@ -20,6 +20,8 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-intent href="upi:*" />
+    <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -54,6 +56,11 @@
         <preference name="ScrollEnabled" value="true" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <allow-intent href="tel:*" />
+        <allow-intent href="sms:*" />
+        <allow-intent href="mailto:*" /> 
+        <access origin="tel:*" launch-external="yes"/>
+        <access origin="sms:*" launch-external="yes"/>
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="20" src="resources/ios/icon/icon-20.png" width="20" />
