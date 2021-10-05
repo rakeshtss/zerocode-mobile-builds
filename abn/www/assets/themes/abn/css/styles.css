@@ -7,9 +7,7 @@
 .loader {
     background-color: transparent !important;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 }
-.modal {
-    top: env(safe-area-inset-top, 0px);
-}
+
 .zc-loading {
     display: none !important;
 }
@@ -2057,7 +2055,9 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
     border-radius: .25rem;
     margin-top: env(safe-area-inset-top, 100px) !important;
 }
-
+.modal {
+    top: env(safe-area-inset-top, 0px);
+}
 .date-picker-container ul {
     display: flex;
 }
