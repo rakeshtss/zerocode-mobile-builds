@@ -3,6 +3,10 @@
 .app-update-notification>.modal-header {
     display: none;
 }
+
+.loader {
+    background-color: transparent !important;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+}
 .modal {
     top: env(safe-area-inset-top, 0px);
 }
@@ -2034,7 +2038,6 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 .date-picker-container {
     position: fixed;
     top: 62px;
-    padding-top: env(safe-area-inset-top, 62px) !important;
     /* left: 0; */
     left: 180px;
     z-index: 1000;
@@ -2052,6 +2055,7 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
+    margin-top: env(safe-area-inset-top, 100px) !important;
 }
 
 .date-picker-container ul {
@@ -5279,7 +5283,7 @@ body .zc-edition-header .ui-datepicker table td>a {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(223, 223, 223, 0.7);
+    /* background-color: rgba(223, 223, 223, 0.7); */
     z-index: 1055;
 }
 
@@ -5365,13 +5369,12 @@ body .zc-edition-header .ui-datepicker table td>a {
     position: fixed !important;
     top: 15px !important;
     right: 15px !important;
-    padding-top: env(safe-area-inset-top, 0px) !important;
+    padding-top: env(safe-area-inset-top, 15px) !important;
 }
 
 .page-clip-image img {
     /* width: 100%; */
 }
-
 .edition-tab-card-mobile,
 .zc-pages-block .edition-tab-card-mobile {
     display: none;
@@ -5442,6 +5445,7 @@ pinch-zoom {
 
 .swiper-container {
     width: 100%;
+    padding-top: env(safe-area-inset-top);
     /* height: auto; */
     /* min-height: calc(100vh - 145px); */
     /* height: calc(100vh - 165px); */
@@ -6642,7 +6646,9 @@ zc-form zc-date-range i {
 .zc-news-list-block.customtop-white {
     padding-bottom: 88px !important;
 }
-
+.mobile-ui .zc-mobile-dashboard .zc-edition-list{
+ padding-bottom: 85px !important;
+}
 @media(min-width: 1024px) {
     .zc-main-menu {
         display: flex;
@@ -6797,7 +6803,9 @@ zc-form zc-date-range i {
 
 @media(min-width:991px) {
     .zc-speed-news-block .swiper-slide {
-        width: 32% !important;
+        /* width: 32% !important; */
+        width: 45% !important;
+        margin: 0 auto;
     }
     .clip-view-modal {
         padding-right: 0px !important;
@@ -7707,6 +7715,9 @@ zc-form zc-date-range i {
         padding: 0;
         margin-bottom: 10px;
     }
+    .mobile-ui .zc-edition-middle{
+        margin-bottom: 50px;
+    }
     .e-paper-content .mat-tab-body {
         margin-top: 15px;
         min-height: 300px;
@@ -7761,7 +7772,7 @@ zc-form zc-date-range i {
         background-color: transparent;
     }
     .zc-speed-news-block {
-        padding: 85px 0 20px !important;
+        padding: 65px 0 20px !important;
     }
     .swiper-container {
         /* min-height: auto; */
@@ -8502,6 +8513,9 @@ zc-form zc-date-range i {
     .blank-layout {
         min-height: calc(100vh - 145px);
     }
+    .mobile-ui .zc-mobile-dashboard .zc-edition-list{
+        padding-bottom: 75px !important;
+       }
     .zc-news-list-block.customtop-white {
         padding-bottom: 76px !important;
     }
