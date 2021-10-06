@@ -2057,6 +2057,7 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 }
 .modal {
     top: env(safe-area-inset-top, 0px);
+    height: calc(100% - env(safe-area-inset-bottom) - env(safe-area-inset-top));
 }
 .date-picker-container ul {
     display: flex;
@@ -5362,14 +5363,14 @@ body .zc-edition-header .ui-datepicker table td>a {
 .page-window .modal-dialog .modal-content {
     background-color: transparent;
     border: none;
-    padding-top: env(safe-area-inset-top);
+    /* padding-top: env(safe-area-inset-top); */
 }
 
 .page-window .cropped-modal .modal-header .close {
     position: fixed !important;
-    top: 15px !important;
+    top: 0px !important;
     right: 15px !important;
-    padding-top: env(safe-area-inset-top, 15px) !important;
+    margin-top: env(safe-area-inset-top, 0px) !important;
 }
 
 .page-clip-image img {
@@ -8313,7 +8314,8 @@ zc-form zc-date-range i {
         z-index: 9;
     }
     .page-clip-image {
-        height: calc(100vh - 90px);
+        /* height: calc(100vh - 90px); */
+        height: calc(100vh - env(safe-area-inset-bottom) - env(safe-area-inset-top) - 90px);
         margin: 0 -28px;
         padding: 0px;
         flex: 1;
