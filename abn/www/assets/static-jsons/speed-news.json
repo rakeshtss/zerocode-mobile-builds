@@ -131,6 +131,10 @@
           "actions": [
             {
               "type": "script",
+              "script": "function minitAds(){\n    console.warn('every 20 sec');\n    if (AdMob) AdMob.prepareInterstitial({\n                adId:'ca-app-pub-4252617315602036/3370770117',\n                autoShow: true\n            }, function() {\n                interstitialAdsRunning = true;\n                console.warn(\"success interaials ad: \");\n            },\n            function(error) { console.warn(\"Error ad: \" + error); });\n        if (AdMob) window.AdMob.showInterstitial();\n};\nif(!window.interval && AdMob){\n  window.interval = setInterval(minitAds, 30*1000);\n}\n"
+            },    
+            {
+              "type": "script",
               "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
             },
             {

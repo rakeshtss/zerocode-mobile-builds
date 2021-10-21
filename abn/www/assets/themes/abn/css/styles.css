@@ -4179,7 +4179,7 @@ zc-dialog .modal-header .close:hover {
     border-radius: 0;
     background-color: transparent;
     border: none;
-    padding-top: env(safe-area-inset-top);
+    /* padding-top: env(safe-area-inset-top); */
 }
 
 .clip-view-modal .modal-footer {
@@ -4223,9 +4223,9 @@ zc-dialog .modal-header .close:hover {
     box-shadow: 0px 0px 6px #000;
     border-radius: 50%;
     padding: 0;
-    top: 15px !important;
+    top: 0px !important;
     right: 15px !important;
-    padding-top: env(safe-area-inset-top);
+    margin-top: env(safe-area-inset-top);
 }
 
 .email-modal .close,
@@ -5438,6 +5438,7 @@ pinch-zoom {
 
 .zc-speed-news-block {
     padding: 65px 0 0px !important;
+    padding-top: calc(65px + env(safe-area-inset-top)) !important;
 }
 
 .blank-layout.Speed.News footer {
@@ -5446,7 +5447,7 @@ pinch-zoom {
 
 .swiper-container {
     width: 100%;
-    padding-top: env(safe-area-inset-top);
+    /* padding-top: env(safe-area-inset-top); */
     /* height: auto; */
     /* min-height: calc(100vh - 145px); */
     /* height: calc(100vh - 165px); */
@@ -8315,7 +8316,7 @@ zc-form zc-date-range i {
     }
     .page-clip-image {
         /* height: calc(100vh - 90px); */
-        height: calc(100vh - env(safe-area-inset-bottom) - env(safe-area-inset-top) - 90px);
+        height: calc(100vh - env(safe-area-inset-bottom) - env(safe-area-inset-top) - 100px);
         margin: 0 -28px;
         padding: 0px;
         flex: 1;

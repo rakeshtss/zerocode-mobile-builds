@@ -6,8 +6,8 @@
     </description>
      <author email="digitalsales@andhrajyothy.com" href="https://www.andhrajyothy.com/">
         Andhrajyothy Team
-    </author>>
-    <content src="index.html" />
+    </author>
+    <content src="index.html" /> 
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
