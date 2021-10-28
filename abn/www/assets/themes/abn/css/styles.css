@@ -6292,7 +6292,8 @@ zc-form zc-date-range i {
 .paper-imgs img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: #0a0a0973;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }

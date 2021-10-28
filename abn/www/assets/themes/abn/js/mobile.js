@@ -93,7 +93,6 @@ function showBannerAd(bannerId) {
             adId: admobid.banner,
             position: AdMob.AD_POSITION.BOTTOM_CENTER,
             autoShow: true,
-            isTesting:true
         }, function() { console.warn("Success Ad"); },
         function(error) { console.warn("Error ad: " + error); });
 
@@ -143,8 +142,7 @@ function showInterstitialAds(interstitialId) {
         // hideBannerAd();
         if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
-                autoShow: false,
-                isTesting:true
+                autoShow: false
             }, function() {
                 interstitialAdsRunning = true;
                 console.warn("success interaials ad: ");
@@ -274,8 +272,9 @@ function checkAppVersion() {
                     }
                 }
                 if (res.android && window.cordova.platformId == 'android') {
+                    zc['versionInfo'] = res.android;
                     if (res.android.app_availability == "false") {
-                        zc['versionInfo']['title'] = res.ios.message_maintance;;
+                        zc['versionInfo']['title'] = res.android.message_maintance;;
                         zc['versionInfo']['message'] = " ";
                         zc['versionInfo']['app_availability'] = "false";
                         zcGlobal.zc_modal_9676.open();
