@@ -1,6 +1,6 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 var iosVersion = "5.2.0";
-var androidVersion = "4.1.0";
+var androidVersion = "5.0.0";
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
     interstitial: 'ca-app-pub-4252617315602036/3370770117'
@@ -243,7 +243,8 @@ function checkAppVersion() {
 
     if (zc && zc.http) {
         var timeStamp = new Date().getTime();
-        zc.http.getExternalUrl('https://ebeta.andhrajyothy.com/assets/static-jsons/version.json?cache=' + timeStamp).subscribe(res => {
+        var baserUrl =  (zc.config.assetsUrl)?zc.config.assetsUrl:'https://epaper.andhrajyothy.com/';
+        zc.http.getExternalUrl(baserUrl+'assets/static-jsons/version.json?cache=' + timeStamp).subscribe(res => {
             // alert('window.cordova.platformId',window.cordova.platformId);
             zc['versionInfo'] = res;
             if (window.cordova) {

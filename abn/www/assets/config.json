@@ -3,7 +3,7 @@
     "apiUrl": "https://betazcapis.andhrajyothy.com/zc-v3.1-user-svc/2.0/",
     "apiUrl5": "https://prod-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
     "apiUrl1": "https://fc-test.zeroco.de/zc-v3.1-user-svc/2.0/",
-    "assetsUrl": "https://ebeta.andhrajyothy.com/",
+    "assetsUrl": "https://epaper.andhrajyothy.com/",
     "client": "abn",
     "platform": "mobile",
     "offline": "false",
