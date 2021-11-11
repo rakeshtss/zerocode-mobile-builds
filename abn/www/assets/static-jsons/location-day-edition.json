@@ -661,6 +661,10 @@
             {
               "type": "script",
               "script": "const modalBackdrop= document.getElementsByClassName('modal-backdrop');while (modalBackdrop.length > 0) modalBackdrop[0].remove();document.querySelector('body').classList.remove('modal-open');"
+            },
+            {
+              "type":"script",
+              "script":"if(zc.config.platform=='mobile'){ showInterstitialAds();}"
             }
           ]
         },

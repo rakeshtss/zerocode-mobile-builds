@@ -46,7 +46,7 @@ var swiper = new Swiper('.swiper-container', {
             // console.log('*** currentIndex', currentIndex);
             // console.log('*** totalSlides', totalSlides);
             if (currentIndex !== 0 && currentIndex % 5 == 0) {
-                // showInterstitialAdsTimer();
+                showInterstitialAds();
             }
             if ((totalRecords >= totalSlides) && currentIndex > 0 && currentIndex == totalSlides - 2) {
                 page = (totalSlides / rows) + 1;

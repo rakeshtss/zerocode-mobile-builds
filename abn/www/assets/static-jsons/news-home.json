@@ -131,8 +131,14 @@
                 "onLoad": {
                     "actions": [{
                         "type": "script",
-                        "script": "if(zc.config.platform=='mobile'){setTimeout(function(){ checkAppVersion(); }, 3000);}"
-                    }]
+                        "script": "if(zc.config.platform=='mobile'){  setTimeout(function(){ checkAppVersion(); }, 3000);}"
+                    },
+                    {
+                        "type":"script",
+                        "script":"if(zc.config.platform=='mobile'){ showInterstitialAds(); showBannerAd();}"
+                      }
+                
+                ]
                 }
             },
             "info": {

@@ -133,6 +133,10 @@
             {
               "type": "script",
               "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+            },
+            {
+              "type":"script",
+              "script":"if(zc.config.platform=='mobile'){ showInterstitialAds();}"
             }
           ]
         }

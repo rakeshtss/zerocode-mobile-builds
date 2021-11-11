@@ -16,6 +16,7 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "devDependencies": {
+        "cordova-admob-sdk": "^0.20.0",
         "cordova-android": "^9.1.0",
         "cordova-browser": "^6.0.0",
         "cordova-ios": "^6.2.0",
@@ -73,7 +74,6 @@
         ]
     },
     "dependencies": {
-        "cordova-plugin-admobpro": "2.49.0",
-        "cordova-plugin-extension": "1.5.4"
+        "cordova-plugin-admobpro": "2.49.0"
     }
 }

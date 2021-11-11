@@ -1,5 +1,5 @@
 document.addEventListener('deviceready', onDeviceReady, false);
-var iosVersion = "5.2.0";
+var iosVersion = "5.0.0";
 var androidVersion = "5.0.0";
 var admobid = {
     banner: 'ca-app-pub-4252617315602036/8649009347', // or DFP format "/6253334/dfp_example_ad"
@@ -7,8 +7,9 @@ var admobid = {
 };
 var interstitialAds = ['ca-app-pub-4252617315602036/3370770117'];
 var interstitialReady = false;
-var isTesting = true;
+var isTesting = false;
 var showTimeAds = true;
+var adsTime = 50000;
 
 function onDeviceReady() {
     // checkIsDevice();
@@ -18,6 +19,7 @@ function onDeviceReady() {
     document.addEventListener('onAdLoaded', onAdLoaded);
     document.addEventListener('onAdDismiss', onAdDismiss);
 }
+
 
 function checkIsDevice() {
     cordova.plugins.diagnostic.isDeviceRooted(function(rooted) {
@@ -86,13 +88,13 @@ function showBannerAd(bannerId) {
     if (!bannerId) {
         bannerId = admobid.banner
     }
-    console.warn('bannerId', bannerId);
-
     // isTesting: true, // works on emulator
+    AdMob.hideBanner(); // for ios
     if (AdMob) AdMob.createBanner({
-            adId: admobid.banner,
+            adId: bannerId,
             position: AdMob.AD_POSITION.BOTTOM_CENTER,
             autoShow: true,
+            overlap: false
         }, function() { console.warn("Success Ad"); },
         function(error) { console.warn("Error ad: " + error); });
 
@@ -107,9 +109,6 @@ function showBannerAd(bannerId) {
     //    function(error){console.log("Error ad: "+error);});
     //
     // // window.AdMob.showInterstitial();
-
-
-
 }
 
 
@@ -124,37 +123,32 @@ function onAdDismiss(e) {
     if (e.adType == 'interstitial') {
         interstitialReady = false;
         showTimeAds = false;
-        setTimeout(function() { showTimeAds = true; }, 60 * 1000);
-        interstitialAdsRunning = false;
-        showBannerAd();
+        setTimeout(function () { showTimeAds = true; }, adsTime);
+
+        showBannerAd(); 
+       
+        showInterstitialAds();
     }
 }
-var interstitialAdsRunning = false;
+function showInterstitialAds() {
 
-function showInterstitialAds(interstitialId) {
+    if (interstitialReady) {
+        if (showTimeAds) {
+            hideBannerAd();
+            AdMob.showInterstitial();
+        }
+    } else {
 
-    if (!interstitialId) {
-        var interstitialId = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
+        var interstitial = interstitialAds[Math.floor(Math.random() * interstitialAds.length)];
+        AdMob.prepareInterstitial({
+            adId: interstitial,
+            autoShow: false
+        }, function () { console.warn("success ad: "); interstitialReady = true; },
+            function (error) { console.warn("Error ad: " + error); });
     }
-    // isTesting: false
-    if (!interstitialAdsRunning) {
-        interstitialAdsRunning = true;
-        // hideBannerAd();
-        if (AdMob) AdMob.prepareInterstitial({
-                adId: interstitialId,
-                autoShow: false
-            }, function() {
-                interstitialAdsRunning = true;
-                console.warn("success interaials ad: ");
-            },
-            function(error) { console.warn("Error ad: " + error); });
-        if (AdMob) window.AdMob.showInterstitial();
-    }
-
 }
 
 function interstitialEveryMinute() {
-
 
     // it will display smart banner at top center, using the default options
     // if (AdMob) AdMob.createBanner({
@@ -173,8 +167,6 @@ function interstitialEveryMinute() {
     window.AdMob.prepareInterstitial({ adId: admobid.interstitial, autoShow: false });
     window.AdMob.showInterstitial();
 
-
-
     //!!!add the code here!!! - so, just paste what I wrote above:
     setInterval(window.AdMob.showInterstitial, 2 * 60 * 1000);
 
@@ -190,14 +182,12 @@ function showInterstitialAdsTimer(interstitialId) {
         hideBannerAd();
         if (AdMob) AdMob.prepareInterstitial({
                 adId: interstitialId,
-                autoShow: false,
-                isTesting: false
+                autoShow: false
             }, function() {
                 console.warn("success ad: ");
                 interstitialReady = true;
             },
             function(error) { console.warn("Error ad: " + error); });
-
     }
 }
 
@@ -247,6 +237,7 @@ function checkAppVersion() {
         zc.http.getExternalUrl(baserUrl+'assets/static-jsons/version.json?cache=' + timeStamp).subscribe(res => {
             // alert('window.cordova.platformId',window.cordova.platformId);
             zc['versionInfo'] = res;
+
             if (window.cordova) {
                 if (window.cordova.platformId == 'ios') {
                     zc['versionInfo'] = res.ios;
@@ -275,9 +266,10 @@ function checkAppVersion() {
                 if (res.android && window.cordova.platformId == 'android') {
                     zc['versionInfo'] = res.android;
                     if (res.android.app_availability == "false") {
-                        zc['versionInfo']['title'] = res.android.message_maintance;;
+                        zc['versionInfo']['title'] = res.android.message_maintance;
                         zc['versionInfo']['message'] = " ";
                         zc['versionInfo']['app_availability'] = "false";
+                       
                         zcGlobal.zc_modal_9676.open();
                     } else {
                         if (res.android && res.android.version !== androidVersion) {

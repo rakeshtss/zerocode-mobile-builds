@@ -9,7 +9,7 @@
       "message_maintance": "We are under maintance, please check after 1 hour."
     },
     "ios": {
-      "version": "5.2.0",
+      "version": "5.0.0",
       "build_no": 8,
       "force_update": "false",
       "title": "New update (5.1.0) available",
