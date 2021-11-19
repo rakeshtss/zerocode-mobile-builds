@@ -20,5 +20,5 @@
         { "title": "Profile", "url": "swfc/registered-users/profile" },
         { "title": "Change Password", "url": "zcbase/account/change-password" }
     ],
-    "version": "5.1.22"
+    "version": "5.1.23"
 }
