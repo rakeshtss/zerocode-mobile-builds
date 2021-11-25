@@ -3294,7 +3294,16 @@ body .ui-inputtext,
   /*   .form-complaint {
     margin-top: -0px !important;
   } */
-    
+  .home-btn-back{
+    margin-left: 75px;
+  }
+    .home-btn-back a{
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      color: #4c98d0;
+    }
   .zc-form,
   .incor-form {
     padding: 15px 0px !important;
