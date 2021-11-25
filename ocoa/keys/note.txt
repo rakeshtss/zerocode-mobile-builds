@@ -1,0 +1,5 @@
+  key_alias='tss-key'
+  key_store_pass='The@1234'
+  key_pass='The@1234'
+
+
