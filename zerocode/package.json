@@ -33,7 +33,9 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-geolocation": {},
+      "cordova-plugin-geolocation": {
+        "GPS_REQUIRED": "true"
+      },
       "cordova-plugin-request-location-accuracy": {},
       "cordova.plugins.diagnostic": {},
       "cordova-plugin-splashscreen": {},

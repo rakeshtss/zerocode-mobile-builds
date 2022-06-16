@@ -169,7 +169,8 @@
   2. zc-vertical-menu
   3. zc-icons-menu
   4. zc-vertical-xlimenu  -->
-<div class="zc-icons-menu">
+<!-- use zc-menu-page-scroll large height of menus   -->
+<div class="zc-icons-menu zc-menu-advanced">
   <div id="myCanvasNav" class="menu-overlay" (click)="ly.toggleMenu()"></div>
 
   <div class="side-menu" [ngClass]="ly.menuState">
@@ -230,7 +231,7 @@
         </ul>
       </div>
     </div>
-    <zc-com-render type="menu" [options]="{ app: ly.currentApp }"></zc-com-render>
+    <zc-com-render type="menu" [options]="{ app: ly.currentApp, hideTooltip:true  }"></zc-com-render>
   </div>
   <!-- Menu end -->
 
