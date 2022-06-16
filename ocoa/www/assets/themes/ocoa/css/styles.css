@@ -2939,7 +2939,7 @@ th .dropdown-menu .ui-dropdown {
 .zc-ocoa-welcome{
   min-height: 100vh;
   display: flex !important;
-  background-image: url('../images/welcome-login-bg.png');
+  /* background-image: url('../images/welcome-login-bg.png'); */
   background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
@@ -3661,6 +3661,10 @@ body .ui-inputtext,
 } */
 .login-container .payment-page .block {
   color: #000 !important;
+}
+.zc-ocoa-welcome .zc-welcome-services li .service-content:hover {
+  transform: none;
+  box-shadow: none;
 }
 }
 @media (max-width: 640px) {
