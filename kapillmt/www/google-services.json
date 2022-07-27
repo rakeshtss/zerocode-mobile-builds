@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1051860670979",
+    "project_id": "dp-kapil-crm",
+    "storage_bucket": "dp-kapil-crm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051860670979:android:d99116cdc79faa7b4a0c36",
+        "android_client_info": {
+          "package_name": "com.doodhplus.crm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051860670979-dpcbvfvo5f3ltefdvbf74k82ppli2ke7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd4mgb4AQRDiZY_3twTwYzjZA08j1k9dY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051860670979-dpcbvfvo5f3ltefdvbf74k82ppli2ke7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

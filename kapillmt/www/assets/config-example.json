@@ -1,0 +1,13 @@
+{
+    "apiUrl": "https://apis.v35.dev.zeroco.de/zc-v3.1-user-svc/2.0/",
+    "platform": "web",
+    "offline": "true",
+    "captchaKey": "6LcifpQUAAAAAAtWYdlTi23dNXYQdJm00QRxVDSx",
+    "clientLogo": "",
+    "faviconUrl": "assets/favicon.ico",
+    "powerByTitle": "",
+    "siteTitle": "",
+    "defaultApp": "zcbase",
+    "loaderUrl": "assets/loaders/Loader3.gif",
+    "profileLinks": []
+}

@@ -1,0 +1,11 @@
+Package Name (ie: com.doodhplus.crm): 
+App Name : CRM
+App Description:
+
+
+
+Android Keystore
+
+File: kapillmt.jks
+Alias: cms
+Password: doothplus@2022
