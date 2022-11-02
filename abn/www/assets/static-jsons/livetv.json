@@ -48,7 +48,7 @@
                             "style": "col-12",
                             "widgets": [{
                                 "definition": {
-                                    "template": "<!--<div class=\"zc-news-header\">\n<a [routerLink]=\"['/']\" class=\"zc-news-logo\">\n<img src=\"assets/themes/abn/images/logo.png\" alt=\"logo\">\n</a>\n</div>-->\n<div class=\"live-tvblock\">\n<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/IKj_cj51_W0\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n</div>\n<div class=\"zc-news-footer\">\n    <ul>\n<li class=\"zc-news-footer-link\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news-white.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/news-home\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n                <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link active abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n        \n    </ul>\n</div>",
+                                    "template": "<!--<div class=\"zc-news-header\">\n<a [routerLink]=\"['/']\" class=\"zc-news-logo\">\n<img src=\"assets/themes/abn/images/logo.png\" alt=\"logo\">\n</a>\n</div>-->\n<div class=\"live-tvblock\">\n<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/zwES4--H1aM\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n</div>\n<div class=\"zc-news-footer\">\n    <ul>\n<li class=\"zc-news-footer-link\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news-white.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a onclick=\"window.cordova.InAppBrowser.open('https://www.andhrajyothy.com/', '_system', 'location=yes')\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a onclick=\"window.cordova.InAppBrowser.open('https://epaper.andhrajyothy.com/', '_system', 'location=yes')\">\n                <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n                <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link active abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>\n        \n    </ul>\n</div>",
                                     "id": "html_166",
                                     "pbId": "html_3977",
                                     "type": "html",
@@ -75,11 +75,11 @@
                 "onLoad": {
                     "actions": [{
                             "type": "script",
-                            "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
+                            "script": "zc.config.version = 1.9; setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
                         },
                         {
                             "type": "script",
-                            "script": "if(zc.config.platform=='mobile'){ hideBannerAd();}"
+                            "script": "if(zc.config.platform=='mobile'){ hideBannerAd(); interstitialAdsRunning = true;}"
                         }
                     ]
                 }

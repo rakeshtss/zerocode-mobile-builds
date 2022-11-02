@@ -1,7 +1,7 @@
 {
     "apiUrl_dev": "https://dev-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
     "apiUrl": "https://betazcapis.andhrajyothy.com/zc-v3.1-user-svc/2.0/",
-    "assetsUrl": "https://epaper.andhrajyothy.com/",
+    "assetsUrl": "http://localhost:8000/",
     "client": "abn",
     "platform": "mobile",
     "offline": "false",

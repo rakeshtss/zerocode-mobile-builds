@@ -102,7 +102,7 @@
               "widgets": [
                 {
                   "definition": {
-                    "template": "<div class=\"zc-news-footer\">\n <ul>\n<li class=\"zc-news-footer-link active\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/epaper/news/news-home\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a routerLink=\"/zcbase/account/home\">\n                <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n                <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>        \n    </ul>\n</div>",
+                    "template": "<div class=\"zc-news-footer\">\n <ul>\n<li class=\"zc-news-footer-link active\">\n            <a routerLink=\"//epaper/news/speed-news\">\n                <img src=\"assets/themes/abn/images/short-news.png\" alt=\"\">\n                <p>Speed News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n             <a onclick=\"window.cordova.InAppBrowser.open('https://www.andhrajyothy.com/', '_system', 'location=yes')\">\n                <img src=\"assets/themes/abn/images/news-white.png\" alt=\"\">\n                <p>News</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link\">\n            <a onclick=\"window.cordova.InAppBrowser.open('https://epaper.andhrajyothy.com/', '_system', 'location=yes')\">\n                <img src=\"assets/themes/abn/images/e-paper-white.png\" alt=\"\">\n                <p>Epaper</p>\n            </a>\n        </li>\n        <li class=\"zc-news-footer-link abn-logo\">\n            <a routerLink=\"/epaper/news/livetv\">\n                <img src=\"assets/themes/abn/images/logo.png\" alt=\"\">\n                <p>Live <span>TV</span></p>\n            </a>\n        </li>        \n    </ul>\n</div>",
                     "id": "html_5255",
                     "pbId": "html_802",
                     "type": "html",
@@ -128,14 +128,18 @@
           }
         ],
         "onLoad": {
-          "actions": [  
+          "actions": [
+            {
+              "type": "script",
+              "script1": "interstitialAdsRunning = false; function minitAds(){\n    console.warn('every 20 sec');\n    if (AdMob && !interstitialAdsRunning) AdMob.prepareInterstitial({\n                adId:'ca-app-pub-4252617315602036/3370770117',\n                autoShow: true\n            }, function() {\n                interstitialAdsRunning = true;\n                console.warn(\"success interaials ad: \");\n            },\n            function(error) { console.warn(\"Error ad: \" + error); });\n        if (AdMob) window.AdMob.showInterstitial();\n};\nif(!window.interval && AdMob){\n  window.interval = setInterval(minitAds, 60*1000);\n}\n"
+            },    
             {
               "type": "script",
               "script": "setTimeout(function(){ zcGlobal.loadFooter = true; }, 500);"
             },
             {
               "type": "script",
-              "script": "if(zc.config.platform=='mobile'){ showBannerAd();setTimeout(function(){ checkAppVersion(); }, 3000);}"
+              "script": "if(zc.config.platform=='mobile'){setTimeout(function(){ checkAppVersion(); }, 3000);showInterstitialAds();showBannerAd();}"
             }
           ]
         }
