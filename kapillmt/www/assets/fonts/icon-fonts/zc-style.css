@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "zcfonts";
+    src: url("zcfont/zcfonts.eot");
+    src: url("zcfont/zcfonts.eot?#iefix") format("embedded-opentype"),
+        url("zcfont/zcfonts.woff") format("woff"),
+        url("zcfont/zcfonts.ttf") format("truetype"),
+        url("zcfont/zcfonts.svg#zcfonts") format("svg");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+[data-icon]:before {
+    font-family: "zcfonts" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="zcv-"],
+[class^="zcv-"]:before,
+[class*=" zcv-"]:before {
+    font-family: "zcfonts" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.zcv-3dots-horizontal:before {
+    content: "\61";
+}
+
+.zcv-3dots-vertical:before {
+    content: "\62";
+}
+
+.zcv-actions:before {
+    content: "\63";
+}
+
+.zcv-activity:before {
+    content: "\64";
+}
+
+.zcv-alert1:before {
+    content: "\65";
+}
+
+.zcv-apps:before {
+    content: "\66";
+}
+
+.zcv-archive:before {
+    content: "\67";
+}
+
+.zcv-area-chart:before {
+    content: "\68";
+}
+
+.zcv-arrowhead:before {
+    content: "\69";
+}
+
+.zcv-barchart:before {
+    content: "\6a";
+}
+
+.zcv-binocular:before {
+    content: "\6b";
+}
+
+.zcv-check-circle:before {
+    content: "\6c";
+}
+
+.zcv-close:before {
+    content: "\6d";
+}
+
+.zcv-code:before {
+    content: "\6e";
+}
+
+.zcv-collab:before {
+    content: "\6f";
+}
+
+.zcv-collapse:before {
+    content: "\70";
+}
+
+.zcv-condition:before {
+    content: "\71";
+}
+
+.zcv-coupon:before {
+    content: "\72";
+}
+
+.zcv-data:before {
+    content: "\73";
+}
+
+.zcv-delete:before {
+    content: "\74";
+}
+
+.zcv-dial-chart:before {
+    content: "\75";
+}
+
+.zcv-donut-chart:before {
+    content: "\76";
+}
+
+.zcv-down:before {
+    content: "\77";
+}
+
+.zcv-edit:before {
+    content: "\78";
+}
+
+.zcv-expand:before {
+    content: "\79";
+}
+
+.zcv-externallink:before {
+    content: "\7a";
+}
+
+.zcv-filter:before {
+    content: "\41";
+}
+
+.zcv-flowchart:before {
+    content: "\42";
+}
+
+.zcv-gear:before {
+    content: "\43";
+}
+
+.zcv-gift:before {
+    content: "\44";
+}
+
+.zcv-grid:before {
+    content: "\45";
+}
+
+.zcv-icons8-ticket-32:before {
+    content: "\46";
+}
+
+.zcv-info:before {
+    content: "\47";
+}
+
+.zcv-left:before {
+    content: "\48";
+}
+
+.zcv-list:before {
+    content: "\49";
+}
+
+.zcv-lock:before {
+    content: "\4a";
+}
+
+.zcv-map:before {
+    content: "\4b";
+}
+
+.zcv-outline:before {
+    content: "\4c";
+}
+
+.zcv-page:before {
+    content: "\4d";
+}
+
+.zcv-pan:before {
+    content: "\4e";
+}
+
+.zcv-piechart:before {
+    content: "\4f";
+}
+
+.zcv-plus:before {
+    content: "\50";
+}
+
+.zcv-plus-circle:before {
+    content: "\51";
+}
+
+.zcv-pm:before {
+    content: "\52";
+}
+
+.zcv-process:before {
+    content: "\53";
+}
+
+.zcv-properties:before {
+    content: "\54";
+}
+
+.zcv-query:before {
+    content: "\55";
+}
+
+.zcv-resresh:before {
+    content: "\56";
+}
+
+.zcv-right:before {
+    content: "\57";
+}
+
+.zcv-save:before {
+    content: "\58";
+}
+
+.zcv-search:before {
+    content: "\59";
+}
+
+.zcv-send:before {
+    content: "\5a";
+}
+
+.zcv-server:before {
+    content: "\30";
+}
+
+.zcv-settings:before {
+    content: "\31";
+}
+
+.zcv-shopping-bag:before {
+    content: "\32";
+}
+
+.zcv-star:before {
+    content: "\33";
+}
+
+.zcv-style:before {
+    content: "\34";
+}
+
+.zcv-sync:before {
+    content: "\35";
+}
+
+.zcv-table:before {
+    content: "\36";
+}
+
+.zcv-trophy:before {
+    content: "\37";
+}
+
+.zcv-ui:before {
+    content: "\38";
+}
+
+.zcv-uielements:before {
+    content: "\39";
+}
+
+.zcv-uitemplate:before {
+    content: "\21";
+}
+
+.zcv-unlock:before {
+    content: "\22";
+}
+
+.zcv-user:before {
+    content: "\23";
+}
+
+.zcv-zoomin:before {
+    content: "\24";
+}
+
+.zcv-zoomout:before {
+    content: "\25";
+}

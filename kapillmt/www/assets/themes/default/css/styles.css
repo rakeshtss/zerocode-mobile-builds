@@ -603,6 +603,10 @@ zc-social-login .row {
   margin-left: 0 !important;
 }
 
+.blank-layout {
+  padding-top: 0px !important;
+}
+
 /*************************************************************
 ***************** app selection styles end here  ******************
 **************************************************************/
@@ -2067,10 +2071,11 @@ zc-actions .zc-form-add-btn .btn i {
   z-index: 99;
   right: 32px;
 } */
-zc-field-table .ui-table table .ui-table-thead tr th {
+.zc-field-table .ui-table table .ui-table-thead tr th {
   font-size: 14px;
   background-color: #499794 !important;
   color: #fff !important;
+  text-align: left;
 }
 
 .zc-circle-title,
@@ -3831,6 +3836,25 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
 }
 
 @media (max-width: 640px) {
+  .ui-table-responsive .ui-table-tbody>tr {
+    position: relative;
+  }
+
+  .zc-widget-data-list .ui-table.ui-table-responsive .ui-table-tbody>tr>td:last-child {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .zc-widget-data-list .ui-table.ui-table-responsive .ui-table-tbody>tr>td span {
+    color: #000;
+    font-size: 13px;
+  }
+
+  .ui-table-responsive td zc-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
 
   /*************************************************************
 ***************** header styles start here  ******************
@@ -3850,9 +3874,10 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
   /********************* TABLE Styles start here  ***************************/
   /************************************************************************/
   .ui-table-responsive .ui-table-tbody>tr>td .ui-column-title {
-    margin: 0 0 2px 0 !important;
+    margin: 0 !important;
     padding: 0;
-    font-size: 14px;
+    font-size: 13px;
+    color: #888c9b !important;
   }
 
   .zc-widget-data-list .ui-table-responsive .ui-table-tbody>tr {
@@ -3861,6 +3886,7 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
     border-radius: 0;
     border-top: 0 !important;
     border-bottom: 1px solid #ecedf1 !important;
+    padding: 5px !important;
   }
 
   .ui-table table tbody.ui-table-tbody tr:hover {
@@ -3880,21 +3906,23 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
   }
 
   .zc-widget-data-list .ui-table .ui-table-tbody>tr>td {
-    flex: 1 1 100%;
-    padding: 8px 5px !important;
+    flex: 1 1 50%;
+    padding: 3px 5px !important;
     line-height: 18px;
-    border-bottom: 1px solid #ecedf1 !important;
+    border-bottom: none !important;
   }
 
   .zc-widget-data-list .ui-table .ui-table-tbody>tr>td:first-child {
-    padding-left: 8px !important;
-    padding-top: 8px !important;
+    padding-left: 5px !important;
+    padding-top: 3px !important;
   }
 
   .zc-widget-data-list .ui-table .ui-table-tbody>tr>td:last-child {
     border-bottom: 1px solid #ecedf1 !important;
     padding-bottom: 8px !important;
   }
+
+
 
   /************************************************************************/
   /********************* TABLE Styles end here  ***************************/
@@ -4033,6 +4061,10 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
 }
 
 @media(max-width:390px) {
+  .zc-widget-data-list .ui-table .ui-table-tbody>tr>td {
+    flex: 1 1 100%;
+  }
+
   .zc-horizontal-card-right {
     width: 100%;
     text-align: right;
