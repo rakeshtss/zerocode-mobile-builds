@@ -1063,7 +1063,7 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item>.nav-link.active>i::after,
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item.activatedNode.open>.nav-link>i::after {
   transform: scale(1);
-  background-color: #419794;
+  background-color: #0e1d2f;
 }
 
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link i,
@@ -1176,13 +1176,13 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active i,
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active:hover span,
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active:hover i {
-  color: #3c7c7a !important;
+  color: #fff !important;
 }
 
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active:hover,
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover,
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active {
-  background-color: #ccc !important;
+  background-color: #0e1d2f !important;
 }
 
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item:hover>.nav-link:hover i,
@@ -1190,24 +1190,27 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover span {
   color: #202124 !important;
 }
-
+.show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover i,
+.show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover span {
+  color: #fff !important;
+}
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-link.active i,
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-link.active span,
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-link.active:hover>i {
-  color: #419794 !important;
+  color: #0e1d2f !important;
 }
 
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active i,
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active span,
 .zc-menu-advanced .side-menu div .zc-menu .nav-item.activatedNode.open a.nav-dropdown-toggle {
-  color: #419794 !important;
+  color: #0e1d2f !important;
 }
 
 .zc-menu-advanced .side-menu div .zc-menu .nav-item:hover a.nav-link,
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover span,
 .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover i,
 .hide-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item.nav-dropdown:hover .nav-dropdown-toggle i {
-  color: #419794 !important;
+  color: #0e1d2f !important;
 }
 
 .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item:hover>.nav-link.active:hover i {
@@ -1459,7 +1462,7 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 
   .show-menu .zc-menu-advanced .side-menu .zc-menu li.nav-item:hover>a.nav-link.nav-dropdown-toggle,
   .show-menu .zc-menu-advanced .side-menu .zc-menu li:hover>a.nav-link {
-    color: #419794 !important;
+    color: #0e1d2f !important;
   }
 
   .show-menu .zc-menu-advanced .side-menu ul.zc-menu li.nav-item:hover a.nav-link.nav-dropdown-toggle {
@@ -1493,7 +1496,7 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
     border: 0;
     border-radius: 0;
     box-shadow: none;
-    color: #419794 !important;
+    color: #0e1d2f !important;
   }
 
   .show-menu .zc-menu-advanced .side-menu ul.zc-menu li.nav-item:hover a.nav-link.nav-dropdown-toggle>.nav-link-text {
@@ -1528,7 +1531,7 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
 
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover i,
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link:hover span {
-    color: #419794 !important;
+    color: #0e1d2f !important;
   }
 
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active span,
@@ -1538,12 +1541,12 @@ ul.zc-menu li.nav-item.nav-dropdown.open .nav-dropdown-items .nav-item .nav-link
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active i,
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active:hover span,
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item .nav-dropdown-items .nav-item .nav-link.active:hover i {
-    color: #419794 !important;
+    color: #0e1d2f !important;
   }
 
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item:hover>.nav-link.active:hover i,
   .show-menu .zc-menu-advanced .side-menu div .zc-menu .nav-item:hover>.nav-link:hover i {
-    color: #419794 !important;
+    color: #0e1d2f !important;
   }
 
   /*************** ADVANCED SIDEMENU STYLES END here***************/
