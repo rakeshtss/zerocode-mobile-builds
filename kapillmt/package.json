@@ -19,7 +19,8 @@
     "cordova-plugin-inappbrowser": "^4.0.0",
     "cordova-plugin-request-location-accuracy": "^2.3.0",
     "cordova-plugin-splashscreen": "^6.0.2",
-    "cordova.plugins.diagnostic": "^5.0.0"
+    "cordova.plugins.diagnostic": "^5.0.0",
+    "cordova-plugin-firebasex": "^11.0.3"
   },
   "cordova": {
     "plugins": {
@@ -63,7 +64,7 @@
         "ANDROID_FIREBASE_INSTALLATIONS_VERSION": "17.0.1",
         "ANDROID_GRPC_OKHTTP": "1.46.0"
       },
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-file-transfer": {}
     },
     "platforms": [
       "android"
@@ -71,7 +72,8 @@
   },
   "devDependencies": {
     "cordova-android": "^10.1.2",
-    "cordova-plugin-firebasex": "^14.2.1",
-    "cordova-plugin-whitelist": "^1.3.4"
+    "cordova-plugin-file": "^7.0.0",
+    "cordova-plugin-file-transfer": "git+https://github.com/apache/cordova-plugin-file-transfer.git",
+    "cordova-plugin-firebasex": "^11.0.3"
   }
 }

@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "keys/kapill.jks",
+            "storePassword": "doothplus@2022",
+            "alias": "cms",
+            "password" : "doothplus@2022",
+            "keystoreType": "jks"
+        },
+        "release": {
+            "keystore": "keys/kapill.jks",
+            "storePassword": "doothplus@2022",
+            "alias": "cms",
+            "password" : "doothplus@2022",
+            "keystoreType": "jks"
+        }
+    }
+}
