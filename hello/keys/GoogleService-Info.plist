@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1051860670979-kpev30huaedidjbbmluq3605vv0ieqob.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1051860670979-kpev30huaedidjbbmluq3605vv0ieqob</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA7T3odoJJFnYXTR2WrdUH1XACmZe0dUlM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1051860670979</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.doothplus.crm</string>
+	<key>PROJECT_ID</key>
+	<string>dp-kapil-crm</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dp-kapil-crm.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1051860670979:ios:b9d5bc1d8456422f4a0c36</string>
+</dict>
+</plist>

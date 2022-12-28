@@ -1,0 +1,34 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "keys/kapill.jks",
+            "storePassword": "doothplus@2022",
+            "alias": "cms",
+            "password" : "doothplus@2022",
+            "keystoreType": "jks",
+            "packageType": "apk"
+        },
+        "release": {
+            "keystore": "keys/kapill.jks",
+            "storePassword": "doothplus@2022",
+            "alias": "cms",
+            "password" : "doothplus@2022",
+            "keystoreType": "jks",
+            "packageType": "bundle"
+        }
+    },
+    "ios": {
+        "debug": {
+            "codeSignIdentity": "Kapil CRM DEV",
+            "provisioningProfile": "",
+            "developmentTeam": "AWD5QU326C",
+            "packageType": "development"
+        },
+        "release": {
+            "codeSignIdentity": "Kapil CRM DEV",
+            "provisioningProfile": "",
+            "developmentTeam": "AWD5QU326C",
+            "packageType": "app-store"
+        }
+    }
+}
