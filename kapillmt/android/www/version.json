@@ -1,13 +1,13 @@
 {
     "dirty": false,
-    "raw": "v3.6.2.6-0-g8baa91db",
-    "hash": "g8baa91db",
-    "distance": 0,
+    "raw": "v3.6.2.6-7-g1ea287f1",
+    "hash": "g1ea287f1",
+    "distance": 7,
     "tag": "v3.6.2.6",
     "semver": null,
-    "suffix": "0-g8baa91db",
+    "suffix": "7-g1ea287f1",
     "semverString": "",
     "version": "3.6.0",
-    "date": "2022-12-27T05:12:45.014Z",
-    "dateIST": "12/27/2022, 10:42:45 AM"
+    "date": "2022-12-29T11:34:00.916Z",
+    "dateIST": "12/29/2022, 5:04:00 PM"
 }
