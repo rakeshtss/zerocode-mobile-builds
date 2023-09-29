@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "keys/machs.jks",
+            "storePassword": "The@123",
+            "alias": "morefresh",
+            "password": "key0",
+            "keystoreType": "jks"
+        },
+        "release": {
+            "keystore": "keys/machs.jks",
+            "storePassword": "The@123",
+            "alias": "morefresh",
+            "password": "key0",
+            "keystoreType": "jks"
+        }
+    }
+}
