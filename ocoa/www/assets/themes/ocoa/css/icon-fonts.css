@@ -2,14 +2,13 @@
 
 @font-face {
   font-family: "ocoafonts";
-  src:url("../fonts/icons/ocoafonts.eot");
-  src:url("../fonts/icons/ocoafonts.eot?#iefix") format("embedded-opentype"),
+  src: url("../fonts/icons/ocoafonts.eot");
+  src: url("../fonts/icons/ocoafonts.eot?#iefix") format("embedded-opentype"),
     url("../fonts/icons/ocoafonts.woff") format("woff"),
     url("../fonts/icons/ocoafonts.ttf") format("truetype"),
     url("../fonts/icons/ocoafonts.svg#ocoafonts") format("svg");
   font-weight: normal;
   font-style: normal;
-
 }
 
 [data-icon]:before {
@@ -24,6 +23,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 [class^="tss-"],
 [class^="tss-"]:before,
 [class*=" tss-"]:before {
@@ -41,24 +41,35 @@
 .tss-es:before {
   content: "\e001";
 }
+
 .tss-gp:before {
   content: "\e002";
 }
+
 .tss-payment:before {
   content: "\e004";
 }
+
 .tss-sos:before {
   content: "\e005";
 }
+
 .tss-sp:before {
   content: "\e006";
 }
+
 .tss-bus:before {
   content: "\e000";
 }
+
 .tss-other:before {
   content: "\e003";
 }
+
 .tss-icon-01:before {
   content: "\e007";
+}
+
+.tss-distress:before {
+  content: "\e008";
 }

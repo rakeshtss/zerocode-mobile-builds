@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "keys/default_zc_mobile.jks",
+            "storePassword": "The@1234",
+            "alias": "tss-key",
+            "password": "The@1234",
+            "keystoreType": "jks"
+        },
+        "release": {
+            "keystore": "keys/default_zc_mobile.jks",
+            "storePassword": "The@1234",
+            "alias": "tss-key",
+            "password": "The@1234",
+            "keystoreType": "jks"
+        }
+    }
+}

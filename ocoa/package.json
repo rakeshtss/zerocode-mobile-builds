@@ -1,51 +1,39 @@
 {
-  "name": "com.ocoa.zerocode",
-  "displayName": "ocoa",
-  "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "figer": "keytool -list -v -keystore keys/default_zc_mobile.jks -alias tss-key -storepass The@1234 -keypass",
-    "key": "keytool -list -v -keystore keys/default_zc_mobile.jks -alias tss-key -storepass The@1234 -keypass The@1234"
-  },
-  "keywords": [
-    "ecosystem:cordova"
-  ],
-  "author": "Apache Cordova Team",
-  "license": "Apache-2.0",
-  "devDependencies": {
-    "cordova-android": "^10.1.2",
-    "cordova-browser": "^6.0.0",
-    "cordova-ios": "^6.2.0",
-    "cordova-plugin-androidx-adapter": "^1.1.3",
-    "cordova-plugin-geolocation": "^4.1.0",
-    "cordova-plugin-inappbrowser": "^4.0.0",
-    "cordova-plugin-ionic-webview": "^4.0.0",
-    "cordova-plugin-native-spinner": "^1.1.3",
-    "cordova-plugin-request-location-accuracy": "^2.3.0",
-    "cordova-plugin-splashscreen": "^6.0.0",
-    "cordova-plugin-statusbar": "^2.4.3",
-    "cordova-plugin-whitelist": "^1.3.4",
-    "cordova.plugins.diagnostic": "^6.0.3"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-inappbrowser": {},
-      "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-geolocation": {
-        "GPS_REQUIRED": "true"
-      },
-      "cordova-plugin-androidx-adapter": {},
-      "cordova.plugins.diagnostic": {},
-      "cordova-plugin-native-spinner": {}
+    "name": "com.ocoa.zerocode",
+    "displayName": "ocoa",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "figer": "keytool -list -v -keystore keys/default_zc_mobile.jks -alias tss-key -storepass The@1234 -keypass",
+        "key": "keytool -list -v -keystore keys/default_zc_mobile.jks -alias tss-key -storepass The@1234 -keypass The@1234"
     },
-    "platforms": [
-      "android",
-      "browser",
-      "ios"
-    ]
-  }
+    "keywords": [
+        "ecosystem:cordova"
+    ],
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "cordova-android": "^12.0.1",
+        "cordova-plugin-geolocation": "^5.0.0",
+        "cordova-plugin-inappbrowser": "^5.0.0",
+        "cordova-plugin-request-location-accuracy": "^2.3.0",
+        "cordova-plugin-statusbar": "^3.0.0"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-geolocation": {
+                "GPS_REQUIRED": "true"
+            },
+            "cordova-plugin-request-location-accuracy": {
+                "PLAY_SERVICES_LOCATION_VERSION": "16.+"
+            }
+        },
+        "platforms": [
+            "android"
+        ]
+    }
 }
