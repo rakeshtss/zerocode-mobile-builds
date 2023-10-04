@@ -3646,7 +3646,9 @@ th .dropdown-menu .ui-dropdown {
     margin: 15px 0 0;
     color: #fff;
 }
-
+.zc-no-required-star .form-group .required-star {
+    display: none;
+}
 
 
 
