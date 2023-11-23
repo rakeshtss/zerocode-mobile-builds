@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.doodhplus.crm" ios-CFBundleIdentifier="com.doothplus.crm"  version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.doodhplus.crm" ios-CFBundleIdentifier="com.doothplus.crm" version="1.2.0"
+    xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CRM</name>
     <description>
         Zerocode kapillmt application
@@ -16,13 +18,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <allow-intent href="market:*" />
-        <preference name="android-buildToolsVersion" value="30.0.3" />
-        <preference name="android-minSdkVersion" value="22" />
-        <preference name="android-compileSdkVersion" value="31" />
-        <preference name="android-targetSdkVersion" value="31" />
-        <preference name="SplashMaintainAspectRatio" value="true" />
-        <preference name="SplashShowOnlyFirstTime" value="true" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon"
+            value="res/screen/android/splash-port-xxxhdpi.png" />
         <icon density="ldpi" src="res/icon/android/ldpi.png" />
         <icon density="mdpi" src="res/icon/android/mdpi.png" />
         <icon density="hdpi" src="res/icon/android/hdpi.png" />
