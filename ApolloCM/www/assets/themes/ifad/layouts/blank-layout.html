@@ -1,0 +1,251 @@
+<div class="blank-layout" [ngClass]="ly.pageCode">
+  <header class="zc-header">
+    <div class="max-content">
+      <div class="zc-header-strip">
+        <div class="zc-header-strip-left">
+          <ul class="header-social-logos">
+            <li>
+              <a href="javascript:;" class="icon icon-twitter"></a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon icon-facebook"></a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon icon-google"></a>
+            </li>
+            <li>
+              <a href="javascript:;" class="icon icon-pinterest-p"></a>
+            </li>
+          </ul>
+        </div>
+        <div class="zc-header-strip-right">
+
+          <div class="zc-header-strip-contact">
+            <i class="icon icon-phone2"></i>
+            <span class="zc-header-strip-number">+39-0654591</span>
+          </div>
+          <div class="zc-header-signup zc-mobile-hide" *ngIf="!localStorage.getItem('ZC_user')">
+            <img class="zc-user-img" src="https://cdn.v35.dev.zeroco.de/ifad/themes/ifad/images/user-img.png" alt="">
+            <span><a routerLink="/zcbase/account/user-login">Login / Sign Up</a></span>
+          </div>
+
+          <div class="zc-profile-dp-list d-md-flex d-none" *ngIf="localStorage.getItem('ZC_user')">
+            <div ngbDropdown class="zc-profile-dp" placement="bottom-right">
+              <a class="zc-profile-dp-link" id="userdroupdown" ngbDropdownToggle>
+                <span class="welcome-user-pic"
+                  *ngIf="!(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                  <img src="assets/themes/default/images/user.png" alt="logo" />
+                </span>
+                <span class="welcome-user-pic"
+                  *ngIf="(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                  <img [src]="ly.siteConfig.fileServer + 'get/' +ly.userDetails.pic[0]['path']" alt="logo" />
+                </span>
+                <span class="welcome-widget">
+                  <!-- <span class="welcome">Welcome </span> -->
+                  <div class="welcome-user" title="{{ ly.userDetails.name }}"> {{ ly.userDetails.name }}</div>
+                  <div class="zc-user-info">
+                    <label *ngIf="ly.userDetails?.email"
+                      title="{{ly.userDetails?.email}}">{{ly.userDetails?.email}}</label>
+                    <label *ngIf="ly.userDetails.role?.label">{{ly.userDetails.role.label}}</label>
+                    <label *ngIf="ly.userDetails.addInfo?.branch">{{ly.userDetails.addInfo.branch?.label}}</label>
+                    <label *ngIf="ly.userDetails.phone?.isdCode">{{ ly.userDetails.phone?.isdCode
+                      }}-{{ly.userDetails.phone?.value}}
+                    </label>
+                  </div>
+                </span>
+              </a>
+
+              <div ngbDropdownMenu aria-labelledby="userdroupdown" class="zc-profile-dp-menu">
+                <ul class="zc-profile-dp-menu-list">
+                  <li>
+
+                    <span class="welcome-widget d-lg-none">
+                      <!-- <span class="welcome">Welcome </span> -->
+                      <div class="welcome-user" title="{{ ly.userDetails.name }}"> {{ ly.userDetails.name }}</div>
+                      <div class="zc-user-info">
+                        <label *ngIf="ly.userDetails.role?.label">{{
+                          ly.userDetails.role.label
+                          }}</label>
+                        <label *ngIf="ly.userDetails.addInfo?.branch">{{
+                          ly.userDetails.addInfo.branch?.label
+                          }}</label>
+                        <label *ngIf="ly.userDetails.phone?.isdCode">{{ ly.userDetails.phone?.isdCode }}-{{
+                          ly.userDetails.phone?.value
+                          }}
+                        </label>
+                      </div>
+                    </span>
+                  </li>
+                  <ng-container *ngIf="ly.siteConfig && ly.siteConfig.profileLinks.length > 0">
+                    <li *ngFor="let link of ly.siteConfig.profileLinks">
+                      <ng-container [ngSwitch]="link.type">
+                        <!--
+                      <a *ngSwitchCase="external" [href]="link.url" class="dropdown-item" target="link.target">{{link.title}}</a>
+                    -->
+                        <a *ngSwitchDefault [routerLink]="['/' + link.url]" class="dropdown-item"
+                          [target]="link.target">{{ link.title }}</a>
+                      </ng-container>
+                    </li>
+                  </ng-container>
+                  <li>
+                    <button class="dropdown-item" routerLink="/zcbase/account/profile"><span class="icon-user"></span>
+                      Profile</button>
+                  </li>
+                  <li *ngIf="ly.userDetails?.addInfo?.role?.code != 'user'">
+                    <button class="dropdown-item" routerLink="/zcbase/account/change-password"><span
+                        class="icon-lock-2"></span>Change Password</button>
+                  </li>
+                  <li *ngIf="ly.userDetails && ly.userDetails['multiple-apps']">
+                    <button class="dropdown-item" routerLink="/zcbase/account/app-selection"><span
+                        class="icon-server"></span>App Selection</button>
+                  </li>
+                  <!-- <li>
+                <button class="dropdown-item" routerLink="/zcbase/account/delegation-creation">Delegation Creation</button>
+              </li> 
+              <li>
+                <button class="dropdown-item" routerLink="/zcbase/account/delegation-received">Delegation Received</button>
+              </li>  -->
+                  <li>
+                    <button id="logout" class="dropdown-item" (click)="ly.logout()">
+                      <span class="icon-sign-out"></span>Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="zc-header-main">
+        <div class="zc-header-left">
+          <a class="zc-logo" routerLink="/" *ngIf="ly.siteConfig.clientLogo">
+            <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+          </a>
+        </div>
+        <div class="zc-header-right">
+          <div id="myCanvasNav" class="menu-overlay" (click)="ly.toggleMenu()"></div>
+
+          <div class="zc-horizontal-menu">
+            <div class="menu-close icon-close  zc-web-hide" (click)="ly.toggleMenu()"></div>
+            <div class="zc-header-signup  zc-web-hide" *ngIf="!localStorage.getItem('ZC_user')">
+              <img class="zc-user-img" src="https://cdn.v35.dev.zeroco.de/ifad/themes/ifad/images/user-img.png" alt="">
+              <span><a routerLink="/zcbase/account/user-login">Login / Sign Up</a></span>
+            </div>
+            <div class="dropdown d-md-none zc-profile-dp" ngbDropdown *ngIf="localStorage.getItem('ZC_user')">
+              <a class="zc-profile-dp-link dropdown-toggle w-100" id="dropdownMenuButton" data-toggle="dropdown"
+                ngbDropdownToggle>
+                <span class="welcome-user-pic"
+                  *ngIf="!(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                  <img src="assets/themes/default/images/user.png" alt="logo" />
+                </span>
+                <span class="welcome-user-pic"
+                  *ngIf="(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                  <img [src]="ly.siteConfig.fileServer + 'get/' +ly.userDetails.pic[0]['path']" alt="logo" />
+                </span>
+                <span class="welcome-widget">
+                  <!-- <span class="welcome">Welcome </span> -->
+                  <div class="welcome-user" title="{{ ly.userDetails.name }}"> {{ ly.userDetails.name }}</div>
+                  <div class="zc-user-info">
+                    <label *ngIf="ly.userDetails?.email"
+                      title="{{ly.userDetails?.email}}">{{ly.userDetails?.email}}</label>
+                    <label *ngIf="ly.userDetails.role?.label">{{ly.userDetails.role.label}}</label>
+                    <label *ngIf="ly.userDetails.addInfo?.branch">{{ly.userDetails.addInfo.branch?.label}}</label>
+                    <label *ngIf="ly.userDetails.phone?.isdCode">{{ ly.userDetails.phone?.isdCode
+                      }}-{{ly.userDetails.phone?.value}}
+                    </label>
+                  </div>
+                </span>
+                <span class="icon-caret-down-1 dp-toggle-icon"></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" ngbDropdownMenu (click)="ly.toggleMenu()">
+                <ul class="zc-profile-dp-menu-list">
+
+                  <li>
+                    <button class="dropdown-item" routerLink="/zcbase/account/profile"><span class="icon-user"></span>
+                      Profile</button>
+                  </li>
+                  <li *ngIf="ly.userDetails?.addInfo?.role?.code != 'user'">
+                    <button class="dropdown-item" routerLink="/zcbase/account/change-password"><span
+                        class="icon-lock-2"></span>Change Password</button>
+                  </li>
+                  <li *ngIf="ly.userDetails && ly.userDetails['multiple-apps']">
+                    <button class="dropdown-item" routerLink="/zcbase/account/app-selection"><span
+                        class="icon-server"></span>App Selection</button>
+                  </li>
+                  <!-- <li>
+                      <button class="dropdown-item" routerLink="/zcbase/account/delegation-creation">Delegation Creation</button>
+                    </li> 
+                    <li>
+                      <button class="dropdown-item" routerLink="/zcbase/account/delegation-received">Delegation Received</button>
+                    </li>  -->
+                  <li>
+                    <button id="logout" class="dropdown-item" (click)="ly.logout()">
+                      <span class="icon-sign-out"></span>Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <ul class="zc-menu" (click)="ly.toggleMenu()">
+              <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active"
+                  [routerLinkActiveOptions]={exact:true}>Projects</a></li>
+              <li class="nav-item" *ngIf="ly.userDetails?.addInfo?.role?.code != null ">
+                <a class="nav-link" routerLink="/zcbase/account/dashboard" routerLinkActive="active">Dashboard</a>
+              </li>
+              <li class="nav-item" *ngIf="ly.userDetails?.addInfo?.role?.code === null ">
+                <a class="nav-link" [routerLink]="['/zcbase/account/user-login']"
+                  [queryParams]="{message : 'dashboard'}">Dashboard</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" routerLink="/zcbase/account/about-us"
+                  routerLinkActive="active">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" routerLink="/zcbase/account/contact"
+                  routerLinkActive="active">Contact Us</a></li>
+              <li class="nav-item"><a class="nav-link" routerLink="/zcbase/account/privacy-policy"
+                  routerLinkActive="active">Privacy Policy</a></li>
+              <li class="nav-item"><a class="nav-link" routerLink="/zcbase/account/terms-and-conditions"
+                  routerLinkActive="active">Terms & Conditions</a></li>
+              <li class="nav-item"
+                *ngIf="ly.userDetails?.addInfo?.role?.code === 'ifad_admin' || ly.userDetails?.addInfo?.role?.code === 'ifad_user'">
+                <a class="nav-link" routerLink="/ifad_application/projects/project-list"
+                  routerLinkActive="active">Project List</a>
+              </li>
+            </ul>
+            <!-- <zc-com-render type="menu" [options]="{ app: ly.currentApp }"></zc-com-render> -->
+          </div>
+          <div class="sidebar-toggle zc-web-hide">
+            <a fxHide fxShow.lt-sm class="icon-bars " (click)="ly.toggleMenu();"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content" [ngClass]="ly.menuState">
+    <router-outlet></router-outlet>
+
+  </div>
+  <footer>
+    <div class="max-content">
+      <a class="zc-logo" *ngIf="ly.siteConfig.clientLogo" routerlink="/" href="/">
+        <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+      </a>
+      <div class="row m-0">
+        <div class="col-md-6 col-12 p-0 left-footer">
+          <p>Via Paolo di Dono, 44, 00142 Roma, ITALY</p>
+
+        </div>
+
+        <div class="col-md-6 col-12 p-0 right-footer">
+          <h4>Contact</h4>
+          <p>E-mail: <a href="mailto:info@ifad.org">info@ifad.org</a></p>
+        </div>
+        <div class="col-12 p-0 copyrights-text">
+          <p>© <span>{{ ly.today | date : 'y'}}</span> IFAD. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div>
+    <!-- <zc-com-render type='html' [options]="{type:'page', pageUrl:'zcbase/account/contact'}"></zc-com-render> -->
+  </div>
+</div>

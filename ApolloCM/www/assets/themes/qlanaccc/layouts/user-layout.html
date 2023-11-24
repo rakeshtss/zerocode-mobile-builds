@@ -1,0 +1,168 @@
+<header class="col-12">
+  <div class="header-leftside row pl-1 m-0">
+
+    <div class="sidebar-toggle">
+      <a fxHide fxShow.lt-sm class="icon-bars " (click)="ly.toggleMenu();"></a>
+    </div>
+
+    <div class="logo-container">
+      <a class="logo" *ngIf="ly.siteConfig.clientLogo">
+        <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+      </a>
+    </div>
+    <!-- <div ngbDropdown class="drop-logo">
+      <div class="user-details" ngbDropdownToggle>
+        <img src="assets/themes/incor/images/drop-logo.png" alt="">
+        <a class="d-flex align-items-start flex-column" id="dropdownBasic1">
+          <span class="city-name"><strong>VB City</strong></span>
+          <span class="city-loc">MEDCHAL</span>
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="user-menu">
+          <ul>
+            <li>
+              <button class="dropdown-item">Ameerpet</button>
+            </li>
+            <li>
+              <button class="dropdown-item">Secunderabad</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <!--
+    <div class="col-4">
+        <zc-com-render type='app-selection' [options]="{type:'dropdown'}"></zc-com-render>
+    </div>
+  -->
+
+  <div class="header-rightside">
+    <ul>
+      <!-- <li class="zc-notifications">
+        <zc-com-render type="notifications" [options]="ly.siteConfig"></zc-com-render>
+      </li> -->
+      <li>
+        <div ngbDropdown class="user-details" placement="bottom-right">
+          <!-- <span class="icon-user-c welcome-user-ico"></span> -->
+          <a class="" id="dropdownBasic1" ngbDropdownToggle>
+            <span class="welcome-user-pic"
+            *ngIf="!(ly.userDetails.addInfo && ly.userDetails.addInfo.pic && ly.userDetails.addInfo.pic.length > 0)">
+            <img src="assets/themes/qlanaccc/images/user.png" alt="logo" />
+          </span>
+          <span class="welcome-user-pic"
+            *ngIf="(ly.userDetails.addInfo && ly.userDetails.addInfo.pic && ly.userDetails.addInfo.pic.length > 0)">
+            <img [src]="ly.siteConfig.fileServer + 'get/' +ly.userDetails.addInfo.pic[0]['path']" alt="logo" />
+          </span>
+            <span class="welcome">Welcome </span>
+            <span class="welcome-user"> {{ ly.userDetails.name }}</span>
+          </a>
+
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="user-menu">
+            <ul>
+              <li>
+                <div class="user-info">
+                  <label *ngIf="ly.userDetails.role?.label">{{
+                    ly.userDetails.role.label
+                  }}</label>
+                  <label *ngIf="ly.userDetails.addInfo?.branch">{{
+                    ly.userDetails.addInfo.branch?.label
+                  }}</label>
+                  <label *ngIf="ly.userDetails.phone?.isdCode">{{ ly.userDetails.phone?.isdCode }}-{{
+                      ly.userDetails.phone?.value
+                    }}
+                  </label>
+                </div>
+              </li>
+              <ng-container *ngIf="ly.siteConfig && ly.siteConfig.profileLinks.length > 0">
+                <li *ngFor="let link of ly.siteConfig.profileLinks">
+                  <ng-container [ngSwitch]="link.type">
+                    <!--
+                      <a *ngSwitchCase="external" [href]="link.url" class="dropdown-item" target="link.target">{{link.title}}</a>
+                    -->
+                    <a *ngSwitchDefault [routerLink]="['/' + link.url]" class="dropdown-item"
+                      [target]="link.target">{{ link.title }}</a>
+                  </ng-container>
+                </li>
+              </ng-container>
+              <li>
+                <button class="dropdown-item" routerLink="account/profile">Profile</button>
+              </li>
+              <li>
+                <button class="dropdown-item" routerLink="account/change-password">Change Password</button>
+              </li>
+              <li>
+                <button class="dropdown-item" (click)="ly.logout()">
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+
+  <div class="side-menu" [ngClass]="ly.menuState">
+    <zc-com-render type="menu" [options]="{ app: ly.currentApp }"></zc-com-render>
+    <!--
+      <div class="leftnav-logo">
+        <a [href]="ly.siteConfig.powerByUrl" target="_blank">
+          <span>{{ly.siteConfig.powerByTitle}}</span>
+          <img *ngIf="ly.siteConfig.powerByLogo" [src]="ly.siteConfig.powerByLogo" alt="logo" />
+        </a>
+      </div>
+    -->
+  </div>
+  <div class="main-content" (click)="ly.onOutsideClick();" [ngClass]="ly.menuState">
+    <div class="breadcrumb-container">
+      <p class="m-0 page-title d-block">{{ ly.pageTitle }}</p>
+      <!-- <div class="breadcrumb-widget">
+        <div fxFlex class="breadcrumb-left" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <i *ngIf="ly.backBtn" class="icon-long-left-arrow back-btn" (click)="ly.backClicked()"></i>
+          <span>{{ ly.pageTitle }}</span>
+        </div>
+        <div fxFlex class="breadcrumb-right" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px"></div>
+      </div> -->
+      <div class="breadcrumb-widget">
+        <div fxFlex class="breadcrumb-left">
+          <i *ngIf="ly.backBtn" class="icon-long-left-arrow back-btn" title="Back" (click)="ly.backClicked()"></i>
+          <!-- Breadcrumb Start -->
+          <ul *ngIf="ly.breadcrumb && ly.breadcrumb.length > 0">
+            <li *ngFor="let item of ly.breadcrumb; let _inx = index">
+              <span *ngIf="_inx">{{ ' > ' }}</span>
+              <span *ngIf="!item.url">
+                <span zcBreadcrumb [breadcrumb]="item"></span>
+              </span>
+              <a *ngIf="item.url" class="bredcrumb-item" [routerLink]="[item.url]"
+                routerLinkActive="router-link-active">
+                <span zcBreadcrumb [breadcrumb]="item"></span>
+              </a>
+            </li>
+          </ul>
+          <!-- Breadcrumb Ends -->
+        </div>
+      </div>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+      <footer>
+        <div class="right-footer">
+         <!--  <ul>
+            <li><a>Help</a></li>
+            <li><a>Contact</a></li>
+            <li><a>privacy Policy</a></li>
+            <li><a>Terms &amp; Conditions</a></li>
+          </ul> -->
+        </div>
+        <div class="leftnav-logo">
+      <a href="http://zeroco.de/" target="_blank">
+        <div class="d-flex align-items-center">
+          <span class="d-block pr-2">{{ly.siteConfig.powerByTitle}}</span>
+          <img *ngIf="ly.siteConfig.powerByLogo" [src]="ly.siteConfig.powerByLogo" alt="logo" />
+        </div>
+      </a>
+    </div>
+      </footer>
+    </div>
+  </div>

@@ -1,0 +1,396 @@
+<zc-com-render type="html"
+    [options]="{'widget': 'layouts_animations','type': 'custom-html','js':[{'name':'jquery', 'src':'layouts_animations/jquery-3.5.0.min.js'},{'name':'Paroller','src':'layouts_animations/paroller.js'},{'name':'Parallax Scroll','src':'layouts_animations/parallax-scroll.js'},{'name':'wow','src':'layouts_animations/wow.min.js'},{'name':'Way Point', 'src':'layouts_animations/jquery.waypoints.min.js'},{'name':'Counter Up','src':'layouts_animations/jquery.counterup.min.js'},{'name':'Drift','src':'layouts_animations/drift.js'},{'name':'Gtag','src':'layouts_animations/gtag.js'},{'name':'Scroll Top','src':'layouts_animations/main.js'}],'css':[{'name':'Animation CSS','src':'layouts_animations/animate.min.css'}]}">
+</zc-com-render>
+<div class="blank-layout">
+    <header class="zc-header">
+        <div class="zc-header-left">
+            <!-- <a class="zc-logo"><img alt="Logo" src="assets/themes/default/images/head-logo.png"></a> -->
+            <a class="zc-logo" *ngIf="ly.siteConfig.clientLogo" routerLink="/zcbase/account/home" routerLinkActive="active">
+                <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+            </a>
+            <a href="javascript:;" class="icon-bars sidebar-toggle" (click)="ly.toggleMenu()"
+                matTooltip="Click to toggle Menu" matTooltipPosition="right"></a>
+        </div>
+        <!-- <div class="zc-header-meddile"> -->
+
+        <!-- </div> -->
+
+        <div class="zc-header-right" style="transition: all 0.5s linear;">
+            <div class="zc-horizontal-menu">
+                <div class="side-menu">
+                    <ul class="zc-menu">
+                        <li class="nav-item" (click)="ly.toggleMenu()">
+                            <a class="nav-link" routerLink="/zcbase/account/home" routerLinkActive="active"><span
+                                    class="nav-link-text">Home</span></a>
+                        </li>
+                        <li #products class="nav-item nav-dropdown" routerLinkActive="activatedNode"
+                            (click)="products.classList.toggle('open')">
+                            <a routerLink="/zccms/discover/discover" class="nav-link nav-dropdown-toggle">
+                                <span class="icon icon-angle-down dp-arrow"></span>
+                                <span class="nav-link-text">Discover</span>
+                            </a>
+                            <ul class="nav-dropdown-items zc-mega-menu" (click)="ly.toggleMenu()">
+                                <li class="nav-item sub-menu">
+                                    <span>Product</span>
+                                    <ul class="nav-sub-dropdown-items">
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/features" routerLinkActive="active"
+                                                class="nav-link"><span>Features</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/services" routerLinkActive="active"
+                                                class="nav-link"><span>Services</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/showcase" routerLinkActive="active"
+                                                class="nav-link"><span>Showcase</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/why-zerocode" routerLinkActive="active"
+                                                class="nav-link"><span>Why ZeroCode</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/pricing" routerLinkActive="active"
+                                                class="nav-link"><span>Pricing</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/faqs" routerLinkActive="active"
+                                                class="nav-link"><span>FAQs</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <span>Ecosystem</span>
+                                    <ul class="nav-sub-dropdown-items">
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/academy" routerLinkActive="active"
+                                                class="nav-link"><span>Academy</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/training" routerLinkActive="active"
+                                                class="nav-link"><span>Training</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/community" routerLinkActive="active"
+                                                class="nav-link"><span>Community</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/programs" routerLinkActive="active"
+                                                class="nav-link"><span>Programs &amp;
+                                                    Initiatives</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/help-center" routerLinkActive="active"
+                                                class="nav-link"><span>Help Center</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/discover/resources" routerLinkActive="active"
+                                                class="nav-link"><span>Resources</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li #solutions class="nav-item nav-dropdown" routerLinkActive="activatedNode"
+                            (click)="solutions.classList.toggle('open')">
+                            <a routerLink="/zccms/solutions/solutions" class="nav-link nav-dropdown-toggle">
+                                <span class="icon icon-angle-down dp-arrow"></span>
+                                <span class="nav-link-text">Solutions</span>
+                            </a>
+                            <ul class="nav-dropdown-items zc-mega-menu" (click)="ly.toggleMenu()">
+                                <li class="nav-item sub-menu">
+                                    <span>By Industry</span>
+                                    <ul class="nav-sub-dropdown-items">
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/banking" routerLinkActive="active"
+                                                class="nav-link"><span>Banking & Fintech</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/healthcare" routerLinkActive="active"
+                                                class="nav-link"><span>Healthcare</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/pharmaceutical" routerLinkActive="active"
+                                                class="nav-link"><span>Pharmaceutical</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/government" routerLinkActive="active"
+                                                class="nav-link"><span>Government</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/education" routerLinkActive="active"
+                                                class="nav-link"><span>Education</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/supply-chain" routerLinkActive="active"
+                                                class="nav-link"><span>Supply Chain</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/manufacturing" routerLinkActive="active"
+                                                class="nav-link"><span>Manufacturing</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/agriculture" routerLinkActive="active"
+                                                class="nav-link"><span>Agriculture</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/real-estate" routerLinkActive="active"
+                                                class="nav-link"><span>Real Estate</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <span>By Use Case</span>
+                                    <ul class="nav-sub-dropdown-items">
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/operational-efficiency"
+                                                routerLinkActive="active" class="nav-link"><span>Operational
+                                                    Efficiency</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/customer-apps" routerLinkActive="active"
+                                                class="nav-link"><span>Customer Apps</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/e-commerce" routerLinkActive="active"
+                                                class="nav-link"><span>E-Commerce & Fulfillment</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/filed-service" routerLinkActive="active"
+                                                class="nav-link"><span>Field Service</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/knowledge-management"
+                                                routerLinkActive="active" class="nav-link"><span>Knowledge
+                                                    Management</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <span>By Category</span>
+                                    <ul class="nav-sub-dropdown-items">
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/business-enablement"
+                                                routerLinkActive="active" class="nav-link"><span>Business
+                                                    Enablement</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/customer-enblement"
+                                                routerLinkActive="active" class="nav-link"><span>Customer
+                                                    Enablement</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/legacy-modernization"
+                                                routerLinkActive="active" class="nav-link"><span>Legacy
+                                                    Modernization</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/product-innovation"
+                                                routerLinkActive="active" class="nav-link"><span>Product
+                                                    Innovation</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <span>By Team</span>
+                                    <ul class="nav-sub-dropdown-items">
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/marketing-team" routerLinkActive="active"
+                                                class="nav-link"><span>Marketing Team</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/sales-team" routerLinkActive="active"
+                                                class="nav-link"><span>Sales Team</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/operations-team" routerLinkActive="active"
+                                                class="nav-link"><span>Operations Team</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/hr-team" routerLinkActive="active"
+                                                class="nav-link"><span>HR Team</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/product-team" routerLinkActive="active"
+                                                class="nav-link"><span>Product Team</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/finance-team" routerLinkActive="active"
+                                                class="nav-link"><span>Finance Team</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <span>By Digitization</span>
+                                    <ul class="nav-sub-dropdown-items">
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/going-digital" routerLinkActive="active"
+                                                class="nav-link"><span>Going Digital</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/doing-digital" routerLinkActive="active"
+                                                class="nav-link"><span>Doing Digital</span></a>
+                                        </li>
+                                        <li class="nav-item sub-menu">
+                                            <a routerLink="/zccms/solutions/being-digital" routerLinkActive="active"
+                                                class="nav-link"><span>Being Digital</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li #company class="nav-item nav-dropdown" routerLinkActive="activatedNode"
+                            (click)="company.classList.toggle('open')">
+                            <a routerLink="/zccms/company/about" routerLinkActive="active"
+                                class="nav-link nav-dropdown-toggle">
+                                <span class="icon icon-angle-down dp-arrow"></span>
+                                <span class="nav-link-text">Company</span>
+                            </a>
+                            <ul class="nav-dropdown-items" (click)="ly.toggleMenu()">
+                                <li class="nav-item sub-menu">
+                                    <a routerLink="/zccms/company/about" routerLinkActive="active"
+                                        class="nav-link"><span>About</span></a>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <a routerLink="/zccms/company/career" routerLinkActive="active"
+                                        class="nav-link"><span>Career</span></a>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <a routerLink="/zccms/company/events" routerLinkActive="active"
+                                        class="nav-link"><span>Events</span></a>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <a routerLink="/zccms/company/support" routerLinkActive="active"
+                                        class="nav-link"><span>Support</span></a>
+                                </li>
+                                <li class="nav-item sub-menu">
+                                    <a routerLink="/zccms/company/contact-us" routerLinkActive="active"
+                                        class="nav-link"><span>Contact Us</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="zc-header-right-btns">
+                <a type="button" class="btn btn-primary" href="https://www.zeroco.de/1day-1app/">1 Day-1 App</a>
+                <a type="button" class="btn btn-primary" href="#book-a-demo">Book Demo</a>
+            </div>
+        </div>
+    </header>
+    <div class="zc-icons-menu">
+        <div class="main-content" [ngClass]="ly.menuState">
+            <router-outlet></router-outlet>
+        </div>
+        <footer class="footer">
+            <div class="bg-shapes">
+                <div class="shape">
+                    <img src="https://cdn.v35.dev.zeroco.de/zccms/themes/zccms/images/kite.svg" alt="Shape">
+                </div>
+                <div class="shape">
+                    <img src="https://cdn.v35.dev.zeroco.de/zccms/themes/zccms/images/women.svg" alt="Shape">
+                </div>
+                <div class="shape">
+                    <img src="https://cdn.v35.dev.zeroco.de/zccms/themes/zccms/images/leaf.svg" alt="Shape">
+                </div>
+            </div>
+            <div class="container">
+                <div class="zc-footer-top">
+                    <div class="row">
+                        <div class="col-12 col-lg-9 zc-footer-top-menu">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                                    <h4>Company</h4>
+                                    <ul>
+                                        <li><a routerLink="/zccms/company/about">About</a></li>
+                                        <li><a routerLink="/zccms/company/career">Careers</a></li>
+                                        <li><a routerLink="/zccms/company/events">Events</a></li>
+                                        <li><a routerLink="/zccms/company/support">Support</a></li>
+                                        <li><a routerLink="/zccms/company/contact-us">Contact us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                                    <h4>Useful Links</h4>
+                                    <ul>
+                                        <li><a routerLink="/zccms/solutions/solutions">Solutions</a></li>
+                                        <li><a routerLink="/zccms/discover/academy">Academy</a></li>
+                                        <li><a routerLink="/zccms/discover/training">Training</a></li>
+                                        <li><a routerLink="/zccms/discover/community">Community</a></li>
+                                        <li><a routerLink="/zccms/discover/help-center">Help Center</a></li>
+                                        <li><a routerLink="/zccms/discover/resources">Resources</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+                                    <h4>Product</h4>
+                                    <ul>
+                                        <li><a routerLink="/zccms/discover/features">Features</a></li>
+                                        <li><a routerLink="/zccms/discover/services">Services</a></li>
+                                        <li><a routerLink="/zccms/discover/showcase">Showcase</a></li>
+                                        <li><a routerLink="/zccms/discover/why-zerocode">Why ZeroCode</a></li>
+                                        <li><a routerLink="/zccms/discover/pricing">Pricing</a></li>
+                                        <li><a>Blog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 zc-footer-top-menu wow fadeInUp" data-wow-delay="0.5s">
+                            <div>
+                                <h4>Join Us</h4>
+                                <p>You can be part of our team as Experts, Partners, Programmers and Trainers.</p>
+                                <form>
+                                    <div class="form-group zc-footer-email">
+                                        <label>Write you email*</label>
+                                        <input type="email" placeholder="Your Email" class="form-control">
+                                        <i class="icon icon-envelope"></i>
+                                    </div>
+                                    <button type="button" class="btn btn-secondary btn-block">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="zc-footer-bottom wow fadeInUp" data-wow-delay="0.1s">
+                    <div>
+                        <img src="https://cdn.v35.dev.zeroco.de/zccms/themes/zccms/images/white-logo.png">
+                    </div>
+                    <div class="zc-footer-bottom-menu">
+                        <ul>
+                            <li><a href="javascript;">Terms &amp; Conditions</a></li>
+                            <li><a href="javascript;">Privacy Policy</a></li>
+                            <li><a href="javascript;">Legal Notice</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="zc-footer-social-link">
+                            <li>
+                                <a href="https://www.facebook.com/zerocodeplatform/" target="_blank"><i
+                                        class="icon icon-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/zerocodplatform/" target="_blank"><i
+                                        class="icon icon-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/zerocode-innovations" target="_blank"><i
+                                        class="icon icon-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCPbJ8tbOdY_0aZBUtjQdDDA" target="_blank"><i
+                                        class="icon icon-youtube-play"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/zerocodeplatform/" target="_blank"><i
+                                        class="icon icon-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+        </footer>
+        <div class="scrollTopImg">
+            <img src="https://cdn.v35.dev.zeroco.de/zccms/themes/zccms/images/scroll.svg" alt="Shape">
+        </div>
+        </div>
+</div>

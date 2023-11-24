@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "zcicons";
+  src:url("../fonts/icon-fonts/zcicons.eot");
+  src:url("../fonts/icon-fonts/zcicons.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/icon-fonts/zcicons.woff") format("woff"),
+    url("../fonts/icon-fonts/zcicons.ttf") format("truetype"),
+    url("../fonts/icon-fonts/zcicons.svg#zcicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "zcicons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="tss-"],
+[class*=" tss-"],
+[class^="tss-"]:before,
+[class*=" tss-"]:before {
+  font-family: "zcicons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tss-account-circle:before {
+  content: "\61";
+}
+.tss-add-a-photo:before {
+  content: "\62";
+}
+.tss-add-business:before {
+  content: "\63";
+}
+.tss-add-location:before {
+  content: "\64";
+}
+.tss-all-inbox:before {
+  content: "\65";
+}
+.tss-app-settings-alt:before {
+  content: "\66";
+}
+.tss-attach-file:before {
+  content: "\67";
+}
+.tss-calculate:before {
+  content: "\68";
+}
+.tss-cancel:before {
+  content: "\69";
+}
+.tss-check-box:before {
+  content: "\6a";
+}
+.tss-check-box-outline:before {
+  content: "\6b";
+}
+.tss-check-circle-outline:before {
+  content: "\6c";
+}
+.tss-chevron-left:before {
+  content: "\6d";
+}
+.tss-chevron-right:before {
+  content: "\6e";
+}
+.tss-cloud-done:before {
+  content: "\6f";
+}
+.tss-cloud-download:before {
+  content: "\70";
+}
+.tss-cloud-upload:before {
+  content: "\71";
+}
+.tss-question-answer:before {
+  content: "\72";
+}
+.tss-create:before {
+  content: "\73";
+}
+.tss-create-new-folder:before {
+  content: "\74";
+}
+.tss-error:before {
+  content: "\75";
+}
+.tss-feedback:before {
+  content: "\76";
+}
+.tss-folder:before {
+  content: "\77";
+}
+.tss-grading:before {
+  content: "\78";
+}
+.tss-group-add:before {
+  content: "\79";
+}
+.tss-group-work:before {
+  content: "\7a";
+}
+.tss-history:before {
+  content: "\41";
+}
+.tss-info-black:before {
+  content: "\42";
+}
+.tss-leaderboard:before {
+  content: "\43";
+}
+.tss-location-disabled:before {
+  content: "\44";
+}
+.tss-location-searching:before {
+  content: "\45";
+}
+.tss-miscellaneous-services:before {
+  content: "\46";
+}
+.tss-not-interested:before {
+  content: "\47";
+}
+.tss-people:before {
+  content: "\48";
+}
+.tss-person:before {
+  content: "\49";
+}
+.tss-person-add:before {
+  content: "\4a";
+}
+.tss-photo-camera:before {
+  content: "\4b";
+}
+.tss-preview:before {
+  content: "\4c";
+}
+.tss-print:before {
+  content: "\4d";
+}
+.tss-radio-button-checked:before {
+  content: "\4e";
+}
+.tss-radio-button-unchecked:before {
+  content: "\4f";
+}
+.tss-room:before {
+  content: "\50";
+}
+.tss-save:before {
+  content: "\51";
+}
+.tss-send:before {
+  content: "\52";
+}
+.tss-supervisor-account:before {
+  content: "\53";
+}
+.tss-support:before {
+  content: "\54";
+}
+.tss-toggle-off:before {
+  content: "\55";
+}
+.tss-toggle-on:before {
+  content: "\56";
+}
+.tss-warning:before {
+  content: "\57";
+}
+.tss-enterpraise:before {
+  content: "\58";
+}

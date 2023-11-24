@@ -1,0 +1,4450 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "tss-fonts";
+  src:url("../fonts/tss-fonts.eot");
+  src:url("../fonts/tss-fonts.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/tss-fonts.woff") format("woff"),
+    url("../fonts/tss-fonts.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "tss-fonts" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="tss-"],
+[class^="tss-"]:before,
+[class*=" tss-"]:before {
+  font-family: "tss-fonts" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tss-3d-tag-monitor:before {
+  content: "\61";
+}
+.tss-a-negative:before {
+  content: "\62";
+}
+.tss-a-positive:before {
+  content: "\63";
+}
+.tss-aeroplane-bold:before {
+  content: "\64";
+}
+.tss-alert-1:before {
+  content: "\65";
+}
+.tss-alphabet:before {
+  content: "\66";
+}
+.tss-alphabet-1:before {
+  content: "\67";
+}
+.tss-alphabet-display:before {
+  content: "\68";
+}
+.tss-ambulance:before {
+  content: "\69";
+}
+.tss-ambulance-1:before {
+  content: "\6a";
+}
+.tss-ambulance-medical:before {
+  content: "\6b";
+}
+.tss-anchor:before {
+  content: "\6c";
+}
+.tss-anchor-1:before {
+  content: "\6d";
+}
+.tss-anchor-2:before {
+  content: "\6e";
+}
+.tss-android:before {
+  content: "\6f";
+}
+.tss-android-1:before {
+  content: "\70";
+}
+.tss-apartment-1:before {
+  content: "\71";
+}
+.tss-apple:before {
+  content: "\72";
+}
+.tss-apple-1:before {
+  content: "\73";
+}
+.tss-apple-2:before {
+  content: "\74";
+}
+.tss-arrow:before {
+  content: "\75";
+}
+.tss-arrow-1-1:before {
+  content: "\76";
+}
+.tss-arrow-cross-direction-1:before {
+  content: "\77";
+}
+.tss-arrow-direction-1:before {
+  content: "\78";
+}
+.tss-arrow-down-2:before {
+  content: "\79";
+}
+.tss-arrow-down-1-1:before {
+  content: "\7a";
+}
+.tss-arrow-exchange-1:before {
+  content: "\41";
+}
+.tss-arrow-exchange-2-1:before {
+  content: "\42";
+}
+.tss-arrow-left-1:before {
+  content: "\43";
+}
+.tss-arrow-left-1-1:before {
+  content: "\44";
+}
+.tss-arrow-left-2-1:before {
+  content: "\45";
+}
+.tss-arrow-left-3-1:before {
+  content: "\46";
+}
+.tss-arrow-left-4-1:before {
+  content: "\47";
+}
+.tss-arrow-left-5-1:before {
+  content: "\48";
+}
+.tss-arrow-left-6-1:before {
+  content: "\49";
+}
+.tss-arrow-left-c:before {
+  content: "\4a";
+}
+.tss-arrow-left-c-1-1:before {
+  content: "\4b";
+}
+.tss-arrow-left-turn-2:before {
+  content: "\4c";
+}
+.tss-arrow-left-turn-1-1:before {
+  content: "\4d";
+}
+.tss-arrow-right-2:before {
+  content: "\4e";
+}
+.tss-arrow-right-1-1:before {
+  content: "\4f";
+}
+.tss-arrow-right-3:before {
+  content: "\50";
+}
+.tss-arrow-right-4:before {
+  content: "\51";
+}
+.tss-arrow-right-5-1:before {
+  content: "\52";
+}
+.tss-arrow-right-6-1:before {
+  content: "\53";
+}
+.tss-arrow-right-7-1:before {
+  content: "\54";
+}
+.tss-arrow-right-8-1:before {
+  content: "\55";
+}
+.tss-arrow-right-play-1:before {
+  content: "\56";
+}
+.tss-arrow-right-turn-2:before {
+  content: "\57";
+}
+.tss-arrow-right-turn-1-1:before {
+  content: "\58";
+}
+.tss-arrow-up-5:before {
+  content: "\59";
+}
+.tss-arrow-up-1-1:before {
+  content: "\5a";
+}
+.tss-arrow-up-2-1:before {
+  content: "\30";
+}
+.tss-arrow-up-3-1:before {
+  content: "\31";
+}
+.tss-arrow-up-4-1:before {
+  content: "\32";
+}
+.tss-arrow-up-down-1:before {
+  content: "\33";
+}
+.tss-at:before {
+  content: "\34";
+}
+.tss-at-1:before {
+  content: "\35";
+}
+.tss-b:before {
+  content: "\36";
+}
+.tss-backward:before {
+  content: "\37";
+}
+.tss-backward-1:before {
+  content: "\38";
+}
+.tss-badge-check:before {
+  content: "\39";
+}
+.tss-badge-check-1:before {
+  content: "\21";
+}
+.tss-badge-user:before {
+  content: "\22";
+}
+.tss-bag:before {
+  content: "\23";
+}
+.tss-bag-1:before {
+  content: "\24";
+}
+.tss-bag-2:before {
+  content: "\25";
+}
+.tss-bag-3:before {
+  content: "\26";
+}
+.tss-bag-4:before {
+  content: "\27";
+}
+.tss-bag-5:before {
+  content: "\28";
+}
+.tss-bag-6:before {
+  content: "\29";
+}
+.tss-bag-7:before {
+  content: "\2a";
+}
+.tss-bag-sale-tag:before {
+  content: "\2b";
+}
+.tss-bag-sale-tag-1:before {
+  content: "\2c";
+}
+.tss-bag-sold-tag:before {
+  content: "\2d";
+}
+.tss-bag-tag:before {
+  content: "\2e";
+}
+.tss-ball:before {
+  content: "\2f";
+}
+.tss-ball-1:before {
+  content: "\3a";
+}
+.tss-balloon:before {
+  content: "\3b";
+}
+.tss-balloon-1:before {
+  content: "\3c";
+}
+.tss-bank-4:before {
+  content: "\3d";
+}
+.tss-bank-1-1:before {
+  content: "\3e";
+}
+.tss-bank-2-1:before {
+  content: "\3f";
+}
+.tss-bank-3-1:before {
+  content: "\40";
+}
+.tss-bar-button:before {
+  content: "\5b";
+}
+.tss-bar-menu-1:before {
+  content: "\5d";
+}
+.tss-bar-vertical-1:before {
+  content: "\5e";
+}
+.tss-bar-vertical-string-1:before {
+  content: "\5f";
+}
+.tss-barcode:before {
+  content: "\60";
+}
+.tss-barcode-1:before {
+  content: "\7b";
+}
+.tss-barcode-2:before {
+  content: "\7c";
+}
+.tss-basket-2:before {
+  content: "\7d";
+}
+.tss-basket-1-1:before {
+  content: "\7e";
+}
+.tss-basket-2-1:before {
+  content: "\5c";
+}
+.tss-basket-3:before {
+  content: "\e000";
+}
+.tss-basket-4:before {
+  content: "\e001";
+}
+.tss-basket-5:before {
+  content: "\e002";
+}
+.tss-basket-6:before {
+  content: "\e003";
+}
+.tss-basket-7:before {
+  content: "\e004";
+}
+.tss-basket-check:before {
+  content: "\e005";
+}
+.tss-basket-minus:before {
+  content: "\e006";
+}
+.tss-basket-plus:before {
+  content: "\e007";
+}
+.tss-basket-times:before {
+  content: "\e008";
+}
+.tss-bath-shower:before {
+  content: "\e009";
+}
+.tss-bath-tub:before {
+  content: "\e00a";
+}
+.tss-bath-tub-1:before {
+  content: "\e00b";
+}
+.tss-batman-user:before {
+  content: "\e00c";
+}
+.tss-battary:before {
+  content: "\e00d";
+}
+.tss-battary-1:before {
+  content: "\e00e";
+}
+.tss-battery:before {
+  content: "\e00f";
+}
+.tss-battery-1:before {
+  content: "\e010";
+}
+.tss-battery-2:before {
+  content: "\e011";
+}
+.tss-battery-3:before {
+  content: "\e012";
+}
+.tss-beach-resorts:before {
+  content: "\e013";
+}
+.tss-beach-resorts-1:before {
+  content: "\e014";
+}
+.tss-beats:before {
+  content: "\e015";
+}
+.tss-bed:before {
+  content: "\e016";
+}
+.tss-bed-1:before {
+  content: "\e017";
+}
+.tss-bed-leaf:before {
+  content: "\e018";
+}
+.tss-bed-leaf-1:before {
+  content: "\e019";
+}
+.tss-bell:before {
+  content: "\e01a";
+}
+.tss-bell-1:before {
+  content: "\e01b";
+}
+.tss-berkeley:before {
+  content: "\e01c";
+}
+.tss-bitcoin:before {
+  content: "\e01d";
+}
+.tss-bitcoin-1:before {
+  content: "\e01e";
+}
+.tss-bitcoin-cloud:before {
+  content: "\e01f";
+}
+.tss-bitcoin-laptop:before {
+  content: "\e020";
+}
+.tss-bitcoin-table:before {
+  content: "\e021";
+}
+.tss-blood:before {
+  content: "\e022";
+}
+.tss-blood-1:before {
+  content: "\e023";
+}
+.tss-blood-2:before {
+  content: "\e024";
+}
+.tss-blood-3:before {
+  content: "\e025";
+}
+.tss-blood-4:before {
+  content: "\e026";
+}
+.tss-blood-packet:before {
+  content: "\e027";
+}
+.tss-board:before {
+  content: "\e028";
+}
+.tss-bolt:before {
+  content: "\e029";
+}
+.tss-bolt-1:before {
+  content: "\e02a";
+}
+.tss-bolt-2:before {
+  content: "\e02b";
+}
+.tss-bolt-slash:before {
+  content: "\e02c";
+}
+.tss-bolt-slash-1:before {
+  content: "\e02d";
+}
+.tss-bone:before {
+  content: "\e02e";
+}
+.tss-bone-1:before {
+  content: "\e02f";
+}
+.tss-book-1:before {
+  content: "\e030";
+}
+.tss-book-1-1:before {
+  content: "\e031";
+}
+.tss-book-2:before {
+  content: "\e032";
+}
+.tss-book-cover:before {
+  content: "\e033";
+}
+.tss-book-cover-1:before {
+  content: "\e034";
+}
+.tss-book-cover-2:before {
+  content: "\e035";
+}
+.tss-book-cover-3:before {
+  content: "\e036";
+}
+.tss-booklet:before {
+  content: "\e037";
+}
+.tss-books:before {
+  content: "\e038";
+}
+.tss-books-1:before {
+  content: "\e039";
+}
+.tss-books-2:before {
+  content: "\e03a";
+}
+.tss-books-files:before {
+  content: "\e03b";
+}
+.tss-books-library:before {
+  content: "\e03c";
+}
+.tss-books-open:before {
+  content: "\e03d";
+}
+.tss-bottle:before {
+  content: "\e03e";
+}
+.tss-bow:before {
+  content: "\e03f";
+}
+.tss-bowl-straw:before {
+  content: "\e040";
+}
+.tss-bowling-game:before {
+  content: "\e041";
+}
+.tss-bowling-game-1:before {
+  content: "\e042";
+}
+.tss-box:before {
+  content: "\e043";
+}
+.tss-box-1:before {
+  content: "\e044";
+}
+.tss-box-2:before {
+  content: "\e045";
+}
+.tss-box-3:before {
+  content: "\e046";
+}
+.tss-box-add:before {
+  content: "\e047";
+}
+.tss-box-check:before {
+  content: "\e048";
+}
+.tss-box-check-1:before {
+  content: "\e049";
+}
+.tss-box-check-2:before {
+  content: "\e04a";
+}
+.tss-box-minus:before {
+  content: "\e04b";
+}
+.tss-box-minus-1:before {
+  content: "\e04c";
+}
+.tss-box-minus-2:before {
+  content: "\e04d";
+}
+.tss-box-plus:before {
+  content: "\e04e";
+}
+.tss-box-plus-1:before {
+  content: "\e04f";
+}
+.tss-boxires:before {
+  content: "\e050";
+}
+.tss-bra:before {
+  content: "\e051";
+}
+.tss-bra-1:before {
+  content: "\e052";
+}
+.tss-brain:before {
+  content: "\e053";
+}
+.tss-brain-heart:before {
+  content: "\e054";
+}
+.tss-brick:before {
+  content: "\e055";
+}
+.tss-bricks:before {
+  content: "\e056";
+}
+.tss-bricks-1:before {
+  content: "\e057";
+}
+.tss-bringles:before {
+  content: "\e058";
+}
+.tss-brush:before {
+  content: "\e059";
+}
+.tss-brush-1:before {
+  content: "\e05a";
+}
+.tss-btc:before {
+  content: "\e05b";
+}
+.tss-btc-1:before {
+  content: "\e05c";
+}
+.tss-btc-c:before {
+  content: "\e05d";
+}
+.tss-bucket:before {
+  content: "\e05e";
+}
+.tss-bucket-1:before {
+  content: "\e05f";
+}
+.tss-buiding:before {
+  content: "\e060";
+}
+.tss-building:before {
+  content: "\e061";
+}
+.tss-building-1:before {
+  content: "\e062";
+}
+.tss-building-2:before {
+  content: "\e063";
+}
+.tss-building-3:before {
+  content: "\e064";
+}
+.tss-building-4:before {
+  content: "\e065";
+}
+.tss-building-5:before {
+  content: "\e066";
+}
+.tss-burger:before {
+  content: "\e067";
+}
+.tss-burger-1:before {
+  content: "\e068";
+}
+.tss-burger-2:before {
+  content: "\e069";
+}
+.tss-burger-3:before {
+  content: "\e06a";
+}
+.tss-bus:before {
+  content: "\e06b";
+}
+.tss-bus-1:before {
+  content: "\e06c";
+}
+.tss-butterfly:before {
+  content: "\e06d";
+}
+.tss-cafe:before {
+  content: "\e06e";
+}
+.tss-calculator:before {
+  content: "\e06f";
+}
+.tss-calendar:before {
+  content: "\e070";
+}
+.tss-calendar-1:before {
+  content: "\e071";
+}
+.tss-calendar-2-1:before {
+  content: "\e072";
+}
+.tss-calendar-3:before {
+  content: "\e073";
+}
+.tss-calendar-4:before {
+  content: "\e074";
+}
+.tss-calendar-5:before {
+  content: "\e075";
+}
+.tss-calendar-6:before {
+  content: "\e076";
+}
+.tss-calendar-7:before {
+  content: "\e077";
+}
+.tss-calendar-plus:before {
+  content: "\e078";
+}
+.tss-calendar-time:before {
+  content: "\e079";
+}
+.tss-call-check:before {
+  content: "\e07a";
+}
+.tss-call-times:before {
+  content: "\e07b";
+}
+.tss-camera:before {
+  content: "\e07c";
+}
+.tss-camera-1:before {
+  content: "\e07d";
+}
+.tss-camera-2:before {
+  content: "\e07e";
+}
+.tss-camera-3:before {
+  content: "\e07f";
+}
+.tss-camera-4:before {
+  content: "\e080";
+}
+.tss-camera-5:before {
+  content: "\e081";
+}
+.tss-camera-6:before {
+  content: "\e082";
+}
+.tss-camera-7:before {
+  content: "\e083";
+}
+.tss-camera-8:before {
+  content: "\e084";
+}
+.tss-can:before {
+  content: "\e085";
+}
+.tss-cap:before {
+  content: "\e086";
+}
+.tss-cap-1:before {
+  content: "\e087";
+}
+.tss-cap-2:before {
+  content: "\e088";
+}
+.tss-cap-3:before {
+  content: "\e089";
+}
+.tss-cap-4:before {
+  content: "\e08a";
+}
+.tss-cap-5:before {
+  content: "\e08b";
+}
+.tss-cap-6:before {
+  content: "\e08c";
+}
+.tss-cap-7:before {
+  content: "\e08d";
+}
+.tss-cap-8:before {
+  content: "\e08e";
+}
+.tss-cap-box:before {
+  content: "\e08f";
+}
+.tss-car:before {
+  content: "\e090";
+}
+.tss-car-1:before {
+  content: "\e091";
+}
+.tss-car-2:before {
+  content: "\e092";
+}
+.tss-car-3:before {
+  content: "\e093";
+}
+.tss-car-leaf:before {
+  content: "\e094";
+}
+.tss-car-leaf-1:before {
+  content: "\e095";
+}
+.tss-carrom-board:before {
+  content: "\e096";
+}
+.tss-carrom-board-1:before {
+  content: "\e097";
+}
+.tss-carrot:before {
+  content: "\e098";
+}
+.tss-cart:before {
+  content: "\e099";
+}
+.tss-cart-1:before {
+  content: "\e09a";
+}
+.tss-cart-2:before {
+  content: "\e09b";
+}
+.tss-cart-3:before {
+  content: "\e09c";
+}
+.tss-cart-4:before {
+  content: "\e09d";
+}
+.tss-cart-5:before {
+  content: "\e09e";
+}
+.tss-casio:before {
+  content: "\e09f";
+}
+.tss-cctv:before {
+  content: "\e0a0";
+}
+.tss-cctv-1:before {
+  content: "\e0a1";
+}
+.tss-cctv-2:before {
+  content: "\e0a2";
+}
+.tss-cctv-camera:before {
+  content: "\e0a3";
+}
+.tss-chain:before {
+  content: "\e0a4";
+}
+.tss-chain-1:before {
+  content: "\e0a5";
+}
+.tss-chair:before {
+  content: "\e0a6";
+}
+.tss-chair-umbrella:before {
+  content: "\e0a7";
+}
+.tss-chair-umbrella-1:before {
+  content: "\e0a8";
+}
+.tss-chairs:before {
+  content: "\e0a9";
+}
+.tss-chart:before {
+  content: "\e0aa";
+}
+.tss-chat:before {
+  content: "\e0ab";
+}
+.tss-chat-computer:before {
+  content: "\e0ac";
+}
+.tss-check:before {
+  content: "\e0ad";
+}
+.tss-check-1:before {
+  content: "\e0ae";
+}
+.tss-check-2:before {
+  content: "\e0af";
+}
+.tss-check-3:before {
+  content: "\e0b0";
+}
+.tss-check-4:before {
+  content: "\e0b1";
+}
+.tss-check-c:before {
+  content: "\e0b2";
+}
+.tss-check-computer:before {
+  content: "\e0b3";
+}
+.tss-check-jar:before {
+  content: "\e0b4";
+}
+.tss-check-setting:before {
+  content: "\e0b5";
+}
+.tss-checklist:before {
+  content: "\e0b6";
+}
+.tss-chess:before {
+  content: "\e0b7";
+}
+.tss-chicken:before {
+  content: "\e0b8";
+}
+.tss-chicken-1:before {
+  content: "\e0b9";
+}
+.tss-chimney:before {
+  content: "\e0ba";
+}
+.tss-chips:before {
+  content: "\e0bb";
+}
+.tss-church:before {
+  content: "\e0bc";
+}
+.tss-cinematography:before {
+  content: "\e0bd";
+}
+.tss-circle:before {
+  content: "\e0be";
+}
+.tss-circle-1:before {
+  content: "\e0bf";
+}
+.tss-circle-2:before {
+  content: "\e0c0";
+}
+.tss-circle-3:before {
+  content: "\e0c1";
+}
+.tss-circle-close:before {
+  content: "\e0c2";
+}
+.tss-circle-half:before {
+  content: "\e0c3";
+}
+.tss-circle-ins:before {
+  content: "\e0c4";
+}
+.tss-circle-logo:before {
+  content: "\e0c5";
+}
+.tss-circle-o:before {
+  content: "\e0c6";
+}
+.tss-circle-plus:before {
+  content: "\e0c7";
+}
+.tss-circle-star:before {
+  content: "\e0c8";
+}
+.tss-clamp-meter:before {
+  content: "\e0c9";
+}
+.tss-clicpboard:before {
+  content: "\e0ca";
+}
+.tss-clip:before {
+  content: "\e0cb";
+}
+.tss-clipboard:before {
+  content: "\e0cc";
+}
+.tss-clipboard-1:before {
+  content: "\e0cd";
+}
+.tss-clipboard-medical:before {
+  content: "\e0ce";
+}
+.tss-clipboard-minus:before {
+  content: "\e0cf";
+}
+.tss-clipboard-plus:before {
+  content: "\e0d0";
+}
+.tss-clipboard-times:before {
+  content: "\e0d1";
+}
+.tss-clipboard-times-1-1:before {
+  content: "\e0d2";
+}
+.tss-clock:before {
+  content: "\e0d3";
+}
+.tss-clock-1:before {
+  content: "\e0d4";
+}
+.tss-clock-2:before {
+  content: "\e0d5";
+}
+.tss-clock-3:before {
+  content: "\e0d6";
+}
+.tss-close-emoji:before {
+  content: "\e0d7";
+}
+.tss-cloud:before {
+  content: "\e0d8";
+}
+.tss-cloud-1:before {
+  content: "\e0d9";
+}
+.tss-cloud-2:before {
+  content: "\e0da";
+}
+.tss-cloud-3:before {
+  content: "\e0db";
+}
+.tss-cloud-4:before {
+  content: "\e0dc";
+}
+.tss-cloud-5:before {
+  content: "\e0dd";
+}
+.tss-cloud-6:before {
+  content: "\e0de";
+}
+.tss-cloud-7:before {
+  content: "\e0df";
+}
+.tss-cloud-computer:before {
+  content: "\e0e0";
+}
+.tss-cloud-download:before {
+  content: "\e0e1";
+}
+.tss-cloud-option:before {
+  content: "\e0e2";
+}
+.tss-cloud-signal:before {
+  content: "\e0e3";
+}
+.tss-cloud-sun:before {
+  content: "\e0e4";
+}
+.tss-cloud-upload:before {
+  content: "\e0e5";
+}
+.tss-coconut-tree:before {
+  content: "\e0e6";
+}
+.tss-code:before {
+  content: "\e0e7";
+}
+.tss-code-file:before {
+  content: "\e0e8";
+}
+.tss-coffee:before {
+  content: "\e0e9";
+}
+.tss-comb:before {
+  content: "\e0ea";
+}
+.tss-comb-1:before {
+  content: "\e0eb";
+}
+.tss-comment:before {
+  content: "\e0ec";
+}
+.tss-comment-1:before {
+  content: "\e0ed";
+}
+.tss-comment-2:before {
+  content: "\e0ee";
+}
+.tss-comment-add:before {
+  content: "\e0ef";
+}
+.tss-comment-check:before {
+  content: "\e0f0";
+}
+.tss-comment-cross:before {
+  content: "\e0f1";
+}
+.tss-comment-remove:before {
+  content: "\e0f2";
+}
+.tss-comments:before {
+  content: "\e0f3";
+}
+.tss-comments-check:before {
+  content: "\e0f4";
+}
+.tss-comments-minus:before {
+  content: "\e0f5";
+}
+.tss-comments-plus:before {
+  content: "\e0f6";
+}
+.tss-comments-plus-1:before {
+  content: "\e0f7";
+}
+.tss-comments-times:before {
+  content: "\e0f8";
+}
+.tss-compact-disc:before {
+  content: "\e0f9";
+}
+.tss-compact-disc-1:before {
+  content: "\e0fa";
+}
+.tss-compact-disc-2:before {
+  content: "\e0fb";
+}
+.tss-compound-path-3:before {
+  content: "\e0fc";
+}
+.tss-computer:before {
+  content: "\e0fd";
+}
+.tss-computer-1:before {
+  content: "\e0fe";
+}
+.tss-cone:before {
+  content: "\e0ff";
+}
+.tss-contact-card:before {
+  content: "\e100";
+}
+.tss-contact-exchange:before {
+  content: "\e101";
+}
+.tss-contact-exchange-1:before {
+  content: "\e102";
+}
+.tss-container:before {
+  content: "\e103";
+}
+.tss-cooker:before {
+  content: "\e104";
+}
+.tss-cooking:before {
+  content: "\e105";
+}
+.tss-cooking-1:before {
+  content: "\e106";
+}
+.tss-copies:before {
+  content: "\e107";
+}
+.tss-copy:before {
+  content: "\e108";
+}
+.tss-copy-1:before {
+  content: "\e109";
+}
+.tss-copy-2:before {
+  content: "\e10a";
+}
+.tss-copy-files:before {
+  content: "\e10b";
+}
+.tss-crab:before {
+  content: "\e10c";
+}
+.tss-crain-building:before {
+  content: "\e10d";
+}
+.tss-crome:before {
+  content: "\e10e";
+}
+.tss-crome-1:before {
+  content: "\e10f";
+}
+.tss-cross:before {
+  content: "\e110";
+}
+.tss-cross-time-computer:before {
+  content: "\e111";
+}
+.tss-cross-times:before {
+  content: "\e112";
+}
+.tss-cross-times-1:before {
+  content: "\e113";
+}
+.tss-crown:before {
+  content: "\e114";
+}
+.tss-cupboard:before {
+  content: "\e115";
+}
+.tss-cycle:before {
+  content: "\e116";
+}
+.tss-cycle-1:before {
+  content: "\e117";
+}
+.tss-cycle-2:before {
+  content: "\e118";
+}
+.tss-cylinder:before {
+  content: "\e119";
+}
+.tss-cylinder-1:before {
+  content: "\e11a";
+}
+.tss-d2h:before {
+  content: "\e11b";
+}
+.tss-dam:before {
+  content: "\e11c";
+}
+.tss-dart-board:before {
+  content: "\e11d";
+}
+.tss-dart-board-1:before {
+  content: "\e11e";
+}
+.tss-dartboard:before {
+  content: "\e11f";
+}
+.tss-data-transfer:before {
+  content: "\e120";
+}
+.tss-database:before {
+  content: "\e121";
+}
+.tss-database-1-1:before {
+  content: "\e122";
+}
+.tss-database-2:before {
+  content: "\e123";
+}
+.tss-database-3:before {
+  content: "\e124";
+}
+.tss-database-4:before {
+  content: "\e125";
+}
+.tss-database-5:before {
+  content: "\e126";
+}
+.tss-database-6:before {
+  content: "\e127";
+}
+.tss-database-android:before {
+  content: "\e128";
+}
+.tss-database-android-1:before {
+  content: "\e129";
+}
+.tss-database-check:before {
+  content: "\e12a";
+}
+.tss-database-minus:before {
+  content: "\e12b";
+}
+.tss-database-monitor:before {
+  content: "\e12c";
+}
+.tss-desktop:before {
+  content: "\e12d";
+}
+.tss-desktop-1:before {
+  content: "\e12e";
+}
+.tss-desktop-2:before {
+  content: "\e12f";
+}
+.tss-diamonds:before {
+  content: "\e130";
+}
+.tss-dining:before {
+  content: "\e131";
+}
+.tss-display:before {
+  content: "\e132";
+}
+.tss-display-1:before {
+  content: "\e133";
+}
+.tss-display-2:before {
+  content: "\e134";
+}
+.tss-display-code:before {
+  content: "\e135";
+}
+.tss-display-monitor:before {
+  content: "\e136";
+}
+.tss-divider:before {
+  content: "\e137";
+}
+.tss-dizzy-emoji:before {
+  content: "\e138";
+}
+.tss-dizzy-emoji-1:before {
+  content: "\e139";
+}
+.tss-dollar:before {
+  content: "\e13a";
+}
+.tss-dollar-1:before {
+  content: "\e13b";
+}
+.tss-dollar-2:before {
+  content: "\e13c";
+}
+.tss-dollar-3:before {
+  content: "\e13d";
+}
+.tss-dollar-bag:before {
+  content: "\e13e";
+}
+.tss-dollar-bag-1-1:before {
+  content: "\e13f";
+}
+.tss-dollar-bag-2:before {
+  content: "\e140";
+}
+.tss-dollar-bag-3:before {
+  content: "\e141";
+}
+.tss-dollar-c:before {
+  content: "\e142";
+}
+.tss-dollar-c-1:before {
+  content: "\e143";
+}
+.tss-dollar-circle:before {
+  content: "\e144";
+}
+.tss-dollar-emoji:before {
+  content: "\e145";
+}
+.tss-dollar-emoji-1:before {
+  content: "\e146";
+}
+.tss-door:before {
+  content: "\e147";
+}
+.tss-door-1:before {
+  content: "\e148";
+}
+.tss-down:before {
+  content: "\e149";
+}
+.tss-download:before {
+  content: "\e14a";
+}
+.tss-download-1:before {
+  content: "\e14b";
+}
+.tss-download-2:before {
+  content: "\e14c";
+}
+.tss-download-3:before {
+  content: "\e14d";
+}
+.tss-download-4:before {
+  content: "\e14e";
+}
+.tss-download-5:before {
+  content: "\e14f";
+}
+.tss-download-6:before {
+  content: "\e150";
+}
+.tss-drawer:before {
+  content: "\e151";
+}
+.tss-drawer-1:before {
+  content: "\e152";
+}
+.tss-drawer-2:before {
+  content: "\e153";
+}
+.tss-dress:before {
+  content: "\e154";
+}
+.tss-dress-1:before {
+  content: "\e155";
+}
+.tss-dress-box:before {
+  content: "\e156";
+}
+.tss-droper:before {
+  content: "\e157";
+}
+.tss-droper-1:before {
+  content: "\e158";
+}
+.tss-dropper:before {
+  content: "\e159";
+}
+.tss-drops:before {
+  content: "\e15a";
+}
+.tss-dumbbells:before {
+  content: "\e15b";
+}
+.tss-dumbbells-1:before {
+  content: "\e15c";
+}
+.tss-dumbles:before {
+  content: "\e15d";
+}
+.tss-dumbles-1:before {
+  content: "\e15e";
+}
+.tss-e:before {
+  content: "\e15f";
+}
+.tss-ear-buds:before {
+  content: "\e160";
+}
+.tss-ecg-heartbeat:before {
+  content: "\e161";
+}
+.tss-ecg-heartbeat-1:before {
+  content: "\e162";
+}
+.tss-edit:before {
+  content: "\e163";
+}
+.tss-edit-pencil:before {
+  content: "\e164";
+}
+.tss-edit-table:before {
+  content: "\e165";
+}
+.tss-edit-table-1:before {
+  content: "\e166";
+}
+.tss-education:before {
+  content: "\e167";
+}
+.tss-eiffel-tower:before {
+  content: "\e168";
+}
+.tss-eiffel-tower-1:before {
+  content: "\e169";
+}
+.tss-email:before {
+  content: "\e16a";
+}
+.tss-emoji:before {
+  content: "\e16b";
+}
+.tss-emoji-1:before {
+  content: "\e16c";
+}
+.tss-emoji-2:before {
+  content: "\e16d";
+}
+.tss-euro:before {
+  content: "\e16e";
+}
+.tss-euro-c:before {
+  content: "\e16f";
+}
+.tss-euro-c-1:before {
+  content: "\e170";
+}
+.tss-euro-circle:before {
+  content: "\e171";
+}
+.tss-exchange:before {
+  content: "\e172";
+}
+.tss-exhaust-fan:before {
+  content: "\e173";
+}
+.tss-exhaust-fan-1:before {
+  content: "\e174";
+}
+.tss-eye:before {
+  content: "\e175";
+}
+.tss-eye-1:before {
+  content: "\e176";
+}
+.tss-eye-2:before {
+  content: "\e177";
+}
+.tss-eye-close-emoji:before {
+  content: "\e178";
+}
+.tss-eye-pie-chart-1:before {
+  content: "\e179";
+}
+.tss-factory:before {
+  content: "\e17a";
+}
+.tss-factory-1:before {
+  content: "\e17b";
+}
+.tss-factory-2:before {
+  content: "\e17c";
+}
+.tss-factory-3:before {
+  content: "\e17d";
+}
+.tss-factory-4:before {
+  content: "\e17e";
+}
+.tss-factory-5:before {
+  content: "\e17f";
+}
+.tss-factory-6:before {
+  content: "\e180";
+}
+.tss-factory-7:before {
+  content: "\e181";
+}
+.tss-factory-8:before {
+  content: "\e182";
+}
+.tss-factory-9:before {
+  content: "\e183";
+}
+.tss-fan:before {
+  content: "\e184";
+}
+.tss-fan-1:before {
+  content: "\e185";
+}
+.tss-fan-2:before {
+  content: "\e186";
+}
+.tss-fan-3:before {
+  content: "\e187";
+}
+.tss-fan-turbine:before {
+  content: "\e188";
+}
+.tss-female-user:before {
+  content: "\e189";
+}
+.tss-file:before {
+  content: "\e18a";
+}
+.tss-file-check:before {
+  content: "\e18b";
+}
+.tss-file-check-1:before {
+  content: "\e18c";
+}
+.tss-files:before {
+  content: "\e18d";
+}
+.tss-files-1:before {
+  content: "\e18e";
+}
+.tss-files-2:before {
+  content: "\e18f";
+}
+.tss-film-slate:before {
+  content: "\e190";
+}
+.tss-fire:before {
+  content: "\e191";
+}
+.tss-fire-extinguishers:before {
+  content: "\e192";
+}
+.tss-fire-extinguishers-1:before {
+  content: "\e193";
+}
+.tss-fire-extinguishers-2:before {
+  content: "\e194";
+}
+.tss-fire-extinguishers-3:before {
+  content: "\e195";
+}
+.tss-fire-extinguishers-4:before {
+  content: "\e196";
+}
+.tss-fire-extinguishers-5:before {
+  content: "\e197";
+}
+.tss-fire-extinguishers-6:before {
+  content: "\e198";
+}
+.tss-firewall:before {
+  content: "\e199";
+}
+.tss-first-aid:before {
+  content: "\e19a";
+}
+.tss-first-aid-box:before {
+  content: "\e19b";
+}
+.tss-fish:before {
+  content: "\e19c";
+}
+.tss-fish-1:before {
+  content: "\e19d";
+}
+.tss-flag:before {
+  content: "\e19e";
+}
+.tss-flag-1:before {
+  content: "\e19f";
+}
+.tss-flag-2:before {
+  content: "\e1a0";
+}
+.tss-flask:before {
+  content: "\e1a1";
+}
+.tss-flask-1:before {
+  content: "\e1a2";
+}
+.tss-flask-2:before {
+  content: "\e1a3";
+}
+.tss-flask-3:before {
+  content: "\e1a4";
+}
+.tss-flask-4:before {
+  content: "\e1a5";
+}
+.tss-flask-5:before {
+  content: "\e1a6";
+}
+.tss-flask-6:before {
+  content: "\e1a7";
+}
+.tss-floppy:before {
+  content: "\e1a8";
+}
+.tss-floppy-disk:before {
+  content: "\e1a9";
+}
+.tss-flower:before {
+  content: "\e1aa";
+}
+.tss-flower-1:before {
+  content: "\e1ab";
+}
+.tss-flower-pot:before {
+  content: "\e1ac";
+}
+.tss-flowers:before {
+  content: "\e1ad";
+}
+.tss-flush:before {
+  content: "\e1ae";
+}
+.tss-focus-area:before {
+  content: "\e1af";
+}
+.tss-folder:before {
+  content: "\e1b0";
+}
+.tss-folder-1:before {
+  content: "\e1b1";
+}
+.tss-folder-2:before {
+  content: "\e1b2";
+}
+.tss-folder-3:before {
+  content: "\e1b3";
+}
+.tss-folder-add:before {
+  content: "\e1b4";
+}
+.tss-folder-check:before {
+  content: "\e1b5";
+}
+.tss-folder-check-1:before {
+  content: "\e1b6";
+}
+.tss-folder-minus:before {
+  content: "\e1b7";
+}
+.tss-folder-minus-1:before {
+  content: "\e1b8";
+}
+.tss-folder-plus:before {
+  content: "\e1b9";
+}
+.tss-folder-times:before {
+  content: "\e1ba";
+}
+.tss-folder-times-2:before {
+  content: "\e1bb";
+}
+.tss-food:before {
+  content: "\e1bc";
+}
+.tss-foot-print:before {
+  content: "\e1bd";
+}
+.tss-foot-print-1:before {
+  content: "\e1be";
+}
+.tss-forward:before {
+  content: "\e1bf";
+}
+.tss-forward-1:before {
+  content: "\e1c0";
+}
+.tss-freshener:before {
+  content: "\e1c1";
+}
+.tss-fridge:before {
+  content: "\e1c2";
+}
+.tss-fruits:before {
+  content: "\e1c3";
+}
+.tss-fry-pan:before {
+  content: "\e1c4";
+}
+.tss-frypan-fire:before {
+  content: "\e1c5";
+}
+.tss-frypan-gas:before {
+  content: "\e1c6";
+}
+.tss-game:before {
+  content: "\e1c7";
+}
+.tss-game-1:before {
+  content: "\e1c8";
+}
+.tss-game-2:before {
+  content: "\e1c9";
+}
+.tss-game-3:before {
+  content: "\e1ca";
+}
+.tss-game-4:before {
+  content: "\e1cb";
+}
+.tss-game-ball:before {
+  content: "\e1cc";
+}
+.tss-game-board:before {
+  content: "\e1cd";
+}
+.tss-game-controller:before {
+  content: "\e1ce";
+}
+.tss-game-controller-1:before {
+  content: "\e1cf";
+}
+.tss-gaval:before {
+  content: "\e1d0";
+}
+.tss-gaval-1:before {
+  content: "\e1d1";
+}
+.tss-gift:before {
+  content: "\e1d2";
+}
+.tss-gifts:before {
+  content: "\e1d3";
+}
+.tss-girl-tops:before {
+  content: "\e1d4";
+}
+.tss-glass-with-drinks:before {
+  content: "\e1d5";
+}
+.tss-globe:before {
+  content: "\e1d6";
+}
+.tss-globe-1:before {
+  content: "\e1d7";
+}
+.tss-globe-2:before {
+  content: "\e1d8";
+}
+.tss-globe-3:before {
+  content: "\e1d9";
+}
+.tss-globe-4:before {
+  content: "\e1da";
+}
+.tss-globe-5:before {
+  content: "\e1db";
+}
+.tss-graduate:before {
+  content: "\e1dc";
+}
+.tss-graduate-cap:before {
+  content: "\e1dd";
+}
+.tss-graduation-cap:before {
+  content: "\e1de";
+}
+.tss-grapes:before {
+  content: "\e1df";
+}
+.tss-grid4-1:before {
+  content: "\e1e0";
+}
+.tss-grinder-chopper:before {
+  content: "\e1e1";
+}
+.tss-grinder-chopper-1:before {
+  content: "\e1e2";
+}
+.tss-gst-tag-cart:before {
+  content: "\e1e3";
+}
+.tss-gst-tag-computer:before {
+  content: "\e1e4";
+}
+.tss-guitar:before {
+  content: "\e1e5";
+}
+.tss-guitars:before {
+  content: "\e1e6";
+}
+.tss-gun:before {
+  content: "\e1e7";
+}
+.tss-gun-1:before {
+  content: "\e1e8";
+}
+.tss-gurudwar:before {
+  content: "\e1e9";
+}
+.tss-gym-instruments:before {
+  content: "\e1ea";
+}
+.tss-gym-instruments-1:before {
+  content: "\e1eb";
+}
+.tss-gym-instruments-2:before {
+  content: "\e1ec";
+}
+.tss-half-circle:before {
+  content: "\e1ed";
+}
+.tss-hamer:before {
+  content: "\e1ee";
+}
+.tss-hammer:before {
+  content: "\e1ef";
+}
+.tss-hammer-1:before {
+  content: "\e1f0";
+}
+.tss-hammer-2:before {
+  content: "\e1f1";
+}
+.tss-hand-dollar:before {
+  content: "\e1f2";
+}
+.tss-hand-dollar-1-1:before {
+  content: "\e1f3";
+}
+.tss-hand-dollar-2:before {
+  content: "\e1f4";
+}
+.tss-hand-gloves:before {
+  content: "\e1f5";
+}
+.tss-hand-glovs:before {
+  content: "\e1f6";
+}
+.tss-hand-letter:before {
+  content: "\e1f7";
+}
+.tss-hand-money:before {
+  content: "\e1f8";
+}
+.tss-hand-money-1:before {
+  content: "\e1f9";
+}
+.tss-hand-money-2:before {
+  content: "\e1fa";
+}
+.tss-hand-paperbill:before {
+  content: "\e1fb";
+}
+.tss-handshake:before {
+  content: "\e1fc";
+}
+.tss-handwith-water:before {
+  content: "\e1fd";
+}
+.tss-handwith-water-1:before {
+  content: "\e1fe";
+}
+.tss-hang:before {
+  content: "\e1ff";
+}
+.tss-hang-1:before {
+  content: "\e200";
+}
+.tss-hash-circle:before {
+  content: "\e201";
+}
+.tss-hat:before {
+  content: "\e202";
+}
+.tss-head-blood:before {
+  content: "\e203";
+}
+.tss-headfone:before {
+  content: "\e204";
+}
+.tss-headphone:before {
+  content: "\e205";
+}
+.tss-headphone-1:before {
+  content: "\e206";
+}
+.tss-headphone-2:before {
+  content: "\e207";
+}
+.tss-headphone-3:before {
+  content: "\e208";
+}
+.tss-headphone-4:before {
+  content: "\e209";
+}
+.tss-headphone-5:before {
+  content: "\e20a";
+}
+.tss-headphone-6:before {
+  content: "\e20b";
+}
+.tss-heart:before {
+  content: "\e20c";
+}
+.tss-heart-1:before {
+  content: "\e20d";
+}
+.tss-heart-2:before {
+  content: "\e20e";
+}
+.tss-heart-3:before {
+  content: "\e20f";
+}
+.tss-heart-4:before {
+  content: "\e210";
+}
+.tss-heart-beat:before {
+  content: "\e211";
+}
+.tss-heart-beat-1:before {
+  content: "\e212";
+}
+.tss-heart-c:before {
+  content: "\e213";
+}
+.tss-heart-c-1:before {
+  content: "\e214";
+}
+.tss-heart-meter:before {
+  content: "\e215";
+}
+.tss-heart-plus:before {
+  content: "\e216";
+}
+.tss-helicopter:before {
+  content: "\e217";
+}
+.tss-helicopter-1:before {
+  content: "\e218";
+}
+.tss-helm-wheel:before {
+  content: "\e219";
+}
+.tss-hills:before {
+  content: "\e21a";
+}
+.tss-home:before {
+  content: "\e21b";
+}
+.tss-home-1:before {
+  content: "\e21c";
+}
+.tss-home-2:before {
+  content: "\e21d";
+}
+.tss-home-3:before {
+  content: "\e21e";
+}
+.tss-home-4:before {
+  content: "\e21f";
+}
+.tss-home-5:before {
+  content: "\e220";
+}
+.tss-hospital:before {
+  content: "\e221";
+}
+.tss-hospital-1:before {
+  content: "\e222";
+}
+.tss-hotel:before {
+  content: "\e223";
+}
+.tss-hotel-1:before {
+  content: "\e224";
+}
+.tss-hotel-2:before {
+  content: "\e225";
+}
+.tss-house:before {
+  content: "\e226";
+}
+.tss-house-1:before {
+  content: "\e227";
+}
+.tss-house-2:before {
+  content: "\e228";
+}
+.tss-house-3:before {
+  content: "\e229";
+}
+.tss-house-4:before {
+  content: "\e22a";
+}
+.tss-house-5:before {
+  content: "\e22b";
+}
+.tss-house-6:before {
+  content: "\e22c";
+}
+.tss-house-7:before {
+  content: "\e22d";
+}
+.tss-house-8:before {
+  content: "\e22e";
+}
+.tss-house-9:before {
+  content: "\e22f";
+}
+.tss-hurdles:before {
+  content: "\e230";
+}
+.tss-hurdles-1:before {
+  content: "\e231";
+}
+.tss-ice-cream:before {
+  content: "\e232";
+}
+.tss-ice-creme:before {
+  content: "\e233";
+}
+.tss-image:before {
+  content: "\e234";
+}
+.tss-image-1:before {
+  content: "\e235";
+}
+.tss-image-2:before {
+  content: "\e236";
+}
+.tss-image-3:before {
+  content: "\e237";
+}
+.tss-image-gallery:before {
+  content: "\e238";
+}
+.tss-image-gallery-1:before {
+  content: "\e239";
+}
+.tss-immersion-rod:before {
+  content: "\e23a";
+}
+.tss-incoming-call:before {
+  content: "\e23b";
+}
+.tss-incoming-call-1:before {
+  content: "\e23c";
+}
+.tss-industry:before {
+  content: "\e23d";
+}
+.tss-industry-1:before {
+  content: "\e23e";
+}
+.tss-industry-2:before {
+  content: "\e23f";
+}
+.tss-industry-3:before {
+  content: "\e240";
+}
+.tss-industry-4:before {
+  content: "\e241";
+}
+.tss-info:before {
+  content: "\e242";
+}
+.tss-info-1:before {
+  content: "\e243";
+}
+.tss-injection-syringe:before {
+  content: "\e244";
+}
+.tss-inside-user:before {
+  content: "\e245";
+}
+.tss-islam-faces:before {
+  content: "\e246";
+}
+.tss-jellyfish:before {
+  content: "\e247";
+}
+.tss-jessus:before {
+  content: "\e248";
+}
+.tss-jesus:before {
+  content: "\e249";
+}
+.tss-jesus-1:before {
+  content: "\e24a";
+}
+.tss-jug:before {
+  content: "\e24b";
+}
+.tss-kettle:before {
+  content: "\e24c";
+}
+.tss-kettle-1:before {
+  content: "\e24d";
+}
+.tss-kettle-2:before {
+  content: "\e24e";
+}
+.tss-key:before {
+  content: "\e24f";
+}
+.tss-keyboard:before {
+  content: "\e250";
+}
+.tss-keyboard-1:before {
+  content: "\e251";
+}
+.tss-keyboard-2:before {
+  content: "\e252";
+}
+.tss-keypad:before {
+  content: "\e253";
+}
+.tss-knife:before {
+  content: "\e254";
+}
+.tss-ladder:before {
+  content: "\e255";
+}
+.tss-lamp:before {
+  content: "\e256";
+}
+.tss-laptop:before {
+  content: "\e257";
+}
+.tss-laptop-1:before {
+  content: "\e258";
+}
+.tss-laptop-2:before {
+  content: "\e259";
+}
+.tss-laptop-3:before {
+  content: "\e25a";
+}
+.tss-laptop-4:before {
+  content: "\e25b";
+}
+.tss-leaf:before {
+  content: "\e25c";
+}
+.tss-leaf-1:before {
+  content: "\e25d";
+}
+.tss-leaf-2:before {
+  content: "\e25e";
+}
+.tss-leaf-3:before {
+  content: "\e25f";
+}
+.tss-leaf-4:before {
+  content: "\e260";
+}
+.tss-leaf-5:before {
+  content: "\e261";
+}
+.tss-leaf-6:before {
+  content: "\e262";
+}
+.tss-leaf-7:before {
+  content: "\e263";
+}
+.tss-left-arrow:before {
+  content: "\e264";
+}
+.tss-left-arrow-1:before {
+  content: "\e265";
+}
+.tss-left-c:before {
+  content: "\e266";
+}
+.tss-left-c-1:before {
+  content: "\e267";
+}
+.tss-left-down-arrow:before {
+  content: "\e268";
+}
+.tss-left-up-arrow:before {
+  content: "\e269";
+}
+.tss-letter-box:before {
+  content: "\e26a";
+}
+.tss-letterbox:before {
+  content: "\e26b";
+}
+.tss-library:before {
+  content: "\e26c";
+}
+.tss-light:before {
+  content: "\e26d";
+}
+.tss-light-1:before {
+  content: "\e26e";
+}
+.tss-light-2:before {
+  content: "\e26f";
+}
+.tss-light-3:before {
+  content: "\e270";
+}
+.tss-light-4:before {
+  content: "\e271";
+}
+.tss-light-5:before {
+  content: "\e272";
+}
+.tss-light-6:before {
+  content: "\e273";
+}
+.tss-light-7:before {
+  content: "\e274";
+}
+.tss-lighter:before {
+  content: "\e275";
+}
+.tss-lighter-1:before {
+  content: "\e276";
+}
+.tss-like:before {
+  content: "\e277";
+}
+.tss-lip:before {
+  content: "\e278";
+}
+.tss-lipstick:before {
+  content: "\e279";
+}
+.tss-lipstick-1:before {
+  content: "\e27a";
+}
+.tss-liver:before {
+  content: "\e27b";
+}
+.tss-loader:before {
+  content: "\e27c";
+}
+.tss-loader-1:before {
+  content: "\e27d";
+}
+.tss-loader-2:before {
+  content: "\e27e";
+}
+.tss-loader-3:before {
+  content: "\e27f";
+}
+.tss-loader-4:before {
+  content: "\e280";
+}
+.tss-loader-5:before {
+  content: "\e281";
+}
+.tss-location:before {
+  content: "\e282";
+}
+.tss-location-1:before {
+  content: "\e283";
+}
+.tss-location-start:before {
+  content: "\e284";
+}
+.tss-lock:before {
+  content: "\e285";
+}
+.tss-lock-1:before {
+  content: "\e286";
+}
+.tss-lock-2:before {
+  content: "\e287";
+}
+.tss-lock-3:before {
+  content: "\e288";
+}
+.tss-lock-4:before {
+  content: "\e289";
+}
+.tss-lock-5:before {
+  content: "\e28a";
+}
+.tss-lock-6:before {
+  content: "\e28b";
+}
+.tss-lock-cloud:before {
+  content: "\e28c";
+}
+.tss-logo:before {
+  content: "\e28d";
+}
+.tss-logo2:before {
+  content: "\e28e";
+}
+.tss-logo-1:before {
+  content: "\e28f";
+}
+.tss-lotus:before {
+  content: "\e290";
+}
+.tss-lotus-1:before {
+  content: "\e291";
+}
+.tss-love:before {
+  content: "\e292";
+}
+.tss-love-1:before {
+  content: "\e293";
+}
+.tss-love-2:before {
+  content: "\e294";
+}
+.tss-loveletter:before {
+  content: "\e295";
+}
+.tss-lungs:before {
+  content: "\e296";
+}
+.tss-lungs-1:before {
+  content: "\e297";
+}
+.tss-machine:before {
+  content: "\e298";
+}
+.tss-magic-star-stick:before {
+  content: "\e299";
+}
+.tss-mail-draft:before {
+  content: "\e29a";
+}
+.tss-mail-heart:before {
+  content: "\e29b";
+}
+.tss-mail-receive:before {
+  content: "\e29c";
+}
+.tss-mail-receive-1:before {
+  content: "\e29d";
+}
+.tss-mail-reload:before {
+  content: "\e29e";
+}
+.tss-mail-reload-1:before {
+  content: "\e29f";
+}
+.tss-mail-sent:before {
+  content: "\e2a0";
+}
+.tss-mail-sent-1:before {
+  content: "\e2a1";
+}
+.tss-mail-timing:before {
+  content: "\e2a2";
+}
+.tss-makeup-kit:before {
+  content: "\e2a3";
+}
+.tss-male-user:before {
+  content: "\e2a4";
+}
+.tss-man-beard:before {
+  content: "\e2a5";
+}
+.tss-map:before {
+  content: "\e2a6";
+}
+.tss-map-location:before {
+  content: "\e2a7";
+}
+.tss-map-location-1:before {
+  content: "\e2a8";
+}
+.tss-map-location-2:before {
+  content: "\e2a9";
+}
+.tss-map-location-3:before {
+  content: "\e2aa";
+}
+.tss-map-location-4:before {
+  content: "\e2ab";
+}
+.tss-map-location-5:before {
+  content: "\e2ac";
+}
+.tss-map-location-6:before {
+  content: "\e2ad";
+}
+.tss-map-location-7:before {
+  content: "\e2ae";
+}
+.tss-map-location-8:before {
+  content: "\e2af";
+}
+.tss-map-location-9:before {
+  content: "\e2b0";
+}
+.tss-map-location-10:before {
+  content: "\e2b1";
+}
+.tss-map-location-11:before {
+  content: "\e2b2";
+}
+.tss-map-location-12:before {
+  content: "\e2b3";
+}
+.tss-map-location-13:before {
+  content: "\e2b4";
+}
+.tss-map-location-14:before {
+  content: "\e2b5";
+}
+.tss-map-location-15:before {
+  content: "\e2b6";
+}
+.tss-map-location-16:before {
+  content: "\e2b7";
+}
+.tss-map-location-17:before {
+  content: "\e2b8";
+}
+.tss-map-location-18:before {
+  content: "\e2b9";
+}
+.tss-map-location-call:before {
+  content: "\e2ba";
+}
+.tss-map-location-check:before {
+  content: "\e2bb";
+}
+.tss-map-location-check-1:before {
+  content: "\e2bc";
+}
+.tss-map-location-cross:before {
+  content: "\e2bd";
+}
+.tss-map-location-dollar:before {
+  content: "\e2be";
+}
+.tss-map-location-minus:before {
+  content: "\e2bf";
+}
+.tss-map-location-setting:before {
+  content: "\e2c0";
+}
+.tss-map-location-star:before {
+  content: "\e2c1";
+}
+.tss-map-location-times:before {
+  content: "\e2c2";
+}
+.tss-mask:before {
+  content: "\e2c3";
+}
+.tss-mask-1:before {
+  content: "\e2c4";
+}
+.tss-mask-2:before {
+  content: "\e2c5";
+}
+.tss-mask-3:before {
+  content: "\e2c6";
+}
+.tss-matchstick:before {
+  content: "\e2c7";
+}
+.tss-matchstick-1:before {
+  content: "\e2c8";
+}
+.tss-meah-emoji:before {
+  content: "\e2c9";
+}
+.tss-meah-emoji-1:before {
+  content: "\e2ca";
+}
+.tss-mechine:before {
+  content: "\e2cb";
+}
+.tss-mechine-1:before {
+  content: "\e2cc";
+}
+.tss-mechine-2:before {
+  content: "\e2cd";
+}
+.tss-mechine-3:before {
+  content: "\e2ce";
+}
+.tss-medal:before {
+  content: "\e2cf";
+}
+.tss-medical:before {
+  content: "\e2d0";
+}
+.tss-medical-1:before {
+  content: "\e2d1";
+}
+.tss-medicine:before {
+  content: "\e2d2";
+}
+.tss-medicine-1:before {
+  content: "\e2d3";
+}
+.tss-medicine-2:before {
+  content: "\e2d4";
+}
+.tss-medicine-box:before {
+  content: "\e2d5";
+}
+.tss-medicine-saline:before {
+  content: "\e2d6";
+}
+.tss-medicine-saline-1:before {
+  content: "\e2d7";
+}
+.tss-megaphone:before {
+  content: "\e2d8";
+}
+.tss-megaphone-1-1:before {
+  content: "\e2d9";
+}
+.tss-megaphone-2:before {
+  content: "\e2da";
+}
+.tss-memory-card:before {
+  content: "\e2db";
+}
+.tss-men-in-mask:before {
+  content: "\e2dc";
+}
+.tss-menu-bar:before {
+  content: "\e2dd";
+}
+.tss-mercury:before {
+  content: "\e2de";
+}
+.tss-mercury-1:before {
+  content: "\e2df";
+}
+.tss-message:before {
+  content: "\e2e0";
+}
+.tss-message-1:before {
+  content: "\e2e1";
+}
+.tss-message-2:before {
+  content: "\e2e2";
+}
+.tss-meter:before {
+  content: "\e2e3";
+}
+.tss-meter-1:before {
+  content: "\e2e4";
+}
+.tss-microphone:before {
+  content: "\e2e5";
+}
+.tss-microphone-1:before {
+  content: "\e2e6";
+}
+.tss-microphone-2:before {
+  content: "\e2e7";
+}
+.tss-microphone-3:before {
+  content: "\e2e8";
+}
+.tss-microphone-4:before {
+  content: "\e2e9";
+}
+.tss-microphone-5:before {
+  content: "\e2ea";
+}
+.tss-microscope:before {
+  content: "\e2eb";
+}
+.tss-microscopes:before {
+  content: "\e2ec";
+}
+.tss-microscopes-1:before {
+  content: "\e2ed";
+}
+.tss-minus:before {
+  content: "\e2ee";
+}
+.tss-minus-c:before {
+  content: "\e2ef";
+}
+.tss-minus-c-1:before {
+  content: "\e2f0";
+}
+.tss-minus-triangle-signal:before {
+  content: "\e2f1";
+}
+.tss-mirror:before {
+  content: "\e2f2";
+}
+.tss-mobile:before {
+  content: "\e2f3";
+}
+.tss-mobile-1:before {
+  content: "\e2f4";
+}
+.tss-mobile-2:before {
+  content: "\e2f5";
+}
+.tss-mobile-3:before {
+  content: "\e2f6";
+}
+.tss-mobile-4:before {
+  content: "\e2f7";
+}
+.tss-mobile-5:before {
+  content: "\e2f8";
+}
+.tss-mobile-browser:before {
+  content: "\e2f9";
+}
+.tss-mobile-chat:before {
+  content: "\e2fa";
+}
+.tss-mobile-check:before {
+  content: "\e2fb";
+}
+.tss-mobile-cloud-tablet:before {
+  content: "\e2fc";
+}
+.tss-mobile-cross-times:before {
+  content: "\e2fd";
+}
+.tss-mobile-money:before {
+  content: "\e2fe";
+}
+.tss-molecules:before {
+  content: "\e2ff";
+}
+.tss-molecules-1:before {
+  content: "\e300";
+}
+.tss-molecules-bond:before {
+  content: "\e301";
+}
+.tss-money:before {
+  content: "\e302";
+}
+.tss-money-1:before {
+  content: "\e303";
+}
+.tss-money-2:before {
+  content: "\e304";
+}
+.tss-money-3:before {
+  content: "\e305";
+}
+.tss-money-4:before {
+  content: "\e306";
+}
+.tss-money-5:before {
+  content: "\e307";
+}
+.tss-money-card:before {
+  content: "\e308";
+}
+.tss-money-plus:before {
+  content: "\e309";
+}
+.tss-money-plus-1:before {
+  content: "\e30a";
+}
+.tss-monitor:before {
+  content: "\e30b";
+}
+.tss-monitor-1:before {
+  content: "\e30c";
+}
+.tss-monitor-2:before {
+  content: "\e30d";
+}
+.tss-monitor-3:before {
+  content: "\e30e";
+}
+.tss-monitor-4:before {
+  content: "\e30f";
+}
+.tss-monitor-6:before {
+  content: "\e310";
+}
+.tss-mortar-pestle:before {
+  content: "\e311";
+}
+.tss-mosque:before {
+  content: "\e312";
+}
+.tss-mouse:before {
+  content: "\e313";
+}
+.tss-mouse-1:before {
+  content: "\e314";
+}
+.tss-movie:before {
+  content: "\e315";
+}
+.tss-mushroom:before {
+  content: "\e316";
+}
+.tss-music:before {
+  content: "\e317";
+}
+.tss-music-1:before {
+  content: "\e318";
+}
+.tss-music-2:before {
+  content: "\e319";
+}
+.tss-music-3:before {
+  content: "\e31a";
+}
+.tss-music-4:before {
+  content: "\e31b";
+}
+.tss-music-5:before {
+  content: "\e31c";
+}
+.tss-music-6:before {
+  content: "\e31d";
+}
+.tss-music-speaker:before {
+  content: "\e31e";
+}
+.tss-mustache:before {
+  content: "\e31f";
+}
+.tss-mustache-1:before {
+  content: "\e320";
+}
+.tss-news:before {
+  content: "\e321";
+}
+.tss-nfc:before {
+  content: "\e322";
+}
+.tss-nfc-1:before {
+  content: "\e323";
+}
+.tss-nib:before {
+  content: "\e324";
+}
+.tss-nipple:before {
+  content: "\e325";
+}
+.tss-note:before {
+  content: "\e326";
+}
+.tss-note-book:before {
+  content: "\e327";
+}
+.tss-note-book-1:before {
+  content: "\e328";
+}
+.tss-notebook:before {
+  content: "\e329";
+}
+.tss-notepad:before {
+  content: "\e32a";
+}
+.tss-notepad-1:before {
+  content: "\e32b";
+}
+.tss-notes:before {
+  content: "\e32c";
+}
+.tss-notes-1:before {
+  content: "\e32d";
+}
+.tss-oem-tag:before {
+  content: "\e32e";
+}
+.tss-open-book-1:before {
+  content: "\e32f";
+}
+.tss-openbook:before {
+  content: "\e330";
+}
+.tss-outgoing-call:before {
+  content: "\e331";
+}
+.tss-outgoing-call-1:before {
+  content: "\e332";
+}
+.tss-paint:before {
+  content: "\e333";
+}
+.tss-paint-roller:before {
+  content: "\e334";
+}
+.tss-paint-roller-1:before {
+  content: "\e335";
+}
+.tss-paper:before {
+  content: "\e336";
+}
+.tss-paper-1:before {
+  content: "\e337";
+}
+.tss-paper-copy:before {
+  content: "\e338";
+}
+.tss-paper-copy-1:before {
+  content: "\e339";
+}
+.tss-paper-sheet:before {
+  content: "\e33a";
+}
+.tss-paper-sheet-1:before {
+  content: "\e33b";
+}
+.tss-paper-twitter:before {
+  content: "\e33c";
+}
+.tss-paper-twitter-1:before {
+  content: "\e33d";
+}
+.tss-papers:before {
+  content: "\e33e";
+}
+.tss-pause:before {
+  content: "\e33f";
+}
+.tss-pause-1:before {
+  content: "\e340";
+}
+.tss-pause-2:before {
+  content: "\e341";
+}
+.tss-pause-circle:before {
+  content: "\e342";
+}
+.tss-pen:before {
+  content: "\e343";
+}
+.tss-pencil:before {
+  content: "\e344";
+}
+.tss-pencil-1:before {
+  content: "\e345";
+}
+.tss-pencil-2:before {
+  content: "\e346";
+}
+.tss-pencil-3:before {
+  content: "\e347";
+}
+.tss-pencil-4:before {
+  content: "\e348";
+}
+.tss-pencil-scale:before {
+  content: "\e349";
+}
+.tss-pencil-scale-1:before {
+  content: "\e34a";
+}
+.tss-penstand:before {
+  content: "\e34b";
+}
+.tss-pentagon:before {
+  content: "\e34c";
+}
+.tss-percent:before {
+  content: "\e34d";
+}
+.tss-phone:before {
+  content: "\e34e";
+}
+.tss-phone-1:before {
+  content: "\e34f";
+}
+.tss-phone-2:before {
+  content: "\e350";
+}
+.tss-phone-3:before {
+  content: "\e351";
+}
+.tss-phone-booth:before {
+  content: "\e352";
+}
+.tss-phone-check:before {
+  content: "\e353";
+}
+.tss-phone-check-1:before {
+  content: "\e354";
+}
+.tss-phone-loud:before {
+  content: "\e355";
+}
+.tss-phone-loud-1:before {
+  content: "\e356";
+}
+.tss-phone-times:before {
+  content: "\e357";
+}
+.tss-phone-times-1:before {
+  content: "\e358";
+}
+.tss-photo:before {
+  content: "\e359";
+}
+.tss-photo-frame:before {
+  content: "\e35a";
+}
+.tss-photo-frame-1:before {
+  content: "\e35b";
+}
+.tss-pie-chart:before {
+  content: "\e35c";
+}
+.tss-pie-chart-1:before {
+  content: "\e35d";
+}
+.tss-pie-chart-2:before {
+  content: "\e35e";
+}
+.tss-pie-chart-3:before {
+  content: "\e35f";
+}
+.tss-piechart:before {
+  content: "\e360";
+}
+.tss-piechart-1:before {
+  content: "\e361";
+}
+.tss-piggy-bank:before {
+  content: "\e362";
+}
+.tss-piggybank:before {
+  content: "\e363";
+}
+.tss-piggybank-1:before {
+  content: "\e364";
+}
+.tss-pills:before {
+  content: "\e365";
+}
+.tss-pills-1:before {
+  content: "\e366";
+}
+.tss-pin:before {
+  content: "\e367";
+}
+.tss-pin-1:before {
+  content: "\e368";
+}
+.tss-pin-2:before {
+  content: "\e369";
+}
+.tss-pin-3:before {
+  content: "\e36a";
+}
+.tss-pin-notes:before {
+  content: "\e36b";
+}
+.tss-pin-notes-1:before {
+  content: "\e36c";
+}
+.tss-pineapple:before {
+  content: "\e36d";
+}
+.tss-plane:before {
+  content: "\e36e";
+}
+.tss-plane-1:before {
+  content: "\e36f";
+}
+.tss-plane-2:before {
+  content: "\e370";
+}
+.tss-plane-3:before {
+  content: "\e371";
+}
+.tss-plant:before {
+  content: "\e372";
+}
+.tss-plant-1:before {
+  content: "\e373";
+}
+.tss-plant-2:before {
+  content: "\e374";
+}
+.tss-plant-3:before {
+  content: "\e375";
+}
+.tss-plant-4:before {
+  content: "\e376";
+}
+.tss-plant-flower:before {
+  content: "\e377";
+}
+.tss-plant-flower-1:before {
+  content: "\e378";
+}
+.tss-play:before {
+  content: "\e379";
+}
+.tss-play-1:before {
+  content: "\e37a";
+}
+.tss-play-2:before {
+  content: "\e37b";
+}
+.tss-play-3:before {
+  content: "\e37c";
+}
+.tss-play-4:before {
+  content: "\e37d";
+}
+.tss-play-5:before {
+  content: "\e37e";
+}
+.tss-play-6:before {
+  content: "\e37f";
+}
+.tss-play-laptop:before {
+  content: "\e380";
+}
+.tss-plum-rotatng:before {
+  content: "\e381";
+}
+.tss-plus:before {
+  content: "\e382";
+}
+.tss-plus-1:before {
+  content: "\e383";
+}
+.tss-plus-c:before {
+  content: "\e384";
+}
+.tss-plus-c-1:before {
+  content: "\e385";
+}
+.tss-plus-circle:before {
+  content: "\e386";
+}
+.tss-plus-slash-minus:before {
+  content: "\e387";
+}
+.tss-plus-triangle-signal:before {
+  content: "\e388";
+}
+.tss-point:before {
+  content: "\e389";
+}
+.tss-pointer:before {
+  content: "\e38a";
+}
+.tss-pointer-1:before {
+  content: "\e38b";
+}
+.tss-pointer-2:before {
+  content: "\e38c";
+}
+.tss-pointer-3:before {
+  content: "\e38d";
+}
+.tss-poll:before {
+  content: "\e38e";
+}
+.tss-pos:before {
+  content: "\e38f";
+}
+.tss-pos-1:before {
+  content: "\e390";
+}
+.tss-pot:before {
+  content: "\e391";
+}
+.tss-pound:before {
+  content: "\e392";
+}
+.tss-power-switch:before {
+  content: "\e393";
+}
+.tss-power-switch-1:before {
+  content: "\e394";
+}
+.tss-prescription:before {
+  content: "\e395";
+}
+.tss-prescription-1:before {
+  content: "\e396";
+}
+.tss-prescription-medical:before {
+  content: "\e397";
+}
+.tss-presentation:before {
+  content: "\e398";
+}
+.tss-printer:before {
+  content: "\e399";
+}
+.tss-printer-1:before {
+  content: "\e39a";
+}
+.tss-printer-2:before {
+  content: "\e39b";
+}
+.tss-projector:before {
+  content: "\e39c";
+}
+.tss-projector-1:before {
+  content: "\e39d";
+}
+.tss-properties-file:before {
+  content: "\e39e";
+}
+.tss-properties-file-1:before {
+  content: "\e39f";
+}
+.tss-puzzle:before {
+  content: "\e3a0";
+}
+.tss-puzzles:before {
+  content: "\e3a1";
+}
+.tss-qa:before {
+  content: "\e3a2";
+}
+.tss-radio:before {
+  content: "\e3a3";
+}
+.tss-react:before {
+  content: "\e3a4";
+}
+.tss-react-1:before {
+  content: "\e3a5";
+}
+.tss-react-2:before {
+  content: "\e3a6";
+}
+.tss-recept:before {
+  content: "\e3a7";
+}
+.tss-recharge:before {
+  content: "\e3a8";
+}
+.tss-recharge-1:before {
+  content: "\e3a9";
+}
+.tss-recycle:before {
+  content: "\e3aa";
+}
+.tss-recycle-1:before {
+  content: "\e3ab";
+}
+.tss-recycle-2:before {
+  content: "\e3ac";
+}
+.tss-recycle-3:before {
+  content: "\e3ad";
+}
+.tss-recycle-4:before {
+  content: "\e3ae";
+}
+.tss-recycle-electronics:before {
+  content: "\e3af";
+}
+.tss-reject-call:before {
+  content: "\e3b0";
+}
+.tss-reject-call-1:before {
+  content: "\e3b1";
+}
+.tss-reload:before {
+  content: "\e3b2";
+}
+.tss-report-card:before {
+  content: "\e3b3";
+}
+.tss-restrooms:before {
+  content: "\e3b4";
+}
+.tss-restrooms-1:before {
+  content: "\e3b5";
+}
+.tss-ribbon:before {
+  content: "\e3b6";
+}
+.tss-righ-c:before {
+  content: "\e3b7";
+}
+.tss-right-arrow:before {
+  content: "\e3b8";
+}
+.tss-right-arrow-1:before {
+  content: "\e3b9";
+}
+.tss-right-arrow-2:before {
+  content: "\e3ba";
+}
+.tss-right-arrow-circle:before {
+  content: "\e3bb";
+}
+.tss-right-c:before {
+  content: "\e3bc";
+}
+.tss-right-down-arrow:before {
+  content: "\e3bd";
+}
+.tss-right-flag:before {
+  content: "\e3be";
+}
+.tss-right-up-arrow:before {
+  content: "\e3bf";
+}
+.tss-ring:before {
+  content: "\e3c0";
+}
+.tss-road:before {
+  content: "\e3c1";
+}
+.tss-road-1:before {
+  content: "\e3c2";
+}
+.tss-roll:before {
+  content: "\e3c3";
+}
+.tss-routebox-check:before {
+  content: "\e3c4";
+}
+.tss-routebox-lock:before {
+  content: "\e3c5";
+}
+.tss-routebox-times:before {
+  content: "\e3c6";
+}
+.tss-router:before {
+  content: "\e3c7";
+}
+.tss-sail:before {
+  content: "\e3c8";
+}
+.tss-sail-1:before {
+  content: "\e3c9";
+}
+.tss-satellite-dish:before {
+  content: "\e3ca";
+}
+.tss-satellite-dish-1:before {
+  content: "\e3cb";
+}
+.tss-saturn-planet:before {
+  content: "\e3cc";
+}
+.tss-saturn-planet-1:before {
+  content: "\e3cd";
+}
+.tss-saw:before {
+  content: "\e3ce";
+}
+.tss-scissors:before {
+  content: "\e3cf";
+}
+.tss-scissors-1:before {
+  content: "\e3d0";
+}
+.tss-scissors-2:before {
+  content: "\e3d1";
+}
+.tss-scissors-3:before {
+  content: "\e3d2";
+}
+.tss-scissors-4:before {
+  content: "\e3d3";
+}
+.tss-scissors-5:before {
+  content: "\e3d4";
+}
+.tss-scooter:before {
+  content: "\e3d5";
+}
+.tss-scooter-1:before {
+  content: "\e3d6";
+}
+.tss-scooter-2:before {
+  content: "\e3d7";
+}
+.tss-scooter-3:before {
+  content: "\e3d8";
+}
+.tss-screw:before {
+  content: "\e3d9";
+}
+.tss-screw-1:before {
+  content: "\e3da";
+}
+.tss-screw-driver:before {
+  content: "\e3db";
+}
+.tss-screw-driver-1:before {
+  content: "\e3dc";
+}
+.tss-screw-driver-2:before {
+  content: "\e3dd";
+}
+.tss-screw-driver-3:before {
+  content: "\e3de";
+}
+.tss-screw-fitter:before {
+  content: "\e3df";
+}
+.tss-screwdriver:before {
+  content: "\e3e0";
+}
+.tss-screwdriver-1:before {
+  content: "\e3e1";
+}
+.tss-screwdriver-2:before {
+  content: "\e3e2";
+}
+.tss-screws:before {
+  content: "\e3e3";
+}
+.tss-scuba-mask:before {
+  content: "\e3e4";
+}
+.tss-scuba-mask-1:before {
+  content: "\e3e5";
+}
+.tss-search:before {
+  content: "\e3e6";
+}
+.tss-search-1:before {
+  content: "\e3e7";
+}
+.tss-search-2:before {
+  content: "\e3e8";
+}
+.tss-search-3:before {
+  content: "\e3e9";
+}
+.tss-search-4:before {
+  content: "\e3ea";
+}
+.tss-search-5:before {
+  content: "\e3eb";
+}
+.tss-search-6:before {
+  content: "\e3ec";
+}
+.tss-search-heart:before {
+  content: "\e3ed";
+}
+.tss-search-user:before {
+  content: "\e3ee";
+}
+.tss-send-2:before {
+  content: "\e3ef";
+}
+.tss-send-1-1:before {
+  content: "\e3f0";
+}
+.tss-send-teligram:before {
+  content: "\e3f1";
+}
+.tss-seo-tag-tv:before {
+  content: "\e3f2";
+}
+.tss-setting:before {
+  content: "\e3f3";
+}
+.tss-setting-1:before {
+  content: "\e3f4";
+}
+.tss-setting-2:before {
+  content: "\e3f5";
+}
+.tss-setting-3:before {
+  content: "\e3f6";
+}
+.tss-setting-4:before {
+  content: "\e3f7";
+}
+.tss-setting-5:before {
+  content: "\e3f8";
+}
+.tss-setting-6:before {
+  content: "\e3f9";
+}
+.tss-setting-7:before {
+  content: "\e3fa";
+}
+.tss-setting-8:before {
+  content: "\e3fb";
+}
+.tss-setting-9:before {
+  content: "\e3fc";
+}
+.tss-settings:before {
+  content: "\e3fd";
+}
+.tss-sheets:before {
+  content: "\e3fe";
+}
+.tss-shell:before {
+  content: "\e3ff";
+}
+.tss-shield:before {
+  content: "\e400";
+}
+.tss-shield-1:before {
+  content: "\e401";
+}
+.tss-shield-computer:before {
+  content: "\e402";
+}
+.tss-shirt:before {
+  content: "\e403";
+}
+.tss-shorts:before {
+  content: "\e404";
+}
+.tss-shovel:before {
+  content: "\e405";
+}
+.tss-signal:before {
+  content: "\e406";
+}
+.tss-signal-1:before {
+  content: "\e407";
+}
+.tss-signal-2:before {
+  content: "\e408";
+}
+.tss-signal-right:before {
+  content: "\e409";
+}
+.tss-skype:before {
+  content: "\e40a";
+}
+.tss-slash-circle:before {
+  content: "\e40b";
+}
+.tss-sleepers:before {
+  content: "\e40c";
+}
+.tss-sliders-h:before {
+  content: "\e40d";
+}
+.tss-sliders-v:before {
+  content: "\e40e";
+}
+.tss-smie-emoji:before {
+  content: "\e40f";
+}
+.tss-smile-emoji:before {
+  content: "\e410";
+}
+.tss-smile-wink:before {
+  content: "\e411";
+}
+.tss-smile-wink-1:before {
+  content: "\e412";
+}
+.tss-smoker:before {
+  content: "\e413";
+}
+.tss-sms:before {
+  content: "\e414";
+}
+.tss-sms-1:before {
+  content: "\e415";
+}
+.tss-socks:before {
+  content: "\e416";
+}
+.tss-sofa:before {
+  content: "\e417";
+}
+.tss-sofa-1:before {
+  content: "\e418";
+}
+.tss-solar-roof:before {
+  content: "\e419";
+}
+.tss-sp3-orbital:before {
+  content: "\e41a";
+}
+.tss-speaker:before {
+  content: "\e41b";
+}
+.tss-speaker-1:before {
+  content: "\e41c";
+}
+.tss-speaker-2:before {
+  content: "\e41d";
+}
+.tss-speaker-3:before {
+  content: "\e41e";
+}
+.tss-specs:before {
+  content: "\e41f";
+}
+.tss-specs-1:before {
+  content: "\e420";
+}
+.tss-specs-2:before {
+  content: "\e421";
+}
+.tss-sperm:before {
+  content: "\e422";
+}
+.tss-spider:before {
+  content: "\e423";
+}
+.tss-spoon:before {
+  content: "\e424";
+}
+.tss-spoon-dining:before {
+  content: "\e425";
+}
+.tss-spoon-restaurant:before {
+  content: "\e426";
+}
+.tss-spoons:before {
+  content: "\e427";
+}
+.tss-spoons-1:before {
+  content: "\e428";
+}
+.tss-square-board:before {
+  content: "\e429";
+}
+.tss-squre:before {
+  content: "\e42a";
+}
+.tss-squre-1:before {
+  content: "\e42b";
+}
+.tss-squre-2:before {
+  content: "\e42c";
+}
+.tss-squre-screen:before {
+  content: "\e42d";
+}
+.tss-stamp:before {
+  content: "\e42e";
+}
+.tss-stamp-1:before {
+  content: "\e42f";
+}
+.tss-star:before {
+  content: "\e430";
+}
+.tss-star-1:before {
+  content: "\e431";
+}
+.tss-star-2:before {
+  content: "\e432";
+}
+.tss-star-3:before {
+  content: "\e433";
+}
+.tss-star-4:before {
+  content: "\e434";
+}
+.tss-star-5:before {
+  content: "\e435";
+}
+.tss-star-6:before {
+  content: "\e436";
+}
+.tss-star-7:before {
+  content: "\e437";
+}
+.tss-star-8:before {
+  content: "\e438";
+}
+.tss-star-crackers:before {
+  content: "\e439";
+}
+.tss-starfish:before {
+  content: "\e43a";
+}
+.tss-statistics-monitor:before {
+  content: "\e43b";
+}
+.tss-statistics-up:before {
+  content: "\e43c";
+}
+.tss-step-backward:before {
+  content: "\e43d";
+}
+.tss-step-backward-1:before {
+  content: "\e43e";
+}
+.tss-step-forward:before {
+  content: "\e43f";
+}
+.tss-step-forward-1:before {
+  content: "\e440";
+}
+.tss-step-upward:before {
+  content: "\e441";
+}
+.tss-stereo:before {
+  content: "\e442";
+}
+.tss-stereo-1:before {
+  content: "\e443";
+}
+.tss-stereo-2:before {
+  content: "\e444";
+}
+.tss-stetho:before {
+  content: "\e445";
+}
+.tss-stetho-1:before {
+  content: "\e446";
+}
+.tss-stetho-2:before {
+  content: "\e447";
+}
+.tss-stomach:before {
+  content: "\e448";
+}
+.tss-stomach-1:before {
+  content: "\e449";
+}
+.tss-strolly-bag:before {
+  content: "\e44a";
+}
+.tss-student:before {
+  content: "\e44b";
+}
+.tss-suitcase:before {
+  content: "\e44c";
+}
+.tss-suitcase-1:before {
+  content: "\e44d";
+}
+.tss-suitcase-2:before {
+  content: "\e44e";
+}
+.tss-suitcase-3:before {
+  content: "\e44f";
+}
+.tss-suitcase-4:before {
+  content: "\e450";
+}
+.tss-suitcase-5:before {
+  content: "\e451";
+}
+.tss-suitcase-6:before {
+  content: "\e452";
+}
+.tss-suitcase-7:before {
+  content: "\e453";
+}
+.tss-suitcase-rolling:before {
+  content: "\e454";
+}
+.tss-suitcase-rolling-1:before {
+  content: "\e455";
+}
+.tss-sun:before {
+  content: "\e456";
+}
+.tss-sun-1:before {
+  content: "\e457";
+}
+.tss-sun-2:before {
+  content: "\e458";
+}
+.tss-sun-3:before {
+  content: "\e459";
+}
+.tss-sun-4:before {
+  content: "\e45a";
+}
+.tss-sun-5:before {
+  content: "\e45b";
+}
+.tss-switch:before {
+  content: "\e45c";
+}
+.tss-switch-1:before {
+  content: "\e45d";
+}
+.tss-switch-2:before {
+  content: "\e45e";
+}
+.tss-switch-3:before {
+  content: "\e45f";
+}
+.tss-switch-4:before {
+  content: "\e460";
+}
+.tss-switch-5:before {
+  content: "\e461";
+}
+.tss-switch-6:before {
+  content: "\e462";
+}
+.tss-switch-power:before {
+  content: "\e463";
+}
+.tss-symbol-135:before {
+  content: "\e464";
+}
+.tss-symbol-135-1:before {
+  content: "\e465";
+}
+.tss-symbol-460:before {
+  content: "\e466";
+}
+.tss-symbol-fire-extinguishers:before {
+  content: "\e467";
+}
+.tss-sync:before {
+  content: "\e468";
+}
+.tss-sync-1:before {
+  content: "\e469";
+}
+.tss-sync-document:before {
+  content: "\e46a";
+}
+.tss-tablet:before {
+  content: "\e46b";
+}
+.tss-tablet-1:before {
+  content: "\e46c";
+}
+.tss-tablet-2:before {
+  content: "\e46d";
+}
+.tss-tablet-mobile:before {
+  content: "\e46e";
+}
+.tss-tablet-mobile-1:before {
+  content: "\e46f";
+}
+.tss-tag:before {
+  content: "\e470";
+}
+.tss-tag-1:before {
+  content: "\e471";
+}
+.tss-tag-2:before {
+  content: "\e472";
+}
+.tss-tag-3:before {
+  content: "\e473";
+}
+.tss-tag-4:before {
+  content: "\e474";
+}
+.tss-teeth:before {
+  content: "\e475";
+}
+.tss-telephone:before {
+  content: "\e476";
+}
+.tss-telephone-1:before {
+  content: "\e477";
+}
+.tss-telephone-2:before {
+  content: "\e478";
+}
+.tss-telephone-3:before {
+  content: "\e479";
+}
+.tss-telephone-4:before {
+  content: "\e47a";
+}
+.tss-television:before {
+  content: "\e47b";
+}
+.tss-television-1:before {
+  content: "\e47c";
+}
+.tss-television-2:before {
+  content: "\e47d";
+}
+.tss-television-3:before {
+  content: "\e47e";
+}
+.tss-teligram-send:before {
+  content: "\e47f";
+}
+.tss-teliphone:before {
+  content: "\e480";
+}
+.tss-teliscope:before {
+  content: "\e481";
+}
+.tss-teliscope-1:before {
+  content: "\e482";
+}
+.tss-telivision:before {
+  content: "\e483";
+}
+.tss-telivision-1:before {
+  content: "\e484";
+}
+.tss-temperature-meter:before {
+  content: "\e485";
+}
+.tss-temple-1:before {
+  content: "\e486";
+}
+.tss-text-file:before {
+  content: "\e487";
+}
+.tss-text-file-1:before {
+  content: "\e488";
+}
+.tss-thap:before {
+  content: "\e489";
+}
+.tss-theater:before {
+  content: "\e48a";
+}
+.tss-thermometer:before {
+  content: "\e48b";
+}
+.tss-thumb-dislike:before {
+  content: "\e48c";
+}
+.tss-thumb-dislike-1:before {
+  content: "\e48d";
+}
+.tss-thumb-like:before {
+  content: "\e48e";
+}
+.tss-thumb-like-1:before {
+  content: "\e48f";
+}
+.tss-thumb-like-2:before {
+  content: "\e490";
+}
+.tss-timer:before {
+  content: "\e491";
+}
+.tss-times:before {
+  content: "\e492";
+}
+.tss-times-1:before {
+  content: "\e493";
+}
+.tss-times-c:before {
+  content: "\e494";
+}
+.tss-times-c-1:before {
+  content: "\e495";
+}
+.tss-times-cross-c:before {
+  content: "\e496";
+}
+.tss-toilet:before {
+  content: "\e497";
+}
+.tss-toilet-1:before {
+  content: "\e498";
+}
+.tss-tool-1:before {
+  content: "\e499";
+}
+.tss-tools:before {
+  content: "\e49a";
+}
+.tss-touchpad:before {
+  content: "\e49b";
+}
+.tss-touchpad-1:before {
+  content: "\e49c";
+}
+.tss-tower:before {
+  content: "\e49d";
+}
+.tss-traffic-cone:before {
+  content: "\e49e";
+}
+.tss-train:before {
+  content: "\e49f";
+}
+.tss-train-1:before {
+  content: "\e4a0";
+}
+.tss-transgender:before {
+  content: "\e4a1";
+}
+.tss-transgender-1:before {
+  content: "\e4a2";
+}
+.tss-trash:before {
+  content: "\e4a3";
+}
+.tss-trash-1:before {
+  content: "\e4a4";
+}
+.tss-trash-2:before {
+  content: "\e4a5";
+}
+.tss-trash-3:before {
+  content: "\e4a6";
+}
+.tss-trash-4:before {
+  content: "\e4a7";
+}
+.tss-trash-5:before {
+  content: "\e4a8";
+}
+.tss-trash-6:before {
+  content: "\e4a9";
+}
+.tss-trash-7:before {
+  content: "\e4aa";
+}
+.tss-trash-8:before {
+  content: "\e4ab";
+}
+.tss-tree:before {
+  content: "\e4ac";
+}
+.tss-tree-1:before {
+  content: "\e4ad";
+}
+.tss-tree-2:before {
+  content: "\e4ae";
+}
+.tss-tree-3:before {
+  content: "\e4af";
+}
+.tss-tree-4:before {
+  content: "\e4b0";
+}
+.tss-tree-sky:before {
+  content: "\e4b1";
+}
+.tss-tringle:before {
+  content: "\e4b2";
+}
+.tss-trip:before {
+  content: "\e4b3";
+}
+.tss-trip-2:before {
+  content: "\e4b4";
+}
+.tss-trolly:before {
+  content: "\e4b5";
+}
+.tss-trophy:before {
+  content: "\e4b6";
+}
+.tss-trophy-1:before {
+  content: "\e4b7";
+}
+.tss-trophy-2:before {
+  content: "\e4b8";
+}
+.tss-truck:before {
+  content: "\e4b9";
+}
+.tss-truck-1:before {
+  content: "\e4ba";
+}
+.tss-truck-2:before {
+  content: "\e4bb";
+}
+.tss-truck-3:before {
+  content: "\e4bc";
+}
+.tss-truck-bus:before {
+  content: "\e4bd";
+}
+.tss-tshirt:before {
+  content: "\e4be";
+}
+.tss-tss-petrol:before {
+  content: "\e4bf";
+}
+.tss-tss-scissors:before {
+  content: "\e4c0";
+}
+.tss-turbine:before {
+  content: "\e4c1";
+}
+.tss-turbine-1:before {
+  content: "\e4c2";
+}
+.tss-turn:before {
+  content: "\e4c3";
+}
+.tss-turn-back-downarrow:before {
+  content: "\e4c4";
+}
+.tss-turn-left:before {
+  content: "\e4c5";
+}
+.tss-turn-right:before {
+  content: "\e4c6";
+}
+.tss-turn-to-left:before {
+  content: "\e4c7";
+}
+.tss-turn-to-right:before {
+  content: "\e4c8";
+}
+.tss-turn-uparrow:before {
+  content: "\e4c9";
+}
+.tss-tv:before {
+  content: "\e4ca";
+}
+.tss-tv-1:before {
+  content: "\e4cb";
+}
+.tss-tv-radio:before {
+  content: "\e4cc";
+}
+.tss-twitter:before {
+  content: "\e4cd";
+}
+.tss-umbrella:before {
+  content: "\e4ce";
+}
+.tss-umbrella-1:before {
+  content: "\e4cf";
+}
+.tss-umbrella-2:before {
+  content: "\e4d0";
+}
+.tss-umbrella-3:before {
+  content: "\e4d1";
+}
+.tss-umbrella-4:before {
+  content: "\e4d2";
+}
+.tss-umbrella-5:before {
+  content: "\e4d3";
+}
+.tss-umbrella-6:before {
+  content: "\e4d4";
+}
+.tss-umbrella-7:before {
+  content: "\e4d5";
+}
+.tss-umbrella-8:before {
+  content: "\e4d6";
+}
+.tss-umbrella-9:before {
+  content: "\e4d7";
+}
+.tss-underwear:before {
+  content: "\e4d8";
+}
+.tss-underwear-1:before {
+  content: "\e4d9";
+}
+.tss-underwear-2:before {
+  content: "\e4da";
+}
+.tss-university:before {
+  content: "\e4db";
+}
+.tss-university-1:before {
+  content: "\e4dc";
+}
+.tss-unlock:before {
+  content: "\e4dd";
+}
+.tss-unlock-1:before {
+  content: "\e4de";
+}
+.tss-unlock-2:before {
+  content: "\e4df";
+}
+.tss-unlock-3:before {
+  content: "\e4e0";
+}
+.tss-unlock-4:before {
+  content: "\e4e1";
+}
+.tss-unlock-5:before {
+  content: "\e4e2";
+}
+.tss-untitled-127:before {
+  content: "\e4e3";
+}
+.tss-upload:before {
+  content: "\e4e4";
+}
+.tss-upload-1:before {
+  content: "\e4e5";
+}
+.tss-upload-2:before {
+  content: "\e4e6";
+}
+.tss-upload-3:before {
+  content: "\e4e7";
+}
+.tss-upload-4:before {
+  content: "\e4e8";
+}
+.tss-upload-5:before {
+  content: "\e4e9";
+}
+.tss-upload-6:before {
+  content: "\e4ea";
+}
+.tss-user:before {
+  content: "\e4eb";
+}
+.tss-user-1:before {
+  content: "\e4ec";
+}
+.tss-user-2:before {
+  content: "\e4ed";
+}
+.tss-user-3:before {
+  content: "\e4ee";
+}
+.tss-user-4:before {
+  content: "\e4ef";
+}
+.tss-user-5:before {
+  content: "\e4f0";
+}
+.tss-user-6:before {
+  content: "\e4f1";
+}
+.tss-user-add:before {
+  content: "\e4f2";
+}
+.tss-user-callcenter:before {
+  content: "\e4f3";
+}
+.tss-user-callcenter-1:before {
+  content: "\e4f4";
+}
+.tss-user-card:before {
+  content: "\e4f5";
+}
+.tss-user-card-1:before {
+  content: "\e4f6";
+}
+.tss-user-card-2:before {
+  content: "\e4f7";
+}
+.tss-user-card-3:before {
+  content: "\e4f8";
+}
+.tss-user-check:before {
+  content: "\e4f9";
+}
+.tss-user-check-1-1:before {
+  content: "\e4fa";
+}
+.tss-user-chef:before {
+  content: "\e4fb";
+}
+.tss-user-chefs:before {
+  content: "\e4fc";
+}
+.tss-user-contact-card:before {
+  content: "\e4fd";
+}
+.tss-user-create:before {
+  content: "\e4fe";
+}
+.tss-user-fem:before {
+  content: "\e4ff";
+}
+.tss-user-female:before {
+  content: "\e500";
+}
+.tss-user-female-1:before {
+  content: "\e501";
+}
+.tss-user-female-2:before {
+  content: "\e502";
+}
+.tss-user-group:before {
+  content: "\e503";
+}
+.tss-user-group-1:before {
+  content: "\e504";
+}
+.tss-user-headphone-1:before {
+  content: "\e505";
+}
+.tss-user-king:before {
+  content: "\e506";
+}
+.tss-user-king-1:before {
+  content: "\e507";
+}
+.tss-user-location:before {
+  content: "\e508";
+}
+.tss-user-location-1:before {
+  content: "\e509";
+}
+.tss-user-male:before {
+  content: "\e50a";
+}
+.tss-user-male-1:before {
+  content: "\e50b";
+}
+.tss-user-message:before {
+  content: "\e50c";
+}
+.tss-user-message-1:before {
+  content: "\e50d";
+}
+.tss-user-minus:before {
+  content: "\e50e";
+}
+.tss-user-minus-1:before {
+  content: "\e50f";
+}
+.tss-user-money:before {
+  content: "\e510";
+}
+.tss-user-plus-1:before {
+  content: "\e511";
+}
+.tss-user-police:before {
+  content: "\e512";
+}
+.tss-user-police-1:before {
+  content: "\e513";
+}
+.tss-user-remove:before {
+  content: "\e514";
+}
+.tss-users:before {
+  content: "\e515";
+}
+.tss-users-1:before {
+  content: "\e516";
+}
+.tss-users-2:before {
+  content: "\e517";
+}
+.tss-users-3:before {
+  content: "\e518";
+}
+.tss-uturn:before {
+  content: "\e519";
+}
+.tss-uturn-1:before {
+  content: "\e51a";
+}
+.tss-van:before {
+  content: "\e51b";
+}
+.tss-van-copy:before {
+  content: "\e51c";
+}
+.tss-video:before {
+  content: "\e51d";
+}
+.tss-video-1:before {
+  content: "\e51e";
+}
+.tss-video-1-copy:before {
+  content: "\e51f";
+}
+.tss-video-2:before {
+  content: "\e520";
+}
+.tss-video-3:before {
+  content: "\e521";
+}
+.tss-video-4:before {
+  content: "\e522";
+}
+.tss-video-call:before {
+  content: "\e523";
+}
+.tss-video-call-1:before {
+  content: "\e524";
+}
+.tss-video-call-2:before {
+  content: "\e525";
+}
+.tss-video-camera:before {
+  content: "\e526";
+}
+.tss-video-camera-1:before {
+  content: "\e527";
+}
+.tss-videos:before {
+  content: "\e528";
+}
+.tss-videos-1:before {
+  content: "\e529";
+}
+.tss-visiting-card:before {
+  content: "\e52a";
+}
+.tss-visiting-card-1:before {
+  content: "\e52b";
+}
+.tss-visiting-card-2:before {
+  content: "\e52c";
+}
+.tss-visiting-card-3:before {
+  content: "\e52d";
+}
+.tss-volume-down:before {
+  content: "\e52e";
+}
+.tss-volume-down-1:before {
+  content: "\e52f";
+}
+.tss-volume-minus:before {
+  content: "\e530";
+}
+.tss-volume-minus-1:before {
+  content: "\e531";
+}
+.tss-volume-mute:before {
+  content: "\e532";
+}
+.tss-volume-mute-2:before {
+  content: "\e533";
+}
+.tss-volume-mute-3:before {
+  content: "\e534";
+}
+.tss-volume-plus:before {
+  content: "\e535";
+}
+.tss-volume-plus-1:before {
+  content: "\e536";
+}
+.tss-volume-up:before {
+  content: "\e537";
+}
+.tss-volume-up-1:before {
+  content: "\e538";
+}
+.tss-wall-crane:before {
+  content: "\e539";
+}
+.tss-wallet:before {
+  content: "\e53a";
+}
+.tss-wallet-1:before {
+  content: "\e53b";
+}
+.tss-watch:before {
+  content: "\e53c";
+}
+.tss-watch-1:before {
+  content: "\e53d";
+}
+.tss-watch-2:before {
+  content: "\e53e";
+}
+.tss-water:before {
+  content: "\e53f";
+}
+.tss-water-1:before {
+  content: "\e540";
+}
+.tss-water-2:before {
+  content: "\e541";
+}
+.tss-water-3:before {
+  content: "\e542";
+}
+.tss-water-4:before {
+  content: "\e543";
+}
+.tss-water-5:before {
+  content: "\e544";
+}
+.tss-water-tap:before {
+  content: "\e545";
+}
+.tss-water-tap-1:before {
+  content: "\e546";
+}
+.tss-water-tap-2:before {
+  content: "\e547";
+}
+.tss-watermelon:before {
+  content: "\e548";
+}
+.tss-watermelon-1:before {
+  content: "\e549";
+}
+.tss-weighing-scale:before {
+  content: "\e54a";
+}
+.tss-wheel:before {
+  content: "\e54b";
+}
+.tss-wheels:before {
+  content: "\e54c";
+}
+.tss-whistle:before {
+  content: "\e54d";
+}
+.tss-whistle-1:before {
+  content: "\e54e";
+}
+.tss-wifi:before {
+  content: "\e54f";
+}
+.tss-wifi-1:before {
+  content: "\e550";
+}
+.tss-wifi-2:before {
+  content: "\e551";
+}
+.tss-wifi-3:before {
+  content: "\e552";
+}
+.tss-wifi-4:before {
+  content: "\e553";
+}
+.tss-wifi-5:before {
+  content: "\e554";
+}
+.tss-wine-glass-1:before {
+  content: "\e555";
+}
+.tss-wine-glass-1-1:before {
+  content: "\e556";
+}
+.tss-wine-glass-2:before {
+  content: "\e557";
+}
+.tss-wine-glass-3:before {
+  content: "\e558";
+}
+.tss-wine-glass-4-1:before {
+  content: "\e559";
+}
+.tss-wrench-1:before {
+  content: "\e55a";
+}
+.tss-yen-1:before {
+  content: "\e55b";
+}
+.tss-yen-c-1:before {
+  content: "\e55c";
+}
+.tss-yen-circle-1:before {
+  content: "\e55d";
+}
+.tss-zoom-in-1:before {
+  content: "\e55e";
+}
+.tss-zoom-out-1:before {
+  content: "\e55f";
+}

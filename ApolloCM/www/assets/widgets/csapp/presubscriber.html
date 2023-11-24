@@ -1,0 +1,628 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+<!-- multistep form -->
+<div id="msform">
+
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active" current-tab="1"><span>Welcome</span></li>
+    <li current-tab="2"><span>NPI Verification</span></li>
+    <li current-tab="3"><span>Personal Information</span></li>
+    <li current-tab="4"><span>Licenses</span></li>
+    <li current-tab="5"><span>DEA Verification</span></li>
+    <li current-tab="6"><span>Account Information</span></li>
+    <li current-tab="7"><span>Complete!</span></li>
+  </ul>
+  <!-- fieldsets -->
+
+  <fieldset id="1">
+
+    <h2 class="fs-title">Welcome to <span>Prescriber</span> Registration Wizard <span class="right-value"><b
+          class="active-clr">1</b>/<b>7</b></span></h2>
+    <div class="welcome-card bg-pink">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <p>Please have your professional and business credentials and License numbers with expiration dates available in
+        order to complete the registration process</p>
+    </div>
+    <div class="welcome-card bg-skyblue">
+      <div>
+        <i class="icon icon-users-1"></i>
+      </div>
+      <div>
+        <h4>Master Accounts Only</h4>
+        <p>This part of the registration process should be used to set up Master accounts only colleagues, associates
+          and employees can be added as delegates after completion of the process.</p>
+      </div>
+    </div>
+    <div class="welcome-card bg-gray">
+      <div>
+        <i class="icon icon-right-check2"></i>
+      </div>
+      <div>
+        <p class="pb-3">This wizard will guide you through the process of registering for use or RxDataTrack’s CSAPP.
+          Registration is estimated to take approximately five minutes</p>
+        <h4>Do you agree with RxDataTrack’s <span>CASPP terms and conditions</span>?</h4>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    <a href="https://csapp.dev.zeroco.de/#/zcbase/account/registration" name="previous"
+      class="previous action-button cancel-btn" value="CANCEL">CANCEL</a>
+    <input type="button" name="next" class="next action-button mt-4" value="NEXT">
+
+  </fieldset>
+
+  <fieldset id="2">
+
+    <h2 class="fs-title">NPI Verification <span class="right-value"><b class="active-clr">2</b>/<b>7</b></span></h2>
+    <div class="welcome-card bg-cayan">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <div>
+        <p>To begin the registration process, please provide the individual or Organizational NPI number and associated
+          zip code.</p>
+      </div>
+    </div>
+    <div class="custom-psub-form">
+      <h4 class="mt-40">Entity Type</h4>
+      <div class="row">
+        <div class="col-12">Organization <input type="text"></div>
+        <div class="form-group col-12 col-md-4">
+          <label>NPI Number <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i>
+          </label>
+          <input type="text" class="form-control" name="npinumber">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Zip Code <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+      </div>
+    </div>
+
+    <input type="button" name="previous" class="previous action-button cancel-btn" value="CANCEL">
+    <input type="button" name="next" class="next action-button" value="NEXT">
+
+  </fieldset>
+  <fieldset id="3">
+
+    <h2 class="fs-title">Personal Information <span class="right-value"><b class="active-clr">3</b>/<b>7</b></span></h2>
+    <div class="welcome-card bg-cayan">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <div>
+        <p>Provide the following information</p>
+      </div>
+    </div>
+    <div class="custom-psub-form">
+      <div class="row">
+        <div class="form-group col-12 col-md-4">
+          <label>Title <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i>
+          </label>
+          <input type="text" class="form-control" name="npinumber">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Specialty <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>First Name <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Middle Name <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Last Name <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Suffix (optional)<i class="icon-info1 pl-2" data-toggle="popover" data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Phone <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Middle Phone<i class="icon-info1 pl-2" data-toggle="popover" data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Date of birth <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="col-12">
+          <p>Each membership account must have a unique associated email address</p>
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Email <span class="required-star">*</span> <i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+        <div class="form-group col-12 col-md-4">
+          <label>Email Verification <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+              data-trigger="hover"
+              data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+          <input type="text" class="form-control" name="zipcode">
+        </div>
+      </div>
+    </div>
+
+    <input type="button" name="previous" class="previous action-button cancel-btn" value="CANCEL">
+    <input type="button" name="next" class="next action-button" value="NEXT">
+
+  </fieldset>
+  <fieldset id="4">
+
+    <h2 class="fs-title">License Information <span class="right-value"><b class="active-clr">4</b>/<b>7</b></span></h2>
+    <div class="welcome-card bg-cayan">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <div>
+        <p>Please provide information as designated below in relation to your license to practice and/or dispense
+          medication in your state, if applicable</p>
+        <p class="error-color">If you are registering a Master account, please supply your state board license number
+        </p>
+      </div>
+    </div>
+    <table class="profile-info custom-table-with-border">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Number</th>
+          <th>State</th>
+          <th>Exp. Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Board License Number</td>
+          <td>123456</td>
+          <td>wv</td>
+          <td>12/31/2020 - 12:00:00 AM</td>
+          <td><i class="icon-edit mr-1"></i><i class="icon-delete"></i></td>
+        </tr>
+        <tr>
+          <td>Board License Number</td>
+          <td>123456</td>
+          <td>wv</td>
+          <td>12/31/2020 - 12:00:00 AM</td>
+          <td><i class="icon-edit mr-1"></i><i class="icon-delete"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center"><button class="btn- btn-primary add-dea-btn" data-toggle="modal"
+        data-target="#myModal1">ADD LICENSE</button></div>
+
+    <div class="modal" id="myModal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">License</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-12 col-md-6">
+                <label>Type <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+                    data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <input type="text" class="form-control" name="zipcode">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label>Expiration Date <span class="required-star">*</span><i class="icon-info1 pl-2"
+                    data-toggle="popover" data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <input type="text" class="form-control" name="zipcode">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label>Number <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+                    data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <input type="text" class="form-control" name="zipcode">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label>State <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+                    data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <select name="cars">
+                  <option value="">Select</option>
+                  <option value="volvo">AP</option>
+                  <option value="saab">TS</option>
+                  <option value="fiat">MH</option>
+                  <option value="audi">DH</option>
+                </select>
+              </div>
+
+              <div class="col-12 text-center mt-2">
+                <input type="submit" name="submit" class="submit action-button" value="SUBMIT">
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    <input type="button" name="previous" class="previous action-button cancel-btn mt-4" value="CANCEL">
+    <input type="button" name="next" class="next action-button mt-4" value="NEXT">
+
+  </fieldset>
+  <fieldset id="5">
+
+    <h2 class="fs-title">DEA Verification <span class="right-value"><b class="active-clr">5</b>/<b>7</b></span></h2>
+    <div class="welcome-card bg-cayan">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <div>
+        <p>As part of the registration process, each registrant must associate themselves with one or more DEA numbers
+          by providing identifying information</p>
+      </div>
+    </div>
+    <table class="profile-info custom-table-with-border">
+      <thead>
+        <tr>
+          <th>DEA</th>
+          <th>Name</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Zip</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Board License Number</td>
+          <td></td>
+          <td>123456</td>
+          <td>wv</td>
+          <td>454755</td>
+          <td><i class="icon-delete"></i></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <div class="text-center"><button class="btn- btn-primary add-dea-btn" data-toggle="modal" data-target="#myModal">ADD
+        DEA</button></div>
+
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">DEA Association Request</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group col-12 col-md-6">
+                <label>BAC <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+                    data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <select name="cars">
+                  <option value="">Select</option>
+                  <option value="volvo">1</option>
+                  <option value="saab">2</option>
+                  <option value="fiat">3</option>
+                  <option value="audi">4</option>
+                </select>
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label>DEA Number <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+                    data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <input type="text" class="form-control" name="zipcode">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label>Expiration Date <span class="required-star">*</span><i class="icon-info1 pl-2"
+                    data-toggle="popover" data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <input type="text" class="form-control" name="zipcode">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <label>Zip Code * <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+                    data-trigger="hover"
+                    data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+                <input type="text" class="form-control" name="zipcode">
+              </div>
+              <div class="form-group col-12">
+                Do you want to add another DEA?
+                <div class="modal-radio">
+                  <div class="form-check mr-4">
+                    <label class="form-check-label" for="radio1">
+                      <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Yes">Yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label" for="radio2">
+                      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="No">No
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 text-center mt-2">
+                <input type="submit" name="submit" class="submit action-button" value="SUBMIT">
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+    <input type="button" name="previous" class="previous action-button cancel-btn mt-4" value="CANCEL">
+    <input type="button" name="next" class="next action-button mt-4" value="NEXT">
+
+  </fieldset>
+  <fieldset id="6">
+    <h2 class="fs-title">Membership Information <span class="right-value"><b class="active-clr">6</b>/<b>7</b></span>
+    </h2>
+    <div class="welcome-card bg-cayan">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <div>
+        <p>The following information will create your login information</p>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="form-group col-12 col-md-4">
+        <label>Preferred Username <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+            data-trigger="hover"
+            data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+        <input type="text" class="form-control" name="zipcode">
+      </div>
+      <div class="form-group col-12 col-md-4">
+        <label>Password <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+            data-trigger="hover"
+            data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+        <input type="password" class="form-control" name="zipcode">
+      </div>
+      <div class="form-group col-12 col-md-4">
+        <label>Confirm Password <span class="required-star">*</span><i class="icon-info1 pl-2" data-toggle="popover"
+            data-trigger="hover"
+            data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+        <input type="password" class="form-control" name="zipcode">
+      </div>
+      <h4 class="select-question">Security Question's</h4>
+      <div class="form-group col-12">
+        <label>Security Question One <span class="required-star">*</span><i class="icon-info1 pl-2"
+            data-toggle="popover" data-trigger="hover"
+            data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+        <select name="cars">
+          <option value="">Select</option>
+          <option value="volvo">1</option>
+          <option value="saab">2</option>
+          <option value="fiat">3</option>
+          <option value="audi">4</option>
+        </select>
+      </div>
+      <div class="form-group col-12">
+
+        <input type="text" class="form-control" placeholder="Answer here">
+      </div>
+      <div class="form-group col-12">
+        <label>Security Question two <span class="required-star">*</span><i class="icon-info1 pl-2"
+            data-toggle="popover" data-trigger="hover"
+            data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+        <select name="cars">
+          <option value="">Select</option>
+          <option value="volvo">1</option>
+          <option value="saab">2</option>
+          <option value="fiat">3</option>
+          <option value="audi">4</option>
+        </select>
+      </div>
+      <div class="form-group col-12">
+
+        <input type="text" class="form-control" placeholder="Answer here">
+      </div>
+      <div class="form-group col-12">
+        <label>Security Question three <span class="required-star">*</span><i class="icon-info1 pl-2"
+            data-toggle="popover" data-trigger="hover"
+            data-content="if your zipcode done not verify and you receive an error notice to that effect. Please email y our NPI with te correct zipcode to Support@rxdatatrack.com. We will correct the information so that you can continue with the REGISTRATION"></i></label>
+        <select name="cars">
+          <option value="">Select</option>
+          <option value="volvo">1</option>
+          <option value="saab">2</option>
+          <option value="fiat">3</option>
+          <option value="audi">4</option>
+        </select>
+      </div>
+      <div class="form-group col-12">
+
+        <input type="text" class="form-control" placeholder="Answer here">
+      </div>
+    </div>
+    <!-- <div class="register-finish mt-4"> -->
+    <input type="button" name="previous" class="previous action-button cancel-btn" value="CANCEL">
+    <input type="button" name="next" class="next action-button" value="NEXT">
+    <!-- </div> -->
+
+
+
+  </fieldset>
+  <fieldset id="7">
+
+    <h2 class="fs-title">Registration Process Complete <span class="right-value"><b
+          class="active-clr">7</b>/<b>7</b></span></h2>
+    <div class="welcome-card bg-cayan">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <div>
+        <p class="error-color">Please and <span class="bg-red"> do not reply@rxdatatrack.com </span> to your safe list
+          to ensure the proper delivery of all emails from RxDataTrack’s <span class="link-color">CSAPP.</span> </p>
+        <p class="error-color pt-1">If you are unable to do so, please remember to check your spam and junk mail folders
+          for future correspondence</p>
+      </div>
+    </div>
+    <div class="welcome-card bg-gray">
+      <div>
+        <i class="icon icon-right-check2"></i>
+      </div>
+      <div>
+
+        <h4 class="received-text">Application Received & Registration Nearly Complete</h4>
+        <p class="">Thank you for completing this portion of the registration process...</p>
+
+      </div>
+    </div>
+    <div class="welcome-card bg-pink">
+      <div>
+        <i class="icon icon-info1"></i>
+      </div>
+      <div>
+        <p class="error-color">Your registration will not be considered unless these documents are provided</p>
+        <p class="error-color pt-1">Registration requests are reviewed in the order of submission</p>
+      </div>
+    </div>
+    <div class="registration-complate">
+      <div>
+        <img src="assets/themes/csapp/images/stop-logo.png" alt="">
+      </div>
+      <div>
+        <div class="registration-complate-card">
+          <h5>Step 1</h5>
+          <p class="pb-1">Registrants are required to email or fax a copy of this registration (or if not available a
+            note of your Username) together with a copy of board license (Board of Pharmacy or Board of Medicine) Plus
+            DEA certificate to:</p>
+          <h4>West Virginia Board of Pharmacy</h4>
+          <div class="d-flex">
+            <p class="d-flex align-items-center pr-25"><i class="icon-message pr-1"></i>cynthia.y.parsons@wv.gov</p>
+            <p class="d-flex align-items-center"><i class="icon-printer pr-1"></i> 558-0474</p>
+          </div>
+        </div>
+        <div class="registration-complate-card">
+          <h5>Step 2</h5>
+          <h4>You will be notified by email when your account request has been reviewed.</h4>
+          <p>Once you receive the email with your confirmation code. continue the registration process by logging in at
+            <a href="javascript:;">https://www.csappwv.com/</a> using the username and password you created during
+            registration your registration will be complete once you are confirm your account using the code contained
+            in the confirmation e-mail</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="preview-div">
+      <h2 class="preview-head">PREVIEW</h2>
+      <h3 class="preview-header-cls">PROFILE INFORMATION</h3>
+      <table class="profile-info">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Registration Type</th>
+            <th>NPI Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test@test.com</td>
+            <td>Prescribe</td>
+            <td>xxxxxxxx</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="preview-header-cls">DEA INFORMATION</h3>
+      <table class="custom-table-with-border">
+        <thead>
+          <tr>
+            <th>DEA Number</th>
+            <th>Company Name</th>
+            <th>Address 1</th>
+            <th>Address 2</th>
+            <th>State</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>123456</td>
+            <td>MDDS</td>
+            <td>Dental Care</td>
+            <td>Dental Care2</td>
+            <td>WC</td>
+            <td>VG</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="preview-header-cls">LICENSES</h3>
+      <table class="custom-table-with-border">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>State</th>
+            <th>Expiration Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>123456</td>
+            <td>MDDS</td>
+            <td>Dental Care</td>
+            <td>Dental Care2</td>
+          </tr>
+          <tr>
+            <td>123456</td>
+            <td>MDDS</td>
+            <td>Dental Care</td>
+            <td>Dental Care2</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="register-finish mt-4">
+      <button class="btn btn-primary print-btn"><i class="icon-printer"></i></button>
+      <a href="https://csapp.dev.zeroco.de/#/zcbase" class="submit action-button" value="FINISH">FINISH</a>
+    </div>
+
+  </fieldset>
+</div>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188697981634",
+    "project_id": "apollo-coupon-management",
+    "storage_bucket": "apollo-coupon-management.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188697981634:android:6f6ba911f5d6eeb56cc15b",
+        "android_client_info": {
+          "package_name": "com.apollocm.zerocode"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8N_G1unYMCL4O0fT6i9UfEzpUtd92cCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

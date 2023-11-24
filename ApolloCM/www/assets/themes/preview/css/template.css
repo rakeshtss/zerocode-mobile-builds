@@ -1,0 +1,903 @@
+.tile.bg-blue,
+.tile.bg-indigo,
+.tile.bg-pink,
+.tile.bg-purple,
+.tile.bg-red,
+a.tile.bg-blue:focus,
+a.tile.bg-blue:hover,
+a.tile.bg-dark:focus,
+a.tile.bg-dark:hover,
+a.tile.bg-indigo:focus,
+a.tile.bg-indigo:hover,
+a.tile.bg-pink:focus,
+a.tile.bg-pink:hover,
+a.tile.bg-purple:focus,
+a.tile.bg-purple:hover,
+a.tile.bg-red:focus,
+a.tile.bg-red:hover {
+    color: #fff;
+}
+
+.tile {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    color: #888c9b;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: #e6e8ed;
+    line-height: 2rem;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 0.25rem;
+}
+
+.tile-circle {
+    border-radius: 4rem;
+}
+
+.tile-xs {
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: .75rem;
+    line-height: 1.25rem;
+}
+
+.tile-xl {
+    width: 5rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+}
+
+.tile-lg {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+}
+
+.zc-metric.zc-metric-bordered {
+    min-height: 8.5rem;
+}
+
+.bg-pink {
+    background-color: #b76ba3 !important;
+}
+
+.bg-blue {
+    background-color: #0179a8 !important;
+}
+
+.bg-purple {
+    background-color: #5f4b8b !important;
+}
+
+.bg-red {
+    background-color: #ea6759 !important;
+}
+
+.bg-muted {
+    background-color: #e6e8ed !important;
+}
+
+.text-pink {
+    color: #b76ba3 !important;
+}
+
+.text-yellow {
+    color: #f7c46c !important;
+}
+
+.zc-list-group-item-figure {
+    display: flex;
+    align-items: center;
+    color: #a6abbd;
+}
+
+.zc-list-group-item-title {
+    margin: 0;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: #363642;
+    font-size: 1rem;
+}
+
+.zc-list-group-item-text {
+    margin: 0;
+    line-height: 1.25rem;
+    color: #888c9b;
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+.zc-page-title {
+    margin-top: 0;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.zc-client-info {
+    padding-top: 20px !important;
+}
+
+.zc-card {
+    margin-bottom: 20px;
+    border: 1px solid rgba(20, 20, 31, .12);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    padding: 15px
+}
+
+.zc-card-title,
+.zc-table-title-size .zc-data-list-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    padding: 10px 15px 0;
+}
+
+.zc-table-title-size .zc-form-add-btn .row {
+    margin: 0rem;
+}
+
+.zc-lead {
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.progress-xs {
+    height: 3px;
+}
+
+.has-badge>.tile-circle+.tile,
+.has-badge>.tile-circle+.user-avatar,
+.has-badge>.user-avatar+.tile,
+.has-badge>.user-avatar+.user-avatar {
+    transform: translate3d(-60%, 0, 0);
+}
+
+.zc-metric-value.h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.zc-metric-bordered {
+    border: 1px solid #d6d8e1;
+}
+
+.zc-no-border {
+    border: none !important;
+    border-radius: 0px !important;
+}
+
+.zc-timeline-date {
+    font-size: .75rem;
+    color: #888c9b;
+}
+
+.user-avatar {
+    position: relative;
+    margin-bottom: 0;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    vertical-align: middle;
+    border-radius: 4rem;
+}
+
+.user-avatar-sm {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.user-avatar-md {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 2.25rem;
+}
+
+.user-avatar-lg {
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+}
+
+.user-avatar-xl {
+    width: 5rem;
+    height: 5rem;
+    font-size: 5rem;
+}
+
+.user-avatar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: top;
+    object-position: top;
+}
+
+.avatar-group .user-avatar {
+    box-shadow: 0 0 0 2px #fff;
+}
+
+.avatar-group {
+    display: inline-block;
+}
+
+.avatar-group .user-avatar {
+    margin-left: -10px;
+}
+
+.avatar-group .user-avatar:hover {
+    z-index: 2;
+}
+
+.has-badge {
+    position: relative;
+    display: inline-block;
+}
+
+.zc-two-cadrs-sbs .ui-table-tbody,
+.zc-three-cadrs-sbs .ui-table-tbody {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.zc-three-cadrs-sbs .ui-table-tbody {
+    margin-right: -7px;
+    margin-left: -7px;
+}
+
+.zc-two-cadrs-sbs .ui-table-tbody .card {
+    width: 50%;
+}
+
+.zc-two-cadrs-sbs .ui-table-tbody .card:nth-child(even) {
+    padding-left: 8px;
+}
+
+.zc-two-cadrs-sbs .ui-table-tbody .card:nth-child(odd) {
+    padding-right: 8px;
+}
+
+.zc-list-title .zc-data-list-title {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.zc-three-cadrs-sbs .card {
+    width: 33.3%;
+    padding: 4px 7px;
+}
+
+/* *************************************************************************** */
+/************** Client   Page Css Starts  Here  **************/
+/* *************************************************************************** */
+.zc-client-pageCard .zc-widget-data-list::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.zc-client-pageCard .zc-widget-data-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.zc-client-pageCard .zc-widget-data-list::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+}
+
+.zc-client-pageCard {
+    border-right: 1px solid #d4d5d9d9;
+    position: sticky !important;
+    height: 100% !important;
+    top: 56px;
+}
+
+.zc-client-pageCard .zc-widget-data-list {
+    height: calc(100vh - 113px);
+    background-color: #fff;
+    overflow: auto;
+}
+
+.zc-client-pageCard .zc-list-group-item-body {
+    padding: 15px 15px 15px 0 !important;
+    border-bottom: 1px solid #ddd;
+}
+
+.zc-tickets-table-block .table-header-right,
+.zc-tickets-table-block .zc-table-header.top .table-header-right .filter-position-top .zc-data-list-filters .ui-fluid-filters-div {
+    width: 100%;
+}
+
+.zc-tickets-table-block .zc-table-header.top {
+    padding: 0 !important;
+}
+
+.zc-tickets-table-block .zc-table-header.top .table-header-right .filter-position-top .zc-data-list-filters {
+    padding: 10px !important;
+}
+
+.zc-tickets-table-block .filter-clear-btn.zc-global-search-btn {
+    padding: 6px 10px !important;
+}
+
+.zc-client-page-accordion .zc-accordion .ui-accordion .ui-accordion-header a {
+    flex-direction: row-reverse;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.zc-client-page-accordion .zc-accordion .ui-accordion-header a .ui-accordion-toggle-icon {
+    padding-right: 0px;
+}
+
+.zc-client-page-accordion .zc-accordion p-header {
+    display: flex;
+    align-items: center;
+}
+
+.zc-page-navs .zc-card-subtitle {
+    font-size: .75rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.zc-card-subtitle {
+    font-size: .75rem;
+    font-weight: 400;
+}
+
+.f14 {
+    font-size: 0.875rem;
+}
+
+.rating-sm {
+    font-size: 1rem;
+}
+
+.rating-sm .icon {
+    margin-right: 5px;
+}
+
+.zc-border-top {
+    border-top: 1px solid #ddd;
+}
+
+.zc-fields-flex .zc-field-boolean {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zc-linked-group .btn-link {
+    padding: 0 !important;
+    text-decoration: none;
+}
+
+.zc-linked-group {
+    align-items: center;
+}
+
+/* *************************************************************************** */
+/************** Client Page Css end  Here  **************/
+/* *************************************************************************** */
+
+
+/* *************************************************************************** */
+/************** Dashboard Page Css start  Here  **************/
+/* *************************************************************************** */
+.zc-dashboard-count-field {
+    border: 1px solid #ccc;
+    border-right: none;
+    padding: 30px 30px 10px;
+}
+
+.zc-dashboard-count-field:last-child {
+    border-right: 1px solid #ccc;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.zc-dashboard-count-field:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.zc-dashboard-counts-div {
+    text-align: center;
+}
+
+.zc-dashboard-counts-div h5 {
+    margin: 0 0 7px;
+    font-size: .875rem;
+    font-weight: 500;
+    color: #888c9b;
+}
+
+.zc-dashboard-counts-div span {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.zc-dashboard-counts-div i {
+    color: #a6abbd;
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+.zc-dashboard-counts-div button {
+    font-size: 11px;
+    padding: 3px 7px !important;
+}
+
+.zc-dashboard-counts-div button i {
+    font-size: 10px;
+    color: #fff;
+}
+
+.zc-charts-block {
+    padding: 15px !important;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.zc-charts-block .zc-widget-header-title h2 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0 !important;
+}
+
+.zc-activity-status {
+    margin: 15px 0;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.zc-activity-status .zc-table-header {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px !important;
+}
+
+.zc-activity-status .table-header {
+    padding: 0px !important;
+    font-weight: 600;
+    font-size: .875rem;
+}
+
+.zc-activity-status .table-header h2 {
+    font-weight: 600;
+    font-size: .875rem;
+    margin: 0;
+}
+
+.zc-activity-status .zc-widget-data-list {
+    padding: 0px !important;
+}
+
+.zc-activity-status .zc-list-group-item {
+    padding: 10px 15px !important;
+}
+
+.zc-activity-status .zc-list-group-item .zc-card-title {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.zc-activity-status .zc-list-group-item .zc-card-subtitle {
+    font-size: .75rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* *************************************************************************** */
+/************** Dashboard Page Css end  Here  **************/
+/* *************************************************************************** */
+/* *************************************************************************** */
+/************** Invoice Page Css start  Here  **************/
+/* *************************************************************************** */
+.zc-invoice-block {
+    border: 1px solid #dddddd;
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+.zc-metric {
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 100%;
+    border-radius: 0.25rem;
+    cursor: default;
+}
+
+.zc-metric-label {
+    font-size: .875rem;
+    font-weight: 500;
+    color: #888c9b;
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+}
+
+.zc-metric-value {
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    font-size: 1.25rem;
+}
+
+.zc-metric-value>sup {
+    top: -0.75em;
+    font-size: .5em;
+    position: relative;
+    color: #a6abbd;
+}
+
+/* *************************************************************************** */
+/************** Invoice Page Css end  Here  **************/
+/* *************************************************************************** */
+
+/* *************************************************************************** */
+/************** Message Page Css start  Here  **************/
+/* *************************************************************************** */
+.zc-message-all .zc-widget-data-list {
+    padding: 0rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 5px !important;
+}
+
+.zc-message-all .zc-list-group-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.zc-list-group-item-figure .icon-star {
+    font-size: 20px;
+}
+
+.zc-list-group-item-title.text-truncate {
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.25rem;
+    color: #363642;
+    font-size: 1rem;
+}
+
+.zc-list-group-item-title.text-truncate a {
+    color: #000;
+}
+
+.has-badge-bottom .icon.icon-glob {
+    transform: translate3d(-1.125rem, 0, 0);
+    border: 3px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border-radius: 4rem;
+    font-size: 1rem;
+    top: auto;
+    bottom: 0.5rem;
+}
+
+.zc-message-all .zc-widget-data-list .ui-table .ui-table-tfoot>tr>td:first-child {
+    border-left: none;
+}
+
+.zc-message-all .zc-widget-data-list .ui-table .ui-table-tfoot>tr>td:last-child {
+    border-right: none;
+}
+
+/* *************************************************************************** */
+/************** Message Page Css end  Here  **************/
+/* *************************************************************************** */
+/* *************************************************************************** */
+/************** Teams Page Css start  Here  **************/
+/* *************************************************************************** */
+.zc-myTeam-tab .zc-data-list-filters,
+.zc-myTeam-tab .table-header-right,
+.zc-myTeam-tab .zc-table-header .table-header-right .filter-position-top .zc-data-list-filters .ui-fluid-filters-div {
+    width: 100% !important;
+}
+
+.zc-myTeam-tab .filter-position-top .filter-footer .filter-clear-btn {
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.zc-myTeam-tab .filter-position-top .filter-footer .filter-clear-btn i {
+    margin-right: 5px;
+}
+
+.zc-tab-content .zc-myTeam-tab .zc-table-header {
+    padding: 0.5rem 1rem !important;
+}
+
+.zc-action-row .row {
+    margin: 0 !important;
+}
+
+.zc-action-row .row .col {
+    padding-right: 0 !important;
+}
+
+.zc-myTeam-tab .zc-list-group-item {
+    align-items: center;
+}
+
+.zc-team .zc-list-group-item-title a {
+    color: #222230;
+    font-size: 1rem;
+}
+
+.zc-list-inline,
+.zc-list-inline-item {
+    display: flex;
+    align-items: center;
+}
+
+.zc-myTeam-tab .zc-list-group-item-body {
+    border-bottom: 1px solid #ddd;
+    padding: 0.75rem 1rem 0.75rem 0;
+}
+
+.zc-myTeam-tab .zc-list-group-item-figure {
+    padding: 0.75rem 1rem !important;
+}
+
+/* *************************************************************************** */
+/************** Teams Page Css end  Here  **************/
+/* *************************************************************************** */
+/* *************************************************************************** */
+/************** Team Page Css start Here  **************/
+/* *************************************************************************** */
+.zc-metric-value.h3 {
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    line-height: 8px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.zc-metric-value.h3 sub {
+    color: #a6abbd;
+    font-size: .5em;
+    margin-right: 5px;
+}
+
+.zc-chart-heading-top .zc-widget-header-title h2 {
+    font-size: 1rem;
+}
+
+.zc-chart-heading-top .highcharts-root {
+    padding: 15px !important;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.zc-team-summary {
+    padding: 15px !important;
+    border-bottom: 1px solid #ddd;
+}
+
+.zc-team-summary zc-form>div>h3 {
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.zc-recent-activity {
+    border-top: 1px solid #ddd;
+    padding: 15px !important;
+}
+
+.zc-recent-activity .col.table-header {
+    padding: 0px !important;
+}
+
+.zc-recent-activity .zc-data-list-title {
+    font-size: 1rem;
+}
+
+.zc-recent-activity .btn-link {
+    padding: 0px !important;
+    font-weight: 400;
+}
+
+.zc-comment-info {
+    width: 29px;
+    height: 29px;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* *************************************************************************** */
+/************** Team Page Css end  Here  **************/
+/* *************************************************************************** */
+
+/* *************************************************************************** */
+/************** user Page Css start  Here  **************/
+/* *************************************************************************** */
+
+.zc-user-details-block {
+    background-color: #e6e8ed;
+    padding: 2rem 1rem 1rem !important;
+}
+
+.zc-page-cover .icon.icon-star-1,
+.zc-page-cover .icon.icon-star {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.zc-user-status {
+    background-color: #fff;
+    text-align: center;
+}
+
+.zc-user-status .zc-metric-value.h3 {
+    justify-content: center;
+}
+
+.zc-user-tabs .mat-tab-list .mat-tab-labels {
+    justify-content: center;
+}
+
+.zc-table-title-size {
+    border: 1px solid #ddd !important;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.zc-card.zc-card-fluid .zc-card-body .zc-media {
+    display: flex;
+    justify-content: space-between;
+}
+
+.zc-card.zc-card-fluid .zc-card-body .zc-media .zc-form-add-btn .ui-clickable {
+    border: none;
+}
+
+.list-icons>li:not(:last-child) {
+    margin-bottom: 0.25rem;
+}
+
+.list-icons li {
+    font-size: 0.875rem;
+    color: #363642;
+}
+
+.zc-card-footer:last-child {
+    border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+}
+
+.zc-card-footer {
+    background-color: transparent;
+    border-top: 1px solid rgba(20, 20, 31, .12);
+    display: flex;
+}
+
+.zc-card-footer .card-footer-item-bordered:not(:last-child) {
+    border-right: 1px solid rgba(20, 20, 31, .12);
+}
+
+.zc-card-footer .card-footer-item-bordered {
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+    outline: 0;
+}
+
+.zc-new-vertical {
+    background-color: #f6f7f9 !important;
+}
+
+.zc-new-vertical.zc-vertical-tabs .mat-tab-body-content .zc-tab-content {
+    padding: 0 0 0 15px !important;
+}
+
+.zc-new-vertical.zc-vertical-tabs .zc-tab-content zc-form {
+    border: 1px solid #ddd !important;
+}
+
+.zc-new-vertical.zc-vertical-tabs .mat-tab-body-wrapper,
+.zc-new-vertical.zc-vertical-tabs .mat-tab-label {
+    border: none;
+}
+
+.zc-new-vertical.zc-vertical-tabs .mat-tab-header {
+    height: fit-content;
+}
+
+.zc-new-vertical.zc-vertical-tabs .mat-tab-list .mat-tab-labels .mat-tab-label-active::after {
+    right: auto;
+    left: 0;
+    background-color: #346cb0;
+}
+
+.zc-social-networks .btn .info-icon {
+    padding-right: 0px;
+}
+
+.zc-social-networks .btn i {
+    margin-right: 0px;
+    font-size: 16px;
+}
+
+.zc-social-networks .btn-primary.twitter,
+.zc-social-networks .btn-primary.twitter:hover {
+    background-color: #00a9f1 !important;
+    border-color: #00a9f1 !important;
+    color: #fff;
+    cursor: inherit !important;
+}
+
+.zc-social-networks .btn-primary.facebook,
+.zc-social-networks .btn-primary.facebook:hover {
+    background-color: #365397 !important;
+    border-color: #365397 !important;
+    color: #fff;
+    cursor: inherit !important;
+}
+
+.zc-social-networks .btn-primary.linkedin,
+.zc-social-networks .btn-primary.linkedin:hover {
+    background-color: #006db3 !important;
+    border-color: #006db3 !important;
+    color: #fff;
+    cursor: inherit !important;
+}
+
+.zc-social-networks .btn-primary.dribble,
+.zc-social-networks .btn-primary.dribble:hover {
+    background-color: #ed4584 !important;
+    border-color: #ed4584 !important;
+    color: #fff;
+    cursor: inherit !important;
+}
+
+.zc-social-networks .btn-primary.git,
+.zc-social-networks .btn-primary.git:hover {
+    background-color: #2f2f2f !important;
+    border-color: #2f2f2f !important;
+    color: #fff;
+    cursor: inherit !important;
+}
+
+/* *************************************************************************** */
+/************** user Page Css end  Here  **************/
+/* *************************************************************************** */

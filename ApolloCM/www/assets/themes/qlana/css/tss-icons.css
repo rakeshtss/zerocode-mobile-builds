@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "tss-fonts";
+  src:url("../fonts/tss-fonts/tss-fonts.eot");
+  src:url("../fonts/tss-fonts/tss-fonts.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/tss-fonts/tss-fonts.woff") format("woff"),
+    url("../fonts/tss-fonts/tss-fonts.ttf") format("truetype"),
+    url("../fonts/tss-fonts/tss-fonts.svg#tss-fonts") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "tss-fonts" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  /* speak: none; */
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^='tss-'],
+[class^="tss-"]:before,
+[class*=" tss-"]:before {
+  font-family: "tss-fonts" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  /* speak: none; */
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tss-alert:before {
+  content: "\61";
+}
+.tss-apartment:before {
+  content: "\62";
+}
+.tss-arrow-1:before {
+  content: "\63";
+}
+.tss-arrow-cross-direction:before {
+  content: "\64";
+}
+.tss-arrow-direction:before {
+  content: "\65";
+}
+.tss-arrow-down:before {
+  content: "\66";
+}
+.tss-arrow-down-1:before {
+  content: "\67";
+}
+.tss-arrow-exchange:before {
+  content: "\68";
+}
+.tss-arrow-exchange-2:before {
+  content: "\69";
+}
+.tss-arrow-left:before {
+  content: "\6a";
+}
+.tss-arrow-left-2:before {
+  content: "\6b";
+}
+.tss-arrow-left-3:before {
+  content: "\6c";
+}
+.tss-arrow-left-4:before {
+  content: "\6d";
+}
+.tss-arrow-left-5:before {
+  content: "\6e";
+}
+.tss-arrow-left-6:before {
+  content: "\6f";
+}
+.tss-arrow-left-c-1:before {
+  content: "\70";
+}
+.tss-arrow-left-turn:before {
+  content: "\71";
+}
+.tss-arrow-left-turn-1:before {
+  content: "\72";
+}
+.tss-arrow-right:before {
+  content: "\73";
+}
+.tss-arrow-right-1:before {
+  content: "\74";
+}
+.tss-arrow-right-5:before {
+  content: "\75";
+}
+.tss-arrow-right-6:before {
+  content: "\76";
+}
+.tss-arrow-right-7:before {
+  content: "\77";
+}
+.tss-arrow-right-8:before {
+  content: "\78";
+}
+.tss-arrow-right-play:before {
+  content: "\79";
+}
+.tss-arrow-right-turn:before {
+  content: "\7a";
+}
+.tss-arrow-right-turn-1:before {
+  content: "\41";
+}
+.tss-arrow-up:before {
+  content: "\42";
+}
+.tss-arrow-up-1:before {
+  content: "\43";
+}
+.tss-arrow-up-2:before {
+  content: "\44";
+}
+.tss-arrow-up-3:before {
+  content: "\45";
+}
+.tss-arrow-up-4:before {
+  content: "\46";
+}
+.tss-arrow-up-down:before {
+  content: "\47";
+}
+.tss-bank:before {
+  content: "\48";
+}
+.tss-bank-1:before {
+  content: "\49";
+}
+.tss-bank-2:before {
+  content: "\4a";
+}
+.tss-bank-3:before {
+  content: "\4b";
+}
+.tss-bar-menu:before {
+  content: "\4c";
+}
+.tss-bar-vertical:before {
+  content: "\4d";
+}
+.tss-bar-vertical-string:before {
+  content: "\4e";
+}
+.tss-basket:before {
+  content: "\4f";
+}
+.tss-basket-1:before {
+  content: "\50";
+}
+.tss-book:before {
+  content: "\51";
+}
+.tss-calendar-2:before {
+  content: "\52";
+}
+.tss-clipboard-times-1:before {
+  content: "\53";
+}
+.tss-database-1:before {
+  content: "\54";
+}
+.tss-dollar-bag-1:before {
+  content: "\55";
+}
+.tss-eye-pie-chart:before {
+  content: "\56";
+}
+.tss-grid4:before {
+  content: "\57";
+}
+.tss-hand-dollar-1:before {
+  content: "\58";
+}
+.tss-megaphone-1:before {
+  content: "\59";
+}
+.tss-open-book:before {
+  content: "\5a";
+}
+.tss-send:before {
+  content: "\30";
+}
+.tss-send-1:before {
+  content: "\31";
+}
+.tss-temple:before {
+  content: "\32";
+}
+.tss-user-check-1:before {
+  content: "\33";
+}
+.tss-user-headphone:before {
+  content: "\34";
+}
+.tss-user-plus:before {
+  content: "\35";
+}

@@ -1,0 +1,299 @@
+<div class="blank-layout">
+    <header class="zc-header d-none">
+        <div class="zc-header-left">
+            <a routerLink="/" class="zc-logo" *ngIf="ly.siteConfig.clientLogo">
+                <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+            </a>
+            <ul class="navbar-nav zc-navbar">
+                <!-- <li class="nav-item dropdown">
+            <a title="Programs" id="programLink" class="nav-link text-truncate col-12 dropdown-toggle"
+              href="javascript:void(0)">
+              Programs
+            </a>
+          </li> -->
+                <!-- <li class="nav-item dropdown">
+          <a title="Conatct" id="conatctLink" class="nav-link text-truncate col-12 dropdown-toggle"
+            href="javascript:void(0)">
+            Contact
+          </a>
+        </li> -->
+                <!-- <li class="nav-item dropdown">
+            <a title="Conatct" id="eventsLink" class="nav-link text-truncate col-12 dropdown-toggle"
+              href="javascript:void(0)">
+              Events
+            </a>
+          </li> -->
+            </ul>
+        </div>
+        <div class="zc-header-right">
+            <ul class="zc-header-right-list">
+                <li>
+                    <div ngbDropdown class="zc-profile-dp" placement="bottom-right">
+                        <a class="zc-profile-dp-link" id="userdroupdown" ngbDropdownToggle>
+                            <span class="welcome-user-pic"
+                                *ngIf="!(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                                <img src="https://cdn.v35.dev.zeroco.de/tems/themes/tems/images/default-img.png"
+                                    alt="logo" />
+                            </span>
+                            <span class="welcome-user-pic"
+                                *ngIf="(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                                <img [src]="ly.siteConfig.fileServer + 'get/' +ly.userDetails.pic[0]['path']"
+                                    alt="logo" />
+                            </span>
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="userdroupdown" class="zc-profile-dp-menu">
+                            <ul class="zc-profile-dp-menu-list">
+                                <li>
+                                    <div class="zc-user-info">
+                                        <span class="text-pink">Welcome </span>
+                                        <label
+                                            *ngIf="ly.userDetails.role && ly.userDetails.role.label">{{ly.userDetails.first_name}}</label>
+                                        <!-- <label *ngIf="ly.userDetails.role?.label">{{
+                        ly.userDetails.role.label
+                      }}</label> -->
+                                        <label *ngIf="ly.userDetails.addInfo && ly.userDetails.addInfo.branch">{{
+                                            ly.userDetails.addInfo.branch?.label
+                                            }}</label>
+                                        <label *ngIf="ly.userDetails.phone && ly.userDetails.phone.isdCode">{{
+                                            ly.userDetails.phone?.isdCode
+                                            }}-{{
+                                            ly.userDetails.phone?.value
+                                            }}
+                                        </label>
+                                    </div>
+                                </li>
+                                <ng-container *ngIf="ly.siteConfig && ly.siteConfig.profileLinks.length > 0">
+                                    <li *ngFor="let link of ly.siteConfig.profileLinks">
+                                        <ng-container [ngSwitch]="link.type">
+                                            <a *ngSwitchDefault [routerLink]="['/' + link.url]" class="dropdown-item"
+                                                [target]="link.target">{{ link.title }}</a>
+                                        </ng-container>
+                                    </li>
+                                </ng-container>
+                                <li routerLinkActive="active-link">
+                                    <button *ngIf="ly.userDetails.role.label === 'Student'" class="dropdown-item"
+                                        routerLink="/ms/account/student-profile">Profile</button>
+                                    <button *ngIf="ly.userDetails.role.label != 'Student'" class="dropdown-item"
+                                        routerLink="/ms/account/profile">Profile</button>
+                                </li>
+                                <li *ngIf="ly.userDetails.role.code == 'Admin' || ly.userDetails.role.code == 'course_admin' || ly.userDetails.role.code == 'school_admin' || ly.userDetails.role.code == 'mentors'"
+                                    routerLinkActive="active-link">
+                                    <button class="dropdown-item" routerLink="/ms/account/app-selection">App
+                                        Selection</button>
+                                </li>
+                                <li *ngIf="ly.userDetails.role.label != 'Student'">
+                                    <button class="dropdown-item" routerLink="/ms/account/change-password">Change
+                                        Password</button>
+                                </li>
+                                <li *ngIf="ly.userDetails.role.label == 'Student'" routerLinkActive="active-link">
+                                    <button class="dropdown-item" routerLink="/metamorphosis/course/my-course">My
+                                        Courses</button>
+                                </li>
+                                <!-- <li class="zc-border-top" routerLinkActive="active-link">
+                    <button class="dropdown-item">Help</button>
+                  </li> -->
+                                <li routerLinkActive="active-link">
+                                    <button id="logout" class="dropdown-item" (click)="ly.logout()">
+                                        Sign out
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <header class="zc-header">
+
+        <div class="zc-top-menu-block">
+            <div class="zc-top-menu">
+                <a href="javascript:;" class="header-contact"><i class="icon icon-mobile"></i> <span>+91
+                        9290861740</span></a>
+                <a href="javascript:;" class="header-mail"><i class="icon icon-envelope-o"></i>
+                    <span>info@naarm.org.in</span></a>
+            </div>
+            <div class="zc-top-menu-right">
+                <a href="javascript:;"><i class="icon icon-twitter"></i></a>
+                <a href="javascript:;"><i class="icon icon-instagram"></i></a>
+                <a href="javascript:;"><i class="icon icon-facebook"></i></a>
+                <a href="javascript:;"><i class="icon icon-google-plus"></i></a>
+            </div>
+        </div>
+        <div class="zc-main-header">
+            <div class="zc-header-left">
+                <!-- <div class="col-1 sidebar-toggle">
+                <a  fxHide fxShow.lt-sm class="icon-bars " (click)="ly.toggleMenu();"></a>
+              </div> -->
+                <a class="zc-logo" routerLink="/ms/account/login">
+                    <!-- <img [src]="ly.siteConfig.clientLogo" alt="Logo" /> -->
+                    <img src="https://cdn.v35.dev.zeroco.de/tems/themes/tems/images/home-logo.png">
+                </a>
+                <div class="zc-horizontal-menu">
+                    <!-- <div class="side-menu" [ngClass]="ly.menuState">
+                <zc-com-render type="menu" [options]="{ app: ly.currentApp }"></zc-com-render>
+              </div> -->
+                    <ul class="zc-menu">
+                        <li class="nav-item"><a class="nav-link" routerLink="/ms/account/login"
+                                routerLinkActive="active">Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" routerLink="/ms/account/courses"
+                                routerLinkActive="active">Courses</a></li>
+                        <!-- <li class="active"><a href="">Home</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="zc-main-header-right">
+              <div class="zc-header-search" title="Search">
+                  <i class="icon icon-search-logo"></i>
+              </div>
+              <button class="btn btn-secondary learner-login-btn">Learner Login</button>
+              <button class="btn btn-danger ml-1">Registration</button>
+          </div> -->
+            <div class="zc-header-right" *ngIf="ly.userDetails && ly.userDetails.user_code">
+                <ul class="zc-header-right-list">
+                    <li>
+                        <div ngbDropdown class="zc-profile-dp" placement="bottom-right" container="body">
+                            <a class="zc-profile-dp-link" id="userdroupdown" ngbDropdownToggle>
+                                <span class="welcome-user-pic"
+                                    *ngIf="!(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                                    <img src="https://cdn.v35.dev.zeroco.de/tems/themes/tems/images/default-img.png"
+                                        alt="logo" />
+                                </span>
+                                <span class="welcome-user-pic"
+                                    *ngIf="(ly.userDetails && ly.userDetails.pic && ly.userDetails.pic.length > 0)">
+                                    <img [src]="ly.siteConfig.fileServer + 'get/' +ly.userDetails.pic[0]['path']"
+                                        alt="logo" />
+                                </span>
+                            </a>
+                            <div ngbDropdownMenu aria-labelledby="userdroupdown" class="zc-profile-dp-menu">
+                                <ul class="zc-profile-dp-menu-list">
+                                    <li>
+                                        <div class="zc-user-info">
+                                            <span class="text-pink">Welcome </span>
+                                            <label
+                                                *ngIf="ly.userDetails.role && ly.userDetails.role.label">{{ly.userDetails.first_name}}</label>
+                                            <!-- <label *ngIf="ly.userDetails.role?.label">{{
+                            ly.userDetails.role.label
+                          }}</label> -->
+                                            <label *ngIf="ly.userDetails.addInfo && ly.userDetails.addInfo.branch">{{
+                                                ly.userDetails.addInfo.branch?.label
+                                                }}</label>
+                                            <label *ngIf="ly.userDetails.phone && ly.userDetails.phone.isdCode">{{
+                                                ly.userDetails.phone?.isdCode }}-{{
+                                                ly.userDetails.phone?.value
+                                                }}
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <ng-container *ngIf="ly.siteConfig && ly.siteConfig.profileLinks.length > 0">
+                                        <li *ngFor="let link of ly.siteConfig.profileLinks">
+                                            <ng-container [ngSwitch]="link.type">
+                                                <a *ngSwitchDefault [routerLink]="['/' + link.url]"
+                                                    class="dropdown-item" [target]="link.target">{{ link.title }}</a>
+                                            </ng-container>
+                                        </li>
+                                    </ng-container>
+                                    <li routerLinkActive="active-link">
+                                        <button *ngIf="ly.userDetails.role.label == 'Student'" class="dropdown-item"
+                                            routerLink="/ms/account/student-profile">Profile</button>
+                                        <button *ngIf="ly.userDetails.role.label != 'Student'" class="dropdown-item"
+                                            routerLink="/ms/account/profile">Profile</button>
+                                    </li>
+                                    <li *ngIf="ly.userDetails.role.code == 'Admin' || ly.userDetails.role.code == 'course_admin' || ly.userDetails.role.code == 'school_admin' || ly.userDetails.role.code == 'mentors'"
+                                        routerLinkActive="active-link">
+                                        <button class="dropdown-item" routerLink="/ms/account/app-selection">App
+                                            Selection</button>
+                                    </li>
+                                    <li *ngIf="ly.userDetails.role.label != 'Student'">
+                                        <button class="dropdown-item" routerLink="account/change-password">Change
+                                            Password</button>
+                                    </li>
+                                    <li *ngIf="ly.userDetails.role.label == 'Student'" routerLinkActive="active-link">
+                                        <button class="dropdown-item" routerLink="/metamorphosis/course/my-course">My
+                                            Courses</button>
+                                    </li>
+                                    <!-- <li class="zc-border-top" routerLinkActive="active-link">
+                      <button class="dropdown-item">Help</button>
+                    </li> -->
+                                    <li routerLinkActive="active-link">
+                                        <button id="logout" class="dropdown-item" (click)="ly.logout()">
+                                            Sign out
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <div class="zc-icons-menu">
+        <div>
+            <div class="main-content" [ngClass]="ly.menuState">
+                <!-- {{ly.userDetails.name}} -->
+                <router-outlet></router-outlet>
+            </div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-top">
+                        <div class="left-footer">
+                            <div class="footer-logo">
+                                <a routerLink="/" class="zc-logo" *ngIf="ly.siteConfig.clientLogo">
+                                    <img [src]="ly.siteConfig.clientLogo" alt="Logo" />
+                                </a>
+                                <!-- <img src="https://cdn.v35.dev.zeroco.de/tems/themes/tems/images/footer-logo.png"> -->
+                            </div>
+                            <span class="footer-logo-text">Product of Shine India Academy</span>
+                            <div class="footer-contact-details">
+                                <a href="javascript:;"><i
+                                        class="icon icon-phone"></i><span>+91-40-24581307/310/303/429</span></a>
+                                <a href="javascript:;"><i
+                                        class="icon icon-envelope"></i><span>academiccell@naarm.org.in</span></a>
+                            </div>
+                        </div>
+                        <div class="middle-footer">
+                            <a href="https://naarm.org.in/training/Default.aspx" target="_blank">Home</a>
+                            <a href="https://naarm.org.in/training/Accommadation.aspx" target="_blank">Accommodation</a>
+                            <a href="https://naarm.org.in/training/HowtoApply.aspx" target="_blank">How to Apply</a>
+                            <a href="https://naarm.org.in/training/HowToReach1.aspx" target="_blank">How to Reach
+                                NAARM</a>
+                            <a href="https://naarm.org.in/training/Nomination%20Form%20for%20ICAR-NAARM.docx"
+                                target="_blank">Nomination Form</a>
+                            <a href="https://naarm.org.in/training/ContactDetails.aspx" target="_blank">Contact
+                                Details</a>
+                            <a href="https://naarm.org.in/training/PaymentofFees.aspx" target="_blank">Payment of
+                                Fees</a>
+                        </div>
+                        <div class="right-footer">
+                            <a href="javascript:;"><img
+                                    src="https://cdn.v35.dev.zeroco.de/tems/themes/tems/images/google-play.png"></a>
+                            <a href="javascript:;"><img
+                                    src="https://cdn.v35.dev.zeroco.de/tems/themes/tems/images/app-store.png"></a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="footer-bottom-left">
+                            <p>© <span>{{ ly.today | date : 'y'}}</span>. All rights reserved.</p>
+                        </div>
+                        <div class="footer-bottom-middle">
+                            <a href="javascript:;">Privacy Policy</a>
+                            <a href="javascript:;">Terms of Use</a>
+                            <a href="javascript:;">FAQ’s</a>
+
+                        </div>
+                        <div class="footer-bottom-right">
+                            <a href="javascript:;"><i class="icon icon-twitter"></i></a>
+                            <a href="javascript:;"><i class="icon icon-instagram"></i></a>
+                            <a href="javascript:;"><i class="icon icon-facebook"></i></a>
+                            <a href="javascript:;"><i class="icon icon-google-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</div>

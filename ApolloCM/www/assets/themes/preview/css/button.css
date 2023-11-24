@@ -1,0 +1,56 @@
+/********************************************
+*********Button styles start here*************
+********************************************/
+.btn {
+    font-weight: 600;
+    font-size: .875rem;
+    border-radius: 4px !important;
+    padding: 6px 15px !important;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.btn .info-icon {
+    padding-right: 5px;
+    top: 1px;
+    position: relative;
+}
+
+.back-btn {
+    font-size: 26px;
+}
+
+.back-btn:hover {
+    color: #1d72b7;
+}
+
+/********************************************
+  *********Button styles end here*************
+  ********************************************/
+.zc-icon-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.zc-icon-right span {
+    margin-left: 5px;
+}
+
+.zc-rounded {
+    border-radius: 30px !important;
+}
+
+.zc-square {
+    border-radius: 0px !important;
+}
+
+.btn-sm {
+    padding: 5px 25px !important;
+}
+
+.btn-lg {
+    padding: 12px 25px !important;
+}
