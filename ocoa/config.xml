@@ -18,7 +18,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="upi:*" />
-    <allow-intent href="geo:*" />
+    <allow-intent href="intent:*" />
     <platform name="android">
         <preference name="AndroidWindowSplashScreenAnimatedIcon"
             value="resources/splash-icon.png" />
