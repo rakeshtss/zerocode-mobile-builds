@@ -1,13 +1,26 @@
 {
     "dirty": false,
-    "raw": "49c4895",
-    "hash": "49c4895",
-    "distance": null,
-    "tag": null,
-    "semver": null,
-    "suffix": "49c4895",
-    "semverString": null,
+    "raw": "v3.6.22-0-g14d6dd75",
+    "hash": "g14d6dd75",
+    "distance": 0,
+    "tag": "v3.6.22",
+    "semver": {
+        "options": {
+            "loose": false,
+            "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "v3.6.22",
+        "major": 3,
+        "minor": 6,
+        "patch": 22,
+        "prerelease": [],
+        "build": [],
+        "version": "3.6.22"
+    },
+    "suffix": "0-g14d6dd75",
+    "semverString": "3.6.22",
     "version": "3.6.0",
-    "date": "2023-06-02T10:32:15.549Z",
-    "dateIST": "6/2/2023, 4:02:15 PM"
+    "date": "2024-03-19T15:15:21.733Z",
+    "dateIST": "3/19/2024, 8:45:21 PM"
 }
