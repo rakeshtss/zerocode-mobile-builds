@@ -19,10 +19,8 @@
     <allow-intent href="upi:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
-            <application android:exported="true" />
-         </edit-config>
-         <preference name="AndroidXEnabled" value="true" />
+        <preference name="AndroidPersistentFileLocation" value="Internal" />
+        <preference name="AndroidPersistentFileLocation" value="Compatibility" />
         <preference name="StatusBarOverlaysWebView" value="false" />
         <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -47,6 +45,9 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference name="InterceptRemoteRequests" value="all" />
+        <preference name="iosPersistentFileLocation" value="Library" />
+        <preference name="iosPersistentFileLocation" value="Compatibility" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="20" src="resources/ios/icon/icon-20.png" width="20" />

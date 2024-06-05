@@ -1,5 +1,5 @@
 {
-    "apiUrl": "https://live.machs.edu.sa/zc-v3.1-user-svc-boot/2.0/",
+    "apiUrl": "https://apis.v35.dev.zeroco.de/zc-v3.1-user-svc/2.0/",
     "platform": "mobile",
     "offline": "true",
     "profileLinks": [],
