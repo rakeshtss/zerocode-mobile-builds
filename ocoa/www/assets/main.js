@@ -22,10 +22,15 @@ document.addEventListener('deviceready', function() {
     }, function(error) {
         console.error("Error getting FCM token", error);
     });
+    window.FirebasePlugin.subscribe("all", function() {
+        console.log("Subscribed to topic: all");
+    }, function(error) {
+        console.error("Error subscribing to topic: " + error);
+    });
 
     // Handle incoming notifications
     window.FirebasePlugin.onMessageReceived(function(message) {
-        console.log("New FCM message: ", message);
+        console.warn("New FCM message: ", message);
         // Process the message and show notification or update UI
     }, function(error) {
         console.error("Error receiving FCM message", error);
