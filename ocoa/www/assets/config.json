@@ -1,27 +1,9 @@
 {
-  "apiUrl": "https://dvgocoa.karnatakasmartcity.in/zc-v3.1-user-svc/2.0/",
+  "apiUrlProd": "https://dvgocoa.karnatakasmartcity.in/zc-v3.1-user-svc/2.0/",
+  "apiUrl": "https://dev-apis.zeroco.de/zc-v3.1-user-svc/2.0/",
   "client": "ocoa",
   "platform": "mobile",
   "captchaKey": "6LcifpQUAAAAAAtWYdlTi23dNXYQdJm00QRxVDSx",
-  "googleMapKey":"AIzaSyDlqvq37mmAUE1TPHzvToOdPfQaq2W7GJk",
-  "GOOGLE_OAUTH_API_KEY":"771881444052-69jl5p70dnqph56sq02riksfqajsiqlu.apps.googleusercontent.com",
-  "FACEBOOK_OAUTH_API_KEY": "413437082861608",
-  "clientLogo": "",
-  "offline":"true",
-  "faviconUrl": "assets/favicon.ico",
-  "powerByTitle": "",
-  "siteTitle": "",
-  "defaultApp": "zcbase",
   "loaderUrl": "assets/loaders/Loader3.gif",
-  "profileLinks": [],
-  "profileLinks1": [
-    {
-      "title": "Profile",
-      "url": "swfc/registered-users/profile"
-    },
-    {
-      "title": "Change Password",
-      "url": "zcbase/account/change-password"
-    }
-  ]
+  "profileLinks": []
 }

@@ -263,7 +263,7 @@ header .header-rightside>ul>li .user-details a {
 .block.login-right-div {
     height: initial;
     padding: 30px 50px !important;
-    height: calc(100% - 40px);
+    max-height: calc(100% - 40px);
     align-items: center;
     display: flex;
     justify-content: center;
@@ -1485,7 +1485,7 @@ span.required-star {
     /* border: none; */
     padding: 5px 20px;
     font-family: "Roboto-Regular";
-    width: max-content;
+    /* width: max-content; */
 }
 
 .zc-form-add-btn {
@@ -1493,8 +1493,15 @@ span.required-star {
     display: flex;
 }
 
-.btn-primary i {
+
+/* .btn-primary i {
     margin-right: 5px;
+} */
+
+.btn i {
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
 }
 
 .btn-outline-primary:hover,
@@ -2022,12 +2029,14 @@ input::placeholder,
     /* padding: 10px; */
     /* display: initial !important; */
     /* flex: auto; */
-    min-height: 54px;
+    /* min-height: 54px; */
     /* margin-right: 10px; */
 }
 
 .group-actions .btn-primary i {
     margin-right: 0;
+    position: relative;
+    top: 2px;
 }
 
 .actions-menu.dropdown-menu {
@@ -2132,10 +2141,11 @@ body .ui-table .ui-table-tbody>tr.ui-state-highlight {
   display: block;
 } */
 
-.registrationWidget zc-form h3 {
+
+/* .registrationWidget zc-form h3 {
     padding-right: 15px !important;
     padding-left: 15px !important;
-}
+} */
 
 .registrationWidget zc-form>div {
     padding-top: 30px;
@@ -2309,9 +2319,10 @@ button.ui-button-icon-only .icon-time-clock {
     bottom: 11px;
 }
 
-.zc-filter-text .icon-search {
+
+/* .zc-filter-text .icon-search {
     bottom: 13px;
-}
+} */
 
 .th-filter-dropdown .ui-inputgroup .filter-searchclear {
     bottom: 7px;
@@ -3559,6 +3570,7 @@ th .dropdown-menu .ui-dropdown {
 .notification-popup .modal-body {
     font-size: 16px;
 }
+
 .zc-login-user {
     padding: 0;
     min-height: 100vh;
@@ -3571,6 +3583,7 @@ th .dropdown-menu .ui-dropdown {
     position: relative;
     align-items: center;
 }
+
 .zc-login-user::before {
     position: absolute;
     content: "";
@@ -3584,27 +3597,33 @@ th .dropdown-menu .ui-dropdown {
 .zc-login-user .zc-login-user-middle {
     max-width: 500px;
 }
+
 .zc-login-user-middle .zc-login-logo {
     text-align: center;
 }
+
 .zc-login-user-middle .zc-login-logo img {
     height: 90px;
 }
+
 .zc-login-user-middle h3 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #fff;
     text-align: center;
 }
+
 .zc-login-user-middle .zc-login-form {
     padding: 16px 8px;
     border-radius: 10px;
     position: relative;
 }
+
 .zc-login-user-middle .zc-login-form .form-group-label {
     color: #fff;
     margin-bottom: 3px;
 }
+
 .zc-login-user-middle .zc-login-form .form-control {
     height: 38px;
 }
@@ -3613,44 +3632,92 @@ th .dropdown-menu .ui-dropdown {
     font-size: 16px;
     padding: 8px 12px !important;
 }
+
 .zc-login-form .user-number-strip .zc-login-info-text {
     font-weight: 500;
     font-size: 16px;
     margin-bottom: 15px;
 }
+
 .zc-login-form .user-number-strip .close-div .icon {
     position: absolute;
     right: 0;
     top: 0;
     color: #fff;
 }
+
 .zc-login-form .invalid-feedback {
     text-align: left;
 }
+
 .zc-d-block-btn formly-field {
     width: 100%;
 }
+
 .zc-d-block-btn .btn {
     display: block;
     width: 100%;
 }
+
 .zc-login-form .zc-user-otp {
     text-align: left;
     display: block;
     margin: 20px 0 15px;
     color: #fff;
 }
+
 .zc-login-form .user-otp h6 {
     font-size: 16px;
     font-weight: normal;
     margin: 15px 0 0;
     color: #fff;
 }
+
 .zc-no-required-star .form-group .required-star {
     display: none;
 }
 
+.zc-notifications-modal .modal-header {
+    padding: 6px 15px !important;
+}
 
+.zc-notifications-modal .modal-header .close {
+    font-size: 30px !important;
+}
+
+.zc-notifications-modal .modal-content .close {
+    right: 10px;
+}
+
+.zc-notifications-modal .modal-header .close span {
+    width: 30px;
+    height: 30px;
+}
+
+.zc-notifications-modal .modal-header h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.zc-notifications-modal .modal-body form {
+    padding-top: 0 !important;
+}
+
+.zc-notifications-modal .modal-body .zc-field-image .profile img {
+    width: 100% !important;
+    height: 200px !important;
+    border-radius: 10px;
+}
+
+.zc-notifications-modal .zc-field-image .profile .profile-actions {
+    position: absolute;
+    bottom: 25px;
+    top: auto !important;
+}
+
+.zc-notifications-modal .form-group.zc-field-image.view {
+    margin-bottom: 0 !important;
+}
 
 @media( max-width:1874px) {
     .zc-complaint-table .zc-table-body .zc-widget-data-list th .dropdown-menu.show {
@@ -4434,4 +4501,3 @@ th .dropdown-menu .ui-dropdown {
         max-width: 90px !important;
     }
 }
-
