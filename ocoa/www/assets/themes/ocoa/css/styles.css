@@ -1854,7 +1854,8 @@ body .ui-chips>ul.ui-inputtext {
 /****model styles****/
 
 .modal-content {
-    border-radius: 0;
+    /* border-radius: 0; */
+    border-radius: .8rem;
 }
 
 .modal-body {
@@ -3683,6 +3684,8 @@ th .dropdown-menu .ui-dropdown {
 
 .zc-notifications-modal .modal-header .close {
     font-size: 30px !important;
+    right: 10px;
+    top: 7px;
 }
 
 .zc-notifications-modal .modal-content .close {
@@ -3703,9 +3706,15 @@ th .dropdown-menu .ui-dropdown {
     padding-top: 0 !important;
 }
 
+.zc-notifications-modal .modal-body .zc-field-image .profile {
+    max-width: 400px !important;
+    height: 300px !important;
+    margin: 0 auto;
+}
+
 .zc-notifications-modal .modal-body .zc-field-image .profile img {
     width: 100% !important;
-    height: 200px !important;
+    height: 100% !important;
     border-radius: 10px;
 }
 
@@ -3715,8 +3724,27 @@ th .dropdown-menu .ui-dropdown {
     top: auto !important;
 }
 
+.zc-notifications-modal .zc-field-image .profile .profile-actions a {
+    display: none;
+}
+
 .zc-notifications-modal .form-group.zc-field-image.view {
     margin-bottom: 0 !important;
+}
+
+.notification-model-date {
+    text-align: right;
+    color: #767575;
+    font-style: italic;
+}
+
+.zc-notification-profile .zc-field-image .profile img {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.zc-notification-profile .zc-field-image .profile.no-img .custom-file {
+    width: 100%;
 }
 
 @media( max-width:1874px) {
