@@ -29,12 +29,13 @@ document.addEventListener('deviceready', function() {
     });
 
     // Handle incoming notifications
-    window.FirebasePlugin.onMessageReceived(function(message) {
-        console.warn("New FCM message: ", message);
-        // Process the message and show notification or update UI
-    }, function(error) {
-        console.error("Error receiving FCM message", error);
-    });
+    // window.FirebasePlugin.onMessageReceived(function(message) {
+    //     alert(JSON.stringify(message));
+    //     console.warn("New FCM message: ", message);
+    //     // Process the message and show notification or update UI
+    // }, function(error) {
+    //     console.error("Error receiving FCM message", error);
+    // });
 
     // Handle token refresh
     window.FirebasePlugin.onTokenRefresh(function(token) {

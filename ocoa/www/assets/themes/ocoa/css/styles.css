@@ -2011,6 +2011,7 @@ body .ui-dropdown .ui-dropdown-trigger {
 
 td .zc-form-add-btn i {
     padding: 5px !important;
+    cursor: pointer;
 }
 
 .form-control::placeholder,
