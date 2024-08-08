@@ -16,6 +16,7 @@
     "license": "Apache-2.0",
     "devDependencies": {
         "cordova-android": "^12.0.1",
+        "cordova-ios": "^7.1.0",
         "cordova-plugin-firebasex": "^16.5.0",
         "cordova-plugin-geolocation": "^5.0.0",
         "cordova-plugin-inappbrowser": "^6.0.0",
@@ -60,11 +61,14 @@
                 "ANDROID_FIREBASE_CRASHLYTICS_NDK_VERSION": "18.6.4",
                 "ANDROID_GSON_VERSION": "2.9.0",
                 "ANDROID_FIREBASE_PERF_GRADLE_PLUGIN_VERSION": "1.4.2",
-                "ANDROID_GRPC_OKHTTP": "1.46.0"
+                "ANDROID_GRPC_OKHTTP": "1.46.0",
+                "IOS_USE_PRECOMPILED_FIRESTORE_POD": "false",
+                "IOS_FCM_ENABLED": "true"
             }
         },
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ]
     }
 }
